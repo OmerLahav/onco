@@ -1,0 +1,3 @@
+https://github.com/sebastianhaas/medical-appointment-scheduling
+https://github.com/martijnboland/appoints-client
+https://scotch.io/tutorials/build-a-real-time-scheduling-app-using-angularjs-and-firebase
