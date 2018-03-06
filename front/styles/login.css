@@ -1,0 +1,39 @@
+body{
+background-color: #47d1d1;
+}
+
+
+
+#login-page{
+margin-top:50%;
+width:100%;
+}
+
+
+
+
+profile-image-login{
+margin:0 auto;
+
+
+}
+
+
+	
+
+
+@media screen and (max-width: 992px) {
+  
+
+html{ 
+    border: 0px;
+    padding:0px;
+    margin: 0px;}
+body{
+    background: none;
+
+    
+ }
+#login-page{width:100%;margin:0; display: block;    }
+ 
+}
