@@ -1,0 +1,23 @@
+
+*{
+  
+    box-sizing: border-box;
+}
+
+main{
+   width:100%;
+}
+.card
+{
+	margin: auto;
+	text-align:center;
+        width:30rem;
+          margin-bottom:50px;
+}
+
+.calendar{
+       margin: auto;
+       margin-bottom:50px;
+
+
+}

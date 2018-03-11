@@ -1,4 +1,5 @@
 
+
 if (typeof jQuery === 'undefined') { throw new Error('DCalendar.Picker: This plugin requires jQuery'); }
 +function ($) {
 
