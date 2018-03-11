@@ -1,5 +1,8 @@
 .image-avatar{
-border-radius: 50%;
+	border-radius: 50%;
+	width:60px;
+	height:60px;
+
 }
 .navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-text {
     color: rgba(255, 255, 255, .75);
@@ -8,6 +11,20 @@ border-radius: 50%;
     color: rgba(255, 255, 255, 1);
 }
 
+.navbar{
+	height:70px;
+}
+
+.navbar-brand
+{
+	width:80px;
+	height:60px;
+}
+.logo{
+	
+	width:70px;
+	height:55px;
+}
 .sidebar {
     min-width: 250px;
     max-width: 250px;
@@ -57,6 +74,12 @@ border-radius: 50%;
     font-weight: 300;
     line-height: 1.2;
 }
+.page-footer
+{
+	display :block;
+	width:100%;
+}
+
 
 @media (max-width: 768px) {
     .sidebar {
