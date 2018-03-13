@@ -74,11 +74,13 @@
     font-weight: 300;
     line-height: 1.2;
 }
-.page-footer
+footer
 {
-	display :block;
-	width:100%;
+	
+    width:100%;
    margin-top: 0px;
+   background-color:#9595b7;
+   height:50px;
 }
 
 
