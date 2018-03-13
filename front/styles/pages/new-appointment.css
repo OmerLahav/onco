@@ -11,8 +11,9 @@ main{
 {
 	margin: auto;
 	text-align:center;
-        width:30rem;
+        width:20rem;
           margin-bottom:50px;
+          height:400px;
 }
 
 .calendar{
