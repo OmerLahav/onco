@@ -11,186 +11,10 @@
     <link rel="stylesheet" href="styles/pages/frame.css">
 	<link rel="stylesheet" href="styles/pages/new-appointment.css">
 	<link rel="stylesheet" href="styles/pages/bootstrap4.4.3.css">
-	<link rel="stylesheet" href="styles/pages/calendar.css">
-	
-	<style>
-	
-.wizard {
-    margin: 20px auto;
-    background: #fff;
-}
+	<link rel="stylesheet" href="styles/pages/calendar.css">	
 
-.wizard .nav-tabs {
-    position: relative;
-    margin: 40px auto;
-    margin-bottom: 0;
-    border-bottom-color: #e0e0e0;
-}
+		<script type="text/javascript" href="js/new-appointment.js"></script>
 
-.wizard > div.wizard-inner {
-    position: relative;
-}
-
-.connecting-line {
-    height: 2px;
-    background: #e0e0e0;
-    position: absolute;
-    width: 80%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 50%;
-    z-index: 1;
-}
-
-.wizard .nav-tabs > li.active > a,
-.wizard .nav-tabs > li.active > a:hover,
-.wizard .nav-tabs > li.active > a:focus {
-    color: #555555;
-    cursor: default;
-    border: 0;
-    border-bottom-color: transparent;
-}
-
-span.round-tab {
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    display: inline-block;
-    border-radius: 100px;
-    background: #fff;
-    border: 2px solid #e0e0e0;
-    z-index: 2;
-    position: absolute;
-    left: 0;
-    text-align: center;
-    font-size: 25px;
-}
-
-span.round-tab i {
-    color: #555555;
-}
-
-.wizard li a.active span.round-tab {
-    background: #fff;
-    border: 2px solid #5bc0de;
-
-}
-
-.wizard li a.active span.round-tab i {
-    color: #5bc0de;
-}
-
-span.round-tab:hover {
-    color: #333;
-    border: 2px solid #333;
-}
-
-.wizard .nav-tabs > li {
-    width: 19%;
-}
-
-.wizard li a:after {
-    content: " ";
-    position: relative;
-    left: 46%;
-    top: -20px;
-    opacity: 0;
-    margin: 0 auto;
-    bottom: 0px;
-    border: 5px solid transparent;
-    border-bottom-color: #5bc0de;
-    transition: 0.1s ease-in-out;
-}
-
-.wizard li.active.nav-item:after {
-    content: " ";
-    position: relative;
-    left: 46%;
-    top: -20px;
-    opacity: 1;
-    margin: 0 auto;
-    bottom: 0px;
-    border: 10px solid transparent;
-    border-bottom-color: #5bc0de;
-}
-
-.wizard .nav-tabs > li a {
-    width: 70px;
-    height: 70px;
-    margin: 20px auto;
-    border-radius: 100%;
-    padding: 0;
-    position: relative;
-}
-
-.wizard .nav-tabs > li a:hover {
-    background: transparent;
-}
-
-.wizard .tab-pane {
-    position: relative;
-    padding-top: 50px;
-}
-
-.wizard h3 {
-    margin-top: 0;
-}
-
-@media( max-width: 585px) {
-
-    .wizard {
-        width: 90%;
-        height: auto !important;
-    }
-
-    span.round-tab {
-        font-size: 16px;
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-    }
-
-    .wizard .nav-tabs > li a {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-    }
-
-    .wizard li.active:after {
-        content: " ";
-        position: absolute;
-        left: 35%;
-    }
-}
-
-
-*{
-  
-    box-sizing: border-box;
-}
-
-main{
-   width:100%;
-   margin-top:100px;
-}
-. box-wizard
-{
-  margin: auto;
-    width: 50%;
-    padding: 10px;
-		  
-}
-
-
-
-.btn
-{
-	margin-bottom:50px;	
-}
-
-	</style>
-	
 </head>
 
 <body>
@@ -216,7 +40,7 @@ main{
 		</div>
 	</nav>
 
-	<div class="d-flex align-items-stretch">
+<div class="d-flex align-items-stretch">
 		<div class="sidebar bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#"><i class="fa fa-fw fa-link"></i> Dashboard</a></li>
@@ -243,166 +67,141 @@ main{
 		</div>
 	
 	<main class="p-4">
-	   
 	   <h1> Appointment </h1>
-                <form class="form cf">
-                    <div class="wizard">
-                        <div class="wizard-inner">
-                            <div class="connecting-line"></div>
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="nav-item">
-                                    <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Choose care provider" class="nav-link active">
-                                <span class="round-tab">
-                                    <i class="fa fa-user"></i>
-                                </span>
-                            </a>
-                                </li>
-                                <li role="presentation" class="nav-item">
-                                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Choose date" class="nav-link disabled">
-                                <span class="round-tab">
-                                    <i class="fa fa-calendar"></i>
-                                </span>
-                            </a>
-                                </li>
-                                <li role="presentation" class="nav-item">
-                                    <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Choose time" class="nav-link disabled">
-                                <span class="round-tab">
-                                    <i class="fa fa-clock"></i>
-                                </span>
-                            </a>
-                                </li>
-                                <li role="presentation" class="nav-item">
-                                    <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Step 4" class="nav-link disabled">
-                                <span class="round-tab">
-                                    <i class="fa fa-phone"></i>
-                                </span>
-                            </a>
-                                </li>
-                                <li role="presentation" class="nav-item">
-                                    <a href="#step5" data-toggle="tab" aria-controls="step5" role="tab" title="Complete" class="nav-link disabled">
-                                <span class="round-tab">
-                                    <i class="fa fa-check"></i>
-                                </span>
-                            </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active text-center" role="tabpanel" id="step1">
-                                <div class="text-md-center card box-wizard ">Step 1 <div class="card-body">
-		<h5 class="card-title">Choose care provider</h5>
-		<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		<button type="button" class="btn btn-primary "><i class="fas fa-user-md"></i>
-			Doctor</button>
-		<button type="button" class="btn btn-primary "><i class="fas fa-user-md"></i>
-			Nurse</button>
-
-	  </div>
-	</div>
-                                <div class="row">
-
+        <form class="form cf">
+            <div class="wizard">
+                <div class="wizard-inner">
+                     <div class="connecting-line"></div>
+                        <ul class="nav nav-tabs" role="tablist">
+	                        <li role="presentation" class="nav-item">
+	                        	<a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Choose care provider" class="nav-link active">
+		                            <span class="round-tab">
+		                                <i class="fa fa-user"></i>
+		                            </span>
+	                            </a>
+	                        </li>
+	                        <li role="presentation" class="nav-item">
+	                            <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Choose date" class="nav-link disabled">
+	                                <span class="round-tab">
+	                                    <i class="fa fa-calendar"></i>
+	                                </span>
+	                            </a>
+	                        </li>
+	                        <li role="presentation" class="nav-item">
+	                            <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Choose time" class="nav-link disabled">
+	                                <span class="round-tab">
+	                                    <i class="fa fa-clock"></i>
+	                                </span>
+	                            </a>
+	                        </li>
+	                        <li role="presentation" class="nav-item">
+	                            <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Step 4" class="nav-link disabled">
+	                                <span class="round-tab">
+	                                    <i class="fa fa-phone"></i>
+	                                </span>
+	                            </a>
+	                        </li>
+	                        <li role="presentation" class="nav-item">
+	                            <a href="#step5" data-toggle="tab" aria-controls="step5" role="tab" title="Complete" class="nav-link disabled">
+	                                <span class="round-tab">
+	                                    <i class="fa fa-check"></i>
+	                                </span>
+	                            </a>
+	                      	</li>
+                   		 </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active text-center" role="tabpanel" id="step1">
+                        <div class="text-md-center card box-wizard ">Step 1
+							<div class="card-body">
+								<h5 class="card-title">Choose care provider</h5>
+								<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+								<button type="button" class="btn btn-primary care-provider "><i class="fas fa-user-md"></i>Doctor</button>
+								<button type="button" class="btn btn-primary care-provider"><i class="fas fa-user-md"></i>Nurse</button>	
+							</div>
+								</div>
+								<div clss="navigation-btn">
+								    <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
+	                                <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
                                 </div>
-							     <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
-							
-                                   <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
-								
                             </div>
                             <div class="tab-pane" role="tabpanel" id="step2">
                                 <table class="text-md-center box-wizard calendar " id="calendar-demo" ></table>
-								
-                                <div class="row">
-                                   
-
-                                </div>
-                                
-							   <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
-							
-                                   <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
+							    <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
+                                <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
                             </div>
                             <div class="tab-pane" role="tabpanel" id="step3">
                                 <h1 class="text-md-center">Step 3</h1>
-                                <div class="row">
-                                    
-                                </div>
                                  <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
-							
-                                   <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
+                                 <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
                             </div>
                             <div class="tab-pane" role="tabpanel" id="step4">
                                 <h1 class="text-md-center">Step 4</h1>
-                                <div class="row">
-                                   
-                                </div>
                                 <ul class="list-inline text-md-center">
-                                    <li><button type="button" class="btn btn-lg btn-common next-step next-button">Next </button></li>
+                                    <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
                                 </ul>
                             </div>
                             <div class="tab-pane" role="tabpanel" id="step5">
                                 <h1 class="text-md-center">Complete</h1>
-                                <div class="row">
-
-
-                                </div>
                             </div>
                             <div class="clearfix"></div>
                         </div>
-
                     </div>
                 </form>
-
 	</main>
-
 </div>
 
-		<footer class="page-footer font-small blue">
-		  <div class="footer-content">
-			 © 2018 Ican</div>
+		<footer>
+			<div class="footer-content">
+				© 2018 Ican
+			</div>
 		</footer>
 			  
-	<!---scripts---->		  
-		<script src="js/jquery.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jsframe.js"></script>
-	<script src="js/calendar.js"></script>
+<!---scripts---->		  
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jsframe.js"></script>
+<script src="js/calendar.js"></script>
+
+
 <script>
+$(document).ready(function(){
+	 //Initialize tooltips
+	 $('.nav-tabs > li a[title]').tooltip();
 
- //Initialize tooltips
- $('.nav-tabs > li a[title]').tooltip();
+	 //Wizard
+	 $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
 
- //Wizard
- $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+	     var $target = $(e.target);
 
-     var $target = $(e.target);
+	     if ($target.hasClass('disabled')) {
+	         return false;
+	     }
+	 });
 
-     if ($target.hasClass('disabled')) {
-         return false;
-     }
- });
+	 $(".next-step").click(function (e) {
+	     var $active = $('.wizard .nav-tabs .nav-item .active');
+	     var $activeli = $active.parent("li");
 
- $(".next-step").click(function (e) {
-     var $active = $('.wizard .nav-tabs .nav-item .active');
-     var $activeli = $active.parent("li");
-
-     $($activeli).next().find('a[data-toggle="tab"]').removeClass("disabled");
-     $($activeli).next().find('a[data-toggle="tab"]').click();
- });
+	     $($activeli).next().find('a[data-toggle="tab"]').removeClass("disabled");
+	     $($activeli).next().find('a[data-toggle="tab"]').click();
+	 });
 
 
- $(".prev-step").click(function (e) {
+	 $(".prev-step").click(function (e) {
 
-     var $active = $('.wizard .nav-tabs .nav-item .active');
-     var $activeli = $active.parent("li");
+	     var $active = $('.wizard .nav-tabs .nav-item .active');
+	     var $activeli = $active.parent("li");
 
-     $($activeli).prev().find('a[data-toggle="tab"]').removeClass("disabled");
-     $($activeli).prev().find('a[data-toggle="tab"]').click();
+	     $($activeli).prev().find('a[data-toggle="tab"]').removeClass("disabled");
+	     $($activeli).prev().find('a[data-toggle="tab"]').click();
 
- });
+	 });
 
- $('#calendar-demo').dcalendar(); //creates the calendar
+	 $('#calendar-demo').dcalendar(); //creates the calendar
 
+});
 </script>
-
 </body>
 </html>
