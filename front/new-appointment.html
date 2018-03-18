@@ -115,25 +115,36 @@
                         <div class="text-md-center card box-wizard ">Step 1
 							<div class="card-body">
 								<h5 class="card-title">Choose care provider</h5>
-								<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 								<button type="button" class="btn btn-primary care-provider "><i class="fas fa-user-md"></i>Doctor</button>
 								<button type="button" class="btn btn-primary care-provider"><i class="fas fa-user-md"></i>Nurse</button>	
 							</div>
 								</div>
-								<div clss="navigation-btn">
+								<div class="navigation-btn">
 								    <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
 	                                <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
                                 </div>
                             </div>
                             <div class="tab-pane" role="tabpanel" id="step2">
-                                <table class="text-md-center box-wizard calendar " id="calendar-demo" ></table>
+                                <table class="text-md-center box-wizard calendar " id="calendar" ></table>
+                                 <div  class="center-block text-center">
 							    <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
                                 <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
+                             </div>
                             </div>
                             <div class="tab-pane" role="tabpanel" id="step3">
                                 <h1 class="text-md-center">Step 3</h1>
-                                 <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
+                                <p> Pick time</p>
+                                <a href="#" class="btn btn-primary">10:00</a>
+                                <a href="#" class="btn btn-primary">11:00</a>
+                                <a href="#" class="btn btn-primary">12:00</a>
+                                <a href="#" class="btn btn-primary">13:00</a>
+                                <a href="#" class="btn btn-primary">14:00</a>
+                                <a href="#" class="btn btn-primary">15:00</a>
+                                <a href="#" class="btn btn-primary">16:00</a>
+                                  <div  class="center-block text-center">
+                                 <button type="button" class="btn btn-lg btn-common prev-step prev-button ">Back</button>
                                  <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
+                                       </div>
                             </div>
                             <div class="tab-pane" role="tabpanel" id="step4">
                                 <h1 class="text-md-center">Step 4</h1>
@@ -142,7 +153,11 @@
                                 </ul>
                             </div>
                             <div class="tab-pane" role="tabpanel" id="step5">
-                                <h1 class="text-md-center">Complete</h1>
+                                <h1 class="text-md-center">Your appointment has been scheduled</h1>
+                                <p>If you have any questions regarding your upcoming appointment, please feel free to reach out. Our representatives are here to answer any of your inquiries. We are here to help and look forward to hearing from you! 
+
+Thank you and have a wonderful day!</p>
+                                <img src="images/success.png">
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -199,7 +214,7 @@ $(document).ready(function(){
 
 	 });
 
-	 $('#calendar-demo').dcalendar(); //creates the calendar
+	 $('#calendar').dcalendar(); //creates the calendar
 
 });
 </script>
