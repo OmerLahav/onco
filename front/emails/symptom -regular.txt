@@ -1,0 +1,12 @@
+Dear [user_name_relative] ,
+
+[user_name] has self-reported about his medical status by symptoms.
+
+We didnt found any problems.
+
+
+
+(show summary of symptoms)
+
+
+

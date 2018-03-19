@@ -1,0 +1,17 @@
+Dear [user_name_relative] ,
+
+[user_name] has self-reported about his medical status by symptoms.
+
+We  found a critical problems about these issues:
+
+
+
+(show summary of symptoms)
+
+
+please contact with [user_name] ASAP.
+
+
+
+Thanks,
+ICan.com team
