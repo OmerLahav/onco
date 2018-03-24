@@ -1,0 +1,21 @@
+My profile
+first name
+last name
+email:
+change password
+gender
+date of birth
+...
+
+all of the information on the DB
+
+doctor name
+
+
+
+settings
+sounds
+term of service
+privacy policy
+notifiations
+
