@@ -14,6 +14,7 @@ main{
     width:25%;
     height:400px;
     margin-bottom: 10px;
+    margin-top: 0px;
 }
 
 .calendar{
@@ -199,7 +200,12 @@ margin-left:6%;
 	padding: 10px;
 
 }
-
+.guidance{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+}
 .btn
 {
 	margin-bottom:50px;	
@@ -221,10 +227,12 @@ h1 { color: black;
 	text-align: left;
 	border-bottom: 1px solid #538cc6;
 	border-width: 5px;
-width: 100%; }
+    width: 100%; }
 
-h4{
-	background-color:#538cc6;
+.card-head{
+    background-color:#538cc6;
+    height: 80px;
+ 
 }
 
 .doc-icon
