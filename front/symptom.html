@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="styles/pages/fontawesome.min.css">
       <link rel="stylesheet" href="styles/pages/frame.css">
       <link rel="stylesheet" href="styles/pages/bootstrap4.4.3.css">
+      <link rel="stylesheet" href="styles/pages/range.css">
    </head>
    <body>
       <nav class="navbar navbar-expand navbar-dark bg-info">
@@ -101,9 +102,22 @@
                   <button type="button" class="btn btn-danger">Yes</button>
                   <button type="button" class="btn btn-success">No</button>
                </div>
-               <!----Third  part--->    
+               <!----Third  part--->  
+               <!----Range--->
+               <div class="range-container">
+                  <div class="slider-container">
+                     <div class="range-fill"></div>
+                     <input class="slider" type="range" name="testerslider" min="0" max="5" step="0.01" list="testlist">
+                  </div>
+                  <div class="label-container">
+                     <div class="label">1 <p>No</p></div>
+                     <div class="label">2<p> More than 4 </p><</div>
+                     <div class="label">3<p> 4-6 times in day </p></div>
+                     <div class="label">4</div>
+                     <div class="label">5</div>                    
+                  </div>
+               </div>
             </article>
-            </article>      
          </main>
       </div>
       <footer class="page-footer font-small blue">
@@ -116,5 +130,6 @@
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/jsframe.js"></script>
+      <script src="js/range.js"></script>
    </body>
 </html>
