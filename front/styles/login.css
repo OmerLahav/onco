@@ -1,57 +1,77 @@
-html,
-body {
-    height: 100%;
-}
 html {
-    display: table;
-    margin: auto;
+margin: auto;
+background-image: url("../images/login.png");
+background-repeat: no-repeat;
 }
 body {
-    display: table-cell;
-    vertical-align: middle;
+display: table;
+vertical-align: right;
+margin:auto;
+height: 100%;
 }
 .margin {
-  margin: 0 !important;
+margin: 0 !important;
 }
-
-
-body{
-background-color: #47d1d1;
-}
-
-
-
 #login-page{
 margin-top:50%;
 width:100%;
 }
-
-
-
-
 profile-image-login{
 margin:0 auto;
-
-
 }
-
-
-	
-
-
-@media screen and (max-width: 992px) {
-  
-
-html{ 
-    border: 0px;
-    padding:0px;
-    margin: 0px;}
-body{
-    background: none;
-
-    
- }
-
-#login-page{width:100%;margin:0; display: block;    }
- 
+.instructions{
+position: relative;
+left: 40px;
+}
+.forgot-password{
+text-align: center;
+margin-bottom:10px;
+padding:20px;
+}
+footer{
+text-align:center;
+font-weight:bold;
+position: relative;
+bottom: 0px;
+height:30px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) { 
+html {
+background-image: url("../images/login.png");
+background-position: -172px 0px;
+}
+#login-page{width:100%;
+margin:25%;
+display: block;  
+position: relative;
+bottom: -100px;
+}
+footer{
+text-align:center;
+font-weight:bold;
+position: relative;
+bottom: -30px;
+right: -70px;
+height:30px;
+}
+}
+@media screen and (max-width: 480px) { 
+html {
+background-image: none;
+} 
+#login-page{
+width:100%;
+display: block;  
+}
+#login-page{
+margin-top:0px;
+width:100%;
+}
+body {
+display:block;
+}
+.card-panel, .card{
+margin-top:0px;
+box-shadow: 0 2px 5px 0 white, 0 2px 10px 0 white;
+} 
 }
