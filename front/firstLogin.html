@@ -8,7 +8,8 @@
   <title>First Login on ICan </title>
   <!-- CSS-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-  <link rel="stylesheet" href="styles/login.css">
+    
+  <link rel="stylesheet" href="styles/first-login.css">
 </head>
 
 <body >
@@ -38,9 +39,10 @@
 		 <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
-            <input id="new-password" type="password">
-            <label for="new-password">New password</label>
-             <p class="instructions"> *Use 8 or more characters<br>*Use a symbol<br>*Use a number</p>	
+            <input id="new-password" type="password" >
+            <label for="new-password" >New password</label>
+             <p class="instructions"> Must contain at least 6 numbers with symbols and numbers</p>
+              <button id="hide">Hide</button>
           </div>
         </div>
 			 <div class="row margin">
@@ -67,18 +69,26 @@
   </div>
 
   <!-- Scripts-->
+<script>  
+
+    
+    $(document).ready(function(){
+    $("#hide").on("click", function(){
+        alert("The paragraph was clicked.");
+    });
+});
+    
+    
+    </script>
   <!-- jQuery Library -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <!--materialize js-->
+<script src="js/jquery.min.js"></script>
+    <!--materialize js-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+    
 
-  <footer class="page-footer">
-          <div class="footer-copyright">
-            <div class="container">
-            © 2018 Ican - All rights Reserved
-            </div>
-          </div>
+  <footer>          
+            <p>© 2018 Ican - All rights Reserved</p>         
   </footer>
 </body>
 </html>

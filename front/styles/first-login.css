@@ -13,11 +13,17 @@ height: 100%;
 margin: 0 !important;
 }
 #login-page{
-margin-top:50%;
+margin-top:20%;
 width:100%;
 }
 profile-image-login{
 margin:0 auto;
+}
+.instructions{
+ display:none;
+position: relative;
+left: 40px;
+top:-20px;
 }
 .forgot-password{
 text-align: center;
