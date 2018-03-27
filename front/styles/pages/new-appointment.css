@@ -277,7 +277,11 @@ h4{
     
 }
 
-
+.step1
+{
+    width: 80px;
+    margin-top: 25px;
+}
 
 .funkyradio {
   clear: both;
