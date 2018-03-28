@@ -1,39 +1,84 @@
-body,
 html {
-    height: 100%;
-    background-color: #d3d3d3;
+margin: auto;
+background-image: url("../../images/login.png");
+background-repeat: no-repeat;
+}
+body {
+display: table;
+vertical-align: right;
+margin:auto;
+height: 100%;
+}
+.margin {
+margin: 0 !important;
+padding-bottom: 10px;
+}
+#login-page{
+margin-top:50%;
+width:100%;
+}
+profile-image-login{
+margin:0 auto;
+}
+.forgot-password{
+text-align: center;
+margin-bottom:10px;
+padding:20px;
+}
+footer{
+text-align:center;
+font-weight:bold;
+position: relative;
+bottom: 0px;
+height:30px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) { 
+html {
+background-image: url("../images/login.png");
+background-position: -172px 0px;
+}
+#login-page{width:100%;
+margin:25%;
+display: block;  
+position: relative;
+bottom: -100px;
+}
+footer{
+text-align:center;
+font-weight:bold;
+position: relative;
+bottom: -30px;
+right: -70px;
+height:30px;
+}
+}
+@media screen and (max-width: 480px) { 
+html {
+background-image: none;
+} 
+#login-page{
+width:100%;
+display: block;  
+}
+#login-page{
+margin-top:0px;
+width:100%;
+}
+body {
+display:block;
+}
+.card-panel, .card{
+margin-top:-20px;
+box-shadow: 0 2px 5px 0 white, 0 2px 10px 0 white;
+} 
+    
+    footer{
+bottom: 30px;
+height:30px;
+}
+}
+     input[type=password].invalid+label:after, input[type=password]:focus.invalid+label:after, input[type=email].invalid+label:after, input[type=email]:focus.invalid+label:after {
+   text-align:left;
+    width: 240px;
 }
 
-.main {
-    margin-top: 20px;
-}
-
-
-}
-input,
-input::-webkit-input-placeholder {
-    font-size: 11px;
-    padding-top: 10px;
-}
-.main-center {
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 80px;
-}
-footer {
-    margin-top: 20px;
-    color: grey;
-}
-.report {
-    width: 700px;
-    height: 400px;
-    margin: auto;
-}
-.sub-icon {
-    width: 192px;
-    height: 192px;
-    padding: 10px;
-    position: relative;
-    left: 350px;
-}
