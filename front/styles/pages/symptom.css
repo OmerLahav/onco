@@ -40,7 +40,16 @@ main
 
 
 
-
+.ans-btn{
+    
+    border: 0px ;
+    font-family: "helveticaNeueCondencedBold";
+    font-size: 20px ;
+    margin-left: 15px;
+    background: #F6F6F6;
+    border-radius: 10px;
+    padding: 10px 10px 5px 10px;
+}
 
 
 
