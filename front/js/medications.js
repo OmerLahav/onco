@@ -20,15 +20,16 @@ return today;
 
 
 function  showNextDate(){
-var tomorrow = new Date();
+var next= new Date();
 tomorrow.setDate(today.getDate()+1);
-
+return next;
 }
 
 function  showPreviousDate(){
-var tomorrow = new Date();
-tomorrow.setDate(today.getDate()+1);
-
+var previous= new Date();
+tomorrow.setDate(today.getDate()-1);
+previous=tomorrow.setDate(today.getDate()-1);
+return previous;
 }
 
 
