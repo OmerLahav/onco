@@ -18,4 +18,20 @@ return today;
   
  }  
 
-    document.getElementById("date").innerHTML = showDate();
+
+function  showNextDate(){
+var tomorrow = new Date();
+tomorrow.setDate(today.getDate()+1);
+
+}
+
+function  showPreviousDate(){
+var tomorrow = new Date();
+tomorrow.setDate(today.getDate()+1);
+
+}
+
+
+    document.getElementById("current").innerHTML = showDate();
+ document.getElementById("next").innerHTML = showNextDate();
+ document.getElementById("previous").innerHTML = showPreviousDate();
