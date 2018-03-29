@@ -1,168 +1,231 @@
-h1 { color: black; 
+* {
+    box-sizing: border-box;
+}
+h1 {
+    color: black;
     font-family: 'Droid serif', serif;
- 	font-size: 46px;
- 	font-weight: 400; 
- 	line-height: 44px; 
-	margin: 0 0 12px; 
-	text-align: left;
-	border-bottom: 1px solid #538cc6;
-	border-width: 5px;
-    width: 100%; }
-
-main
-{
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 44px;
+    margin: 0 0 12px;
+    text-align: left;
+    border-bottom: 1px solid #538cc6;
+    border-width: 5px;
     width: 100%;
 }
 
-.nav
-{
-  width: 39%  
+main {
+    width: 100%;
 }
-.tab-content
-{
+
+.nav {
+    width: 39%
+}
+
+.tab-content {
     width: 40%;
-    float:left;
-    display:inline;
+    float: left;
+    display: inline;
     margin-right: 10%;
 
 }
 
-.report-levels
-{
+.report-levels {
     width: 40%;
-    float:left;
+    float: left;
 }
 
-.feel-pain
-{
-   text-align: left;
+.feel-pain {
+    text-align: left;
 }
 
 
 
-.ans-btn{
-    
-    border: 0px ;
+.ans-btn {
+
+    border: 0px;
     font-family: "helveticaNeueCondencedBold";
-    font-size: 20px ;
+    font-size: 20px;
     margin-left: 15px;
-    background: #F6F6F6;
+    background: #a3a3c2;
     border-radius: 10px;
     padding: 10px 10px 5px 10px;
+    width: 15%;
+}
+
+.ans-btn:hover { 
+     background:  #29a3a3;
+}
+.image
+{
+    float:left;
+    display:inline;
+    margin-right: 50px;
+ 
+}
+.symp-img
+{
+    
+    height:80px;
+    width: 80px;
 }
 
 
+.image-info
+{
+    margin-top: 15px;
+    font-size: 15px;
+   
+}
 
+.status
+{
+    width:50px;
+}
+
+input , label
+{
+    float:right;
+}
+
+#page-two
+{
+   display: none;
+}
+#page-three
+{
+   display: none;
+}
+
+.report-levels
+{
+    display: none;
+}
 .range-container {
-width: 90%;
-display: -webkit-flex;
--webkit-flex-wrap: wrap;
-margin-top: 2rem;
+    width: 90%;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    margin-top: 2rem;
 }
+
+-
 .label-container {
--webkit-flex-basis: 100%;
-display: -webkit-flex;
--webkit-flex-wrap: nowrap;
--webkit-justify-content: space-between;
-margin-top: 2rem;
+    -webkit-flex-basis: 100%;
+    display: -webkit-flex;
+    -webkit-flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    margin-top: 2rem;
 }
+
 .label {
-color: grey;
-font-size: 1rem;
-margin-top: 1rem;
-text-align: center;
-max-width: 3rem;
--webkit-tap-highlight-color: transparent;  /*gets rid of black flash on click of track*/
+    color: grey;
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    max-width: 3rem;
+    -webkit-tap-highlight-color: transparent;
+    /*gets rid of black flash on click of track*/
 }
+
 .slider-container {
-position: relative;
-height: 100%;
-width: 100%;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
+
 .slider {
-position: absolute;
-left:0;
-width: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
 }
+
 .range-fill {
-position:absolute;
-top:4px;
-left:4px;
-background-color: #fbcdb2;
-height: 12px;
-pointer-events: none;
-border-radius: 10px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background-color: #fbcdb2;
+    height: 12px;
+    pointer-events: none;
+    border-radius: 10px;
 }
+
 input[type=range] {
--webkit-appearance: none;
--webkit-flex-basis: 100%;
--webkit-tap-highlight-color: transparent;
-background: transparent;
+    -webkit-appearance: none;
+    -webkit-flex-basis: 100%;
+    -webkit-tap-highlight-color: transparent;
+    background: transparent;
 }
+
 input[type=range]::-webkit-slider-runnable-track {
-width: 10rem;
-height: 1rem;
-background: transparent;
-border: 2px solid #f36f21;
-border-radius: 10px;
+    width: 10rem;
+    height: 1rem;
+    background: transparent;
+    border: 2px solid #f36f21;
+    border-radius: 10px;
 }
+
 input[type=range]::-webkit-slider-thumb {
--webkit-appearance: none;
-height: 4rem;
-width: 4rem;
-border-radius: 50%;
-background: #f36f21;
-margin-top: -1.8rem;
-border: 2px solid #fff;
-cursor: pointer;
-box-shadow: 0px 5px 5px -3px #d9d9d9;
+    -webkit-appearance: none;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background: #f36f21;
+    margin-top: -1.8rem;
+    border: 2px solid #fff;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px -3px #d9d9d9;
 }
+
 input[type=range]:focus {
-outline: none;
+    outline: none;
 }
+
 /*MEDIA QUERIES*/
-@media (min-width:992px){ 
-.range-container {
-width: 70%;
-max-width: 60rem;
-display: -webkit-flex;
--webkit-flex-wrap: wrap;
-margin-top: 5rem;
+
+@media (min-width:992px) {
+    .range-container {
+        width: 70%;
+        max-width: 60rem;
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        margin-top: 5rem;
+    }
+    .label-container {
+        margin-top: 2rem;
+    }
+    .label {
+        font-size: 2rem;
+        max-width: 8rem;
+    }
+    .slider-container {
+        height: 2.5rem;
+    }
+    .range-fill {
+        border-radius: 20px;
+        height: 36px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        width: 6rem;
+        height: 6rem;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 10rem;
+        height: 2.5rem;
+        border-radius: 20px;
+    }
 }
-.label-container {
-margin-top: 2rem;
-}
-.label {
-font-size: 2rem;
-max-width: 8rem;
-}
-.slider-container {
-height: 2.5rem;
-}
-.range-fill {
-border-radius: 20px;
-height: 36px;
-}
-input[type=range]::-webkit-slider-thumb {
-width: 6rem;
-height: 6rem;
-}
-input[type=range]::-webkit-slider-runnable-track {
-width: 10rem;
-height: 2.5rem;
-border-radius: 20px;
-}
-}
-@media(min-width:1200px){
-.range-container {
-width: 80%;
-}
-.label {
-max-width: 10rem;
-font-size: 20px;
-margin-top: 1rem;
-text-align: center;
-max-width: 3rem;
--webkit-tap-highlight-color: transparent;  /*gets rid of black flash on click of track*/
-}
+
+@media(min-width:1200px) {
+    .range-container {
+        width: 80%;
+    }
+    .label {
+        max-width: 10rem;
+        font-size: 20px;
+        margin-top: 1rem;
+        text-align: center;
+        max-width: 3rem;
+        -webkit-tap-highlight-color: transparent;
+        /*gets rid of black flash on click of track*/
+    }
 }

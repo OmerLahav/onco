@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/pages/frame.css">
     <link rel="stylesheet" href="styles/pages/symptom.css">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-	<link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
 </head>
 
@@ -75,13 +75,113 @@
                 <!--Regular-->
                 <div class="tab-pane active container" id="regular">
                     <p>Please choose a symptom for report</p>
-                    <div class="list-group">
-                            
-                      <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                      <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                      <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                      
+
+                    <!---page 1----->
+                    <div class="list-group" id="page-one">
+                        <button type="button" class="list-group-item list-group-item-action symp-one">
+                            <div class="image">
+                            <h5>Nausea</h5>
+                            <img  class="symp-img"src="images/symptoms/nausea.png" atl="Nausea">
+                            </div>
+                            <p class="image-info">Nausea is a sensation of unease and discomfortin the upper stomach with an involuntary urge to vomit.</p>
+                           <label for="checkbox">Reported</label>
+                            <input type="checkbox" class="status" id="status-symp-one">
+                        </button>
+
+                        <button type="button" class="list-group-item list-group-item-action symp-two">
+                            <div class="image">
+                            <h5>Diarrhea</h5>
+                            <img  class="symp-img"src="images/symptoms/diarrhea.png" atl="Diarrhea">
+                            </div>
+                            <p class="image-info">Diarrhea, also spelled diarrhoea, is the condition of having at least three loose or liquid bowel movements each day.</p>
+                           <label for="checkbox">Reported</label>
+                            <input type="checkbox" class="status" id="status-symp-two">
+                        </button>
+
+                        <button type="button" class="list-group-item list-group-item-action symp-three">
+                            <div class="image">
+                            <h5>Sleep disorder</h5>
+                            <img  class="symp-img"src="images/symptoms/bed.png" atl="Sleep disorder">
+                            </div>
+                            <p class="image-info">A sleep disorder, or somnipathy, is a medical disorder of the sleep patterns of a person .</p>
+                           <label for="checkbox">Reported</label>
+                            <input type="checkbox" class="status" id="status-symp-three">
+                        </button>
+
                     </div>
+
+                    <!---page 2----->
+
+                    <div class="list-group" id="page-two">
+                        <button type="button" class="list-group-item list-group-item-action symp-four">
+                            <div class="image">
+                            <h5>Multifocal motor neuropathy</h5>
+                            <img  class="symp-img"src="images/symptoms/neuropathy.png" atl="Multifocal motor neuropathy">
+                            </div>
+                            <p class="image-info">Multifocal motor neuropathy is a progressively worsening condition where muscles in the extremities gradually weaken.</p>
+                           <label for="checkbox">Reported</label>
+                            <input type="checkbox" class="status" id="status-symp-four">
+                        </button>
+
+                        <button type="button" class="list-group-item list-group-item-action symp-five">
+                            <div class="image">
+                            <h5>Sensory neuropathy</h5>
+                            <img  class="symp-img"src="images/symptoms/diarrhea.png" atl="Sensory neuropathy">
+                            </div>
+                            <p class="image-info">Peripheral neuropathy (PN) is damage to or disease affecting nerves.</p>
+                           <label for="checkbox">Reported</label>
+                            <input type="checkbox" class="status" id="status-symp-five">
+                        </button>
+
+                        <button type="button" class="list-group-item list-group-item-action symp-six">
+                            <div class="image">
+                            <h5>Dry eyes</h5>
+                            <img  class="symp-img"src="images/symptoms/Dryeye.png" atl="Dry eyes">
+                            </div>
+                            <p class="image-info">Dry eye syndrome (DES), also known as keratoconjunctivitis sicca (KCS), is the condition of having dry eyes.</p>
+                           <label for="checkbox">Reported</label>
+                            <input type="checkbox" class="status" id="status-symp-six">
+                        </button>
+
+                    </div>
+
+                    <!---page 3----->
+
+                    <div class="list-group" id="page-three">
+                        <button type="button" class="list-group-item list-group-item-action symp-seven">
+                            <div class="image">
+                            <h5>Tears</h5>
+                            <img  class="symp-img"src="images/symptoms/tears.png" atl="Tears">
+                            </div>
+                            <p class="image-info">Tearing is the secretion of tears, which often serves to clean and lubricate the eyes in response to an irritation of the eyes.</p>
+                           <label for="checkbox">Reported</label>
+                            <input type="checkbox" class="status" id="status-symp-seven">
+                        </button>
+
+                        <button type="button" class="list-group-item list-group-item-action symp-eight">
+                            <div class="image">
+                            <h5>Exhaustion</h5>
+                            <img  class="symp-img"src="images/symptoms/exhausted.png" atl="Exhaustion ">
+                            </div>
+                            <p class="image-info">Symptoms of physical and mental exhaustion include feeling constantly tired and worn out.</p>
+                           <label for="checkbox">Reported</label>
+                            <input type="checkbox" class="status" id="status-symp-eight">
+                        </button>
+
+                        <button type="button" class="list-group-item list-group-item-action symp-nine">
+                            <div class="image">
+                            <h5>Constipation</h5>
+                            <img  class="symp-img"src="images/symptoms/Constipation.png" atl="Constipation">
+                            </div>
+                            <p class="image-info">Constipation refers to bowel movements that are infrequent or hard to pass.</p>
+                           <label for="checkbox">Reported</label>
+                            <input type="checkbox" class="status" id="status-symp-nine">
+                        </button>
+
+                    </div>
+                    <button type="button" class="btn btn-secondary pages" id="Back">Back</button>
+                    <button type="button" class="btn btn-secondary pages" id="next">Next</button>
+
                 </div>
                 <!--Treatment-->
                 <div class="tab-pane container" id="treatment1">
@@ -97,45 +197,88 @@
                 <!----Second  part--->
                 <div class="feel-pain">
                     <h5>Do you feel a pain?</h5>
-                    <button type="button" class="ans-btn">Yes</button>
-                    <button type="button" class="btn btn-default btn-md"> No   </button>
+                    <button type="button" class=" ans-btn" id="yes-pain">Yes</button>
+                    <button type="button" class="btn btn-default btn-md" id="no-pain"> No   </button>
                 </div>
                 <!----Third  part--->
                 <!----Range--->
                 <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                      <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
                         <button type="button" class="btn btn-primary level-1">1</button>
                         <button type="button" class="btn btn-primary level-2">2</button>
                         <button type="button" class="btn btn-primary level-3">3</button>
                         <button type="button" class="btn btn-primary level-4">4</button>
-                          <button type="button" class="btn btn-primary level-5">5</button>
-                        
-                      </div>
-                 
-                         
+                        <button type="button" class="btn btn-primary level-5">5</button>
 
                     </div>
+                </div>
 
-                    <div>
+                <div>
                     <p class="level-explenation"> Please choose your level of pain</p>
 
-                    </div>
-                
-                
+                </div>
+
+
             </section>
-            
+
         </main>
-        </div>
-        	<footer>
-			  <div class="footer-content">
-				 © 2018 Ican</div>
-		</footer>
-        <!---scripts---->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jsframe.js"></script>
-        <script src="js/range.js"></script>
+    </div>
+    <footer>
+        <div class="footer-content">
+            © 2018 Ican</div>
+    </footer>
+    <!---scripts---->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jsframe.js"></script>
+    <script src="js/range.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var position = 1;
+            $("#next").click(function() {
+                if (position == 1) {
+                    $("#page-one").hide();
+                    $("#page-two").show();
+                    position++;
+                } else if (position == 2) {
+                    $("#page-one").hide();
+                    $("#page-two").hide();
+                    $("#page-three").show();
+                    position++;
+                }
+            });
+            $("#Back").click(function() {
+                if (position == 1) {
+                    $("#page-one").show();
+                } else if (position == 2) {
+                    $("#page-one").show();
+                    $("#page-two").hide();
+                    $("#page-three").hide();
+                    position--;
+                } else {
+                    $("#page-one").hide();
+                    $("#page-two").show();
+                    $("#page-three").hide();
+                    position--;
+                }
+            });
+
+            $(".symp-one").click(function() {
+                $(".report-levels").show();
+
+            });
+            $("#no-pain").click(function() {
+                $(".symp-one").css("background", "#d6f5d6");
+                $("#status-symp-one").prop('checked', true);
+            });
+            
+
+        });
+    </script>
 </body>
 
 </html>
