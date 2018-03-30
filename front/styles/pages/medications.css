@@ -32,3 +32,8 @@ section .section-title {
     color: #eee;
     font-size: 20px;
 }
+
+.date{
+ text-align:center;
+  margin: 0 auto; 
+}
