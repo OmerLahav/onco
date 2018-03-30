@@ -69,7 +69,11 @@ main {
     height:80px;
     width: 80px;
 }
-
+.check-img
+{
+    float:right;
+    display: none;
+}
 
 .image-info
 {
@@ -88,6 +92,7 @@ input , label
     float:right;
 }
 
+
 #page-two
 {
    display: none;
@@ -102,13 +107,12 @@ input , label
     display: none;
 }
 
-    height: 100%;
-    width: 100%;
+  .levle-info
+{
+    width:90%;
+    border:1px solid;
+    background:#f0f0f5; 
 }
-
-
-        max-width: 8rem;
-    }
     .slider-container {
         height: 2.5rem;
     }
