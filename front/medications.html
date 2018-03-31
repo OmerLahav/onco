@@ -69,11 +69,10 @@
         <main class="p-4">
             <h1>Medications</h1>
             <div class="date">
-                        <i style=" display: inline;" class="fas fa-chevron-left"></i>
+                 <button  onclick="prev()"><i style=" display: inline;" class="fas fa-chevron-left"></i></button>       
             <p style=" display: inline;">Today date is : <span id="current"> </span></p>
-            <i style=" display: inline;" class="fas fa-chevron-right"></i>
-          <p style=" display: inline;">Tommorow date is : <span id="next"> </span></p>
-                      <p style=" display: inline;">Yesterday date is : <span id="previous"> </span></p>
+            <i style=" display: inline;" class="fas fa-chevron-right" onclick="next()" ></i>
+    
             </div>
 
             <div class="center-block text-center ">
@@ -118,24 +117,16 @@
                             <p class="image-info">Akamol</p>
                             <img  id="checked-symp-one" class="check-img" src="images/symptoms/check.png" alt="check">
                         </button>
-
-                        <button type="button" class="list-group-item list-group-item-action symp-two">
+                                <button type="button" class="list-group-item list-group-item-action symp-one">
                             <div class="image">
-                            <h5>Diarrhea</h5>
-                            <img  class="symp-img"src="images/symptoms/diarrhea.png" alt="Diarrhea">
+                            <img  class="pill-img"src="images/pills/1484942362ios-emoji-pill.png" alt="akamol">
                             </div>
-                            <p class="image-info">Diarrhea, also spelled diarrhoea, is the condition of having at least three loose or liquid bowel movements each day.</p>
-                          <img  id="checked-symp-two" class="check-img"src="images/symptoms/check.png" alt="check">
+                            <p class="image-info">Akamol</p>
+                            <img  id="checked-symp-one" class="check-img" src="images/symptoms/check.png" alt="check">
                         </button>
 
-                        <button type="button" class="list-group-item list-group-item-action symp-three">
-                            <div class="image">
-                            <h5>Sleep disorder</h5>
-                            <img  class="symp-img"src="images/symptoms/bed.png" alt="Sleep disorder">
-                            </div>
-                            <p class="image-info">A sleep disorder, or somnipathy, is a medical disorder of the sleep patterns of a person .</p>
-                           <img  id="checked-symp-three" class="check-img"src="images/symptoms/check.png" alt="check">
-                        </button>
+
+                     
                     </div>
                         </div>
                     </div>

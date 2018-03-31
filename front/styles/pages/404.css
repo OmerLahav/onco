@@ -11,7 +11,7 @@ color:grey;
 }
 .speech-bubble {
 position: relative;
-background: #0080ff;
+background: white;
 border-radius: .4em;
 }
 .speech-bubble:after {
@@ -22,7 +22,7 @@ left: 50%;
 width: 0;
 height: 0;
 border: 20px solid transparent;
-border-top-color: #0080ff;
+border-top-color: white;
 border-bottom: 0;
 margin-left: -20px;
 margin-bottom: -20px;

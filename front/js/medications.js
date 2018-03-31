@@ -1,38 +1,26 @@
-function  showDate(){
- var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; 
-var yyyy = today.getFullYear();
-if(dd<10) 
-{
-    dd='0'+dd;
-} 
+var d = new Date();
 
-if(mm<10) 
-{
-    mm='0'+mm;
-} 
+function next(){
+var nextDay=new Date(d);
+var dateValue = nextDay.getDate() + 1;
+nextDay.setDate(dateValue);
+return nextDay;
+document.getElementById("current").innerHTML = nextDay.toLocaleString();
 
-today = dd+'/'+mm+'/'+yyyy;
-return today;
-  
- }  
-
-
-function  showNextDate(){
-var next= new Date();
-tomorrow.setDate(today.getDate()+1);
-return next;
 }
 
-function  showPreviousDate(){
-var previous= new Date();
-tomorrow.setDate(today.getDate()-1);
-previous=tomorrow.setDate(today.getDate()-1);
-return previous;
+function prev(){
+var prevDay=new Date(d);
+var dateValue = prevDay.getDate() - 1;
+prevDay.setDate(dateValue);
+return prevDay;
+document.getElementById("current").innerHTML = prevDay.toLocaleString();
+
 }
 
+document.getElementById("current").onload = curr();
 
-    document.getElementById("current").innerHTML = showDate();
- document.getElementById("next").innerHTML = showNextDate();
- document.getElementById("previous").innerHTML = showPreviousDate();
+function curr() {
+    document.getElementById("current").innerHTML = d.toLocaleString();
+}
+
