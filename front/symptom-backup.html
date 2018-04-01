@@ -210,12 +210,19 @@
             </div>
             <section class="report-levels">
                 <!----Second  part--->
+                <div class="feel-pain">
+                    <h5>Do you feel a pain?</h5>
+
+                    <input id="toggle-on"  type="radio">
+                    <label id="yes-pain-symp-one" class="pointer" for="toggle-on">Yes</label>
+                    <input class="pointer" id="toggle-off" name="symptom-1" type="radio" value="0">
+                    <label id="no-pain-symp-one" class="pointer" for="toggle-off" >No</label>
+
+                </div>
+
+                <section class="yes-selected">
                     <h5>Select the level of pain</h5>
                     <div class="level-selcet">
-                          <label class="container-levels radio-zero">
-                     <input type="radio" name="symptom-1" value="0">
-                      <span class="checkmark"></span>
-                    </label>
                         <label class="container-levels radio-one">
                      <input type="radio" name="symptom-1" value="1">
                       <span class="checkmark"></span>
@@ -238,7 +245,6 @@
                     </label>
                     </div>
                     <div class="numbers">
-                        <p class="one-five zero">0 </p>
                         <p class="one-five one">1 </p>
                         <p class="one-five two">2</p>
                         <p class="one-five three">3 </p>
@@ -252,8 +258,7 @@
                             Levels descriptions
                         </div>
                         <div class="card-body levle-info" id="info-symp-one">
-                            <ol start="0">
-                                 <li id="il-info-zero">Coffee</li>
+                            <ol>
                                 <li id="il-info-one">Coffee</li>
                                 <li id="il-info-two">Tea</li>
                                 <li id="il-info-three">Milk</li>
@@ -265,7 +270,7 @@
          <button class="save-btn">Submit </button>
 
                 </section>
-            
+            </section>
         </main>
     </div>
     <footer>
@@ -312,8 +317,30 @@
 
             $(".symp-one").click(function() {
                 $(".report-levels").show();
+                $(".yes-selected").hide();
+
+
             });
 
+
+            $("#no-pain-symp-one").click(function() {
+                $(".symp-one").css("background", "#d6f5d6");
+                $("#checked-symp-one").show();
+                $(".yes-selected").hide();
+                 $("#no-pain-symp-one").css("background-color", "#006699");
+                $("#yes-pain-symp-one").css("background-color", "#00b3b3");
+                
+                
+                
+            });
+            $("#yes-pain-symp-one").click(function() {
+                $(".yes-selected").show();
+                $(".symp-one").css("background", "white");
+                  $("#checked-symp-one").hide();
+                 $("#yes-pain-symp-one").css("background-color", "#006699");
+                $("#no-pain-symp-one").css("background-color", "#00b3b3");
+
+            });
 
           
               $('.save-btn').click(function() {
@@ -331,48 +358,36 @@
             
             
             
-             $(".radio-zero").click(function() {
-                $("#il-info-zero").css("color", "#4169E1");
-                $("#il-info-one").css("color", "black");
-                $("#il-info-two").css("color", "black");
-                $("#il-info-three").css("color", "black");
-                $("#il-info-four").css("color", "black");
-                $("#il-info-five").css("color", "black");
-            });
+            
             $(".radio-one").click(function() {
-               $("#il-info-zero").css("color", "black");
-                $("#il-info-one").css("color", "#32CD32");
+                $("#il-info-one").css("color", "#269900");
                 $("#il-info-two").css("color", "black");
                 $("#il-info-three").css("color", "black");
                 $("#il-info-four").css("color", "black");
                 $("#il-info-five").css("color", "black");
             });
             $(".radio-two").click(function() {
-               $("#il-info-zero").css("color", "black");
                 $("#il-info-one").css("color", "black");
-                $("#il-info-two").css("color", "#ffe066");
+                $("#il-info-two").css("color", "#79ff4d");
                 $("#il-info-three").css("color", "black");
                 $("#il-info-four").css("color", "black");
                 $("#il-info-five").css("color", "black");
             });
             $(".radio-three").click(function() {
-               $("#il-info-zero").css("color", "#black");
                 $("#il-info-one").css("color", "black");
                 $("#il-info-two").css("color", "black");
-                $("#il-info-three").css("color", "#ffa500");
+                $("#il-info-three").css("color", "#e6e600");
                 $("#il-info-four").css("color", "black");
                 $("#il-info-five").css("color", "black");
             });
             $(".radio-four").click(function() {
-               $("#il-info-zero").css("color", "black");
                 $("#il-info-one").css("color", "black");
                 $("#il-info-two").css("color", "black");
                 $("#il-info-three").css("color", "black");
-                $("#il-info-four").css("color", "#8B4513");
+                $("#il-info-four").css("color", "#ffaa00");
                 $("#il-info-five").css("color", "black");
             });
             $(".radio-five").click(function() {
-              $("#il-info-zero").css("color", "black");
                 $("#il-info-one").css("color", "black");
                 $("#il-info-two").css("color", "black");
                 $("#il-info-three").css("color", "black");
