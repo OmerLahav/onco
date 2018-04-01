@@ -76,9 +76,32 @@ main {
     width: 50px;
 }
 
-input,
-label {
+
+input {
     float: right;
+}
+
+    input[type="radio"] {
+    display: none;
+}
+
+.pointer {
+  padding: 10px 23px;
+  background-color: #00b3b3;
+  border: thin solid;
+  border-radius: 10px;
+  margin:5px;
+  display: inline-block;
+    cursor: pointer;
+}
+.pointer:hover
+{
+    background-color: #006699; 
+}
+input[type="radio"]:checked + label {
+    background-color: #006699;
+    cursor: default;
+    color: #E6E6E6;
 }
 
 

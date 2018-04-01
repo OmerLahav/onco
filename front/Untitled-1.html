@@ -87,6 +87,29 @@
         margin-left: 8px;
         
     }
+    
+    
+    
+    input[type="radio"] {
+    display: none;
+}
+
+.pointer {
+  padding: 10px 23px;
+  background-color: #00b3b3;
+  border: thin solid;
+  border-radius: 10px;
+  margin:5px;
+  display: inline-block;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #006699;
+    cursor: default;
+    color: #E6E6E6;
+}
+.pointer
+    {cursor: pointer;}
 </style>
 <body>
 
@@ -114,5 +137,31 @@
 </label>
 <P class="one-five">1   2   3   4   5</p>
 </div>
+    
+ 
+<input  id="toggle-on" name="toggle" type="radio">
+ <label class="pointer" for="toggle-on">Yes</label>
+<input class="pointer" id="toggle-off" name="toggle" type="radio">
+<label class="pointer" for="toggle-off">No</label>
+    
+    
+ <script>
+    function formatDate(date) {
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth()+1;
+  var year = date.getFullYear();
+
+  return day + ' ' + monthNames[monthIndex] + ' ' + year;
+}
+
+console.log(formatDate(new Date()));  // show current date-time in console
+     </script>   
 </body>
 </html>

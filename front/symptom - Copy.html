@@ -212,8 +212,12 @@
                 <!----Second  part--->
                 <div class="feel-pain">
                     <h5>Do you feel a pain?</h5>
-                    <button type="button" class="btn btn-default btn-md" id="yes-pain-symp-one"> Yes   </button>
-                    <button type="button" class="btn btn-default btn-md" id="no-pain"> No   </button>
+
+                    <input id="toggle-on" name="radio" type="radio">
+                    <label id="yes-pain-symp-one" class="pointer" for="toggle-on">Yes</label>
+                    <input class="pointer" id="toggle-off" name="radio" type="radio">
+                    <label id="no-pain-symp-one" class="pointer" for="toggle-off">No</label>
+
                 </div>
 
                 <section class="yes-selected">
@@ -312,18 +316,18 @@
 
             $(".symp-one").click(function() {
                 $(".report-levels").show();
-                  $(".yes-selected").hide();
-                
+                $(".yes-selected").hide();
+
 
             });
-            
-            
-                $("#no-pain").click(function() {
+
+
+            $("#no-pain-symp-one").click(function() {
                 $(".symp-one").css("background", "#d6f5d6");
                 $("#checked-symp-one").show();
             });
-             $("#yes-pain-symp-one").click(function() {
-               $(".yes-selected").show();
+            $("#yes-pain-symp-one").click(function() {
+                $(".yes-selected").show();
             });
 
 
