@@ -171,9 +171,10 @@
 
                     </div>
 
-
-                    <button type="button" class="btn btn-default float-right pages" id="next">Next</button>
-                    <button type="button" class="btn btn-default float-right pages" id="Back">Back</button>
+                    <div class="buttons">
+                    <button type="button" class="btn btn-default float-right  t-20" id="next">Next</button>
+                    <button type="button" class="btn btn-default float-right t-20" id="back">Back</button>
+                        </div>
                 </div>
                 <!--Treatment-->
                 <div class="tab-pane container" id="treatment1">
@@ -208,10 +209,10 @@
                     </div>
                 </div>
             </div>
-            <section class="report-levels">
+            <section class="report-levels" >
                 <!----Second  part--->
                     <h5>Select the level of pain</h5>
-                    <div class="level-selcet">
+                    <div class="level-select">
                           <label class="container-levels radio-zero">
                      <input type="radio" name="symptom-1" value="0">
                       <span class="checkmark"></span>
@@ -262,7 +263,8 @@
                             </ol>
                         </div>
                     </div>
-         <button class="save-btn">Submit </button>
+             
+         <button class="save-btn btn btn-default float-right " id="save-symp-one">Submit </button>
 
                 </section>
             
@@ -294,7 +296,7 @@
                     position++;
                 }
             });
-            $("#Back").click(function() {
+            $("#back").click(function() {
                 if (position == 1) {
                     $("#page-one").show();
                 } else if (position == 2) {
@@ -316,7 +318,7 @@
 
 
           
-              $('.save-btn').click(function() {
+              $('#save-symp-one').click(function() {
     if (!$("input[name='symptom-1']:checked").val()) {
        alert('Please select level');
     }

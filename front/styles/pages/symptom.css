@@ -41,11 +41,8 @@ main {
     margin-bottom: 30px;
 }
 
-
-
-.btn-default {
-    color: red;
-    border-color: black;
+#save-symp-one{
+    margin-top:27px;
 }
 
 .image {
@@ -116,12 +113,15 @@ input[type="radio"]:checked + label {
 
 .report-levels {
     display: none;
+    margin-top:10px;
 }
 
-.level-selcet {
+.level-select {
     height: 50px;
 }
-
+.card-info-levels{
+margin-top:82px;
+}
 
 .container-levels {
     float: left;
@@ -137,6 +137,10 @@ input[type="radio"]:checked + label {
     user-select: none;
 }
 
+.buttons{
+    
+    margin-top:20px;
+}
 
 .container-levels input {
     position: absolute;
