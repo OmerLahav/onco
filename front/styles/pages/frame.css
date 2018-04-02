@@ -67,6 +67,19 @@
     margin-left: -250px;
 }
 
+h1 {
+    color: black;
+    font-family: 'Droid serif', serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 44px;
+    margin: 0 0 12px;
+    text-align: left;
+    border-bottom: 1px solid #538cc6;
+    border-width: 5px;
+    width: 100%;
+}
+
 .content {
     width: 100%;
 }
