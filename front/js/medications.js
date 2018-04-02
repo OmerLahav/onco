@@ -1,27 +1,21 @@
-var d = new Date();
 
-function next()
-{
-var nextDay=new Date(d);
-var dateValue = nextDay.getDate() + 1;
-nextDay.setDate(dateValue);
-document.getElementById("current").innerHTML = nextDay.toLocaleString();
-
+function myFunction() {
+    var d = new Date();
+    var n = d.getHours();
+     if(n>=6 && n<=12)
+     {
+     document.getElementById("card-morrning").style.backgroundColor = "#e6e600"; 
+    }
+    else if (n>12 && n<=18)
+    {
+      document.getElementById("card-afternoon").style.backgroundColor = "#ff9900"; 
+    }
+    else if (n>18 && n<=24)
+    {
+      document.getElementById("card-morrning").style.backgroundColor = "#804d00"; 
+    }
+    else
+    {
+          document.getElementById("card-morrning").style.backgroundColor = "#3d3d5c"; 
+    }
 }
-
-function prev(){
-var prevDay=new Date(d);
-var dateValue = prevDay.getDate() - 1;
-prevDay.setDate(dateValue);
-
-document.getElementById("current").innerHTML = prevDay.toLocaleString();
-
-}
-
-document.getElementById("current").onload = curr();
-
-
-function curr() {
-    document.getElementById("current").innerHTML = d.toLocaleString();
-}
-

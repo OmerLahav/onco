@@ -8,10 +8,11 @@
       <link rel="stylesheet" href="styles/bootstrap.min.css">
       <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
       <link rel="stylesheet" href="styles/pages/frame.css">
+        <link rel="stylesheet" href="styles/pages/medications.css">
       <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
       <link rel="stylesheet" href="styles/pages/medications.css">
    </head>
-   <body>
+   <body onload="myFunction()">
       <nav class="navbar navbar-expand navbar-dark bg-info">
          <a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
          <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt=""></a>
@@ -60,15 +61,11 @@
          <main class="p-4">
             <h1>Medications</h1>
              <div class="main-container">
-            <div class="date">
-               <button onclick="prev()"><i style=" display: inline;" class="fas fa-chevron-left"></i></button>
-               <p style=" display: inline;">Today date is : <span id="current"> </span></p>
-               <button onclick="next()"><i style=" display: inline;" class="fas fa-chevron-right" ></i></button>
-            </div>
             <div class="center-block text-center ">
                 <!---Morning-->
-               <div class="card text-black bg-light m-3  d-inline-block " style="max-width: 18rem;">
-                   <div class="card-header "> <img src="images/sunrise.png" width="50" height="50" style="position:relative;top:-8px;left:-60px;"><p class="daytime-text">Morning </p></div>
+               <div class="card text-black bg-light m-3  d-inline-block " style="max-width: 18rem;" >
+                   <div class="card-header" id="card-morrning"> <img src="images/sunrise.png" width="50" height="50" style="position:relative;top:-8px;left:-60px;">
+                       <p class="daytime-text" >Morning </p></div>
                   <div class="card-body">
                      <div class="list-group">
                         <button type="button" class="list-group-item list-group-item-action symp-one">
@@ -93,7 +90,7 @@
                </div>
                 <!---Afternoon-->
                <div class="card text-black bg-light m-3  d-inline-block " style="max-width: 18rem;">
-                  <div class="card-header "> <i class="fas fa-sun fa-2x" style="position:relative;top:2px;left:-60px;"></i><p class="daytime-text">Afternoon</p></div>
+                  <div class="card-header" id="card-afternoon" > <i class="fas fa-sun fa-2x" style="position:relative;top:2px;left:-60px;"></i><p class="daytime-text">Afternoon</p></div>
                   <div class="card-body">
                      <div class="list-group">
                         <button type="button" class="list-group-item list-group-item-action symp-one">
@@ -119,7 +116,7 @@
                 <!---Evening-->
                <div class="clearfix">
                   <div class="card text-black bg-light m-3  d-inline-block " style="max-width: 18rem;">
-                      <div class="card-header "> <img src="images/evening.png" width="50" height="50" style="position:relative;top:-10px;left:-60px;" ><p class="daytime-text">Evening</p></div>
+                      <div class="card-header" id="card-evening"> <img src="images/evening.png" width="50" height="50" style="position:relative;top:-10px;left:-60px;" ><p class="daytime-text">Evening</p></div>
                      <div class="card-body">
                         <div class="list-group">
                            <button type="button" class="list-group-item list-group-item-action symp-one">
@@ -144,7 +141,7 @@
                   </div>
                    <!---Night-->
                   <div class="card text-black bg-light m-3  d-inline-block " style="max-width: 18rem;">
-                      <div class="card-header "> <i class="fas fa-moon fa-2x" style="position:relative;top:6px;left:-80px;"></i><p class="daytime-text">Night</p></div>
+                      <div class="card-header" id="card-night"> <i class="fas fa-moon fa-2x" style="position:relative;top:6px;left:-80px;"></i><p class="daytime-text">Night</p></div>
                      <div class="card-body">
                         <div class="list-group">
                            <button type="button" class="list-group-item list-group-item-action symp-one">
