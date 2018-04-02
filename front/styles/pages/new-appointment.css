@@ -206,9 +206,7 @@ margin-left:6%;
     margin-bottom: 3px;
 }
 /* ------------------ guidance--------------*/
-.steps li:hover {
-background-color: #eee;   
-}
+
 
 .steps {
     margin: 0;
@@ -217,6 +215,7 @@ background-color: #eee;
     list-style-type: none;
     text-align: center;
     margin:auto;
+    
 }
 
 

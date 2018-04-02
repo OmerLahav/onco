@@ -1,40 +1,36 @@
-$(document).ready(function(){
-   
+$(document).ready(function() {
+            //Initialize tooltips
+            $('.nav-tabs > li a[title]').tooltip();
+
+            //Wizard
+            $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+
+                var $target = $(e.target);
+
+                if ($target.hasClass('disabled')) {
+                    return false;
+                }
+            });
+
+            $(".next-step").click(function(e) {
+                var $active = $('.wizard .nav-tabs .nav-item .active');
+                var $activeli = $active.parent("li");
+
+                $($activeli).next().find('a[data-toggle="tab"]').removeClass("disabled");
+                $($activeli).next().find('a[data-toggle="tab"]').click();
+            });
 
 
+            $(".prev-step").click(function(e) {
 
- //Initialize tooltips
- $('.nav-tabs > li a[title]').tooltip();
+                var $active = $('.wizard .nav-tabs .nav-item .active');
+                var $activeli = $active.parent("li");
 
- //Wizard
- $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+                $($activeli).prev().find('a[data-toggle="tab"]').removeClass("disabled");
+                $($activeli).prev().find('a[data-toggle="tab"]').click();
 
-     var $target = $(e.target);
+            });
 
-     if ($target.hasClass('disabled')) {
-         return false;
-     }
- });
+            $('#calendar').dcalendar(); //creates the calendar
 
- $(".next-step").click(function (e) {
-     var $active = $('.wizard .nav-tabs .nav-item .active');
-     var $activeli = $active.parent("li");
-
-     $($activeli).next().find('a[data-toggle="tab"]').removeClass("disabled");
-     $($activeli).next().find('a[data-toggle="tab"]').click();
- });
-
-
- $(".prev-step").click(function (e) {
-
-     var $active = $('.wizard .nav-tabs .nav-item .active');
-     var $activeli = $active.parent("li");
-
-     $($activeli).prev().find('a[data-toggle="tab"]').removeClass("disabled");
-     $($activeli).prev().find('a[data-toggle="tab"]').click();
-
- });
-
- $('#calendar-demo').dcalendar(); //creates the calendar
-
-});
+        });
