@@ -1,4 +1,4 @@
-
+//check the part of the day
 function timeChecker() {
     var d = new Date();
     var n = d.getHours();
@@ -45,7 +45,7 @@ function timeChecker() {
 
     }
     
-    else
+    else if (n>=0 && n<6)
     {
           document.getElementById("card-morrning").style.backgroundColor = "rgb(0,200,200)"; 
         document.getElementById("morning-akamol-one").disabled = true;
