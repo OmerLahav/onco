@@ -13,6 +13,7 @@
 </head>
 
 <body>
+ <!---navbar ---->
 	<nav class="navbar navbar-expand navbar-dark bg-info">
 		<a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
 		<a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt=""></a>
@@ -33,32 +34,19 @@
 			</ul>
 		</div>
 	</nav>
-
-	<div class="d-flex align-items-stretch">
-		<div class="sidebar bg-dark">
-			<ul class="list-unstyled">
-				<li><a href="#"><i class="fa fa-fw fa-link"></i> Dashboard</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-link"></i> Self report</a></li>
-				<li>
-					<a href="#submenu1" data-toggle="collapse"><i class="fa fa-fw fa-address-card"></i> Dropdown Link</a>
-					<ul id="submenu1" class="list-unstyled collapse">
-						<li><a href="#">Submenu Item</a></li>
-						<li><a href="#">Submenu Item</a></li>
-						<li><a href="#">Submenu Item</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#submenu2" data-toggle="collapse"><i class="fa fa-fw fa-address-card"></i> Dropdown Link 2</a>
-					<ul id="submenu2" class="list-unstyled collapse">
-						<li><a href="#">Submenu Item</a></li>
-						<li><a href="#">Submenu Item</a></li>
-						<li><a href="#">Submenu Item</a></li>
-					</ul>
-				</li>
-				<li><a href="#"><i class="fa fa-fw fa-angle-right"></i> Sidebar Link</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-link"></i> Sidebar Link</a></li>
-			</ul>
-		</div>
+    <!---sidebar---->
+	    <div class="d-flex align-items-stretch">
+        <div class="sidebar bg-dark">
+            <ul class="list-unstyled">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x "></i> Dashboard</a></li>
+                <li><a href="symptom%20-%20Copy.html"><i class="fas fa-heartbeat fa-2x"></i> Self report</a></li>
+                 <li><a href="medications.html"><i class="fas fa-pills fa-2x"></i> Medications</a></li>
+                 <li><a href="#"><i class="fas fa-calendar fa-2x"></i> Calendar </a></li>
+                <li><a href="#"><i class="fas fa-envelope fa-2x"></i> Messages </a></li>
+                 <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x"></i> My profile</a></li>
+                 <li><a href="settings.html"><i class="fas fa-cog fa-2x"></i> Settings</a></li>
+            </ul>
+        </div>
 	
 	<main class="p-4">
      <!-- Tabs -->
@@ -69,8 +57,6 @@
 			<div class="col-xs-12 ">
 				<nav>
 					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Account</a>
-						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
 						<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Notifications</a>
 						<a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">Privacy</a>
 					</div>
