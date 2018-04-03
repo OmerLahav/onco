@@ -1,4 +1,0 @@
-https://medium.com/technoetics/handling-user-login-and-registration-using-nodejs-and-mysql-81b146e37419
-http://www.expertphp.in/article/user-login-and-registration-using-nodejs-and-mysql-with-example
-https://www.js-tutorials.com/javascript-tutorial/node-js-user-authentication-using-mysql-express-js/
-https://scotch.io/tutorials/easy-node-authentication-setup-and-local
