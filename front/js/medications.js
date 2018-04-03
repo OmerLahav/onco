@@ -45,9 +45,9 @@ function timeChecker() {
 
     }
     
-    else if (n>=0 && n<6)
+    else 
     {
-          document.getElementById("card-morrning").style.backgroundColor = "rgb(0,200,200)"; 
+          document.getElementById("card-night").style.backgroundColor = "rgb(0,200,200)"; 
         document.getElementById("morning-akamol-one").disabled = true;
          document.getElementById("morning-akamol-two").disabled = true;
          document.getElementById("afternoon-akamol-one").disabled = true;
