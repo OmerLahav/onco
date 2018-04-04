@@ -34,6 +34,7 @@ height:30px;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) { 
 html {
+overflow:hidden;
 background-image: url("../../images/login.png");
 background-position: -172px 0px;
 }
