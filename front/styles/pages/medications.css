@@ -74,12 +74,10 @@ display:inline-block;
 
 
 .steps {
-    margin: 0;
-    padding: 0;
+
     width:40%;
     list-style-type: none;
-    text-align: center;
-    margin:auto;
+    text-align: left;
     margin-top:20px;
       font-size: 120%;
 }

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Staff -Admin Panel ICan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/pages/dashboard.css">
+    <link rel="stylesheet" href="../styles/pages/frame.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/fontawesome/css/fontawesome-all.min.css">
+
+</head>
+
+<body>
+    <!---navbar ---->
+    <nav class="navbar navbar-expand navbar-dark bg-info">
+        <a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
+        <a class="navbar-brand" href="#"><img class="logo" src="../images/logo.png" alt=""></a>
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+						<i class="fa fa-user"></i> Username
+					</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+      <!---sidebar---->
+    <div class="d-flex align-items-stretch">
+        <div class="sidebar bg-dark">
+            <ul class="list-unstyled">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x" ></i> Dashboard</a></li>
+                <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x" ></i>Patients</a></li>
+                 <li><a href="medications.html"><i class="fas fa-pills fa-2x" ></i>   Medications</a></li>
+                <li><a href="medications.html"><i class="fas fa-calendar-check fa-2x" ></i> Appointment</a></li>
+                 <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x " ></i> My profile</a></li>
+                 <li><a href="settings.html"><i class="fas fa-cog fa-2x " ></i> Settings</a></li>
+            </ul>
+        </div>
+
+        <!---content---->
+        <main class="content p-4">
+            <h1>Dashboard</h1>
+            <div class="menu-buttons" style="padding-top:20px;">
+             <div class="row">
+             <div class="col-lg-3">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+    </div>
+  </div>
+            </div>
+            
+            
+            <div class="dropdown float-right" style="position:relative; 
+            top:-40px;   " >
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Options
+  </button>         
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="position:relative; top:10px; left:110px;">
+    <a class="dropdown-item" href="#">Edit</a>
+    <a class="dropdown-item" href="#">Delete</a>
+  </div>                
+</div>
+                </div>
+          <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phone</th>
+       <th>
+        <input type="checkbox">
+         <span class="fa fa-check"></span>
+        </th>
+
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+              <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+              <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+              <td>@mdo</td>
+    </tr>
+      
+  </tbody>
+</table>
+           
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            © 2018 Ican</div>
+    </footer>
+
+    <!---scripts---->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jsframe.js"></script>
+
+</body>
+
+</html>

@@ -2,7 +2,6 @@
 function timeChecker() {
     var d = new Date();
     var n = d.getHours();
-    alert(n);
      if(n>=6 && n<=12)
      {
      document.getElementById("card-morrning").style.backgroundColor = "rgb(0,200,200)"; 
