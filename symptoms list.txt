@@ -1,0 +1,68 @@
+Diarrhea
+0- None
+1-More than 1 time.
+2-Between 2-4
+3-Between 4-6
+4- More than 7
+
+Vomiting
+0- None
+1-More than 1 time.
+2-Between 2-3
+3-Between 4-5
+4- More than 6
+
+Sleep Disorders
+0- None
+1-Easy difficulty falling asleep.
+2-Moderate difficulty falling asleep
+3-High difficulty falling asleep.
+4- ?
+
+Shortness of breath(Dyspnea) misc
+0- None
+1-Shortness of breath in effort.
+2-Shortness of breath in daily activity.
+3-Shortness of breath at rest.
+4- ?
+
+Memory loss 
+0- None
+1- I have had a light loss of memory. Temporary memory loss.
+2- I have had a medium memory loss. Short-term memory loss.
+3- I have had a serious memory loss. Long-term memory loss
+4- ?
+
+--
+Pain misc
+0- I have not had pain
+1-I have had mild pain, but it does not interfere with my normal functioning.
+2-I have a moderate pain, and my pain or my use of pain medication interferes with my normal functioning. But I am still able to carry out my normal daily activities.
+3-I have had a severe pain, and my pain or my use of pain medications severely interferes with my normal daily activities.
+4- My pain has been disabling.
+
+Mucositis treatment
+0- I have not had Mucositis.
+1-I have had mild Mucositis, but it does not interfere with my normal functioning.
+2-I have a moderate Mucositis,but it doesnt hurt my diet through my mouth.
+3-I have had a severe pain, It hurts my diet through my mouth.
+
+constipation
+0- I have not had constipation.
+1-I have had  constipation intermittent or sometimes,so I non- permanently use stool softeners, laxatives, dietary adjustments or enemas
+2-I have had a permanent symptoms of constipation, so I regular use of laxatives or enemas. 
+3-I have had a hard constipation.
+
+Anxiety
+0- I have not had anxiety.
+1-I have had mild anxiety , but it does not interfere with my normal functioning.
+2-I have a moderate anxiety, and my anxiety or my use of anxiety medication interferes with my normal functioning. But I am still able to carry out my normal daily activities.
+3-I have had a severe anxiety, and my anxiety or my use of anxiety medications severely interferes with my normal daily activities.
+4- My anxiety has been disabling.
+
+Depression
+0- I have not had depression.
+1-I have had mild depression , but it does not interfere with my normal functioning.
+2-I have a moderate depression, and my depression or my use of depression medication interferes with my normal functioning. But I am still able to carry out my normal daily activities.
+3-I have had a severe depression, and my anxiety or my use of depression medications severely interferes with my normal daily activities.
+4- My depression has been disabling.
