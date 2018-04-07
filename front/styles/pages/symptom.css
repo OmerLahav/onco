@@ -29,7 +29,7 @@ main {
     margin-bottom: 30px;
 }
 
-#save-symp-one{
+#save-btn{
     margin-top:27px;
 }
 
@@ -100,8 +100,13 @@ input[type="radio"]:checked + label {
 }
 
 .report-levels {
-    display: none;
+    
     margin-top:10px;
+   
+}
+.report-levels
+{
+    display: none; 
 }
 
 .level-select {
@@ -175,9 +180,7 @@ margin-top:82px;
     background-color: #8B4513	;
 }
 
-.radio-five input:checked ~ .checkmark {
-    background-color: #ff0000;
-}
+
 
 /* Create the checkmark/indicator (hidden when not checked) */
 
@@ -219,26 +222,22 @@ margin-top:82px;
     
 }
 
-.one{
+.num-symp-1{
 
     margin-left: 45px;
 }
 
-.two {
+.num-symp-2 {
     margin-left: 45px;
 }
 
-.three {
+.num-symp-3 {
     margin-left: 45px;
 }
-
-.four {
-    margin-left: 45px;
-}
-
-.five {
+.num-symp-4 {
     margin-left: 40px;
 }
+
 
 .levels-btn
 {

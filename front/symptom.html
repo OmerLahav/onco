@@ -35,16 +35,16 @@
             </ul>
         </div>
     </nav>
-        <div class="d-flex align-items-stretch">
+    <div class="d-flex align-items-stretch">
         <div class="sidebar bg-dark">
             <ul class="list-unstyled">
                 <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x "></i> Dashboard</a></li>
                 <li><a href="symptom%20-%20Copy.html"><i class="fas fa-heartbeat fa-2x"></i> Self report</a></li>
-                 <li><a href="medications.html"><i class="fas fa-pills fa-2x"></i> Medications</a></li>
-                 <li><a href="#"><i class="fas fa-calendar fa-2x"></i> Calendar </a></li>
+                <li><a href="medications.html"><i class="fas fa-pills fa-2x"></i> Medications</a></li>
+                <li><a href="#"><i class="fas fa-calendar fa-2x"></i> Calendar </a></li>
                 <li><a href="#"><i class="fas fa-envelope fa-2x"></i> Messages </a></li>
-                 <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x"></i> My profile</a></li>
-                 <li><a href="settings.html"><i class="fas fa-cog fa-2x"></i> Settings</a></li>
+                <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x"></i> My profile</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog fa-2x"></i> Settings</a></li>
             </ul>
         </div>
         <main class="p-4">
@@ -63,7 +63,7 @@
                 <!--Regular-->
                 <div class="tab-pane active container" id="regular">
                     <p>Please choose a symptom for report</p>
-                     
+
                     <!---page 1----->
                     <div class="list-group" id="page-one">
                         <button type="button" class="list-group-item list-group-item-action symp-one">
@@ -159,11 +159,11 @@
                     </div>
 
                     <div class="buttons">
-                    <button type="button" class="btn btn-default float-right  t-20" id="next">Next</button>
-                    <button type="button" class="btn btn-default float-right t-20" id="back">Back</button>
-                        </div>
+                        <button type="button" class="btn btn-default float-right  t-20" id="next">Next</button>
+                        <button type="button" class="btn btn-default float-right t-20" id="back">Back</button>
+                    </div>
                 </div>
-                <!--Treatment-->
+                <!--Treatment------------------------------------------------->
                 <div class="tab-pane container" id="treatment1">
                     <p>Please choose a symptom for report</p>
                     <div class="list-group" id="page-one">
@@ -196,65 +196,167 @@
                     </div>
                 </div>
             </div>
-            <section class="report-levels" >
-                <!----Second  part--->
+            <!----right  part reporting--------->
+            <!------------report symptom one---------------------->
+            <section class="report-levels section-symp-1">
+                <!------------form symptom one---------------------->
+                <form id="form-symp-one" action="" method="post">
                     <h5>Select the level of pain</h5>
                     <div class="level-select">
-                          <label class="container-levels radio-zero">
+                        <label class="container-levels radio-zero" id="radio-zero-symp-1">
                      <input type="radio" name="symptom-1" value="0">
                       <span class="checkmark"></span>
                     </label>
-                        <label class="container-levels radio-one">
+                        <label class="container-levels radio-one" id="radio-one-symp-1">
                      <input type="radio" name="symptom-1" value="1">
                       <span class="checkmark"></span>
                     </label>
-                        <label class="container-levels radio-two">
+                        <label class="container-levels radio-two" id="radio-two-symp-1">
                      <input type="radio" name="symptom-1" value="2">
                       <span class="checkmark"></span>
                     </label>
-                        <label class="container-levels radio-three">
+                        <label class="container-levels radio-three" id="radio-three-symp-1">
                      <input type="radio" name="symptom-1" value="3">
                       <span class="checkmark"></span>
                     </label>
-                        <label class="container-levels radio-four">
+                        <label class="container-levels radio-four" id="radio-four-symp-1">
                      <input type="radio" name="symptom-1" value="4">
                       <span class="checkmark"></span>
                     </label>
-                        <label class="container-levels radio-five">
-                     <input type="radio" name="symptom-1" value="5">
+                    </div>
+                </form>
+                <div class="numbers">
+                    <p class="one-five num-symp-0">0 </p>
+                    <p class="one-five num-symp-1">1 </p>
+                    <p class="one-five num-symp-2">2</p>
+                    <p class="one-five num-symp-3">3 </p>
+                    <p class="one-five num-symp-4">4 </p>
+                </div>
+
+                <div class="card card-info-levels">
+                    <div class="card-header">
+                        Levels descriptions
+                    </div>
+                    <div class="card-body levle-info" id="info-symp-one">
+                        <ol start="0">
+                            <li id="il-info-symp-one-0">None</li>
+                            <li id="il-info-symp-one-1">More than 1 time</li>
+                            <li id="il-info-symp-one-2">Between 2-4</li>
+                            <li id="il-info-symp-one-3">Between 4-6</li>
+                            <li id="il-info-symp-one-4">More than 7</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <button class="save-btn btn btn-default float-right " id="save-symp-one">Submit </button>
+            </section>
+             <!------------report symptom two---------------------->
+            <section class="report-levels section-symp-2">
+                <!------------form symptom two---------------------->
+                <form id="form-symp-two" action="" method="post">
+                    <h5>Select the level of pain</h5>
+                    <div class="level-select">
+                        <label class="container-levels radio-zero" id="radio-zero-symp-2">
+                     <input type="radio" name="symptom-2" value="0">
+                      <span class="checkmark"></span>
+                    </label>
+                        <label class="container-levels radio-one" id="radio-one-symp-2">
+                     <input type="radio" name="symptom-2" value="1">
+                      <span class="checkmark"></span>
+                    </label>
+                        <label class="container-levels radio-two" id="radio-two-symp-2">
+                     <input type="radio" name="symptom-2" value="2">
+                      <span class="checkmark"></span>
+                    </label>
+                        <label class="container-levels radio-three" id="radio-three-symp-2">
+                     <input type="radio" name="symptom-2" value="3">
+                      <span class="checkmark"></span>
+                    </label>
+                        <label class="container-levels radio-four" id="radio-four-symp-2">
+                     <input type="radio" name="symptom-2" value="4">
                       <span class="checkmark"></span>
                     </label>
                     </div>
-                    <div class="numbers">
-                        <p class="one-five zero">0 </p>
-                        <p class="one-five one">1 </p>
-                        <p class="one-five two">2</p>
-                        <p class="one-five three">3 </p>
-                        <p class="one-five four">4 </p>
-                        <p class="one-five five">5 </p>
+                </form>
+                <div class="numbers">
+                    <p class="one-five num-symp-0">0 </p>
+                    <p class="one-five num-symp-1">1 </p>
+                    <p class="one-five num-symp-2">2</p>
+                    <p class="one-five num-symp-3">3 </p>
+                    <p class="one-five num-symp-4">4 </p>
+                </div>
+
+                <div class="card card-info-levels">
+                    <div class="card-header">
+                        Levels descriptions
                     </div>
-
-
-                    <div class="card card-info-levels">
-                        <div class="card-header">
-                            Levels descriptions
-                        </div>
-                        <div class="card-body levle-info" id="info-symp-one">
-                            <ol start="0">
-                                 <li id="il-info-zero">Coffee</li>
-                                <li id="il-info-one">Coffee</li>
-                                <li id="il-info-two">Tea</li>
-                                <li id="il-info-three">Milk</li>
-                                <li id="il-info-four">Milk</li>
-                                <li id="il-info-five">Milk</li>
-                            </ol>
-                        </div>
+                    <div class="card-body levle-info" id="info-symp-one">
+                        <ol start="0">
+                            <li id="il-info-symp-two-0">None</li>
+                            <li id="il-info-symp-two-1">More than 1 time</li>
+                            <li id="il-info-symp-two-2">Between 2-4</li>
+                            <li id="il-info-symp-two-3">Between 4-6</li>
+                            <li id="il-info-symp-two-4">More than 7</li>
+                        </ol>
                     </div>
-             
-         <button class="save-btn btn btn-default float-right " id="save-symp-one">Submit </button>
+                </div>
 
-                </section>
-            
+                <button class="save-btn btn btn-default float-right " id="save-symp-two">Submit </button>
+            </section>
+ <!------------report symptom three---------------------->
+            <section class="report-levels section-symp-3">
+                <!------------form symptom three---------------------->
+                <form id="form-symp-three" action="" method="post">
+                    <h5>Select the level of pain</h5>
+                    <div class="level-select">
+                        <label class="container-levels radio-zero" id="radio-zero-symp-3">
+                     <input type="radio" name="symptom-3" value="0">
+                      <span class="checkmark"></span>
+                    </label>
+                        <label class="container-levels radio-one" id="radio-one-symp-2">
+                     <input type="radio" name="symptom-3" value="1">
+                      <span class="checkmark"></span>
+                    </label>
+                        <label class="container-levels radio-two" id="radio-two-symp-3">
+                     <input type="radio" name="symptom-3" value="2">
+                      <span class="checkmark"></span>
+                    </label>
+                        <label class="container-levels radio-three" id="radio-three-symp-3">
+                     <input type="radio" name="symptom-3" value="3">
+                      <span class="checkmark"></span>
+                    </label>
+                        <label class="container-levels radio-four" id="radio-four-symp-3">
+                     <input type="radio" name="symptom-2" value="4">
+                      <span class="checkmark"></span>
+                    </label>
+                    </div>
+                </form>
+                <div class="numbers">
+                    <p class="one-five num-symp-0">0 </p>
+                    <p class="one-five num-symp-1">1 </p>
+                    <p class="one-five num-symp-2">2</p>
+                    <p class="one-five num-symp-3">3 </p>
+                    <p class="one-five num-symp-4">4 </p>
+                </div>
+
+                <div class="card card-info-levels">
+                    <div class="card-header">
+                        Levels descriptions
+                    </div>
+                    <div class="card-body levle-info" id="info-symp-one">
+                        <ol start="0">
+                            <li id="il-info-symp-three-0">None</li>
+                            <li id="il-info-symp-three-1">More than 1 time</li>
+                            <li id="il-info-symp-three-2">Between 2-4</li>
+                            <li id="il-info-symp-three-3">Between 4-6</li>
+                            <li id="il-info-symp-three-4">More than 7</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <button class="save-btn btn btn-default float-right " id="save-symp-three">Submit </button>
+            </section>
+
         </main>
     </div>
     <footer>
