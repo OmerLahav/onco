@@ -15,9 +15,17 @@ margin: 0 !important;
 padding-bottom: 10px;
 }
 #login-page{
-margin-top:20%;
+margin-top:10%;
 width:100%;
 }
+.login-text{
+position:relative;
+left:-6px;
+}
+.row-logo{
+margin-bottom:0px;
+}
+
 profile-image-login{
 margin:0 auto;
 }
