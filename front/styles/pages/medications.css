@@ -3,6 +3,7 @@ section {
     padding: 60px 0;
 }
 
+
 section .section-title {
     text-align: center;
     color: #007b5e;
@@ -36,13 +37,27 @@ section .section-title {
 
 
 .main-container{
-margin:auto;
-padding-top:30px;
+margin-top:100px;
+
+width:100%;
+    text-align: center;
 }
 
 .p-4{
 width:100%;
 
+}
+
+.position
+{
+    margin-top:10%;
+    display:inline-block;
+    margin:0 auto;
+}
+   
+.card
+{
+    float:left;
 }
 
 .card-body{
@@ -70,16 +85,14 @@ display:inline-block;
 }
 
 
-
-
-
 .steps {
-
-    width:40%;
+width:60%;
+   
     list-style-type: none;
     text-align: left;
     margin-top:20px;
-      font-size: 120%;
+    font-size: 120%;
+    margin-right:5px;
 }
 
 
@@ -101,7 +114,19 @@ display:inline-block;
   border-radius: 3px;
 }
 
+.top-image
+{
+}
+.image-big
+{
+    margin-left:8%;
+     margin-top:1%;
+}
 
+.image-big
+{
+   
+}
 
 .container {
     display: block;

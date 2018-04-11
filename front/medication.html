@@ -2,101 +2,30 @@
 <html lang="en">
 
 <head>
-    <title>Medications on ICan</title>
+  <title>Medications on ICan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="styles/pages/frame.css">
-    <link rel="stylesheet" href="styles/pages/medications.css">
     <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
     <link rel="stylesheet" href="styles/pages/medications.css">
-    
-    <style>
-    
-    .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
-/* Hide the browser's default checkbox */
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 200px;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-    background-color: #00cccc;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 8px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-
-    </style>
 </head>
 
 <body onload="timeChecker()">
+    <!---navbar ---->
     <nav class="navbar navbar-expand navbar-dark bg-info">
         <a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
         <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt=""></a>
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav ml-auto">
-                <div class="avatar">
-                    <a href="#"><img class="image-avatar" alt="" src="https://yt3.ggpht.com/-KAW-Ma7ETqU/AAAAAAAAAAI/AAAAAAAAAAA/gJVH28o-_Vg/s100-c-k-no/photo.jpg"></a>
-                </div>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                  <i class="fa fa-user"></i> Username
-                  </a>
+						<i class="fa fa-user"></i> Username
+					</a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another</a>
@@ -105,35 +34,46 @@
             </ul>
         </div>
     </nav>
-       <!---sidebar---->
-    <div class="d-flex align-items-stretch">
+      <!---sidebar---->
+<div class="d-flex align-items-stretch">
         <div class="sidebar bg-dark">
             <ul class="list-unstyled">
                 <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x "></i> Dashboard</a></li>
                 <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x"></i> Self report</a></li>
-                 <li><a href="medications.html"><i class="fas fa-pills fa-2x"></i> Medications</a></li>
+                <li><a href="medications.html"><i class="fas fa-pills fa-2x"></i> Medications</a></li>
                 <li><a href="medications.html"><i class="fas fa-calendar-check fa-2x"></i> Appointment</a></li>
-                 <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x"></i> My profile</a></li>
-                 <li><a href="settings.html"><i class="fas fa-cog fa-2x"></i> Settings</a></li>
+                <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x"></i> My profile</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog fa-2x"></i> Settings</a></li>
             </ul>
         </div>
-        <main class="p-4">
+
+        <!---content---->
+        <main class="content p-4">
+          
             <h1>Medications</h1>
+            
             <div class="steps">
-                <ol>
-                    <li>
-                        In this stage you will make a request for an appointment.
-                    </li>
+                <ol class="direction">
+                    
                     <li>
                         Please select your health care provider.
                     </li>
+                   <li>
+                        In this stage you will make a request for an appointment.
+                    </li>
                 </ol>
+                            
             </div>
+             
+               
+
             <div class="main-container">
-                <div class="float-left text-center ">
+                <div class=" text-center position">
                     <!---Morning-->
-                    <div class="card text-black bg-light m-3  d-inline-block " >
-                        <div class="card-header" id="card-morrning"> <img src="images/sunrise.png" width="50" height="50" style="position:relative;top:-8px;left:-60px;">
+                    <div class="card text-black bg-light m-3  d-inline">
+
+
+                        <div class="card-header" id="card-morrning"> <img src="images/morning.png" width="50" height="50" style="position:relative;top:-8px;left:-60px;">
                             <p class="daytime-text">Morning </p>
                         </div>
                         <div class="card-body">
@@ -162,7 +102,7 @@
                         </div>
                     </div>
                     <!---Afternoon-->
-                    <div class="card text-black bg-light m-3  d-inline-block " >
+                    <div class="card text-black bg-light m-3  d-inline ">
                         <div class="card-header" id="card-afternoon"> <i class="fas fa-sun fa-2x" style="position:relative;top:2px;left:-60px;"></i>
                             <p class="daytime-text">Afternoon</p>
                         </div>
@@ -192,14 +132,13 @@
                         </div>
                     </div>
                     <!---Evening-->
-                    <div class="clearfix">
-                        <div class="card text-black bg-light m-3  d-inline-block " >
-                            <div class="card-header" id="card-evening"> <img src="images/evening.png" width="50" height="50" style="position:relative;top:-10px;left:-60px;">
-                                <p class="daytime-text">Evening</p>
-                            </div>
-                            <div class="card-body">
-                                <div class="list-group">
-                                    <button type="button" class="list-group-item list-group-item-action evening-box">
+                    <div class="card text-black bg-light m-3  d-inline ">
+                        <div class="card-header" id="card-evening"> <img src="images/evening.png" width="50" height="50" style="position:relative;top:-10px;left:-60px;">
+                            <p class="daytime-text">Evening</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <button type="button" class="list-group-item list-group-item-action evening-box">
                               <div class="image">
                                  <img  class="pill-img"src="images/pills/1484942362ios-emoji-pill.png" alt="akamol">
                               </div>
@@ -209,7 +148,7 @@
                               <span class="checkmark"></span>
                               </label>
                            </button>
-                                    <button type="button" class="list-group-item list-group-item-action evening-box">
+                                <button type="button" class="list-group-item list-group-item-action evening-box">
                               <div class="image">
                                  <img  class="pill-img"src="images/pills/1484942362ios-emoji-pill.png" alt="akamol">
                               </div>
@@ -219,17 +158,17 @@
                               <span class="checkmark"></span>
                               </label>
                            </button>
-                                </div>
                             </div>
                         </div>
-                        <!---Night-->
-                        <div class="card text-black bg-light m-3  d-inline-block " >
-                            <div class="card-header" id="card-night"> <i class="fas fa-moon fa-2x" style="position:relative;top:6px;left:-80px;"></i>
-                                <p class="daytime-text">Night</p>
-                            </div>
-                            <div class="card-body">
-                                <div class="list-group">
-                                    <button type="button" class="list-group-item list-group-item-action night-box">
+                    </div>
+                    <!---Night-->
+                    <div class="card text-black bg-light m-3  d-inline ">
+                        <div class="card-header" id="card-night"> <i class="fas fa-moon fa-2x" style="position:relative;top:6px;left:-80px;"></i>
+                            <p class="daytime-text">Night</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <button type="button" class="list-group-item list-group-item-action night-box">
                               <div class="image">
                                  <img  class="pill-img"src="images/pills/1484942362ios-emoji-pill.png" alt="akamol">
                               </div>
@@ -239,7 +178,7 @@
                               <span class="checkmark"></span>
                               </label>
                            </button>
-                                    <button type="button" class="list-group-item list-group-item-action night-box">
+                                <button type="button" class="list-group-item list-group-item-action night-box">
                               <div class="image">
                                  <img  class="pill-img"src="images/pills/1484942362ios-emoji-pill.png" alt="akamol">
                               </div>
@@ -249,25 +188,31 @@
                               <span class="checkmark"></span>
                               </label>
                            </button>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="clearfix">
+                </div>
             </div>
+
+   
+
         </main>
     </div>
+
     <footer>
         <div class="footer-content">
-            © 2018 Ican
-        </div>
+            © 2018 Ican</div>
     </footer>
+
     <!---scripts---->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jsframe.js"></script>
     <script src="js/medications.js"></script>
+
 </body>
 
 </html>

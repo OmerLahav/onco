@@ -6,11 +6,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/pages/dashboard.css">
-    <link rel="stylesheet" href="styles/pages/frame.css">
+
+<!---bootstrap ---->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
+
+ <!---css ---->
     <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
+    <link rel="stylesheet" href="styles/pages/frame.css">
+    <link rel="stylesheet" href="styles/pages/dashboard.css">
+    
+     <!---google fonts ---->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
 </head>
 
 <body>
@@ -20,10 +28,13 @@
         <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt=""></a>
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav ml-auto">
+                <div class="avatar">
+                    <a href="#"><img class="image-avatar" alt="" src="https://yt3.ggpht.com/-KAW-Ma7ETqU/AAAAAAAAAAI/AAAAAAAAAAA/gJVH28o-_Vg/s100-c-k-no/photo.jpg"></a>
+                </div>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-						<i class="fa fa-user"></i> Username
-					</a>
+                  <i class="fa fa-user"></i> Username
+                  </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another</a>
@@ -32,21 +43,21 @@
             </ul>
         </div>
     </nav>
-      <!---sidebar---->
+    <!---sidebar---->
     <div class="d-flex align-items-stretch">
         <div class="sidebar bg-dark">
             <ul class="list-unstyled">
-                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x" style=" padding:10px;"></i> Dashboard</a></li>
-                <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x" style="position:relative;left:2px;padding:10px;"></i> Self report</a></li>
-                 <li><a href="medications.html"><i class="fas fa-pills fa-2x" style="position:relative;left:11px;"></i>    <span style="border-left: 15px solid red;">Medications</span></a></li>
-                <li><a href="medications.html"><i class="fas fa-calendar-check fa-2x" style="position:relative;left:2px; padding:10px;"></i> Appointment</a></li>
-                 <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x " style="position:relative;left:0; padding:10px; "></i> <span style="position:relative;left:-7px;">My profile</span></a></li>
-                 <li><a href="settings.html"><i class="fas fa-cog fa-2x " style="position:relative;left:2px; padding:10px;"></i> Settings</a></li>
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x "></i> Dashboard</a></li>
+                <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x"></i> Self report</a></li>
+                <li><a href="medications.html"><i class="fas fa-pills fa-2x"></i> Medications</a></li>
+                <li><a href="medications.html"><i class="fas fa-calendar-check fa-2x"></i> Appointment</a></li>
+                <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x"></i> My profile</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog fa-2x"></i> Settings</a></li>
             </ul>
         </div>
 
         <!---content---->
-        <main class="content p-4">
+        <main class="p-4">
             <h1>Dashboard</h1>
             <div class="container bootstrap snippet">
 
@@ -68,7 +79,7 @@
                             <button type="button" class="btn btn-primary">Report taking medication </button>
                         </div>
                     </div>
-                        <div class="col-sm-6">
+                    <div class="col-sm-6">
                         <div class="servive-block rounded servive-block-caramel">
                             <i class="icon-3x color-light fas fa-calendar-check fa-3x"></i>
                             <h2 class="heading-md">Appointment</h2>
@@ -76,8 +87,8 @@
                             <button type="button" class="btn btn-primary">Watch your appointments</button>
                         </div>
                     </div>
-                        
-                        <div class="col-sm-6">
+
+                    <div class="col-sm-6">
                         <div class="servive-block rounded servive-block-blue">
                             <i class="icon-3x color-light fas fa-envelope fa-3x"></i>
                             <h2 class="heading-md">Messages</h2>
@@ -85,12 +96,12 @@
                             <button type="button" class="btn btn-primary">See inbox</button>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </main>
     </div>
-
+    <!---sidebar ---->
     <footer>
         <div class="footer-content">
             © 2018 Ican</div>

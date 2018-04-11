@@ -1,8 +1,12 @@
+*{
+    font-family: 'Poppins';
+      box-sizing: border-box;
+
+}
 .image-avatar{
 	border-radius: 50%;
 	width:60px;
 	height:60px;
-
 }
 
 .navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-text {
@@ -31,7 +35,7 @@
 .sidebar {
     min-width: 250px;
     max-width: 250px;
-    min-height: calc(100vh - 56px);
+    height: 800px;
     transition: all 0.3s;
 }
 .sidebar ul li a {
@@ -70,7 +74,6 @@
 
 h1 {
     color: black;
-    font-family: 'Droid serif', serif;
     font-size: 46px;
     font-weight: 400;
     line-height: 44px;
@@ -99,6 +102,7 @@ footer
    height:50px;
 }
 
+/*responsive*/
 
 @media (max-width: 768px) {
     .sidebar {

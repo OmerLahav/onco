@@ -14,6 +14,8 @@ function timeChecker() {
          $(".afternoon-box, .night-box, .evening-box").click(function() {
               alert("Now it is morning time");
             });
+                $('#morning-big').attr('src', "images/medication-time/morning-2.png");
+
          
     }
     else if (n>12 && n<=18)
@@ -28,6 +30,12 @@ function timeChecker() {
         $(".morning-box, .night-box, .evening-box").click(function() {
               alert("Now it is afternoon time");
             });
+
+               $('#afternoon-big').attr('src', "images/medication-time/afternoon-2.png");
+
+               
+
+
     }
     else if (n>18 && n<=24)
     {
@@ -41,6 +49,8 @@ function timeChecker() {
         $(".morning-box, .night-box, .afternoon-box").click(function() {
               alert("Now it is evening time");
             });
+       $('#evening-big').attr('src', "images/medication-time/evening-2.png");
+
 
     }
     
@@ -56,8 +66,9 @@ function timeChecker() {
         $(".afternoon-box, .night-box, .morning-box").click(function() {
               alert("Now it is night time");
             });
+               $('#night-big').attr('src', "images/medication-time/night-2.png");
+ 
     }
 }
 
- 
 
