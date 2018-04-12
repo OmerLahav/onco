@@ -6,13 +6,18 @@
 
 main{
    width:100%;
+    height:800px;
   
+}
+.tab-content
+{
+    
 }
 .card{ 
 	margin: auto;
 	text-align:center;
-    width:25%;
-    height:400px;
+    width:23%;
+    height:371px;
     margin-bottom: 10px;
     margin-top: 0px;
 }
@@ -20,22 +25,24 @@ main{
 {
         margin-right: 1px;
 }
+
 .calendar{
        margin: auto;
        margin-bottom:10px;
 }
-
+.time-select
+{height:65px;}
 .wizard {
     margin: 20px auto;
     background: #fff;
 
 }
 
--.wizard .nav-tabs {
+.wizard .nav-tabs {
   
   position: relative;
   
-  margin: 40px auto;
+  margin: 20px;
   
   margin-bottom: 0;
   
@@ -140,14 +147,16 @@ margin-left:6%;
 
 .wizard .tab-pane {
     position: relative;
-    padding-top: 50px;
+    padding-top: 10px;
 }
 
 .wizard h3 {
     margin-top: 0;
 }
 
-
+h2{
+    color: #47d147;
+}
 .connecting-line {
     height: 2px;
     background: #e0e0e0;  
@@ -159,6 +168,11 @@ margin-left:6%;
     top: 50%;
     z-index: 1;
 
+}
+.scheduled
+{display: block;
+    margin: auto;
+    margin-top:100px;
 }
 /* ------------------Responsive--------------*/
 @media( max-width: 585px) {
@@ -212,16 +226,18 @@ margin-left:6%;
 
 
 .steps {
-    margin: 0;
+    height: 80px;
     padding: 0;
-    width:40%;
+    width:50%;
     list-style-type: none;
-    text-align: center;
-    margin:auto;
+    
     
 }
 
-
+.navigation-btn
+{
+    text-align: center;
+}
 .steps li {
     counter-increment: step-counter;
     margin-bottom: 10px;
@@ -256,7 +272,7 @@ h4{
     margin-top :10%;
 }
 .card-head{
-    background-color:#538cc6;
+    background-color: #538cc6;
     height: 80px;
  
 }
@@ -264,9 +280,10 @@ h4{
 .doc-icon
 {
     
-    width :40px;
-    height : 38px;
+    width :45px;
+    height : 50px;
     margin-right :5px;
+    margin-top:3px;
     
 }
 
@@ -298,6 +315,8 @@ h4{
   line-height: 2.5em;
   text-indent: 1.25em;
   margin-top: 2em;
+    width:100%;
+    height :60px;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -313,7 +332,7 @@ h4{
   bottom: 0;
   left: 0;
   content: '';
-  width: 2.5em;
+  width: 3.2em;
   background: #D1D3D4;
   border-radius: 3px 0 0 3px;
 }
@@ -326,7 +345,7 @@ h4{
 .funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
 .funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
   content: '\2714';
-  text-indent: .9em;
+  text-indent: 0.5em;
   color: #C2C2C2;
 }
 

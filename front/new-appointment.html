@@ -4,17 +4,21 @@
 <head>
     <title>Homepage</title>
 
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/pages/frame.css">
     <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
+        
     <link rel="stylesheet" href="styles/pages/calendar.css">
+    <link rel="stylesheet" href="styles/pages/frame.css">
     <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
-   
-    <link rel="stylesheet" href="styles/pages/new-appointment.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+     <link rel="stylesheet" href="styles/pages/new-appointment.css">
 
+   
+    
 
     <style>
     </style>
@@ -28,9 +32,6 @@
         <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt=""></a>
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav ml-auto">
-                <div class="avatar">
-                    <a href="#"><img class="image-avatar" alt="" src="https://yt3.ggpht.com/-KAW-Ma7ETqU/AAAAAAAAAAI/AAAAAAAAAAA/gJVH28o-_Vg/s100-c-k-no/photo.jpg"></a>
-                </div>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
 						<i class="fa fa-user"></i> Username
@@ -48,12 +49,11 @@
         <div class="sidebar bg-dark">
             <ul class="list-unstyled">
                 <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x "></i> Dashboard</a></li>
-                <li><a href="symptom%20-%20Copy.html"><i class="fas fa-heartbeat fa-2x"></i> Self report</a></li>
-                 <li><a href="medications.html"><i class="fas fa-pills fa-2x"></i> Medications</a></li>
-                 <li><a href="#"><i class="fas fa-calendar fa-2x"></i> Calendar </a></li>
-                <li><a href="#"><i class="fas fa-envelope fa-2x"></i> Messages </a></li>
-                 <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x"></i> My profile</a></li>
-                 <li><a href="settings.html"><i class="fas fa-cog fa-2x"></i> Settings</a></li>
+                <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x"></i> Self report</a></li>
+                <li><a href="medications.html"><i class="fas fa-pills fa-2x"></i> Medications</a></li>
+                <li><a href="medications.html"><i class="fas fa-calendar-check fa-2x"></i> Appointment</a></li>
+                <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x"></i> My profile</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog fa-2x"></i> Settings</a></li>
             </ul>
         </div>
 
@@ -97,9 +97,9 @@
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane active text-center" role="tabpanel" id="step1">
-                            <div class="steps">
+                             <div class="steps">
                                 <ol>
-                                    <li>
+                                    <li >
                                         In this stage you will make a request for an appointment.
                                     </li>
                                     <li>
@@ -108,8 +108,9 @@
                                 </ol>
                             </div>
                             <div class="text-md-center card box-wizard ">
+                                
                                 <div class="card-head">
-                                    <h4> care provider</h4>
+                                    <h4> Care provider</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="funkyradio">
@@ -122,44 +123,66 @@
                                             <label for="radio2"> <img class="doc-icon" src="images/nurse.png"> Nurse</label>
                                         </div>
                                     </div>
-                                    <img class="step1" src="images/step1.png" alt="">
+                                   
                                 </div>
                             </div>
                             <div class="navigation-btn">
-                                <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
-                                <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
+                                <button type="button" class="btn btn-default prev-step prev-button">Back</button>
+                                <button type="button" class="btn btn-default next-step next-button">Next </button>
                             </div>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step2">
                             <div class="steps">
                                 <ol>
                                     <li>
-                                        In this stage you will make a request for an appointment.
-                                    </li>
-                                    <li>
-                                        Please select your health care provider.
+                                        Please sellect your appointment date.
                                     </li>
                                 </ol>
                             </div>
                             <table class="text-md-center box-wizard calendar " id="calendar"></table>
-                            <div class="center-block text-center">
-                                <button type="button" class="btn btn-lg btn-common prev-step prev-button">Back</button>
-                                <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
+                           <div class="navigation-btn">
+                                <button type="button" class="btn btn-default prev-step prev-button">Back</button>
+                                <button type="button" class="btn btn-default next-step next-button">Next </button>
                             </div>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step3">
-                            <h1 class="text-md-center">Step 3</h1>
-                            <p> Pick time</p>
+                            <div class="steps">
+                                <ol>
+                                    <li>
+                                        Please sellect your appointment time.
+                                    </li>
+                                </ol>
+                            </div>
+                        
+                            
+                            <div class="text-md-center card box-wizard ">
+                                
+                                <div class="card-head">
+                                    <h4> Time select</h4>
+                                </div>
+                                <div class="card-body">
+                                    
+                                    <div class="time-select">
                             <a href="#" class="btn btn-primary">10:00</a>
-                            <a href="#" class="btn btn-primary">11:00</a>
+                            <a href="#" class="btn btn-primary">11:00</a></div>
+                              <div class="time-select">
                             <a href="#" class="btn btn-primary">12:00</a>
-                            <a href="#" class="btn btn-primary">13:00</a>
+                            <a href="#" class="btn btn-primary">13:00</a></div>
+                              <div class="time-select">
                             <a href="#" class="btn btn-primary">14:00</a>
-                            <a href="#" class="btn btn-primary">15:00</a>
+                            <a href="#" class="btn btn-primary">15:00</a></div>
+                                    <div class="time-select">
                             <a href="#" class="btn btn-primary">16:00</a>
-                            <div class="center-block text-center">
-                                <button type="button" class="btn btn-lg btn-common prev-step prev-button ">Back</button>
-                                <button type="button" class="btn btn-lg btn-common next-step next-button">Next </button>
+                            <a href="#" class="btn btn-primary">17:00</a></div>
+                                </div>
+                            </div>
+                            
+                           
+                            
+                            
+                           <div class="navigation-btn">
+                                <button type="button" class="btn btn-default prev-step prev-button">Back</button>
+                                <button type="button" class="btn btn-default next-step next-button">Next </button>
                             </div>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step4">
@@ -169,9 +192,10 @@
                             </ul>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step5">
-                            <h1 class="text-md-center">Your appointment has been scheduled</h1>
+                            <h2 class="text-md-center">Your appointment has been scheduled</h2>
                             <p>If you have any questions regarding your upcoming appointment, please feel free to reach out. Our representatives are here to answer any of your inquiries. We are here to help and look forward to hearing from you! Thank you and have a wonderful day!</p>
-                            <img src="images/success.png">
+                            <img class="scheduled" src="images/time.png">
+                            
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -182,8 +206,7 @@
 
     <footer>
         <div class="footer-content">
-            © 2018 Ican
-        </div>
+            © 2018 Ican</div>
     </footer>
 
     <!---scripts---->
