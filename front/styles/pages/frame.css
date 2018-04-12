@@ -29,8 +29,9 @@
 }
 .logo{
 	
-	width:70px;
-	height:55px;
+	width: 73px;
+    height: 56px;
+    margin-top: -5px;
 }
 .sidebar {
     min-width: 250px;
@@ -95,11 +96,15 @@ h1 {
 }
 footer
 {
-	
-    width:100%;
-   margin-top: 0px;
+   width:100%;
    background-color:rgb(0,200,200);
-   height:50px;
+   height:30px;
+    text-align: center;
+
+}
+.footer-content
+{
+      margin:0 auto;
 }
 
 /*responsive*/
