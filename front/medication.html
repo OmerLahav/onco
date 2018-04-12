@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Medications on ICan</title>
+    <title>Medications on ICan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="styles/pages/frame.css">
     <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
-    <link rel="stylesheet" href="styles/pages/medications.css">
+    <link rel="stylesheet" href="styles/pages/medication.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
 </head>
@@ -34,8 +34,8 @@
             </ul>
         </div>
     </nav>
-      <!---sidebar---->
-<div class="d-flex align-items-stretch">
+    <!---sidebar---->
+    <div class="d-flex align-items-stretch">
         <div class="sidebar bg-dark">
             <ul class="list-unstyled">
                 <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x "></i> Dashboard</a></li>
@@ -49,31 +49,25 @@
 
         <!---content---->
         <main class="content p-4">
-          
             <h1>Medications</h1>
-            
             <div class="steps">
                 <ol class="direction">
-                    
-                    <li>
+                    <li class="step1">
                         Please select your health care provider.
                     </li>
-                   <li>
+                    <li>
                         In this stage you will make a request for an appointment.
                     </li>
                 </ol>
-                            
             </div>
-             
-               
+<!---time---->
+            <div calss="time"><iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=Asia%2FJerusalem" width="100%" height="115" frameborder="0" seamless></iframe> </div>
 
             <div class="main-container">
                 <div class=" text-center position">
                     <!---Morning-->
                     <div class="card text-black bg-light m-3  d-inline">
-
-
-                        <div class="card-header" id="card-morrning"> <img src="images/morning.png" width="50" height="50" style="position:relative;top:-8px;left:-60px;">
+                        <div class="card-header" id="card-morrning"> <img src="images/morning.png" width="50" height="50" style="position:relative;top:-8px;left:-50px;">
                             <p class="daytime-text">Morning </p>
                         </div>
                         <div class="card-body">
@@ -103,7 +97,7 @@
                     </div>
                     <!---Afternoon-->
                     <div class="card text-black bg-light m-3  d-inline ">
-                        <div class="card-header" id="card-afternoon"> <i class="fas fa-sun fa-2x" style="position:relative;top:2px;left:-60px;"></i>
+                        <div class="card-header" id="card-afternoon"><img src="images/medication-time/sun.png" width="50" height="50" style="position:relative;top:-4px;left:-50px;">
                             <p class="daytime-text">Afternoon</p>
                         </div>
                         <div class="card-body">
@@ -133,7 +127,7 @@
                     </div>
                     <!---Evening-->
                     <div class="card text-black bg-light m-3  d-inline ">
-                        <div class="card-header" id="card-evening"> <img src="images/evening.png" width="50" height="50" style="position:relative;top:-10px;left:-60px;">
+                        <div class="card-header" id="card-evening"> <img src="images/evening.png" width="50" height="50" style="position:relative;top:-8px;left:-50px;">
                             <p class="daytime-text">Evening</p>
                         </div>
                         <div class="card-body">
@@ -163,7 +157,7 @@
                     </div>
                     <!---Night-->
                     <div class="card text-black bg-light m-3  d-inline ">
-                        <div class="card-header" id="card-night"> <i class="fas fa-moon fa-2x" style="position:relative;top:6px;left:-80px;"></i>
+                        <div class="card-header" id="card-night"> <img src="images/medication-time/night.png" width="40" height="40" style="position:relative;top:-4px;left:-70px;">
                             <p class="daytime-text">Night</p>
                         </div>
                         <div class="card-body">
@@ -194,9 +188,10 @@
                 </div>
                 <div class="clearfix">
                 </div>
+                <button type="button" class="btn btn-default t-20" id="next">Submit</button>
             </div>
 
-   
+
 
         </main>
     </div>

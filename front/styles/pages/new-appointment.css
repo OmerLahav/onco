@@ -16,7 +16,10 @@ main{
     margin-bottom: 10px;
     margin-top: 0px;
 }
-
+.fa
+{
+        margin-right: 1px;
+}
 .calendar{
        margin: auto;
        margin-bottom:10px;

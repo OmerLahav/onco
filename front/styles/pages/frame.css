@@ -3,6 +3,24 @@
       box-sizing: border-box;
 
 }
+
+h1 {
+    color: black;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 44px;
+    margin: 0 0 12px;
+    text-align: left;
+    border-bottom: 1px solid #538cc6;
+    border-width: 5px;
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+}
+
+/*----top navbar----*/
 .image-avatar{
 	border-radius: 50%;
 	width:60px;
@@ -33,11 +51,14 @@
     height: 56px;
     margin-top: -5px;
 }
+
+/*----slidebar----*/
 .sidebar {
     min-width: 250px;
     max-width: 250px;
     height: 800px;
     transition: all 0.3s;
+        font-size: 17px;
 }
 .sidebar ul li a {
     display: block;
@@ -73,32 +94,19 @@
     margin-left: -250px;
 }
 
-h1 {
-    color: black;
-    font-size: 46px;
-    font-weight: 400;
-    line-height: 44px;
-    margin: 0 0 12px;
-    text-align: left;
-    border-bottom: 1px solid #538cc6;
-    border-width: 5px;
-    width: 100%;
-}
-
-.content {
-    width: 100%;
-}
 
 .display-5 {
     font-size: 2.5rem;
     font-weight: 300;
     line-height: 1.2;
 }
+
+/*----footer----*/
 footer
 {
    width:100%;
    background-color:rgb(0,200,200);
-   height:30px;
+   height:40px;
     text-align: center;
 
 }
@@ -107,7 +115,7 @@ footer
       margin:0 auto;
 }
 
-/*responsive*/
+/*----responsive----*/
 
 @media (max-width: 768px) {
     .sidebar {

@@ -7,8 +7,16 @@ main {
     width: 100%;
 }
 
+
+button:hover{
+    cursor: pointer;
+}
+.btn{
+    margin-top: 50px;
+}
 .nav {
     width: 39%
+            margin-top: 20px;
 }
 
 .tab-content {
@@ -16,8 +24,9 @@ main {
     float: left;
     display: inline;
     margin-right: 10%;
-
+margin-top: 12px;
 }
+
 
 .report-levels {
     width: 40%;
@@ -36,7 +45,8 @@ main {
 .image {
     float: left;
     display: inline;
-    margin-right: 50px;
+    margin-right: 41px;
+    width: 144px;
 
 }
 
@@ -89,7 +99,7 @@ input[type="radio"]:checked + label {
     color: #E6E6E6;
 }
 
-
+/*----pages css----*/
 
 #page-two {
     display: none;
@@ -97,6 +107,13 @@ input[type="radio"]:checked + label {
 
 #page-three {
     display: none;
+}
+
+
+/*----levels 0-4----*/
+.levels-btn
+{
+    float:right;
 }
 
 .report-levels {
@@ -128,11 +145,6 @@ margin-top:82px;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-.buttons{
-    
-    margin-top:20px;
 }
 
 .container-levels input {
@@ -211,6 +223,7 @@ margin-top:82px;
 
 
 }
+/*----nubers css----*/
 .numbers
 {
      margin-bottom: 30px;
@@ -239,7 +252,3 @@ margin-top:82px;
 }
 
 
-.levels-btn
-{
-    float:right;
-}

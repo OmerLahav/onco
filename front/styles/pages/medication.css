@@ -1,9 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
 /* Tabs*/
 section {
     padding: 60px 0;
 }
 
+.time{
+    text-align:center;
+    padding:1em 0;
+    margin-top:10px;
+}
 
+.date
+{
+    padding-right: 65px;
+}
 section .section-title {
     text-align: center;
     color: #007b5e;
@@ -35,9 +48,13 @@ section .section-title {
 }
 
 
+{position: relative;
+    top: -10px;
+    left: -60px;}
+
 
 .main-container{
-margin-top:100px;
+margin-top:70px;
 
 width:100%;
     text-align: center;
@@ -58,6 +75,9 @@ width:100%;
 .card
 {
     float:left;
+}
+.card-header{
+    background-color:#c2d6d6;
 }
 
 .card-body{
@@ -155,7 +175,7 @@ width:60%;
     left: 200px;
     height: 25px;
     width: 25px;
-    background-color: #eee;
+    background-color: #c2d6d6;
 }
 
 /* On mouse-over, add a grey background color */
