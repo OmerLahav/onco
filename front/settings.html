@@ -2,49 +2,59 @@
 <html lang="en">
 <head>
     <title>Settings on ICan</title>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+<!---bootstrap ---->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-	<link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
+
+ <!---css ---->
+    <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
     <link rel="stylesheet" href="styles/pages/frame.css">
-	<link rel="stylesheet" href="styles/bootstrap4.4.3.css">
-    <link rel="stylesheet" href="styles/pages/settings.css">	
+    <link rel="stylesheet" href="styles/pages/Settings.css">
+    
+     <!---google fonts ---->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+	
 </head>
 
 <body>
  <!---navbar ---->
-	<nav class="navbar navbar-expand navbar-dark bg-info">
-		<a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
-		<a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt=""></a>
-		<div class="navbar-collapse collapse">
-			<ul class="navbar-nav ml-auto">
-			  <div class="avatar">
-						<a href="#"><img class="image-avatar" alt="" src="https://yt3.ggpht.com/-KAW-Ma7ETqU/AAAAAAAAAAI/AAAAAAAAAAA/gJVH28o-_Vg/s100-c-k-no/photo.jpg"></a>
-					</div>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-						<i class="fa fa-user"></i> Username
-					</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another</a>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</nav>
+    <nav class="navbar navbar-expand navbar-dark bg-info">
+        <a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
+        <a  class="navbar-brand" ><img class="logo" src="images/logo.png" alt="ican logo"></a>
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                  <i class="fa fa-user" alt="username"></i> Username
+                  </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">settings</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <!---sidebar---->
-	    <div class="d-flex align-items-stretch">
+    <div class="d-flex align-items-stretch">
         <div class="sidebar bg-dark">
             <ul class="list-unstyled">
-                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x "></i> Dashboard</a></li>
-                <li><a href="symptom%20-%20Copy.html"><i class="fas fa-heartbeat fa-2x"></i> Self report</a></li>
-                 <li><a href="medications.html"><i class="fas fa-pills fa-2x"></i> Medications</a></li>
-                 <li><a href="#"><i class="fas fa-calendar fa-2x"></i> Calendar </a></li>
-                <li><a href="#"><i class="fas fa-envelope fa-2x"></i> Messages </a></li>
-                 <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x"></i> My profile</a></li>
-                 <li><a href="settings.html"><i class="fas fa-cog fa-2x"></i> Settings</a></li>
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x " alt="dashboard"></i> Dashboard</a></li>
+                
+                <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x" alt="symptom"></i> Self report</a></li>
+                
+                <li><a href="medication.html"><i class="fas fa-pills fa-2x" alt="medications"></i> Medications</a></li>
+                
+                <li><a href="new-appointment.html"><i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointment</a></li>
+                
+                <li><a href=""><i class="fas fa-id-card-alt fa-2x" alt="appointment"></i> My profile</a></li>
+                
+                <li><a href="settings.html"><i class="fas fa-cog fa-2x" alt="settings"></i> Settings</a></li>
             </ul>
         </div>
 	
