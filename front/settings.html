@@ -1,195 +1,165 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <title>Settings on ICan</title>
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-
-<!---bootstrap ---->
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
-
- <!---css ---->
-    <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
-    <link rel="stylesheet" href="styles/pages/frame.css">
-    <link rel="stylesheet" href="styles/pages/Settings.css">
-    
-     <!---google fonts ---->
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-	
-</head>
-
-<body>
- <!---navbar ---->
-    <nav class="navbar navbar-expand navbar-dark bg-info">
-        <a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
-        <a  class="navbar-brand" href="dashboard.html"><img class="logo" src="images/logo.png" alt="ican logo"></a>
-        <div class="navbar-collapse collapse">
+   <head>
+      <title>Settings on ICan</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+      <!---bootstrap ---->
+      <link rel="stylesheet" href="styles/bootstrap.min.css">
+      <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
+      <!---css ---->
+      <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
+      <link rel="stylesheet" href="styles/pages/frame.css">
+      <link rel="stylesheet" href="styles/pages/Settings.css">
+      <!---google fonts ---->
+      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+   </head>
+   <body>
+      <!---navbar ---->
+      <nav class="navbar navbar-expand navbar-dark bg-info">
+         <a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
+         <a  class="navbar-brand" href="dashboard.html"><img class="logo" src="images/logo.png" alt="ican logo"></a>
+         <div class="navbar-collapse collapse">
             <ul class="navbar-nav ml-auto">
-                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
                   <i class="fa fa-user" alt="username"></i> Username
                   </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">settings</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </div>
-                </li>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="#">settings</a>
+                     <a class="dropdown-item" href="#">Logout</a>
+                  </div>
+               </li>
             </ul>
-        </div>
-    </nav>
-    <!---sidebar---->
-    <div class="d-flex align-items-stretch">
-        <div class="sidebar bg-dark">
+         </div>
+      </nav>
+      <!---sidebar---->
+      <div class="d-flex align-items-stretch">
+         <div class="sidebar bg-dark">
             <ul class="list-unstyled">
-                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x " alt="dashboard"></i> Dashboard</a></li>
-                
-                <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x" alt="symptom"></i> Self report</a></li>
-                
-                <li><a href="medication.html"><i class="fas fa-pills fa-2x" alt="medications"></i> Medications</a></li>
-                
-                <li><a href="new-appointment.html"><i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointment</a></li>
-                
-                <li><a href=""><i class="fas fa-id-card-alt fa-2x" alt="appointment"></i> My profile</a></li>
-                
-                <li><a href="settings.html"><i class="fas fa-cog fa-2x" alt="settings"></i> Settings</a></li>
+               <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x " alt="dashboard"></i> Dashboard</a></li>
+               <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x" alt="symptom"></i> Self report</a></li>
+               <li><a href="medication.html"><i class="fas fa-pills fa-2x" alt="medications"></i> Medications</a></li>
+               <li><a href="new-appointment.html"><i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointment</a></li>
+               <li><a href=""><i class="fas fa-id-card-alt fa-2x" alt="appointment"></i> My profile</a></li>
+               <li><a href="settings.html"><i class="fas fa-cog fa-2x" alt="settings"></i> Settings</a></li>
             </ul>
-        </div>
-	
-	<main class="p-4">
-     <!-- Tabs -->
-<section id="tabs">
-	<div class="container">
-		<h6 class="section-title h1">Tabs</h6>
-		<div class="row">
-			<div class="col-xs-12 ">
-				<nav>
-					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Profile</a>
-						<a class="nav-item nav-link" id="nav-notifications-tab" data-toggle="tab" href="#nav-notifications" role="tab" aria-controls="nav-notifications" aria-selected="false">Notifications</a>
-						<a class="nav-item nav-link" id="nav-legal-tab" data-toggle="tab" href="#nav-legal" role="tab" aria-controls="nav-legal" aria-selected="false">Legal</a>
-					</div>
-				</nav>
-				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-					
-					<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="width:1051px;paddings:80px;"   >
-						 <div class=" col-md-9 col-lg-9 "> 
-                  <table class="table table-user-information">
-                    <tbody>
-                      <tr>
-                        <td>First Name:</td>
-                        <td>Programming</td>
-                      </tr>
-                      <tr>
-                        <td>Last Name:</td>
-                        <td>06/23/2013</td>
-                      </tr>
-                      <tr>
-                        <td>Email</td>
-                        <td>01/24/1988</td>
-                      </tr>
-                   
-                         <tr>
-                             <tr>
-                        <td>Gender</td>
-                        <td>Female</td>
-                      </tr>
-                        <tr>
-                        <td>Password</td>
-                        <td><button href="ChangePassword.html" type="button" class="btn btn-primary">Change password</button></td>
-                      </tr>
-                      <tr>
-                        <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
-                      </tr>
-                        <td>Phone Number</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                        </td>
-                           
-                    
-                    </tbody>
-                  </table>
-          </div>
-					</div>
-					<div class="tab-pane fade" id="nav-notifications" role="tabpanel" aria-labelledby="nav-notifications-tab" style="width:1051px;padding:80px;" >
-                     <div class=" col-md-9 col-lg-9 "> 
-                         <table class="table table-user-information">
-                              <tbody>
-                                  <tr>
-                        <td>Email:</td>
-                        <td><form>
-                      	<i class="fas fa-envelope fa-2x"></i><br>
-  <input type="radio" name="gender" value="male"> Get an email each time there is an update from the system.
-<br>
-  <input type="radio" name="gender" value="female">Off<br>
-                        
-                            </form>			</td>
-                      </tr>
-                         <tr>
-                        <td>SMS:</td>
-                        <td><form>
-                        
-                        
-                              <i class="fas fa-mobile-alt fa-2x"></i><br>
-                      
-  <input type="radio" name="gender" value="male"> Get a SMS each time there is an update from the system.
-<br>
-  <input type="radio" name="gender" value="female">Off<br>
-                        
-                       
-</form></td>
-                      </tr>
-                             </tbody></table>            
-
-                </div>  
+         </div>
+         <main class="p-4">
+            <!-- Tabs -->
+            <section id="tabs">
+               <div class="container">
+                  <h6 class="section-title h1">Settings</h6>
+                  <div class="row">
+                     <div class="col-xs-12 ">
+                        <nav>
+                           <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Profile</a>
+                              <a class="nav-item nav-link" id="nav-notifications-tab" data-toggle="tab" href="#nav-notifications" role="tab" aria-controls="nav-notifications" aria-selected="false">Notifications</a>
+                              <a class="nav-item nav-link" id="nav-legal-tab" data-toggle="tab" href="#nav-legal" role="tab" aria-controls="nav-legal" aria-selected="false">Legal</a>
+                           </div>
+                        </nav>
+                        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                           <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" style="width:1051px;paddings:80px;"   >
+                              <div class=" col-md-9 col-lg-9 ">
+                                 <table class="table table-user-information">
+                                    <tbody>
+                                       <tr>
+                                          <td>First Name:</td>
+                                          <td>Programming</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Last Name:</td>
+                                          <td>06/23/2013</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Email</td>
+                                          <td>01/24/1988</td>
+                                       </tr>
+                                       <tr>
+                                       <tr>
+                                          <td>Gender</td>
+                                          <td>Female</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Password</td>
+                                          <td><button href="ChangePassword.html" type="button" class="btn btn-primary">Change password</button></td>
+                                       </tr>
+                                       <tr>
+                                          <td>Email</td>
+                                          <td><a href="mailto:info@support.com">info@support.com</a></td>
+                                       </tr>
+                                       <td>Phone Number</td>
+                                       <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                                       </td>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="nav-notifications" role="tabpanel" aria-labelledby="nav-notifications-tab" style="width:1051px;padding:80px;" >
+                              <div class=" col-md-9 col-lg-9 ">
+                                 <table class="table table-user-information">
+                                    <tbody>
+                                       <tr>
+                                          <td>Email:</td>
+                                          <td>
+                                             <form>
+                                                <i class="fas fa-envelope fa-2x"></i><br>
+                                                <input type="radio" name="gender" value="male"> Get an email each time there is an update from the system.
+                                                <br>
+                                                <input type="radio" name="gender" value="female">Off<br>
+                                             </form>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td>SMS:</td>
+                                          <td>
+                                             <form>
+                                                <i class="fas fa-mobile-alt fa-2x"></i><br>
+                                                <input type="radio" name="gender" value="male"> Get a SMS each time there is an update from the system.
+                                                <br>
+                                                <input type="radio" name="gender" value="female">Off<br>
+                                             </form>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="nav-legal" role="tabpanel" aria-labelledby="nav-legal-tab" style="width:1051px;padding:80px;" >
+                              <div class=" col-md-9 col-lg-9 ">
+                                 <table class="table table-user-information">
+                                    <tbody>
+                                       <tr>
+                                          <td>Terms of Use:</td>
+                                          <td><a href="#">link2</a></td>
+                                       </tr>
+                                       <tr>
+                                          <td>Privacy desclaimer:</td>
+                                          <td><a href="#">link2</a></td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
                         </div>
-					
-				<div class="tab-pane fade" id="nav-legal" role="tabpanel" aria-labelledby="nav-legal-tab" style="width:1051px;" >
-                  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-</div>
-<div class="tab-content" id="v-pills-tabContent">
-  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-</div>
-
-                     
-
-                </div>                    
-					
-				
-			
-			</div>
-		</div>
-	</div>
-</section>
-<!-- ./Tabs -->
-        
-                 
-		
-	</main>
-
-</div>
-
-		<footer>
-        <div class="footer-content">
-            © 2018 Ican</div>
-    </footer>
-   
-			  
-	<!---scripts---->		  
-		<script src="js/jquery.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jsframe.js"></script>
-
-
-</body>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ./Tabs -->
+         </main>
+      </div>
+      <footer>
+         <div class="footer-content">
+            © 2018 Ican
+         </div>
+      </footer>
+      <!---scripts---->		  
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jsframe.js"></script>
+   </body>
 </html>
