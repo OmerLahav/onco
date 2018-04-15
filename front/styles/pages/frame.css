@@ -125,3 +125,25 @@ footer
         margin-left: 0;
     }
 }
+
+
+
+/* ------------------Responsive--------------*/
+
+@media( max-width: 1920px) {
+.sidebar{
+height: 970px;
+}
+}
+
+@media( max-width: 585px) {
+h1{
+font-size:36px;
+}
+h2{
+font-size:26px;
+}
+   
+
+}
+/* ------------------ End Responsive--------------*/
