@@ -18,6 +18,7 @@
     
      <!---google fonts ---->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Signika" rel="stylesheet">
 
     
 
@@ -75,7 +76,16 @@
             <div class="tab-content">
                 <!--Regular-->
                 <div class="tab-pane active container" id="regular">
-                    <p>Please choose a symptom for report</p>
+                    <div class="steps">
+                <ol class="direction">
+                    <li class="step1">
+                        Please choose a symptom for report.
+                    </li>
+                    <li>
+                       After selecting sympton plese select level of pain.
+                    </li>
+                </ol>
+            </div>
 
                     <!---page 1----->
                     <div class="list-group" id="page-one">
@@ -367,7 +377,7 @@
                     </div>
                 </div>
 
-                <button class="save-btn btn btn-default float-right " id="save-symp-three">Submit </button>
+                <button class="save-btn btn btn-default float-right " id="save-symp-three" type="submit">Submit </button>
             </section>
 
         </main>

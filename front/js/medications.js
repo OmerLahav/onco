@@ -14,7 +14,13 @@ function timeChecker() {
          $(".afternoon-box, .night-box, .evening-box").click(function() {
               alert("Now it is morning time");
             });
-                $('#morning-big').attr('src', "images/medication-time/morning-2.png");
+               
+         
+         $('#mecication-submit').click(function () {
+        if (!$("input[name='morning-acamol']:checked").val()) {
+            alert('You must select the right meducatcation');
+        } 
+        });
 
          
     }
@@ -31,8 +37,12 @@ function timeChecker() {
               alert("Now it is afternoon time");
             });
 
-               $('#afternoon-big').attr('src', "images/medication-time/afternoon-2.png");
-
+             
+  $('#mecication-submit').click(function () {
+        if (!$("input[name='afternoon-acamol']:checked").val()) {
+            alert('You must select the right meducatcation');
+        } 
+        });
                
 
 
@@ -49,7 +59,14 @@ function timeChecker() {
         $(".morning-box, .night-box, .afternoon-box").click(function() {
               alert("Now it is evening time");
             });
-       $('#evening-big').attr('src', "images/medication-time/evening-2.png");
+        
+         $('#mecication-submit').click(function () {
+        if (!$("input[name='evening-acamol']:checked").val()) {
+            alert('You must select the right meducatcation');
+        } 
+        });
+            
+      
 
 
     }
@@ -66,7 +83,13 @@ function timeChecker() {
         $(".afternoon-box, .night-box, .morning-box").click(function() {
               alert("Now it is night time");
             });
-               $('#night-big').attr('src', "images/medication-time/night-2.png");
+         $('#mecication-submit').click(function () {
+        if (!$("input[name='night-acamol']:checked").val()) {
+            alert('You must select the right meducatcation');
+        } 
+        });
+            
+              
  
     }
 }
