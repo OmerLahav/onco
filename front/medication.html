@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="styles/fontawesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="styles/pages/frame.css">
     <link rel="stylesheet" href="styles/bootstrap4.4.3.css">
-    <link rel="stylesheet" href="styles/pages/medication.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-
+    <link rel="stylesheet" href="styles/pages/medication.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather|Signika" rel="stylesheet">
 </head>
 
 <body onload="timeChecker()">
@@ -64,6 +64,7 @@
             <div calss="time"><iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=Asia%2FJerusalem" width="100%" height="115" frameborder="0" seamless></iframe> </div>
 
             <div class="main-container">
+                 <form class=form-medication>
                 <div class=" text-center position">
                     <!---Morning-->
                     <div class="card text-black bg-light m-3  d-inline">
@@ -138,7 +139,7 @@
                               </div>
                               <p class="image-info"></p>
                               <label class="container">Akamol
-                              <input type="checkbox" id="evening-akamol-one">
+                              <input type="checkbox" id="evening-akamol-one" name="evening-akamol">
                               <span class="checkmark"></span>
                               </label>
                            </button>
@@ -148,7 +149,7 @@
                               </div>
                               <p class="image-info"></p>
                               <label class="container">Akamol
-                              <input type="checkbox"  id="evening-akamol-two">
+                              <input type="checkbox"  id="evening-akamol-two" name="evening-akamol">
                               <span class="checkmark"></span>
                               </label>
                            </button>
@@ -168,7 +169,7 @@
                               </div>
                               <p class="image-info"></p>
                               <label class="container">Akamol
-                              <input type="checkbox"  id="night-akamol-one">
+                              <input type="checkbox"  id="night-akamol-one" name="night-akamol">
                               <span class="checkmark"></span>
                               </label>
                            </button>
@@ -178,17 +179,19 @@
                               </div>
                               <p class="image-info"></p>
                               <label class="container">Akamol
-                              <input type="checkbox" id="night-akamol-two">
+                              <input type="checkbox" id="night-akamol-two" name="night-akamol">
                               <span class="checkmark"></span>
                               </label>
                            </button>
                             </div>
                         </div>
                     </div>
+                       
                 </div>
                 <div class="clearfix">
                 </div>
-                <button type="button" class="btn btn-default t-20" id="next">Submit</button>
+                <button class="btn btn-default t-20" id="mecication-submit" type="submit">Submit</button>
+                      </form>
             </div>
 
 
@@ -207,7 +210,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jsframe.js"></script>
     <script src="js/medications.js"></script>
-
+   
+    
 </body>
 
 </html>

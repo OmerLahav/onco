@@ -121,7 +121,9 @@ width:60%;
     margin-bottom: 10px;
     list-style-type:none;
     text-align:left; 
+     font-family: 'Signika', sans-serif;
 }
+
 
 .steps li::before {
   content: counter(step-counter);
@@ -134,19 +136,15 @@ width:60%;
   border-radius: 3px;
 }
 
-.top-image
-{
-}
-.image-big
-{
-    margin-left:8%;
-     margin-top:1%;
+.step1 ::before {
+    font-size: 90%;
+  padding: 3px 11px;
 }
 
-.image-big
-{
-   
-}
+
+
+
+
 
 .container {
     display: block;
