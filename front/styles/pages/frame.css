@@ -37,7 +37,7 @@ h1 {
 }
 
 .navbar{
-	height:70px;
+	height:25%;
 }
 
 .navbar-brand
@@ -56,7 +56,6 @@ h1 {
 .sidebar {
     min-width: 250px;
     max-width: 250px;
-    height: 800px;
     transition: all 0.3s;
         font-size: 17px;
 }
@@ -115,8 +114,13 @@ footer
       margin:0 auto;
 }
 
-/*----responsive----*/
 
+
+
+
+/* ------------------Responsive--------------*/
+
+/*----responsive----*/
 @media (max-width: 768px) {
     .sidebar {
         margin-left: -250px;
@@ -124,18 +128,26 @@ footer
     .sidebar.toggled {
         margin-left: 0;
     }
+    h1{
+font-size:34px;
+}
+    
+h2{
+font-size:26px;
+}
+    main li
+    {
+    
+    display:block;
+        width:100%;
+    }
 }
 
 
 
-/* ------------------Responsive--------------*/
+@media( max-width: 1920px) 
 
-@media( max-width: 1920px) {
-.sidebar{
-height: 970px;
-}
-}
-
+    {}
 @media( max-width: 585px) {
 h1{
 font-size:36px;
