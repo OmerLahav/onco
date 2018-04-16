@@ -80,11 +80,11 @@ function timeChecker() {
          document.getElementById("afternoon-akamol-two").disabled = true;
          document.getElementById("evening-akamol-one").disabled = true;
          document.getElementById("evening-akamol-two").disabled = true;
-        $(".afternoon-box, .night-box, .morning-box").click(function() {
+        $(".afternoon-box, .evening-box, .morning-box").click(function() {
               alert("Now it is night time");
             });
          $('#mecication-submit').click(function () {
-        if (!$("input[name='night-acamol']:checked").val()) {
+        if (!$("input[name='night-akamol']:checked").val()) {
             alert('You must select the right meducatcation');
         } 
         });
