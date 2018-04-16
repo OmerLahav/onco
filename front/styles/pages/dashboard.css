@@ -16,18 +16,35 @@ width:100%;
 
 }
 
+.btn{
+background-color:rgb(26, 188, 156);
+}
+
 /*Colored Content Boxes
 ------------------------------------*/
+.box{
+
+height:300px;
+}
+
 .servive-block {
   padding: 20px 30px;
   text-align: center;
   margin-bottom: 20px;
+  height:250px;
 }
 
-.servive-block p,
+
 .servive-block h2 {
   color: #fff;
 }
+
+
+.servive-block p{
+height:50px; 
+ color: #fff;
+}
+
 
 .servive-block h2 a:hover{
   text-decoration: none;
@@ -52,70 +69,64 @@ width:100%;
 
 
 .servive-block-blue {
-  background: linear-gradient(to right,#03a9f4,#03e9f4);
-}
-.servive-block-frost {
-background: #000428;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: rgb(75, 101, 132);
 }
 
-.servive-block-purple {
-background: #42275a;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-.servive-block-royal {
-background: #141E30;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-
-.servive-block-red{
-background: #F00000;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #DC281E, #F00000);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #DC281E, #F00000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-.servive-block-dusk{
-background: #2C3E50;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FD746C, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FD746C, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-.servive-block-sea{
-background: #2C3E50;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.servive-block-sunset{
-background: #e96443;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
 
 
 .servive-block-pink{
-background: #DE6262;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FFB88C, #DE6262);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FFB88C, #DE6262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background:rgb(252, 92, 101);
 }
 
 .servive-block-parklife{
-background: #ADD100;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #7B920A, #ADD100);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #7B920A, #ADD100); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: rgb(75, 123, 236);  
 }
 
 .servive-block-caramel{
-background: #D1913C;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FFD194, #D1913C);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FFD194, #D1913C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background:rgb(253, 150, 68);
 
 }
+
+.servive-block btn{
+
+margin-bottom:20px;
+display:inline;
+}
+
+.btn{
+    text-transform: none;
+    background-color:transparent;
+    border-style: solid;
+    border-color: white;
+}
+
+/* ------------------Responsive--------------*/
+
+@media( max-width: 1920px) 
+
+ {
+
+}
+@media (max-width: 768px) {
+
+}
+
+
+/*----mobile----*/
+@media( max-width: 585px) {
+.btn{
+   width: 90%;
+padding-left:5%;
+padding-right:5%;
+}
+
+.servive-block {
+  padding: 20px 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  height:60%;
+}
+
+
+}
+/* ------------------ End Responsive--------------*/

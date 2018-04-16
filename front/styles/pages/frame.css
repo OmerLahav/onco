@@ -47,7 +47,7 @@ h1 {
 }
 .logo{
 	
-	width: 73px;
+	width: 85px;
     height: 56px;
     margin-top: -5px;
 }
@@ -106,21 +106,24 @@ footer
    width:100%;
    background-color:rgb(0,200,200);
    height:40px;
-    text-align: center;
+   text-align: center;
 
 }
-.footer-content
-{
-      margin:0 auto;
+.footer-content{
+magin: auto;
+position:relative;
+top:10px;
 }
-
-
 
 
 
 /* ------------------Responsive--------------*/
 
-/*----responsive----*/
+@media( max-width: 1920px) 
+
+ {
+
+}
 @media (max-width: 768px) {
     .sidebar {
         margin-left: -250px;
@@ -144,10 +147,7 @@ font-size:26px;
 }
 
 
-
-@media( max-width: 1920px) 
-
-    {}
+/*----mobile----*/
 @media( max-width: 585px) {
 h1{
 font-size:36px;
@@ -155,7 +155,35 @@ font-size:36px;
 h2{
 font-size:26px;
 }
-   
+.sidebar-toggle{
+width:10%;
+} 
 
+.fa-user{
+padding-right:0px;
+text-align:right;
+}  
+.logo{
+width:80%;
+position:relative;
+top:-8px;
+}
+
+.navbar{
+position:fixed;
+height:10%;
+ z-index:1;
+top:0;
+}
+
+
+h1{
+margin: 44px 0 12px;
+font-size:30px;
+}
+
+.navbar-expand{
+height:56px;
+padding:
 }
 /* ------------------ End Responsive--------------*/
