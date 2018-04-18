@@ -87,20 +87,28 @@
 
         <!---content---->
         <main class="content p-4">
-            <h1>Add patient</h1>
+            <h1>Add Treatment</h1>
             <div class="container">
   <form name="register-patient" action="/action_page.php">
    <div class="form-group">
-      <label for="id">ID:</label>
-      <input type="number" class="form-control" id="id" placeholder="Enter ID" name="id">
+      <!---should create automatic id!!--->
+       
+       
+       <div class="form-group">
+      <label for="patient">Choose Patient:</label>
+      <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Yossi</a></li>
+      <li><a href="#">Avi</a></li>
+      <li><a href="#">Shoshi</a></li>
+    </ul>
+  </div>
     </div>
        <div class="form-group">
-      <label for="first_name">First name:</label>
-      <input type="text" class="form-control" id="first_name" placeholder="Enter First name" name="first_name">
-    </div>
-       <div class="form-group">
-      <label for="last_name">Last name:</label>
-      <input type="text" class="form-control" id="last_name" placeholder="Enter Last name" name="last_name">
+      <label for="last_name">Choose treatment start:</label>
+      <input type="date" class="form-control" id="treatment_start" placeholder="Date" name="treatment_start">
     </div>
     <div class="form-group">
       <label for="email">Email:</label>

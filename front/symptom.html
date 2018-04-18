@@ -391,6 +391,47 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jsframe.js"></script>
     <script src="js/symptom.js"></script>
+    <script>
+       
+        $(document).ready(function() {
+                if ($(window).width() <481) {
+                 $(".tab-content").css({"width": "100%"});
+                    
+                 $(".symp-one").click(function () {
+                $(".section-symp-2,.section-symp-3,.tab-content").hide();
+              $(".section-symp-1").show();
+                      $(".report-levels").css({"width": "100%"});
+                     
+                 });
+                    
+                    $('#save-symp-one').click(function () {
+        if (!$("input[name='symptom-1']:checked").val()) {
+            alert('Please select level');
+        } else {
+            $(".symp-three").css("background", "#d6f5d6");
+            $(".section-symp-1").hide();
+              $(".tab-content").show();
+              $(".tab-content").css({"width": "100%"});
+            }
+           });
+ 
+                    
+                }
+     
+ 
+                                         
+
+  
+    });
+</script>   
+                    
+
+
+
+  
+    
+    
+
 
 </body>
 
