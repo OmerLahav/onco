@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Patients -Admin Panel ICan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/pages/dashboard.css">
+    <link rel="stylesheet" href="../styles/pages/frame.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/fontawesome/css/fontawesome-all.min.css">
+
+<style>
+  fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+.well-legend {
+  display: block;
+  font-size: 14px;
+  width: auto;
+  padding: 2px 7px 2px 5px;
+  margin-bottom: 20px;
+  line-height: inherit;
+  color: #333;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+    
+    .container{
+     margin-top:30px;   
+    }
+    
+    
+   
+    
+    </style>
+</head>
+
+<body>
+    <!---navbar ---->
+    <nav class="navbar navbar-expand navbar-dark bg-info">
+        <a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
+        <a class="navbar-brand" href="#"><img class="logo" src="../images/logo.png" alt=""></a>
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+						<i class="fa fa-user"></i> Username
+					</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+      <!---sidebar---->
+    <div class="d-flex align-items-stretch">
+        <div class="sidebar bg-dark">
+            <ul class="list-unstyled">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x" ></i> Dashboard</a></li>
+                <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x" ></i>Patients</a></li>
+                 <li><a href="medications.html"><i class="fas fa-pills fa-2x" ></i>   Medications</a></li>
+                <li><a href="medications.html"><i class="fas fa-calendar-check fa-2x" ></i> Appointment</a></li>
+                 <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x " ></i> My profile</a></li>
+                 <li><a href="settings.html"><i class="fas fa-cog fa-2x " ></i> Settings</a></li>
+            </ul>
+        </div>
+
+        <!---content---->
+        <main class="content p-4">
+            <h1>Add patient</h1>
+            <div class="container">
+  <form name="register-patient" action="/action_page.php">
+   <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="number" class="form-control" id="id" placeholder="Enter ID" name="id">
+    </div>
+       <div class="form-group">
+      <label for="first_name">First name:</label>
+      <input type="text" class="form-control" id="first_name" placeholder="Enter First name" name="first_name">
+    </div>
+       <div class="form-group">
+      <label for="last_name">Last name:</label>
+      <input type="text" class="form-control" id="last_name" placeholder="Enter Last name" name="last_name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label><br>
+      <input type="password" class="form-control d-inline" id="pwd" placeholder="Enter password" name="pswd" >
+        <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2">
+    </div>
+        <div class="form-group">
+      <label for="num">Phone number:</label>
+       <input type="tel" class="form-control"  id="telNo" name="telNo"  placeholder="Enter Phone number" size="20" minlength="9" maxlength="14">
+    </div>
+    
+  <fieldset class="well the-fieldset">
+	<legend class="the-legend">Contact person</legend>
+	<form>
+		 <div class="form-group">
+      <label for="num">Contact name:</label>
+      <input type="text" class="form-control" id="first_name" placeholder="Enter First name" name="first_name">
+    </div>
+		 <div class="form-group">
+      <label for="num">Phone number:</label>
+       <input type="tel" class="form-control"  id="telNo" name="telNo"  placeholder="Enter Phone number" size="20" minlength="9" maxlength="14">
+    </div>
+	<div class="form-group">
+      <label for="num">Email:</label>
+       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>	
+		
+	</form>
+</fieldset>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+ </div>          
+        </main>
+
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            © 2018 Ican</div>
+    </footer>
+
+    <!---scripts---->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jsframe.js"></script>
+
+</body>
+
+</html>
