@@ -8,15 +8,29 @@ section {
     padding: 60px 0;
 }
 
+
+
 .time {
+    margin-left:500px;
+    color: black;
     text-align: center;
-    padding: 1em 0;
-    margin-top: 10px;
+    width: 300px;
+}
+.hms {
+
+    font-size: 48pt;
+    font-weight: 200;
+}
+.ampm {
+    font-size: 12pt;
+}
+.date {
+    font-size: 10pt;
 }
 
-.date {
-    padding-right: 65px;
-}
+
+
+
 
 section .section-title {
     text-align: center;
@@ -236,7 +250,8 @@ section .section-title {
         list-style-position: inside;
     }
     .time{
-        width:50%;
+        width:100%;
+margin-left:0px;
     }
 
 .form-medication{

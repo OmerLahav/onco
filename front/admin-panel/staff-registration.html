@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Patients -Admin Panel ICan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/pages/dashboard.css">
+    <link rel="stylesheet" href="../styles/pages/frame.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/fontawesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="bootstrap-select.css">
+<script src="bootstrap-select.js"></script>
+    
+    <style>
+  fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+.well-legend {
+  display: block;
+  font-size: 14px;
+  width: auto;
+  padding: 2px 7px 2px 5px;
+  margin-bottom: 20px;
+  line-height: inherit;
+  color: #333;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+    
+    .container{
+     margin-top:30px;   
+    }
+    
+    
+   
+    
+    </style>
+</head>
+
+<body>
+    <!---navbar ---->
+    <nav class="navbar navbar-expand navbar-dark bg-info">
+        <a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars"></i></a>
+        <a class="navbar-brand" href="#"><img class="logo" src="../images/logo.png" alt=""></a>
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+						<i class="fa fa-user"></i> Username
+					</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+      <!---sidebar---->
+    <div class="d-flex align-items-stretch">
+        <div class="sidebar bg-dark">
+            <ul class="list-unstyled">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x" ></i> Dashboard</a></li>
+                <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x" ></i>Patients</a></li>
+                 <li><a href="medications.html"><i class="fas fa-pills fa-2x" ></i>   Medications</a></li>
+                <li><a href="medications.html"><i class="fas fa-calendar-check fa-2x" ></i> Appointment</a></li>
+                 <li><a href="myprofile.html"><i class="fas fa-id-card-alt fa-2x " ></i> My profile</a></li>
+                 <li><a href="settings.html"><i class="fas fa-cog fa-2x " ></i> Settings</a></li>
+            </ul>
+        </div>
+
+        <!---content---->
+        <main class="content p-4">
+            <h1>Add patient</h1>
+            <div class="container">
+  <form name="register-patient" action="/action_page.php">
+   <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="number" class="form-control" id="id" placeholder="Enter ID" name="id">
+    </div>
+       <div class="form-group">
+      <label for="first_name">First name:</label>
+      <input type="text" class="form-control" id="first_name" placeholder="Enter First name" name="first_name">
+    </div>
+       <div class="form-group">
+      <label for="last_name">Last name:</label>
+      <input type="text" class="form-control" id="last_name" placeholder="Enter Last name" name="last_name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label><br>
+      <input type="password" class="form-control d-inline" id="pwd" placeholder="Enter password" name="pswd" >
+        <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2">
+    </div>
+        <div class="form-group">
+      <label for="num">Phone number:</label>
+       <input type="tel" class="form-control"  id="telNo" name="telNo"  placeholder="Enter Phone number" size="20" minlength="9" maxlength="14">
+    </div>
+      <form class="form-inline">
+    <div class="form-group">
+      <label class="col-md-1 control-label" for="lunch">Lunch:</label>
+    </div>
+    <div class="form-group">
+      <div class="btn-group bootstrap-select"><button type="button" class="btn dropdown-toggle bs-placeholder btn-default btn-light" data-toggle="dropdown" role="button" data-id="lunch" title="Please select a lunch ..." aria-expanded="false"><span class="filter-option pull-left">Please select a lunch ...</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox" x-placement="bottom-start" style="max-height: 414px; overflow: hidden; min-height: 129px; position: absolute; transform: translate3d(0px, 44px, 0px); top: 0px; left: 0px; will-change: transform;"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 350px; overflow-y: auto; min-height: 65px;"><a tabindex="0" class="dropdown-item" data-original-index="1"><span class="dropdown-item-inner " data-tokens="null" role="option" tabindex="0" aria-disabled="false" aria-selected="false"><span class="text">Hot Dog, Fries and a Soda</span><span class="fa fa-check check-mark"></span></span></a><a tabindex="0" class="dropdown-item" data-original-index="2"><span class="dropdown-item-inner " data-tokens="null" role="option" tabindex="0" aria-disabled="false" aria-selected="false"><span class="text">Burger, Shake and a Smile</span><span class="fa fa-check check-mark"></span></span></a><a tabindex="0" class="dropdown-item" data-original-index="3"><span class="dropdown-item-inner " data-tokens="null" role="option" tabindex="0" aria-disabled="false" aria-selected="false"><span class="text">Sugar, Spice and all things nice</span><span class="fa fa-check check-mark"></span></span></a><a tabindex="0" class="dropdown-item" data-original-index="4"><span class="dropdown-item-inner " data-tokens="null" role="option" tabindex="0" aria-disabled="false" aria-selected="false"><span class="text">Baby Back Ribs</span><span class="fa fa-check check-mark"></span></span></a><a tabindex="0" class="dropdown-item" data-original-index="5"><span class="dropdown-item-inner " data-tokens="null" role="option" tabindex="0" aria-disabled="false" aria-selected="false"><span class="text">A really really long option made to illustrate an issue with the live search in an inline form</span><span class="fa fa-check check-mark"></span></span></a></div></div><select id="lunch" class="selectpicker" data-live-search="true" title="Please select a lunch ..." tabindex="-98"><option class="bs-title-option" value="">Please select a lunch ...</option>
+        <option>Hot Dog, Fries and a Soda</option>
+        <option>Burger, Shake and a Smile</option>
+        <option>Sugar, Spice and all things nice</option>
+        <option>Baby Back Ribs</option>
+        <option>A really really long option made to illustrate an issue with the live search in an inline form</option>
+      </select></div>
+    </div>
+  </form>
+    
+
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+ </div>          
+        </main>
+
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            © 2018 Ican</div>
+    </footer>
+
+    <!---scripts---->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jsframe.js"></script>
+<script>
+    var mySelect = $('select').selectpicker();;
+var mySelect = $('select').selectpicker({
+
+    // text for no selection
+    noneSelectedText: 'Nothing selected',
+
+    // text for no result
+    noneResultsText: 'No results matched {0}',
+
+    // Sets the format for the text displayed when selectedTextFormat is count or count > #. {0} is the selected amount. {1} is total available for selection.
+    // When set to a function, the first parameter is the number of selected options, and the second is the total number of options. 
+    // The function must return a string.
+    countSelectedText: function (numSelected, numTotal) {
+      return (numSelected == 1) ? "{0} item selected" : "{0} items selected";
+    },
+
+    // The text that is displayed when maxOptions is enabled and the maximum number of options for the given scenario have been selected.
+    // If a function is used, it must return an array. array[0] is the text used when maxOptions is applied to the entire select element. array[1] is the text used when maxOptions is used on an optgroup. 
+    // If a string is used, the same text is used for both the element and the optgroup.
+    maxOptionsText: function (numAll, numGroup) {
+      return [
+        (numAll == 1) ? 'Limit reached ({n} item max)' : 'Limit reached ({n} items max)',
+        (numGroup == 1) ? 'Group limit reached ({n} item max)' : 'Group limit reached ({n} items max)'
+      ];
+    },
+
+    // Text for Select All button
+    selectAllText: 'Select All',
+
+    // Text for Deselect All button
+    deselectAllText: 'Deselect All',
+
+    // Shows done button
+    doneButton: false,
+
+    // Text for done button
+    doneButtonText: 'Close',
+
+    // custom separator
+    multipleSeparator: ', ',
+
+    // button styles
+    styleBase: 'btn',
+    style: 'btn-default',
+
+    // dropdown size
+    size: 'auto',
+
+    // dropdown title
+    title: null,
+
+    // 'values' | 'static' | 'count' | 'count > x'
+    selectedTextFormat: 'values',
+
+    // dropdown width
+    width: false,
+
+    // e.g., container: 'body' | '.main-body'
+    container: false,
+
+    // hide disabled options
+    hideDisabled: false,
+
+    // shows sub text
+    showSubtext: false,
+
+    // shows icon
+    showIcon: true,
+
+    // shows content
+    showContent: true,
+
+    // auto dropup
+    dropupAuto: true,
+
+    // shows dropdown header
+    header: false,
+
+    // live search options
+    liveSearch: false,
+    liveSearchPlaceholder: null,
+    liveSearchNormalize: false,
+    liveSearchStyle: 'contains',
+
+    // enables Select All / Deselect All box
+    actionsBox: false,
+
+    // icons
+    iconBase: 'glyphicon',
+    tickIcon: 'glyphicon-ok',
+
+    // shows checkmark on selected option
+    showTick: false,
+
+    // custom template
+    template: {
+      caret: '<span class="caret"></span>'
+    },
+
+    // string | array | function
+    maxOptions: false,
+
+    // enables the device's native menu for select menus
+    mobile: false,
+
+    // treats the tab character like the enter or space characters within the selectpicker dropdown.
+    selectOnTab: false,
+
+    // Align the menu to the right instead of the left.
+    dropdownAlignRight: false,
+
+    // e.g. [top, right, bottom, left]
+    windowPadding: 0
+    
+});;
+    var mySelect = $('select').selectpicker({
+02
+ 
+03
+    // options here
+04
+ 
+05
+});;
+06
+ 
+07
+// Sets the selected value
+08
+mySelect.selectpicker('val', 'JQuery');
+09
+mySelect.selectpicker('val', ['jQuery','Script']);
+10
+ 
+11
+// Selects all items
+12
+mySelect.selectpicker('selectAll');
+13
+ 
+14
+// Clears all
+15
+mySelect.selectpicker('deselectAll');
+16
+ 
+17
+// Re-render
+18
+mySelect.selectpicker('render');
+19
+ 
+20
+// Enables mobile scrolling
+21
+if( /<a href="https://www.jqueryscript.net/tags.php?/Android/">Android</a>|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+22
+  mySelect.selectpicker('mobile');
+23
+}
+24
+ 
+25
+// Sets styles
+26
+// Replace Class
+27
+mySelect.selectpicker('setStyle', 'btn-danger');
+28
+// Add Class
+29
+mySelect.selectpicker('setStyle', 'btn-large', 'add');
+30
+// Remove Class
+31
+mySelect.selectpicker('setStyle', 'btn-large', 'remove');
+32
+ 
+33
+// Refreshes
+34
+mySelect.selectpicker('refresh');
+35
+ 
+36
+// Toggles the drop down list
+37
+mySelect.selectpicker('toggle');
+38
+ 
+39
+// Hides the drop down list
+40
+mySelect.selectpicker('hide');
+41
+ 
+42
+// Shows the drop down list
+43
+mySelect.selectpicker('show');
+44
+ 
+45
+// Destroys the drop down list
+46
+mySelect.selectpicker('destroy');
+
+   mySelect.on('show.bs.select', function (e) {
+02
+  // on show
+03
+});
+04
+ 
+05
+mySelect.on('shown.bs.select', function (e) {
+06
+  // on shown
+07
+});
+08
+ 
+09
+mySelect.on('hide.bs.select', function (e) {
+10
+  // on hide
+11
+});
+12
+ 
+13
+mySelect.on('hidden.bs.select', function (e) {
+14
+  // do hidden
+15
+});
+16
+ 
+17
+mySelect.on('loaded.bs.select', function (e) {
+18
+  // on loaded
+19
+});
+20
+ 
+21
+mySelect.on('rendered.bs.select', function (e) {
+22
+  // on rendered
+23
+});
+24
+ 
+25
+mySelect.on('refreshed.bs.select', function (e) {
+26
+  // on refreshed
+27
+});
+28
+ 
+29
+mySelect.on('changed.bs.select', function (e) {
+30
+  // on changed
+31
+});
+
+    
+    
+    </script>
+</body>
+
+</html>
