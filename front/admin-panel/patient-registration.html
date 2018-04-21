@@ -11,46 +11,6 @@
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/fontawesome/css/fontawesome-all.min.css">
 
-<style>
-  fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-.well {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-}
-.well-legend {
-  display: block;
-  font-size: 14px;
-  width: auto;
-  padding: 2px 7px 2px 5px;
-  margin-bottom: 20px;
-  line-height: inherit;
-  color: #333;
-  background: #fff;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-}
-    
-    .container{
-     margin-top:30px;   
-    }
-    
-    
-   
-    
-    </style>
 </head>
 
 <body>
@@ -133,9 +93,9 @@
   </div>
     </div>
     
-  <fieldset class="well the-fieldset">
-	<legend class="the-legend">Contact person</legend>
-	<form>
+
+	<h3>Contact person</h3>
+
 		 <div class="form-group">
       <label for="num">Contact name:</label>
       <input type="text" class="form-control" id="first_name" placeholder="Enter First name" name="first_name">
@@ -149,12 +109,23 @@
        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
     </div>	
 		
-	</form>
-</fieldset>
+<div class="btn-group bootstrap-select dropup"><button type="button" class="btn dropdown-toggle btn-default btn-light" data-toggle="dropdown" role="button" data-id="first-disabled" title="Apple" aria-expanded="false"><span class="filter-option pull-left">Apple</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox" style="max-height: 564px; overflow: hidden; min-height: 129px; position: absolute; transform: translate3d(0px, -2px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="top-start"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 500px; overflow-y: auto; min-height: 65px;"><div class="dropdown-header " data-optgroup="1"><span class="text">Fruit</span></div><a tabindex="0" class="dropdown-item selected active" data-original-index="1" data-optgroup="1"><span class="dropdown-item-inner opt  " data-tokens="null" role="option" tabindex="0" aria-disabled="false" aria-selected="true"><span class="text">Apple</span><span class="fa fa-check check-mark"></span></span></a><a tabindex="0" class="dropdown-item" data-original-index="2" data-optgroup="1"><span class="dropdown-item-inner opt  " data-tokens="null" role="option" tabindex="0" aria-disabled="false" aria-selected="false"><span class="text">Orange</span><span class="fa fa-check check-mark"></span></span></a><div class="dropdown-divider" data-optgroup="2div"></div><div class="dropdown-header " data-optgroup="2"><span class="text">Vegetable</span></div><a tabindex="0" class="dropdown-item" data-original-index="3" data-optgroup="2"><span class="dropdown-item-inner opt  " data-tokens="null" role="option" tabindex="0" aria-disabled="false" aria-selected="false"><span class="text">Corn</span><span class="fa fa-check check-mark"></span></span></a><a tabindex="0" class="dropdown-item" data-original-index="4" data-optgroup="2"><span class="dropdown-item-inner opt  " data-tokens="null" role="option" tabindex="0" aria-disabled="false" aria-selected="false"><span class="text">Carrot</span><span class="fa fa-check check-mark"></span></span></a></div></div><select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true" tabindex="-98">
+    <optgroup disabled="disabled" label="disabled">
+      <option>Hidden</option>
+    </optgroup>
+    <optgroup label="Fruit">
+      <option>Apple</option>
+      <option>Orange</option>
+    </optgroup>
+    <optgroup label="Vegetable">
+      <option>Corn</option>
+      <option>Carrot</option>
+    </optgroup>
+  </select></div>
+
   
     <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-
+                </form>
  </div>          
         </main>
 
