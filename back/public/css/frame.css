@@ -1,0 +1,195 @@
+*{
+    font-family: 'Poppins';
+      box-sizing: border-box;
+
+}
+
+h1 {
+    color: black;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 44px;
+    margin: 0 0 12px;
+    text-align: left;
+    border-bottom: 1px solid #538cc6;
+    border-width: 5px;
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+}
+
+/*----top navbar----*/
+.image-avatar{
+	border-radius: 50%;
+	width:60px;
+	height:60px;
+}
+
+.navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-text {
+    color: rgb(0,200,200);
+
+
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: rgb(0,200,200);
+}
+
+.navbar{
+	height:25%;
+}
+
+.navbar-brand
+{
+	width:100px;
+	height:60px;
+}
+.logo{
+	
+	width: 85px;
+    height: 56px;
+    margin-top: -5px;
+}
+
+/*----slidebar----*/
+.sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.3s;
+        font-size: 17px;
+}
+.sidebar ul li a {
+    display: block;
+    padding: .75rem 1rem;
+    color: rgba(255, 255, 255, .75);
+    text-decoration: none;
+}
+.sidebar ul li a:hover, .sidebar ul .active a {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(0, 0, 0, .25);
+}
+.sidebar ul ul a {
+    padding-left: 2.5rem;
+    background: rgba(0, 0, 0, .25);
+}
+.sidebar [data-toggle="collapse"] {
+    position: relative;
+}
+.sidebar [data-toggle="collapse"]:before {
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+}
+.sidebar [aria-expanded="true"] {
+    background: rgba(0, 0, 0, .25);
+}
+.sidebar [aria-expanded="true"]:before {
+    content: "\f0d8";
+}
+.sidebar.toggled {
+    margin-left: -250px;
+}
+
+
+.display-5 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+/*----footer----*/
+footer
+{
+   width:100%;
+   background-color:rgb(0,200,200);
+   height:40px;
+   text-align: center;
+
+}
+.footer-content{
+margin: auto;
+position:relative;
+top:10px;
+}
+
+
+
+/* ------------------Responsive--------------*/
+
+@media( max-width: 1920px) 
+
+ {
+
+}
+@media (max-width: 768px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+    .sidebar.toggled {
+        margin-left: 0;
+    }
+    h1{
+font-size:34px;
+}
+    
+h2{
+font-size:26px;
+}
+    main li
+    {
+    
+    display:block;
+        width:100%;
+    }
+}
+
+
+/*----mobile----*/
+@media( max-width: 585px) {
+h1{
+font-size:36px;
+}
+h2{
+font-size:26px;
+}
+.sidebar-toggle{
+width:10%;
+} 
+
+.fa-user{
+padding-right:0px;
+text-align:right;
+}  
+.logo{
+width:80%;
+position:relative;
+top:-8px;
+}
+
+.navbar{
+position:fixed;
+width: 100%;
+height:10%;
+ z-index:1;
+top:0;
+}
+
+
+h1{
+margin: 44px 0 12px;
+font-size:30px;
+}
+
+.navbar-expand{
+height:56px;
+padding:
+}
+
+footer{
+    height: 38px;
+}
+}
+/* ------------------ End Responsive--------------*/
