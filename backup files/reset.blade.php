@@ -1,29 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-      <title>Login </title>
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-      <!-- CSS-->
-     <link rel="stylesheet" href="styles/pages/forgot-password.css">
-      
-   </head>
-    
-    <body>   
-<div id="forgot-page" class="row" >
-   <div class="col s12 z-depth-6 card-panel">
-                  <form class="login-form" method="POST" action="{{ route('password.request') }}">
- <div class="row">
-                  <div class="input-field col s12 center">
-                     <img src="images/logo.png" alt="" class="responsive-img valign profile-image-login">
-                  </div>
-     
-     
-                         <input type="hidden" name="token" value="{{ $token }}">
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Reset Password') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('password.request') }}">
+                        @csrf
+
+                        <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -68,13 +56,10 @@
                                 </button>
                             </div>
                         </div>
-                      </div>
-       </form>
-    </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </body>
-</html>
-
-    
-   
-
+    </div>
+</div>
+@endsection
