@@ -1,0 +1,179 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Ican</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+
+    <!---bootstrap ---->
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/fontawesome/css/fontawesome-all.min.css">
+
+    <!---css ---->
+    <link rel="stylesheet" href="../bootstrap4.4.3.css">
+    <link rel="stylesheet" href="../styles/pages/frame.css">
+    <link rel="stylesheet" href="../styles/pages/dashboard.css">
+
+    <!---google fonts ---->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+</head>
+
+<body>
+    <!---navbar ---->
+    <nav class="navbar navbar-expand navbar-dark bg-info">
+        <a class="sidebar-toggle text-light mr-3"><i class="fa fa-bars" ></i></a>
+        <a class="navbar-brand" href="dashboard.html"><img class="logo" src="images/logo.png" alt="ican logo" ></a>
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                  <i class="fa fa-user" alt="username"></i>  {{Auth::user()->name}}     </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">settings</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!---sidebar---->
+    <div class="d-flex align-items-stretch">
+        <div class="sidebar bg-dark">
+            <ul class="list-unstyled">
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt fa-2x " alt="dashboard"></i> Dashboard</a></li>
+
+                <li><a href="symptom.html"><i class="fas fa-heartbeat fa-2x" alt="symptom"></i> Self report</a></li>
+
+                <li><a href="medication.html"><i class="fas fa-pills fa-2x" alt="medications"></i> Medications</a></li>
+
+                <li><a href="new-appointment.html"><i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointment</a></li>
+
+                <li><a href="settings.html"><i class="fas fa-cog fa-2x" alt="settings"></i> Settings</a></li>
+            </ul>
+        </div>
+
+        <!---content---->
+        <main class="p-4">
+            <h1>Dashboard</h1>
+            <div class="container bootstrap snippet ">
+
+                <div class="row margin-bottom-10  ">
+                    
+                    <div class="box col-sm-6 ">
+                        <div class="servive-block servive-block-pink">
+                            <i class="icon-3x color-light fas fa-users fa-3x"></i>
+                            <h2 class="heading-md"> Total Patients</h2>
+                            <div class="text-box">
+                                <p>12 </p>
+                            </div>
+                            <button type="button" class="btn-style">Report Now</button>
+
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="box col-sm-6 ">
+                        <div class="servive-block servive-block-pink">
+                            <i class="icon-3x color-light fas fa-heartbeat fa-3x"></i>
+                            <h2 class="heading-md">Self Report</h2>
+                            <div class="text-box">
+                                <p>You have not recorded any symptoms for the last day. </p>
+                            </div>
+                            <button type="button" class="btn-style">Report Now</button>
+
+                        </div>
+                    </div>
+                    
+                    <div class="box col-sm-6 ">
+                        <div class="servive-block servive-block-pink">
+                            <i class="icon-3x color-light fas fa-stethoscope fa-3x"></i>
+                            <h2 class="heading-md">Treatments</h2>
+                            <div class="text-box">
+                                <p>12 </p>
+                            </div>
+                            <button type="button" class="btn-style">Report Now</button>
+
+                        </div>
+                    </div>
+                    
+                    <div class="box col-sm-6">
+                        <div class="servive-block rounded servive-block-parklife">
+                            <i class="icon-3x color-light fas fa-pills fa-3x"></i>
+                            <h2 class="heading-md">Medications</h2>
+                            <div class="text-box">
+                                <p>You have not taken a medication for the evening.</p>
+                            </div>
+                            <button type="button" class="btn-style">Report Now </button>
+                        </div>
+                    </div>
+                    <div class="box col-sm-6">
+                        <div class="servive-block rounded servive-block-caramel">
+                            <i class="icon-3x color-light fas fa-calendar-check fa-3x"></i>
+                            <h2 class="heading-md">Today appointments</h2>
+                            <div class="text-box">
+                                <p>2</p>
+                            </div>
+                            <button type="button" class="btn-style">Appointment</button>
+                        </div>
+                    </div>
+
+                    <div class="box col-sm-6">
+                        <div class="servive-block rounded servive-block-blue">
+                            <i class="icon-3x color-light fas fa-envelope fa-3x"></i>
+                            <h2 class="heading-md">Messages</h2>
+                            <div class="text-box">
+                                <p>you have not messages.</p>
+                            </div>
+                            <button type="button" class="btn-style">See inbox</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <!---sidebar ---->
+    <footer>
+        <div class="footer-content">
+            © 2018 Ican</div>
+    </footer>
+
+    <!---scripts---->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jsframe.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.sidebar-toggle').on('click', function() {
+                if ($(window).width() > 479 && $(window).width() < 769) {
+                    if ($(".toggled").is(":visible")) {
+                        $(".servive-block").css({
+                            "height": "280px",
+                            "margin-bottom": "12px"
+                        });
+                      
+
+                    } else {
+                        $(".servive-block").css({
+                            "height": "250px",
+                            "margin-bottom": "250px",
+
+
+                        });
+                    }
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
