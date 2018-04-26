@@ -93,6 +93,7 @@ section .section-title {
 
 .card {
     float: left;
+
 }
 
 .card-header {
@@ -269,7 +270,10 @@ margin-left:0px;
         margin:auto;
     }
 
-
+.card
+    {
+        left:10%;
+    }
 
 }
 

@@ -15,10 +15,16 @@ button:hover{
     margin-top: 10px;
 }
 .nav {
-    width: 39%
+   
             margin-top: 20px;
 }
 
+
+ol.direction
+{
+    padding-left:10px;
+    margin-top:20px;
+}
 .tab-content {
     width: 40%;
     float: left;
@@ -33,6 +39,7 @@ margin-top: 12px;
     list-style-type:none;
     text-align:left; 
      font-family: 'Signika', sans-serif;
+    margin-left:-10px;
 }
 
 
@@ -137,7 +144,7 @@ input[type="radio"]:checked + label {
 
 .report-levels {
     
-    margin-top: 91px;
+    margin-top: 177px   ;
 
    
 }
