@@ -9,13 +9,16 @@ h1 {
     font-size: 46px;
     font-weight: 400;
     line-height: 44px;
-    margin: 0 0 12px;
+    margin: 12px 0 45px;
     text-align: left;
     border-bottom: 1px solid #538cc6;
     border-width: 5px;
     width: 100%;
 }
-
+.direction
+{
+    margin-bottom: 80px;
+}
 .content {
     width: 100%;
 }

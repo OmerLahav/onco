@@ -11,10 +11,13 @@ section {
 
 
 .time {
-    margin-left:500px;
+   margin: auto;
     color: black;
     text-align: center;
     width: 300px;
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: #F0F8FF;
 }
 .hms {
 
@@ -67,11 +70,7 @@ section .section-title {
 }
 
 
-    {
-    position: relative;
-    top: -10px;
-    left: -60px;
-}
+
 
 
 .main-container {
@@ -124,7 +123,10 @@ section .section-title {
 
 }
 
-
+#mecication-submit
+{
+    margin-top: 30px;
+}
 .steps {
     width: 60%;
 
@@ -262,7 +264,10 @@ margin-left:0px;
 /*----tablet----*/
 @media (max-width: 768px) {
 
-
+.date
+    {
+        margin:auto;
+    }
 
 
 
