@@ -252,11 +252,12 @@ height:60%;
     text-align: center;
 }
 .steps li {
-    counter-increment: step-counter;
+  counter-increment: step-counter;
     margin-bottom: 10px;
-    list-style-type:none;
-    text-align:left; 
-      font-family: 'Signika', sans-serif;
+    list-style-type: none;
+    text-align: left;
+    font-family: 'Signika', sans-serif;
+    font-size:20px;
 }
 
 .steps li::before {
