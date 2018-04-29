@@ -31,4 +31,5 @@ class SymptomsController extends Controller
 
     	return redirect()->route('symptoms.index');
     }
+
 }

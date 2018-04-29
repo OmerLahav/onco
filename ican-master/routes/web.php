@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/forgot-password','ForgotPasswordController@forgotPassword');
+Route::post('/forgot-password','ForgotPasswordController@postForgotPassword');
 
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 Route::resource('medications', 'MedicationsController', ['only' => ['index', 'create', 'store']]);

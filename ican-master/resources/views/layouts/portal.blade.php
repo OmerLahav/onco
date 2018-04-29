@@ -64,12 +64,17 @@
                     </li>
                     <li>
                         <a href="{{ route('treatments.index') }}">
-                            <i class="fas fa-heartbeat fa-2x" alt="symptom"></i> Treatments
+                            <i class="fas fa-stethoscope fa-2x" alt="symptom"></i> Treatments
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('medications.index') }}">
                             <i class="fas fa-pills fa-2x" alt="medications"></i> Medications
+                        </a>
+                    </li>
+                    <li>
+                            <a href="{{ route('patients.index') }}">
+                            <i class="fas fa-user  fa-2x" alt="patients"></i> Patients
                         </a>
                     </li>
                     <li>
@@ -79,7 +84,7 @@
                     </li>
                     <li>
                         <a href="{{ route('team.index') }}">
-                            <i class="fas fa-user fa-2x" alt="appointment"></i> Team
+                            <i class="fas fa-user-md fa-2x" alt="team"></i> Medical stuff
                         </a>
                     </li>
                     <li>

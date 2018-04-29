@@ -8,6 +8,7 @@
 			<tr>
 				<td>{{ $medication->id }}</td>
 				<td>{{ $medication->name }}</td>
+				<td>{{ $medication->strength }}</td>
 			</tr>
 		@endforeach
 	</table>

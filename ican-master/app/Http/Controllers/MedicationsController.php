@@ -22,6 +22,7 @@ class MedicationsController extends Controller
     {
     	$this->validate($request, [
     		'name' => 'required'
+
     	]);
 
     	Medication::create(
