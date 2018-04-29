@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/fontawesome/css/fontawesome-all.min.css">
 
+    
+    <link href='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/15.1.1/autocomplete-lhc_jQueryUI.min.css' rel="stylesheet">
+    
+    
+    
+    
+    
+    
 </head>
 
 <body>
@@ -93,6 +101,26 @@
   </div>
     </div>
     
+      
+      
+     <!---Medication API ---->
+      
+      <input type="text" id="rxterms" placeholder="Drug name">
+<input type="text" id="drug_strengths" placeholder="Strength list">
+      
+      
+      
+      
+      
+      
+  <!---End Medication API ---->    
+      
+      
+      
+      
+      
+      
+      
 
 	<h3>Contact person</h3>
 
@@ -141,7 +169,27 @@
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jsframe.js"></script>
-
+<script src='https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/15.1.1/autocomplete-lhc_jQuery.min.js'></script>
+    
+    
+    <script>
+new Def.Autocompleter.Prefetch('drug_strengths', []);
+new Def.Autocompleter.Search('rxterms',
+ 'https://clinicaltables.nlm.nih.gov/api/rxterms/v3/search?ef=STRENGTHS_AND_FORMS');
+Def.Autocompleter.Event.observeListSelections('rxterms', function() {
+  var drugField = $('#rxterms')[0];
+  var autocomp = drugField.autocomp;
+  var strengths =
+    autocomp.getSelectedItemData()[0].data['STRENGTHS_AND_FORMS'];
+  if (strengths)
+    $('#drug_strengths')[0].autocomp.setListAndField(strengths, '');
+})
+        
+   </script>           
+    
+    
+    
+    
 </body>
 
 </html>
