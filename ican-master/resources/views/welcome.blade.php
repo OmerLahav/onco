@@ -14,6 +14,7 @@
     <style>
         html, body {
             background-image: url("https://i.pinimg.com/originals/51/54/e4/5154e43e684237bf5999815f352c07a4.jpg");
+			background-position: center;
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
