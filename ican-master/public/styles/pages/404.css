@@ -1,18 +1,35 @@
-body, html{
-height: 100%;
-background-color: #6a9ced;
+*{
+  box-sizing: border-box;
+
+}
+
+body{
+		background-color:#ced5e9;
+}
+
+.container{
+
 }
 .main{
 margin-top: 20px;
 }
+
+.doctor
+{
+	margin-top:110px;
+}
 footer{
 margin-top: 20px;
-color:grey;
+color:black;
+
 }
 .speech-bubble {
-position: relative;
-background: white;
-border-radius: .4em;
+    position: relative;
+    background: white;
+    border-radius: 2.4em;
+    font-size: 18px;
+top: 100px;
+	width:150%;
 }
 .speech-bubble:after {
 content: '';

@@ -70,4 +70,6 @@
     transform: rotate(45deg);
 }
 
+.form-group
 
+{display:inline-block;}

@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('404',['as'=>'404','uses'=>'ErrorHandlerController@errorCode404']);
+
+Route::get('405',['as'=>'405','uses'=>'ErrorHandlerController@errorCode405']);
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/forgot-password','ForgotPasswordController@forgotPassword');
 Route::post('/forgot-password','ForgotPasswordController@postForgotPassword');
