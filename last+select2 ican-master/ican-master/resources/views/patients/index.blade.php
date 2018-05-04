@@ -2,7 +2,7 @@
 
 @section ('content')
 <h1>Patients</h1>
-<a href="{{ route('patients.create') }}" class="btn btn-info pull-right">Create</a>
+<a href="{{ route('patients.create') }}" class="btn btn-info pull-right bg-info">Create</a>
 <table>
 	<thead>
 		<tr>

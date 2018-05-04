@@ -7,6 +7,8 @@ use App\Treatment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use UxWeb\SweetAlert\SweetAlert;
+
 
 class PatientsController extends Controller
 {
@@ -32,7 +34,7 @@ class PatientsController extends Controller
     		'phone' => request('phone'),
     	]);
 
-    	$patient->patient_data()->create([
+    	$create=$patient->patient_data()->create([
     		'gender' => request('gender'),
     		'type' => request('type'),
     		'contact_relation' => request('contact_relation'),
@@ -41,7 +43,11 @@ class PatientsController extends Controller
     		'contact_email' => request('contact_email'),
     		'is_active' => request('is_active'),
     	]);
-
+        if($create){
+            SweetAlert::success('Created successfully')->persistent("Close");
+        }else{
+            sweetAlert::error('There is an error! try again later');
+        }
     	return redirect()->route('patients.index');
     }
 

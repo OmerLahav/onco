@@ -3,7 +3,7 @@
 
 @section ('content')
 	<h1>Create medication</h1>
-	<form method="POST" action="{{ route('medications.store') }}">
+	<form class="form-style" method="POST" action="{{ route('medications.store') }}">
 		@csrf
 		<div>
 			<label for="name">Name:</label>
@@ -14,9 +14,11 @@
 		</div>
 
 		<div>
-			<button>Add</button>
+			<button type="submit" class="btn btn-primary bg-info">Add</button>
+
 		</div>
 	</form>
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form.css') }} ">
 
 <link rel="stylesheet" type="text/css" href="{{url('https://clinicaltables.nlm.nih.gov/autocomplete-lhc-versions/15.1.1/autocomplete-lhc_jQueryUI.min.css')}}"/>
 <script src="{{ URL :: asset('js2/bootstrap.min.js')}}"></script>

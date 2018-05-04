@@ -13,8 +13,9 @@
 			</li>
 		</ol>
 	</div>
-	<form  method="POST" action="{{ route('treatments.store') }}">
+	<form    method="POST" action="{{ route('treatments.store') }}">
 		@csrf
+		<div  class="form-style">
 		<div>
 			<label for="name" >Name:</label>
 			<input type="text" name="name" id="name" placeholder="Name">
@@ -26,8 +27,8 @@
 			<textarea name="description" id="description" cols="30" rows="2"></textarea>
 		</div>
 		<div>
-			<h3>Symptoms</h3>
 
+			<label for="medications">Symptoms:</label>
             <select id="symptoms" multiple="" name="symptoms[]">
                 @foreach ($symptoms as $symptom)
                     <option value="{{ $symptom->id }}" @if(!empty($editData)) @endif> {{ $symptom->name }}</option>
@@ -35,8 +36,10 @@
             </select>
 		</div>
 		<div>
-			<h3>Medications</h3>
-            <select id="medications" multiple="" name="medications[]">
+
+			<label for="medications">Medications:</label>
+
+			<select id="medications" multiple="" name="medications[]">
 			@foreach ($medications as $medication)
                     <option value="{{ $medication->id }}"> {{ $medication->name }}</option>
 				<!--<label class="radio-style">
@@ -50,13 +53,15 @@
 
 		</div>
 		<div>
-			<button type="submit" class="btn btn-primary">Add</button>
+			<button type="submit" class="btn btn-primary bg-info">Add</button>
 
+		</div>
 		</div>
 	</form>
 
-	<link href="{!! asset('css/radio.css') !!}" media="all" rel="stylesheet" type="text/css" />
-	<link href="{!! asset('css/steps.css') !!}" media="all" rel="stylesheet" type="text/css" />
+	<link href="{!! asset('css/admin-styles/radio.css') !!}" media="all" rel="stylesheet" type="text/css" />
+	<link href="{!! asset('css/admin-styles/steps.css') !!}" media="all" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form-treatment.css') }} ">
 
 
 	<script

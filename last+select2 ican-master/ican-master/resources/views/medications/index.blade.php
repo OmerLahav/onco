@@ -2,7 +2,7 @@
 
 @section ('content')
 	<h1>All medications</h1>
-	<a href="{{ route('medications.create') }}" class="btn btn-info pull-right">Create</a>
+	<a href="{{ route('medications.create') }}" class="btn btn-info pull-right bg-info">Create</a>
 	<table>
 		@foreach ($medications as $medication)
 			<tr>

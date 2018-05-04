@@ -4,7 +4,7 @@
     <h1>Add patient</h1>
 
     <div class="container">
-        <form method="POST" action="{{ route('patients.store') }}" name="register-patient">
+        <form  name="myform" class="form-style" method="POST" action="{{ route('patients.store') }}" name="register-patient">
             @csrf
             <div class="form-group">
                 <label for="identification_number">Identification Number:</label>
@@ -35,8 +35,12 @@
             </div>
 
             <div class="form-group">
-                <label for="password">Password:</label><br>
-                <input type="password" class="form-control d-inline" id="password" placeholder="Enter password" name="password" >
+
+                    <label for="last_name">Password:</label>
+
+                    <input id="pass" name="row_password" type="text" size="40">&nbsp;
+                    <input type="button" class="button" value="Generate" onClick="generate();" tabindex="2">
+
                 {{-- <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2"> --}}
             </div>
 
@@ -71,7 +75,7 @@
                 </select>
             </div>
 
-            <h3>Contact person</h3>
+            <h4>Contact person</h4>
 
             <div class="form-group">
                 <label for="contact_relation">Contact relation:</label>
@@ -96,10 +100,31 @@
 
             <div class="form-group">
                 <label for="contact_email">Email:</label>
-                <input type="email" class="form-control" id="contact_email" placeholder="Enter email" name="contact_email">
+                <input type="email" class="form-control" id="contact_email" name="contact_email" placeholder="Enter email" >
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary bg-info">Submit</button>
         </form>
     </div>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form-big.css') }} ">
+<script>
+
+    function randomPassword(length) {
+        var chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
+        var pass = "";
+        for (var x = 0; x < length; x++) {
+            var i = Math.floor(Math.random() * chars.length);
+            pass += chars.charAt(i);
+
+        }
+
+        return pass;
+    }
+
+    function generate() {
+        myform.row_password.value = randomPassword(8);
+
+    }
+</script>
 @stop

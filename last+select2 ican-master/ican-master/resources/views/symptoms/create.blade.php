@@ -2,9 +2,9 @@
 
 @section ('content')
 	<h1>Create a symptom</h1>
-	<form method="POST" action="{{ route('symptoms.store') }}">
+	<form class="form-style" method="POST" action="{{ route('symptoms.store') }}">
 		@csrf
-		<div>
+		<div >
 			<label for="name">Name:</label>
 			<input type="text" name="name" id="name" placeholder="Name">
 		</div>
@@ -17,7 +17,11 @@
 			<input type="text" name="image" id="image" placeholder="image URL">
 		</div>
 		<div>
-			<button>Add</button>
+			<button type="submit" class="btn btn-primary bg-info">Add</button>
+
 		</div>
 	</form>
+
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form.css') }} ">
+
 @stop

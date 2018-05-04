@@ -2,7 +2,7 @@
 
 @section ('content')
 <h1>All Staff</h1>
-<a href="{{ route('team.create') }}" class="btn btn-info pull-right">Create</a>
+<a href="{{ route('team.create') }}" class="btn btn-info pull-right bg-info">Create</a>
 
 <table>
 	<thead>
