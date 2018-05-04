@@ -21,7 +21,7 @@ class SymptomsController extends Controller
 
     public function store(Request $request)
     {
-    	$this->validate($request, [
+    	$validation=$this->validate($request, [
     		'name' => 'required',
     		'importance_level' => 'required|numeric',
     	]);
@@ -30,10 +30,12 @@ class SymptomsController extends Controller
     		$request->only((new Symptom)->getFillable())
     	);
 
-        if($create){
+        if($validation){
             SweetAlert::success('Created successfully')->persistent("Close");
-        }else{
-            sweetAlert::error('There is an error! try again later');
+        }
+        else
+        {
+            SweetAlert::error('There is an error! try again later');
         }
     	return redirect()->route('symptoms.index');
     }

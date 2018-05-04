@@ -1,0 +1,42 @@
+input.search_field, textarea.search_fieldinput[type=date], input[type=datetime-local], input[type=email], input[type=number], input[type=password], input[type=search-md], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.md-textarea {
+			background-color: transparent;
+			border: none;
+			border: 1px solid #aaa;
+			
+			outline: 0;
+			height: 0.51rem;
+			width: 60%;
+			font-size: 1rem;
+			box-shadow: none;
+			box-sizing: content-box;
+			-webkit-transition: all .3s;
+			transition: all .3s;
+			background-color: rgb(255, 255, 255);
+
+		}
+		
+			input[type=text], select,input[type=email],input[type=tel] {
+			width: 50%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		
+		label {
+    display: inline-block;
+    margin-bottom: .5rem;
+	width:10%;
+}
+
+input[type=text], select,input[type=email],input[type=tel] ,textarea{
+			width: 50%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}

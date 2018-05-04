@@ -27,7 +27,7 @@ class PatientsController extends Controller
     	$patient = Patient::create([
     		'role' => 3,
     		'identification_number' => request('identification_number'),
-    		'first_name' => request('first_name'),
+    		'first_name' => request('first_name'),'required',
     		'last_name' => request('last_name'),
     		'email' => request('email'),
     		'password' => bcrypt(request('password')),
