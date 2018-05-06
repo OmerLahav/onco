@@ -1,0 +1,18 @@
+<?php
+
+namespace App;
+
+class Patient extends User
+{
+    protected $table = 'users';
+
+    public static function allPatients()
+    {
+    	return User::patient()->get();
+    }
+
+    public function treatments()
+    {
+    	return $this->belongsToMany(Treatment::class);
+    }
+}
