@@ -439,7 +439,11 @@ section.features .device-container {
     text-transform: capitalize;
 }
 
-
+.img-doc{
+    width:500px;
+    position:relative;
+    left:100px;
+}
 
 
 
@@ -635,3 +639,21 @@ footer ul li a:hover {
     font-size: 11px;
     padding: 15px 45px
 }
+
+
+
+@media (min-width:300px) {
+    
+    .navbar{
+        
+        height:100px;
+    }
+    
+    .logo{
+        height:70px;
+    }
+        .img-doc{
+            display:none;
+        }   
+        
+    }
