@@ -13,7 +13,7 @@ class ChartsController extends Controller
 
     public function googleLineChart()
     {
-        $visitor = DB::table('patient_data')
+        $visitorChartData = DB::table('patient_data')
             ->select(
 
                 DB::raw("type as type"),
@@ -24,7 +24,7 @@ class ChartsController extends Controller
 
 
         $result[] = ['type',' user_id'];
-        foreach ($visitor as $key => $value) {
+        foreach ($visitorChartData as $key => $value) {
             $result[++$key] = [ $value->type, $value->user_id];
         }
 
@@ -36,7 +36,7 @@ class ChartsController extends Controller
 
     public function googleLineChart2()
     {
-        $active = DB::table('patient_data')
+        $activeChartData = DB::table('patient_data')
             ->select(
 
                 DB::raw("is_active as is_active"),
@@ -47,7 +47,7 @@ class ChartsController extends Controller
 
 
         $result[] = ['type',' user_id'];
-        foreach ($active as $key => $value) {
+        foreach ($activeChartData as $key => $value) {
             $result[++$key] = [ $value->is_active, $value->user_id];
         }
 

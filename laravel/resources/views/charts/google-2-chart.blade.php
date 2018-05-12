@@ -2,12 +2,12 @@
 <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        var active = <?php echo $active; ?>;
-        console.log(active);
+        var activeChartData = <?php echo $activeChartData; ?>;
+        console.log(activeChartData);
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
-            var data = google.visualization.arrayToDataTable(active);
+            var data = google.visualization.arrayToDataTable(activeChartData);
             var options = {
                 title: 'Patients types of cancer',
                 curveType: 'function',

@@ -14,7 +14,7 @@ class MedicationsController extends Controller
 
     public function index()
     {
-        if ((Auth::user()->isDoctor())or (Auth::user()->isNurse())){
+        if (Auth::user()->isDoctor()){
 
         return view('medications.index')
             ->withMedications(Medication::all());
@@ -50,6 +50,7 @@ class MedicationsController extends Controller
     	return redirect()->route('medications.index');
     }
 
+
     function delete ($id)
     {
       $deleting=  DB::table ('medications')->where('id','=',$id )->delete();
@@ -65,6 +66,41 @@ class MedicationsController extends Controller
                 SweetAlert::success('Deleted successfully')->persistent("Close");
                 return redirect()->route('medications.index');
             }
+
+    }
+
+    public function edit($id)
+    {
+
+        $medication = medication::find($id);
+
+        return view('medications.edit',compact('medication','id'));
+    }
+
+
+
+    public function update(Request $request,$id)
+    {
+        $this->validate($request,[
+            'name' => 'required'
+//            'drug_strengths' => 'required'
+        ]);
+        $medication= medication::find($id);
+        $medication->name=$request->get('name');
+//        $medication->importance_level=$request->get('drug_strengths');
+        $medication->save();
+
+
+//      if update failed
+        if($medication==null){
+            SweetAlert::error('There is an error! ')->persistent("Close");
+            return redirect()->route('medications.index');
+
+        }
+        else {
+            SweetAlert::success('Updated successfully')->persistent("Close");
+            return redirect()->route('medications.index');
+        }
 
     }
 

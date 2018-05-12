@@ -17,8 +17,9 @@
                                 <div class="dash-box-icon">
                                     <i class="fas fa-heartbeat"></i>
                                 </div>
+
                                 <div class="dash-box-body">
-                                    {{--<span class="dash-box-count">{{$res1}}</span>--}}
+                                    <span class="dash-box-count">{{$updateCountData or '0'}}</span>
                                     <span class="dash-box-title">Critical symptom reports</span>
                                 </div>
 
@@ -81,8 +82,12 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
-        {{--<div class="card-text">    @include('charts.google-2-chart',['active'=>$active])</div>--}}
-        
+        <div class="card-text">
+            @if(isset($activeChartData))
+                @include('charts.google-2-chart',['activeChartData'=>$activeChartData])
+            @endif
+        </div>
+
       </div>
     </div>
   </div>
@@ -90,29 +95,32 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
-        {{--<div class="card-text">   @include('charts.google-pie-cancer-type-chart',['visitor'=>$visitor])</div>--}}
+        <div class="card-text">
+
+            @if(isset($visitorChartData))
+                @include('charts.google-pie-cancer-type-chart',['visitorChartData'=>$visitorChartData])
+            @endif
+        </div>
         
       </div>
     </div>
   </div>
-       
         <div class="col-md-4 col-sm-4 col-xs-12">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
-        {{--<div class="card-text">   @include('charts.google-pie-cancer-type-chart',['visitor'=>$visitor])</div>--}}
+        <div class="card-text">
+            {{--@if(isset($visitorChartData))--}}
+                {{--@include('charts.google-pie-cancer-type-chart',['visitorChartData'=>$visitorChartData])--}}
+            {{--@endif--}}
+
+        </div>
        
       </div>
     </div>
   </div>
-       
-           
-       
-       
 </div>
             </div>
-
-
             {{--action boxes--}}
 
                 <div class="container">
@@ -137,8 +145,9 @@
                                 <div class="dash-box-icon">
                                     <i class="fas fa-pills" aria-hidden="true"></i>
                                 </div>
+
                                 <div class="dash-box-body">
-                                    {{--<span class="dash-box-count">{{$treatments}}</span>--}}
+                                    <span class="dash-box-count">{{$treatmentCountData or '0'}}</span>
                                     <span class="dash-box-title">Treatments</span>
                                 </div>
 

@@ -12,38 +12,41 @@ class DashboardController extends Controller
     public function index()
     {
 
+        $dashboardData = array();
+
         //google charts
         $googlepie   = new ChartsController();
         $chartsArray = $googlepie->googleLineChart();
-        $visitor     = $chartsArray;
+        $dashboardData['visitorChartData'] = $chartsArray;
 
         $googlechart  = new ChartsController();
         $chartsArray2 = $googlechart->googleLineChart2();
-        $active       = $chartsArray2;
+        $dashboardData['activeChartData']    = $chartsArray2;
 
 
+        //Start Update Data Business Logic
+        $dashboardData['updateCountData'] = DB::table('users')
+            ->where('role', '=', 3)
+            ->count();
+        //End Update Data Business Logic
+
+        //Start Treatment Data Business Logic
+        $dashboardData['treatmentCountData'] = DB::table('patient_treatment')
+            ->where('id', '!=', 0)
+            ->count();
+
+        //End Treatment Data Business Logic
+
+        //Auth check
         if ((Auth::user()->isDoctor()) or (Auth::user()->isNurse()))
-            return view('dashboard.index', ['visitor' => $visitor],['active' => $active]);
+            return view('dashboard.index', $dashboardData);
+
         else
             return view('dashboard.index');
 
-    }
-    //doctors dashboard top data
-//    public function updateData()
-//    {
-//        $res1 = DB::table('users')
-//            ->where('role', '=', 3)
-//            ->get();
-//
-//        $res1 = (count($res1));
-//
-//        if ((Auth::user()->isDoctor()) or (Auth::user()->isNurse()))
-//            return view('dashboard.index', compact('res1'));
-//        else
-//            return view('dashboard.index');
-//
-//    }
+        //End Update Data Business Logic
 
+    }
 
 }
 

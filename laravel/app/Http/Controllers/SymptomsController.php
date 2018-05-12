@@ -43,8 +43,9 @@ class SymptomsController extends Controller
 
     	return redirect()->route('symptoms.index');
     }
-	
-	function Symp_delete ($id)
+
+
+    function Symp_delete ($id)
     {
         $deleting=  DB::table ('symptoms')->where('id','=',$id )->delete();
 
@@ -62,4 +63,39 @@ class SymptomsController extends Controller
 
     }
 
+    public function Symp_edit($id)
+    {
+
+        $symptom = symptom::find($id);
+        // Load user/createOrUpdate.blade.php view
+        return view('symptoms.edit',compact('symptom','id'));
+    }
+
+
+
+    public function Symp_update(Request $request,$id)
+    {
+        $this->validate($request,[
+            'name' => 'required',
+            'importance_level' => 'required|numeric'
+        ]);
+        $symptom= symptom::find($id);
+        $symptom->name=$request->get('name');
+        $symptom->importance_level=$request->get('importance_level');
+        $symptom->save();
+
+
+        //   if update failed
+        if($symptom==null){
+            SweetAlert::error('There is an error! ')->persistent("Close");
+            return redirect()->route('symptoms.index');
+
+        }
+        else {
+            SweetAlert::success('Updated successfully')->persistent("Close");
+            return redirect()->route('symptoms.index');
+        }
+
+
+    }
 }

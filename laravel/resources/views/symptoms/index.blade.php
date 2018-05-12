@@ -11,6 +11,7 @@
                 <tr>
                     <th>Sr #</th>
                     <th>Symptom Name</th>
+                    <th>importance level</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -19,8 +20,9 @@
                     <tr>
                         <td>{{ $symptom->id }}</td>
                         <td>{{ $symptom->name }}</td>
+                        <td>{{ $symptom->importance_level }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
+                            <a href="{{action('SymptomsController@Symp_edit',$symptom->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
                             <a href="/Symp_delete/{{$symptom->id}}"  onclick="return confirm('Are you sure you want to delete this symptom?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
                         </td>
                     </tr>

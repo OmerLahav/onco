@@ -52,7 +52,7 @@
 
                     <div class="form-group">
                         <label for="ends_at">Ends at:</label>
-                        <input type="date" class="form-control" id="ends_at" placeholder="Enter identification number"
+                        <input type="date" class="form-control" value="ends_at" placeholder="Enter identification number"
                                name="ends_at">
                     </div>
                     <button type="submit" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add </button>
