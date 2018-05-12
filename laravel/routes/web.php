@@ -31,6 +31,28 @@ Route::get('/forgot-password','ForgotPasswordController@forgotPassword');
 Route::post('/forgot-password','ForgotPasswordController@postForgotPassword');
 
 
+Route::post('/forgot-password-new','ForgotPasswordController@postForgotPasswordNew')->name('password.email');
+
+//Start User Reset Password Route 
+
+Route::any("reset-password/{fcode}",array(//1)user reset password form in web side
+    'as'=>'userforgotpassword',
+    'uses' => 'ForgotPasswordController@user_reset_password_form'));
+
+Route::post("reset-password",array( //2)user reset password submit form in web side
+    'as'=>'reset_password_submit',
+    'uses' => 'ForgotPasswordController@user_reset_password_submit'));
+
+Route::get("reset-password_msg/{msg}",array( //3)user reset password msg screen in web side
+            'as'=>'reset_password_msg',
+            'uses' => 'ForgotPasswordController@reset_password_msg'));
+
+
+
+//End User Reset Password Route
+
+
+
 //dashboard
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 

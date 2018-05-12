@@ -60,6 +60,17 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    
+    //Verify Peer
+    
+     'stream' => [
+        'ssl' => [
+            'allow_self_signed' => true,
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+        ],
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
