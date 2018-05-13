@@ -13,9 +13,13 @@
 
    </head>
    <body>
+       
       <div id="login-page" class="row" >
          <div class="col s12 z-depth-6 card-panel">
-            <form class="login-form" method="POST" action="{{ route('login') }}">
+            <form class="login-form" method="POST" action="{{ route('reset_password_submit') }}">
+
+              <!-- Using Below Hidden variable backend side we identify for which user we reset password using this unique code -->
+              <input type="hidden" name="vfcode" id="vfcode" value="{{$ccode}}">
                <div class="row">
                   <div class="input-field col s12 center">
                      <img src="images/logo.png" alt="" class="responsive-img valign profile-image-login">
@@ -32,33 +36,27 @@
                         </span>
                     @endif
                </div>
-               <div class="row margin">
-                  <div class="input-field col s12">
-                     <i class="mdi-social-person-outline prefix"></i>
-                     <input class="validate" id="email" type="email" class="stored" value="{{ old('email') }}" name="email">
-                     <label for="email" data-error="Please include an '@' in the email address " data-success="" class="center-align" >{{ __('E-Mail') }}</label>
-                  </div>
-               </div>
+              
                <div class="row margin password">
                   <div class="input-field col s12">
                      <i class="mdi-action-lock-outline prefix"></i>
-                     <input id="password" type="password" name="password" class="stored">
-                     <label for="password">{{ __('Password') }}</label>
+                     <input id="password" required type="password" name="password" class="stored">
+                     <label for="password">Password</label>
                   </div>
                </div>
                 
                     <div class="row margin password">
                   <div class="input-field col s12">
                      <i class="mdi-action-lock-outline prefix"></i>
-                     <input id="password" type="password" name="password" class="stored">
-                     <label for="password">{{ __('Password') }}</label>
+                     <input id="cpassword" required type="password" name="cpassword" class="stored">
+                     <label for="cpassword">Confirm Password</label>
                   </div>
                </div>
                 
              
                <div class="row">
                   <div class="input-field col s12">
-                     <button type="submit" class="btn waves-effect waves-light col s12" >{{ __('Login') }}</button> 
+                     <button type="submit" class="btn waves-effect waves-light col s12" >Reset Password</button> 
                   </div>
                </div>
                

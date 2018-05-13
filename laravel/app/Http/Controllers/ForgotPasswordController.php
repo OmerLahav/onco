@@ -4,7 +4,8 @@ use Illuminate\Http\Request;
 use App\User,App\EmailTemplates;
 use Reminder;
 use Mail;
-use Sentinel,Redirect,View;
+use Illuminate\Support\Facades\Input;
+use Sentinel,Redirect,View,Hash;
 
 use App\Helpers\MailSendHelper;
 
@@ -30,28 +31,31 @@ class ForgotPasswordController extends Controller {
         //Send Email To use forforgot password helper function.
         $email_data = EmailTemplates::get_details(1);
         
-        $email_data->template_body = str_replace('[LINK]',SITE_URL.'reset-password/'.$code,$email_data->template_body);
-        $email_data->template_body = str_replace('[USERNAME]',$user->first_name.' '.$user->last_name,$email_data->template_body);
-        $email_data->template_body = str_replace("[BUTTON_LINK]",SITE_URL.'images/goto-link.png',$email_data->template_body);
-               
-        //Send Email In Background Asycronosoly
-        /*ob_end_clean();
-        header("Connection: close");
-        ignore_user_abort(); 
-        ob_start();
-        header('HTTP/1.1 200 OK', true, 200);
-        header('Content-Type: application/plain');
-        echo "TRUE";
-        $size = ob_get_length();
-        header("Content-Length: $size");
-        ob_end_flush();
-        flush();
-        session_write_close();// mail sent to user with new link 
-     */
+        if(!empty($email_data)) 
+        {
+            
+            $email_data->template_body = str_replace('[LINK]',SITE_URL.'reset-password/'.$code,$email_data->template_body);
+            $email_data->template_body = str_replace('[USERNAME]',$user->first_name.' '.$user->last_name,$email_data->template_body);
+            $email_data->template_body = str_replace("[BUTTON_LINK]",SITE_URL.'images/goto-link.png',$email_data->template_body);
 
-        //Send Email Helper Function 
-        MailSendHelper::send_email($email_data, [$user->email]);
+            //Send Email In Background Asycronosoly
+            /*ob_end_clean();
+            header("Connection: close");
+            ignore_user_abort(); 
+            ob_start();
+            header('HTTP/1.1 200 OK', true, 200);
+            header('Content-Type: application/plain');
+            echo "TRUE";
+            $size = ob_get_length();
+            header("Content-Length: $size");
+            ob_end_flush();
+            flush();
+            session_write_close();// mail sent to user with new link 
+         */
 
+            //Send Email Helper Function 
+            MailSendHelper::send_email($email_data, [$user->email]);
+        }
         return redirect()->back()->with(['success' => 'Reset code was sent to your email.']);
     }
     //End Forgot Password function
@@ -61,13 +65,14 @@ class ForgotPasswordController extends Controller {
     public function user_reset_password_form($fcode)
     {
         $user_details = User::where("forgot_password_code","=",$fcode)->first();
+    
         if (!empty($user_details) > 0)
         {
             $t1 = strtotime(CURRENT_DATE_TIME);
-            $t2 = strtotime($user_details->fcode_expiry_date);
+            $t2 = strtotime($user_details->forgot_password_date);
             $diff = $t1 - $t2;
             $hours = $diff / ( 60 * 60 );
-          
+        
             if($hours > 24)
             {
               $user_details->forgot_password_code="";

@@ -6,7 +6,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <script src="js/jquery.min.js"></script>
       <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-      <title>First Login on ICan </title>
+      <title>Reset password message</title>
       <!--Import materialize.css-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
 	   <link rel="stylesheet" type="text/css" href="{{ asset('css/reset_password.css') }} ">
@@ -14,69 +14,54 @@
       <!-- CSS-->
   
    </head>
+
+   <style>
+   .message {
+       font-size: 30px;
+       text-align: center;
+       margin-top: 100px;
+       font-weight: bold;
+       line-height: 30px;
+       font-family:cursive;
+   }
+   .rededd {
+       color: #C20E1A;
+   }
+   .greenery {
+       color: green;
+   }
+   .center{
+       margin-left: 45%;
+   }
+   </style>
+
    <body >
       <div id="login-page" class="row" >
          <div class="col s12 z-depth-6 card-panel">
-            <form class="login-form">
                <div class="row">
                   <div class="input-field col s12 center">
                      <img src="images/logo.png" alt="" class="responsive-img valign profile-image-login">
-                     <p > Thank you for registering to Ican app.<br>Please fill the information below to change your default password.</p>
+                     <h4 > Reset Password Message Sceen</h4><br>
+                      
+                      <p class="message <?php if($message == PW_RESET_ERROR) { echo "rededd"; } else { echo "greenery"; } ?>">{{ $message }}</p>
+
+                     <div class="row">
+                        <div class="input-field col s12">
+                           <a href="{{ route('login') }}">
+                           <button type="button" class="btn waves-effect waves-light col s12" >Redirect To Login Page</button> 
+                           </a>
+                        </div>
+                     </div>
+               
+
+
+
                   </div>
                </div>
-               <div class="row margin">
-                  <div class="input-field col s12">
-                     <i class="mdi-social-person-outline prefix"></i>
-                     <input class="validate" id="email" type="email">
-                     <label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>
-                  </div>
-               </div>
-               <div class="row margin">
-                  <div class="input-field col s12">
-                     <i class="mdi-action-lock prefix"></i>
-                     <input id="old-password" type="password">
-                     <label for="old-password">Old password</label>
-                  </div>
-               </div>
-               <div class="row margin">
-                  <div class="input-field col s12">
-                     <i class="mdi-action-lock-outline prefix"></i>
-                     <input id="new-password" type="password" >
-                     <label for="new-password" >New password</label>
-                     <p class="instructions"> Must contain at least 6 numbers with symbols and numbers</p>
-                  </div>
-               </div>
-               <div class="row margin">
-                  <div class="input-field col s12">
-                     <i class="mdi-action-autorenew prefix"></i>
-                     <input id="repeat-new-password" type="password">
-                     <label for="repeat-new-password">Repeat new password </label>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="input-field col s12 m12 l12  login-text">
-                     <input type="checkbox" id="agree" />
-                     <label for="agree">I agree to the <a href="termsOfUse.html" target="_blank">Terms and Conditions</a> and <a href="privacyPolicy.html" target="_blank">Privacy Policy</a></label>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="input-field col s12">
-                     <a href="login.html" class="btn waves-effect waves-light col s12">Change password</a>
-                  </div>
-               </div>
-            </form>
          </div>
       </div>
       <!-- Scripts-->
-      <script>  
-         $(document).ready(function(){
-         $("#new-password").on("click", function(){
-          $(".instructions").show();
-         });
-         });
-         
-         
-      </script>
+      
       <!-- jQuery Library -->
       <script src="js/jquery.min.js"></script>
       <!--materialize js-->

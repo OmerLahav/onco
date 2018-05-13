@@ -20,10 +20,10 @@
                 <tbody>
                 @foreach ($patients as $patient)
                     <tr>
-                        <td>{{ $patient->patient_data->user_id }}</td>
-                        <td>{{ $patient->name }}</td>
-                        <td>{{ $patient->patient_data->gender }}</td>
-                        <td>{{ $patient->patient_data->type }}</td>
+                        <td>{{ $patient->patient_data->user_id or '--N\A--' }}</td>
+                        <td>{{ $patient->name or '--N\A--'  }}</td>
+                        <td>{{ $patient->patient_data->gender or '--N\A--'  }}</td>
+                        <td>{{ $patient->patient_data->type or '--N\A--'  }}</td>
                         <td>
                             <a href="#" class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
                             <a href="#" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
