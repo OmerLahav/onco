@@ -4,7 +4,7 @@ $SITE_URL = $app->make('url')->to('/')."/";
 define('SITE_FOLDER_NAME','mediplus/domains/med.dev.webstorm.co.il/');
 
 define('WWW_ROOT',$_SERVER['DOCUMENT_ROOT'].'/'.SITE_FOLDER_NAME.'/');
-define('SITE_NAME','V');
+define('SITE_NAME','ICan , 2018');
 define('SITE_URL',$SITE_URL);
 define('ASSET_URL',$SITE_URL.'assets/');
 

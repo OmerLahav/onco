@@ -32,7 +32,7 @@ class TeamController extends Controller
         if($create){
             SweetAlert::success('Added successfully')->persistent("Close");
         }else{
-            sweetAlert::error('There is an error! try again later');
+             SweetAlert::error('There is an error! ')->persistent("Close");
         }
     	return redirect()->route('team.index');
     }

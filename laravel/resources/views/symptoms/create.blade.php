@@ -7,12 +7,8 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        Here you will create new symptom.
+                        Please create new symptom.
                     </li>
-                    <li>
-                        You need to describe the symptom.
-                    </li>
-
                 </ol>
             </div>
             <form class="form-style" method="POST" action="{{ route('symptoms.store') }}">

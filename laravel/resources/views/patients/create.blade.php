@@ -7,10 +7,7 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        Please select your health care provider.
-                    </li>
-                    <li>
-                        In this stage you will make a request for an appointment.
+                        Please enter the new patient details.
                     </li>
                 </ol>
             </div>
@@ -20,25 +17,25 @@
                     @csrf
                     <div class="form-group">
                         <label for="identification_number">Identification Number:</label>
-                        <input type="text" class="form-control" id="identification_number"
+                        <input type="text" class="form-control" id="identification_number" required="required"
                                placeholder="Enter identification number" name="identification_number">
                     </div>
 
                     <div class="form-group">
                         <label for="first_name">First name:</label>
-                        <input type="text" class="form-control" id="first_name" placeholder="Enter First name"
-                               name="first_name">
+                        <input type="text" class="form-control" id="first_name" placeholder="Enter First name" 
+                               required="required" name="first_name">
                     </div>
 
                     <div class="form-group">
                         <label for="last_name">Last name:</label>
                         <input type="text" class="form-control" id="last_name" placeholder="Enter Last name"
-                               name="last_name">
+                               name="last_name" required="required">
                     </div>
 
                     <div class="form-group">
                         <label for="gender">Gender:</label>
-                        <select class="form-control" id="gender" name="gender">
+                        <select class="form-control" id="gender" name="gender" required="required">
                             <option>Female</option>
                             <option>Male</option>
                         </select>
@@ -46,24 +43,24 @@
 					
 					<div class="form-group">
                         <label for="birth_date">Birth Date:</label>
-                        <input type="date" class="form-control" id="birth_date" name="birth_date">
+                        <input type="date" class="form-control" id="birth_date" name="birth_date" required="required">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="required">
                     </div>
 
 
                     <div class="form-group">
                         <label for="phone">Phone number:</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone number"
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone number" required="required"
                                size="20" minlength="9" maxlength="14">
                     </div>
 
                     <div class="form-group">
                         <label for="num">Cancer type:</label>
-                        <select name="type" class="form-control" id="type">
+                        <select name="type" class="form-control" id="type" required="required">
                             <option>Brain</option>
                             <option>Breast</option>
                             <option>Liver</option>
@@ -89,7 +86,7 @@
 
                     <div class="form-group">
                         <label for="password">Password:</label>
-                        <input id="pass" name="password" type="text" size="40">
+                        <input id="pass" name="password" type="text" size="40" required="required">
                         <input type="button" class="button" value="Generate" onClick="generate();" tabindex="2">
                         {{-- <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2"> --}}
                     </div>
@@ -98,7 +95,7 @@
 
                     <div class="form-group">
                         <label for="contact_relation">Contact relation:</label>
-                        <select name="contact_relation" class="form-control" id="contact_relation">
+                        <select name="contact_relation" class="form-control" id="contact_relation" required="required">
                             <option>Spouse</option>
                             <option>Child</option>
                             <option>Sibling</option>
@@ -109,19 +106,19 @@
 
                     <div class="form-group">
                         <label for="contact_name">Contact name:</label>
-                        <input type="text" class="form-control" id="contact_name" placeholder="Enter First name"
+                        <input type="text" class="form-control" id="contact_name" placeholder="Enter First name" required="required"
                                name="contact_name">
                     </div>
 
                     <div class="form-group">
                         <label for="contact_phone">Phone number:</label>
-                        <input type="tel" class="form-control" id="contact_phone" name="contact_phone"
+                        <input type="tel" class="form-control" id="contact_phone" name="contact_phone" required="required"
                                placeholder="Enter Phone number" size="20" minlength="9" maxlength="14">
                     </div>
 
                     <div class="form-group">
                         <label for="contact_email">Email:</label>
-                        <input type="email" class="form-control" id="contact_email" name="contact_email"
+                        <input type="email" class="form-control" id="contact_email" name="contact_email" required="required"
                                placeholder="Enter email">
                     </div>
 

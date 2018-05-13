@@ -7,10 +7,7 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        Please select your health care provider.
-                    </li>
-                    <li>
-                        In this stage you will make a request for an appointment.
+                        Please add medication.
                     </li>
                 </ol>
             </div>

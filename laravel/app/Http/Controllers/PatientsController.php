@@ -48,7 +48,8 @@ class PatientsController extends Controller
         if ($create) {
             SweetAlert::success('Created successfully')->persistent("Close");
         } else {
-            sweetAlert::error('There is an error! try again later');
+			
+            sweetAlert::error('There is an error! try again');
         }
 
     	return redirect()->route('patients.index');

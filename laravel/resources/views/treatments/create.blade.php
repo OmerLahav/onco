@@ -11,7 +11,7 @@
                         Here you will create new treatment.
                     </li>
                     <li>
-                        Please select the right symptoms and medications for this treatment.
+                        Please select the right symptoms for this treatment.
                     </li>
                 </ol>
             </div>

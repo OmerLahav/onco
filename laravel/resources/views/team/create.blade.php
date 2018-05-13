@@ -7,10 +7,10 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        Please select your health care provider.
+                        Please add a staff member.
                     </li>
                     <li>
-                        In this stage you will make a request for an appointment.
+                        Select the right role.
                     </li>
                 </ol>
             </div>
@@ -28,36 +28,36 @@
                     <div class="form-group">
                         <label for="identification_number">Identification Number:</label>
                         <input type="text" class="form-control" id="identification_number"
-                               placeholder="Enter identification number" name="identification_number">
+                               placeholder="Enter identification number" name="identification_number" required="required">
                     </div>
 
                     <div class="form-group">
                         <label for="first_name">First name:</label>
                         <input type="text" class="form-control" id="first_name" placeholder="Enter First name"
-                               name="first_name">
+                               name="first_name" required="required">
                     </div>
 
                     <div class="form-group">
                         <label for="last_name">Last name:</label>
                         <input type="text" class="form-control" id="last_name" placeholder="Enter Last name"
-                               name="last_name">
+                               name="last_name" required="required">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="required">
                     </div>
 
                    <div class="form-group">
                         <label for="password">Password:</label>
-                        <input id="pass" name="password" type="text" size="40">
+                        <input id="pass" name="password" type="text" size="40" required="required">
                         <input type="button" class="button" value="Generate" onClick="generate();" tabindex="2">
                         {{-- <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2"> --}}
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Phone number:</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone number"
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone number" required="required"
                                size="20" minlength="9" maxlength="14">
                     </div>
 

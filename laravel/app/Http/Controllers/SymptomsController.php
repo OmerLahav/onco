@@ -29,7 +29,7 @@ class SymptomsController extends Controller
         ]);
 
     	if($validation->fails()){
-            SweetAlert::error('There is an error! Please provide your name')->persistent("Close");
+            SweetAlert::error('There is an error! Please symptom name and level of importance')->persistent("Close");
             return redirect()->route('symptoms.create');
         }
 

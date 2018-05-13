@@ -37,7 +37,7 @@ class MedicationsController extends Controller
 //        if query failed
 
         if($validation->fails()){
-            SweetAlert::error('There is an error! Please provide your name')->persistent("Close");
+            SweetAlert::error('There is an error! Please provide madication name')->persistent("Close");
             return redirect()->route('medications.create');
         }
     	$create = Medication::create(

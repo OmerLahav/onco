@@ -12,135 +12,75 @@
                 {{--Data boxes--}}
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="dash-box dash-box-color-1">
                                 <div class="dash-box-icon">
                                     <i class="fas fa-heartbeat"></i>
                                 </div>
 
                                 <div class="dash-box-body">
-                                    <span class="dash-box-count">{{$updateCountData or '0'}}</span>
+                                    <span class="dash-box-count">0</span>
                                     <span class="dash-box-title">Critical symptom reports</span>
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#" >More Info</a></button>
+                                    <button class="stuff_btn"><a href="#">More Info</a></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="dash-box dash-box-color-2">
                                 <div class="dash-box-icon">
                                     <i class="fas fa-pills" aria-hidden="true"></i>
                                 </div>
                                 <div class="dash-box-body">
-                                    <span class="dash-box-count">100</span>
+                                    <span class="dash-box-count">0</span>
                                     <span class="dash-box-title">Medication not reported</span>
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#" >More Info</a></button>
+                                    <button class="stuff_btn"><a href="#">More Info</a></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="dash-box dash-box-color-3">
                                 <div class="dash-box-icon">
                                     <i class="far fa-calendar-check"></i>
                                 </div>
                                 <div class="dash-box-body">
-                                    <span class="dash-box-count">2502</span>
+                                    <span class="dash-box-count">0</span>
                                     <span class="dash-box-title">Appointments Today</span>
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#" >More Info</a></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="dash-box dash-box-color-1">
-                                <div class="dash-box-icon">
-                                    <i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
-                                </div>
-                                <div class="dash-box-body">
-                                    <span class="dash-box-count">8,252</span>
-                                    <span class="dash-box-title">Lesson Plan</span>
-                                </div>
-
-                                <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#" >More Info</a></button>
+                                    <button class="stuff_btn"><a href="#">More Info</a></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
- <div class="container">    
-   <div class="row " style="margin-top:20px;margin-bottom:60px;">
-  <div class="col-md-4 col-sm-4 col-xs-12">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <div class="card-text">
-            @if(isset($activeChartData))
-                @include('charts.google-2-chart',['activeChartData'=>$activeChartData])
-            @endif
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 col-sm-4 col-xs-12">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <div class="card-text">
-
-            @if(isset($visitorChartData))
-                @include('charts.google-pie-cancer-type-chart',['visitorChartData'=>$visitorChartData])
-            @endif
-        </div>
-        
-      </div>
-    </div>
-  </div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <div class="card-text">
-            {{--@if(isset($visitorChartData))--}}
-                {{--@include('charts.google-pie-cancer-type-chart',['visitorChartData'=>$visitorChartData])--}}
-            {{--@endif--}}
-
-        </div>
-       
-      </div>
-    </div>
-  </div>
-</div>
-            </div>
-            {{--action boxes--}}
+                {{--action boxes--}}
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="dash-box dash-box-color-1">
                                 <div class="dash-box-icon">
-                                    <i class="fas fa-heartbeat"></i>
+                                    <i class="fas fa-users"></i>
                                 </div>
                                 <div class="dash-box-body">
-                                    <span class="dash-box-count">8,252</span>
+                                    <span class="dash-box-count">{{$PatientCountData or '0'}}</span>
                                     <span class="dash-box-title">My Patients</span>
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#" >More Info</a></button>
+                                    <button class="stuff_btn"><a href="#">More Info</a></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="dash-box dash-box-color-2">
                                 <div class="dash-box-icon">
                                     <i class="fas fa-pills" aria-hidden="true"></i>
@@ -152,37 +92,68 @@
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#" >More Info</a></button>
+                                    <button class="stuff_btn"><a href="#">More Info</a></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="dash-box dash-box-color-3">
                                 <div class="dash-box-icon">
-                                    <i class="far fa-calendar-check"></i>
+                                    <i class="fas fa-file-medical-alt"></i>
                                 </div>
                                 <div class="dash-box-body">
-                                    <span class="dash-box-count">2502</span>
+                                    <span class="dash-box-count">0</span>
                                     <span class="dash-box-title">Patients reports</span>
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#" >More Info</a></button>
+                                    <button class="stuff_btn"><a href="#">More Info</a></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="dash-box dash-box-color-1">
-                                <div class="dash-box-icon">
-                                    <i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i>
-                                </div>
-                                <div class="dash-box-body">
-                                    <span class="dash-box-count">8,252</span>
-                                    <span class="dash-box-title">Lesson Plan</span>
-                                </div>
+                    </div>
+                </div>
+                {{--charts--}}
+                <div class="container">
+                    <div class="row " style="margin-top:20px;margin-bottom:60px;">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cancer types</h5>
+                                    <div class="card-text">
+                                        @if(isset($activeChartData))
+                                            @include('charts.google-2-chart',['activeChartData'=>$activeChartData])
+                                        @endif
+                                    </div>
 
-                                <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#" >More Info</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cancer types </h5>
+                                    <div class="card-text">
+
+                                        @if(isset($BarChartData))
+                                            @include('charts.google-bar-chart',['BarChartData'=>$BarChartData])
+                                        @endif
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">User types</h5>
+                                    <div class="card-text">
+                                        @if(isset($visitorChartData))
+                                            @include('charts.google-pie-cancer-type-chart',['visitorChartData'=>$visitorChartData])
+                                        @endif
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -220,7 +191,7 @@
                                 <i class="icon-3x color-light fas fa-pills fa-3x"></i>
                                 <h2 class="heading-md">Medications</h2>
                                 <div class="text-box">
-                                    <p>2</p>
+                                    <p>{{$PatientCountData2 or '0'}}</p>
                                 </div>
                                 <button type="button" class="btn-style">Add new medications</button>
                             </div>
@@ -237,21 +208,17 @@
                         </div>
 
 
-
                     </div>
 
 
-
                 </div>
-                
-                
-      
-                
-                @endif
-            
-        
+
+
+
+
+            @endif
+
 
         </div>
     </div>
-
 @stop
