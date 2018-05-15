@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 Auth::routes();
 
 //error
@@ -95,6 +98,38 @@ Route::get('google-2-chart', 'ChartsController@googleLineChart2');
 
 //reportsGenetator
 Route::get('generateReport', 'GenerateReportController@index');
+
+//Google Calender API Redirect for Save Details
+
+Route::any("api/google_calender",array( 
+            'as'=>'api.google_calender_for_book_appoinment',
+            'uses' => 'AppointmentsController@googleCalendarLink'));
+
+
+//Start Appointment Related Routes
+
+
+
+Route::get("appointments",array( 
+            'as'=>'appointments.get',
+            'uses' => 'AppointmentsController@getAppointments'));
+
+Route::any("appointments/add",array( 
+            'as'=>'appointments.create',
+            'uses' => 'AppointmentsController@addAppointments'));
+
+
+Route::any("appointments/{appointmentsid}/edit",array( 
+            'as'=>'appointments.edit',
+            'uses' => 'AppointmentsController@editAppointments'));
+
+Route::any("appointments/slots",array( 
+            'as'=>'appointments.slots',
+            'uses' => 'AppointmentsController@getAppointmentsSlots'));
+
+
+
+//End Appointment Related Routes
 
 
 

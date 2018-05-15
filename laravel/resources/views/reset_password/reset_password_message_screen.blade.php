@@ -6,7 +6,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <script src="js/jquery.min.js"></script>
       <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-      <title>Reset password message</title>
+      <title>Reset password </title>
       <!--Import materialize.css-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
 	   <link rel="stylesheet" type="text/css" href="{{ asset('css/reset_password.css') }} ">
@@ -19,7 +19,7 @@
    .message {
        font-size: 30px;
        text-align: center;
-       margin-top: 100px;
+       margin-top: 63px;
        font-weight: bold;
        line-height: 30px;
        font-family:cursive;
@@ -41,7 +41,7 @@
                <div class="row">
                   <div class="input-field col s12 center">
                      <img src="images/logo.png" alt="" class="responsive-img valign profile-image-login">
-                     <h4 > Reset Password Message Sceen</h4><br>
+                     <h4 > Reset Password </h4><br>
                       
                       <p class="message <?php if($message == PW_RESET_ERROR) { echo "rededd"; } else { echo "greenery"; } ?>">{{ $message }}</p>
 

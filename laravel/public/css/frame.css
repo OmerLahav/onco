@@ -124,6 +124,22 @@ position:relative;
 top:10px;
 }
 
+#page_loader{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    z-index: 99999999;
+}
+
+#page_loader .fa{
+    color: #31B6E1 !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
 
 
 /* ------------------Responsive--------------*/

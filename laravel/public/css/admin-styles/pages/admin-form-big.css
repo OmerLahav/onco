@@ -111,3 +111,46 @@ select.form-control:not([size]):not([multiple])
 			margin-bottom:40px;
 			text-decoration: underline;
 		}
+		/*----tablet----*/
+@media (max-width: 768px) {
+
+
+.form-style {
+ 
+    width: 100%;
+
+}
+
+/*----mobile----*/
+@media( max-width: 585px) {
+	
+	label {
+  
+    width: 70%;
+}
+
+.btn {
+    font-size: .8rem;
+    padding: 0.85rem 2.13rem;
+    margin: 6px;
+    border-radius: 2px;
+    border: 0;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    white-space: normal !important;
+    cursor: pointer;
+    width: 67%;
+    margin-left: 17%;
+    margin-top: 20px;
+}
+
+
+input[type=text], select, input[type=email], input[type=tel], textarea {
+    width: 80%;
+  
+}
+
+}
+
+
+/* ------------------ End Responsive--------------*/

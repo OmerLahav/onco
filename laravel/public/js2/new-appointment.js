@@ -31,6 +31,6 @@ $(document).ready(function() {
 
             });
 
-            $('#calendar').dcalendar(); //creates the calendar
+           
 
         });

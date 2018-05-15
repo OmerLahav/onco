@@ -50,4 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(PatientData::class, 'user_id');
     }
+
+    //check already exist value by using key name and key value
+
+    public static  function checkAlreadyExist($key,$value){
+        return self::where($key,$value)->count();
+    } 
 }

@@ -72,3 +72,31 @@
 		button, input{
 			margin: 8px 0;
 		}
+		
+		
+		
+		
+		
+		/*----tablet----*/
+@media (max-width: 768px) {
+
+
+.form-style {
+ 
+    width: 100%;
+
+}
+
+/*----mobile----*/
+@media( max-width: 585px) {
+	
+	label {
+  
+    width: 50%;
+}
+}
+
+
+
+
+/* ------------------ End Responsive--------------*/

@@ -19,6 +19,11 @@ define('CURRENT_DATE',date('Y-m-d'));
 define('CURRENT_DATE_DISPLAY',date('d-m-Y'));
 
 
+//Date Time Display Format
+
+define("DATE_DISPLAY_FORMAT",'d-m-Y');
+define("TIME_DISPLAY_FORMAT",'H:i');
+define("DATETIME_DISPLAY_FORMAT",'d-m-Y H:i');
 
 
 /*Api All HTTP Code */

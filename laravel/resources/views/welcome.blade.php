@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>ICan </title>
 
     <!-- Fonts -->
@@ -13,7 +13,7 @@
     <!-- Styles -->
     <style>
         html, body {
-            background-image: url("https://pagedesignweb.com/wp-content/uploads/2017/12/hs_banner1.jpg");
+            background-image: url("images/background.jpg");
 			background-position: center;
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
@@ -22,9 +22,8 @@
             margin: 0;
         }
         .logo{
-            width:23%;
-            margin-top: 4%;
-            margin-left: 8%;
+            
+            float: left;
 
         }
         .full-height {
@@ -64,6 +63,102 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+  .links > a {
+        
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+       padding: 15px 15px;
+       border: 2px solid black;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: .12em;
+        border-radius: 25px;
+        background-color: white;
+        color:black;
+  }
+  .links > a:hover {
+     /* Green */
+    color: black;
+    background-color: rgb(83, 140, 198)!important;
+
+}
+
+
+.mockup{
+position:relative;
+    top: 200px;
+    left: 5%;
+}
+
+
+footer{
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+top: 150px;
+    height: 30px;
+ clear: both;
+}
+/* ------------------Responsive--------------*/
+
+@media( min-height: 1920px) 
+
+ {
+
+}
+
+@media (max-width: 768px) {
+.mockup{
+position:relative;
+    left: -220px;
+
+}
+
+footer{
+top: 280px;
+}
+
+}
+
+
+/*----mobile----*/
+@media( max-width: 585px) {
+    html, body {
+    background-position:21% 50%; 
+
+        }
+.mockup{
+position:relative;
+width:80%;
+height:80%;
+display:none;
+}
+.top-right{
+top: 248px;
+
+}
+
+.links > a{
+display: block;
+margin: 10px;
+width: 200px;
+text-align:center;
+}
+footer{
+top: 420px;
+}
+
+/* ------------------ End Responsive--------------*/
+
+
+
+
+
+
+
+
     </style>
 </head>
 <body>
@@ -73,15 +168,17 @@
             @if (Auth::check())
                 <a href="{{ url('/dashboard') }}">Home</a>
             @else
-                <a href="{{ url('/login') }}">Login</a>
-                <a href="{{ url('/register') }}">Register</a>
+                 <a href="{{ url('/login') }}">Login</a>
+             
             @endif
         </div>
     @endif
+ <img class="logo" src="images/logo.png" alt="ican logo" >
 
-
-    <img class="logo" src="images/logo.png" alt="ican logo" >
-
+    <img class="mockup" src="images/mockupImage.png" alt="mockup"  width="358" height="700" >
+  <footer>
+<p>  2018 Ican - All rights Reserved</p>
+</footer>
 
 
 
