@@ -46,6 +46,10 @@ class User extends Authenticatable
         return $this->role == '3';
     }
 
+    public function isSecratory()
+    {
+        return $this->role == '4';
+    }
     public function patient_data()
     {
         return $this->hasOne(PatientData::class, 'user_id');

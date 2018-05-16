@@ -78,6 +78,15 @@ Route::get('/Symp_delete/{symptom}' ,'SymptomsController@Symp_delete');
 Route::get('/Symp_edit/{symptom}','SymptomsController@Symp_edit');
 Route::post('/Symp_update/{symptom}','SymptomsController@Symp_update');
 
+//symptoms
+Route::resource('slots_time', 'SloteTimeController',
+    ['only' => ['index', 'create', 'store'],
+     'names' => ['index' => 'slots_time.index']
+]);
+Route::get('/Slot_delete/{slot}' ,'SloteTimeController@Slot_delete');
+Route::get('/Slot_edit/{slot}','SloteTimeController@Slot_edit');
+Route::post('/Slot_update/{slot}','SloteTimeController@Slot_update');
+
 
 
 //treatments

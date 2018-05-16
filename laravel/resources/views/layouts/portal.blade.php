@@ -177,6 +177,20 @@
 
                 <li><a href="settings.html"><i class="fas fa-cog fa-2x" alt="settings"></i> Settings</a></li>
             </ul>
+        @elseif(Auth::user()->isSecratory())
+
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{{ route('dashboard') }}">
+                        <i class="fas fa-tachometer-alt fa-2x " alt="dashboard"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('slots_time.index') }}">
+                        <i class="fas fa-heartbeat fa-2x" alt="slot time"></i> Slots Time
+                    </a>
+                </li>
+            </ul>
         @endif
     </div>
 

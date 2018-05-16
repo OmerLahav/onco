@@ -13,7 +13,7 @@
                     </li>
                 </ol>
             </div>
-            <a href="{{route('api.google_calender_for_book_appoinment')}}" target="_blank" ><button type="button" id="google_clender_btn" class="btn btn-primary bg-info">Add Claender</button> </a>
+           
 
             <div class="container">
               <input type="hidden" name="ajax_slot_fetch_url" id="ajax_slot_fetch_url" value="{{ route('appointments.slots') }}">
@@ -63,6 +63,15 @@
 
                   
                 </form>
+
+                <!-- Form For Clender Api -->
+                <form class="form cf" method="POST" action="{{ route('api.google_calender_for_book_appoinment') }}">
+                 @csrf
+                 <input type="hidden" name="appointment_date" id="api_appointment_date">
+                 <input type="hidden" name="appointment_time" id="api_appointment_time">
+                 <button disabled type="submit" id="google_clender_btn" class="btn btn-primary bg-info">Add Claender</button>
+               </form>
+
             </div>
         </div>
     </div>

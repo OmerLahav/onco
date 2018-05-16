@@ -13,6 +13,9 @@ use UxWeb\SweetAlert\SweetAlert;
 use Illuminate\Support\Facades\Input;
 use App\SlotRange;
 use Auth;
+use Illuminate\Support\Facades\Redirect;
+
+
 class AppointmentsController extends Controller
 {
     //Function for get all appointments base on user role
@@ -167,38 +170,33 @@ class AppointmentsController extends Controller
         return ['html'=>$slot_html,'status'=>$status,'msg'=>$msg,'type'=>$type];
     }
 
-    //Google Claneder Page for add details
+   //Google Claneder Page for add details
 
     public function googleCalendarLink() 
     {
+    	
+    	$appointment_date = Input::get('appointment_date');
+    	$appointment_time = Input::get('appointment_time');
+    	
+    	$params = array(
+		'action' => 'TEMPLATE',
+		'text' => urlencode('Appointment to'. Input::get('provider_name')),
+		'dates' => '20180523T080000/20190523T170000',
 
-        $params = array(
-            'action'   => 'TEMPLATE',
-            'text'     => urlencode( 'Appointment to '.'' ),
-            'dates'    => '2015-05-28T09:00:00-07:00',      
-            //'details'  => urlencode( $event_details ),
-            'location' => urlencode( 'Meir Hospital, Petakh-Tikva' ),
-             'trp'      => 'false',
-            //'sprop'    => 'website:' . '/', 
-        );
+		// 'Start' => '2019-12-04 12:30:00',
+		// 'End' => '2019-12-04 14:30:00',
 
-        $base_url = 'https://www.google.com/calendar/event';
-        ////$url    = add_query_arg( $params, $base_url );
+		//'details' => urlencode('blabla') ,
+		'location' => urlencode('Meir Hospital, Petakh-Tikva') ,
+		'trp' => 'false',
 
-      
-$url_parts = parse_url($base_url);
-$url_parts['query'] = '';
-parse_str($url_parts['query'], $params);
+		// 'sprop'    => 'website:' . 'ican.com',
 
-
-// Note that this will url_encode all values
-$url_parts['query'] = http_build_query($params);
-
-// If you have pecl_http
-echo http_build_url($url_parts);
-exit;
-
-        return $url;
+		);
+		$base_url = 'https://calendar.google.com/calendar/r/eventedit?';
+		$url = $base_url . '/' . http_build_query($params);
+        return Redirect::to($url);
+       
     }
 
 }
