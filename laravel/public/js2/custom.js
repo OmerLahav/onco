@@ -10,7 +10,7 @@ $('body').on('click', '#find_slots', function (e) {
     	var ajaxUrl = $("#ajax_slot_fetch_url").val();
     	$.ajax({
 		    url: ajaxUrl,
-		    data: 'appointmentDate='+appointmentDate+'&medicalStaffType='+$("#medical_staff_type").val()+'&doctorId='+$("#doctor_id").val(),
+		    data: 'appointmentDate='+appointmentDate+'&medicalStaffType='+$("#medical_staff_type").val()+'&doctorId='+$("#doctor_id").val()+'&patientId='+$("#patient_id").val(),
 		    type: "POST",
 		    headers: {
 		        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -101,6 +101,11 @@
                         <i class="fas fa-user  fa-2x" alt="patients"></i> Patients
                     </a>
                 </li>
+                 <li>
+                    <a href="{{ route('slots_time.index') }}">
+                        <i class="fas fa-heartbeat fa-2x" alt="slot time"></i> Slots Time
+                    </a>
+                </li>
                 <li>
                     <a href="{{ route('appointments.get') }}">
                         <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointment
@@ -188,6 +193,11 @@
                 <li>
                     <a href="{{ route('slots_time.index') }}">
                         <i class="fas fa-heartbeat fa-2x" alt="slot time"></i> Slots Time
+                    </a>
+                </li>
+                 <li>
+                    <a href="{{ route('appointments.get') }}">
+                        <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointment
                     </a>
                 </li>
             </ul>

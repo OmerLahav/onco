@@ -136,6 +136,10 @@ Route::any("appointments/slots",array(
             'as'=>'appointments.slots',
             'uses' => 'AppointmentsController@getAppointmentsSlots'));
 
+Route::any("appointments/{appointmentsid}/delete",array( 
+            'as'=>'appointments.delete',
+            'uses' => 'AppointmentsController@deleteAppointment'));
+
 
 
 //End Appointment Related Routes

@@ -3,7 +3,7 @@
 @section ('content')
     <div class="page-wrapper">
         <div class="page-wrapper-container">
-            <h1>Create a time slot</h1>
+            <h1>Create Time Slot</h1>
             <div class="steps">
                 <ol class="direction">
                     <li>
@@ -71,7 +71,8 @@
     </div>
 
     {{--<-- css->--}}
-       <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form.css') }} ">
+    
+	    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form-big.css') }} ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 
 @stop

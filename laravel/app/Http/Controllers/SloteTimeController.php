@@ -11,10 +11,15 @@ class SloteTimeController extends Controller
 {
     public function index()
     {
-        //Return login secratory user all created slots
-
-        return view('time_slot.index')
-    		->withTimeslots(SlotRange::where('created_by','=',Auth::user()->id)->get());
+        //Return login secratory user all created slots or particular doctore so base on login user role
+        if(Auth::user()->isDoctor())
+        {
+            return view('time_slot.index')->withTimeslots(SlotRange::where('user_id','=',Auth::user()->id)->get());
+        }
+        else
+        {
+            return view('time_slot.index')->withTimeslots(SlotRange::where('created_by','=',Auth::user()->id)->get());
+        }
     }
 
     public function create()
@@ -75,9 +80,13 @@ class SloteTimeController extends Controller
     {
 
         $slot_range = SlotRange::find($id);
-        // Load user/createOrUpdate.blade.php view
-        return view('time_slot.edit',compact('slot_range','id'));
-    }
+        //Get All Nurse and Doctore of that secratory
+        
+        $users = User::whereIn('role',['1','2'])->get();
+        return view('time_slot.edit',compact('slot_range','id'))->withUsers($users);
+    
+
+     }
 
 
 

@@ -14,15 +14,39 @@ use Illuminate\Support\Facades\Input;
 use App\SlotRange;
 use Auth;
 use Illuminate\Support\Facades\Redirect;
-
+use DB;
 
 class AppointmentsController extends Controller
 {
     //Function for get all appointments base on user role
     public function getAppointments()
     {
-        $appointments = Appointments::get_list([["patient_id","=",Auth::user()->id]] );
-    	return view('appointments.index')->withAppointments($appointments);
+        if(Auth::user()->isPatient())
+        {        
+            $appointments = Appointments::get_list([["patient_id","=",Auth::user()->id]] );
+    	}
+        elseif(Auth::user()->isDoctor())
+        {
+            //Get All Patients of Login Doctore
+           /* $patient_ids = PatientData::where('doctor_id',Auth::user()->id)->pluck('user_id')->toArray();
+           
+            $appointments = Appointments::whereIn('patient_id',$patient_ids)->with(['provider','patient'])->get();*/
+
+            //Get Approved Apppintment Of Login Doctore 
+
+            $appointments=Appointments::get_list([["medical_staff_id","=",Auth::user()->id],['medical_staff_type','=',Appointments::STAFF_TYPE_DOCTOR]] );
+        }
+        elseif(Auth::user()->isNurse())
+        {
+            //Get All Approved Appointment For Nurse
+            $appointments=Appointments::get_list([["medical_staff_id","=",Auth::user()->id],['medical_staff_type','=',Appointments::STAFF_TYPE_NURSE]]);    
+        }
+        elseif(Auth::user()->isSecratory())
+        {
+            //Get All Approved Appointment For Nurse
+            $appointments=Appointments::get_list([]);    
+        }
+        return view('appointments.index')->withAppointments($appointments);
     }
 
 
@@ -31,17 +55,25 @@ class AppointmentsController extends Controller
     {
         if ($request->isMethod('post')) 
         {
-
             //check whether appointment book by some one else
             if(Appointments::checkAlreadyBookAppointment(request('appointment_date'),request('appointment_time'),request('role')) == 0)
             {
+                if(Auth::user()->isSecratory())
+                {
+                    $patient_id = request('patient_id');
+                }
+                else
+                {
+                    $patient_id = Auth::user()->id;
+                }
+
                 $appointment = Appointments::create([
-                    'patient_id' => Auth::user()->id,
-                    'appointment_date' => request('appointment_date'),
-                    'appointment_time' => request('appointment_time'),'required',
-                    'type' => request('type'),
-                    'medical_staff_type' => request('role'),
-                    'status' => Appointments::STATUS_REGULAR,
+                    'patient_id'            => $patient_id,
+                    'appointment_date'      => request('appointment_date'),
+                    'appointment_time'      => request('appointment_time'),'required',
+                    'type'                  => request('type'),
+                    'medical_staff_type'    => request('role'),
+                    'status'                => Appointments::STATUS_REGULAR,
                 ]);
 
                
@@ -60,7 +92,6 @@ class AppointmentsController extends Controller
                     //Send Email Helper Function 
                     MailSendHelper::send_email($email_data, [Auth::user()->email]);
                 }*/
-            
                 if ($appointment) {
                     SweetAlert::success('Created appointment successfully')->persistent("Close");
                     return redirect()->route('appointments.get');
@@ -77,15 +108,38 @@ class AppointmentsController extends Controller
         }
         else
         {
-            $doctorData = $patientData = [];
-            //get login patient all appointments
-            $patientData = PatientData::where('user_id','=',Auth::user()->id)->first();
-            if(!empty($patientData) && isset($patientData->doctor_id))
+            $doctorData = $patientData = $users =  [];
+            if(Auth::user()->isSecratory())
             {
-                //Get Doctor Data From User Table
-                $doctorData = User::find($patientData->doctor_id)->toArray();
+                $users = User::where('role','3')->get();
             }
-    	    return view('appointments.create')->withDoctor($doctorData);
+            else
+            {
+                //get login patient all appointments
+                $patientData = PatientData::where('user_id','=',Auth::user()->id)->first();
+                if(!empty($patientData) && isset($patientData->doctor_id))
+                {
+                    //Get Doctor Data From User Table
+                    $doctorData = User::find($patientData->doctor_id)->toArray();
+                }
+            }
+    	    return view('appointments.create')->withDoctor($doctorData)->withUsers($users);
+        }
+    }
+
+     function deleteAppointment($id)
+    {
+        $deleting=  DB::table ('appointments')->where('id','=',$id )->delete();
+//      if query failed
+        if($deleting!=1){
+            SweetAlert::error('There is an error! ')->persistent("Close");
+            return redirect()->route('appointments.get');
+
+        }
+        else {
+
+            SweetAlert::success('Deleted successfully')->persistent("Close");
+            return redirect()->route('appointments.get');
         }
     }
 
@@ -115,16 +169,21 @@ class AppointmentsController extends Controller
                     $userId = Input::get('doctorId');
                 }
 
-                //Fetch Patient Data for check status crtical or normal
-                $patientData = PatientData::where('user_id','=',Auth::user()->id)->first();
-
+                if(Auth::user()->isPatient())
+                {
+                    //Fetch Patient Data for check status crtical or normal
+                    $patientData = PatientData::where('user_id','=',Auth::user()->id)->first();
+                }
+                else
+                {
+                    $patientData = PatientData::where('user_id','=',Input::get('patientId'))->first();
+                }
 
                //Pick Regular Slots Base on Doctore wise OR Nurse Wise
                 $regularSlots = SlotRange::where('user_id','=',$userId)->where('type','=','Regular')->where('status','=','Active')->orderByRaw("RAND()")->first();
 
                 if(!empty($regularSlots))
                 {
-
                     $type = 'Regular';
                     $slots = AppointmentHelper::createSlots($regularSlots->start_time,$regularSlots->end_time,$regularSlots->slot_time_in_minute,$booked_slots);
                 }
