@@ -25,7 +25,7 @@ class SloteTimeController extends Controller
     public function create()
     {
         //Get All Nurse and Doctore of that secratory
-        $users = User::whereIn('role',['1','2'])->get();
+        $users = User::whereIn('role',['1'])->get();
     	return view('time_slot.create')->withUsers($users);
     }
 

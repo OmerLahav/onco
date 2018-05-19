@@ -3,24 +3,24 @@
 @section ('content')
     <div class="page-wrapper">
         <div class="page-wrapper-container">
-            <h1>All Time Slots</h1>
+            <h1>Schedule</h1>
             
             @if(Auth::user()->isSecratory())
 
                 <a href="{{ route('slots_time.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
             @endif
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <table id="example" class="table table-striped table-bordered col-sm-12" style="width:100%">
                 <thead>
                 <tr>
-                    <th>Sr #</th>
+                    <th>ID</th>
                     @if(Auth::user()->isSecratory())
-                        <th>User Name</th>
+                        <th>Provider</th>
                     @endif
-                    <th>User Type</th>
-                    <th>Slot Date</th>
-                    <th>Slot Start Time</th>
-                    <th>Slot End Time</th>
-                    <th>Slot Type</th>
+                    <th>Role</th>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Type</th>
                     <th>Slot Time</th>
                     @if(Auth::user()->isSecratory())
                         <th>Actions</th>
@@ -52,7 +52,7 @@
                         @if(Auth::user()->isSecratory())
 
                         <td>
-                            <a href="{{action('SloteTimeController@Slot_edit',$timeslot->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
+                            <a href="{{action('SloteTimeController@Slot_edit',$timeslot->id)}}"  class="btn btn-primary opt-btn fa fa-edit" style="margin-bottom:5px;"><span class="edit "> Edit </span></a>
                             <a href="/Slot_delete/{{$timeslot->id}}"  onclick="return confirm('Are you sure you want to delete this timeslot?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
                         </td>
                         @endif
@@ -63,5 +63,7 @@
         </div>
     </div>
 
+	<!--css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index.css') }} ">
+	<link href="{!! asset('css/data-tables.css') !!}" media="all" rel="stylesheet" type="text/css" />
 @stop

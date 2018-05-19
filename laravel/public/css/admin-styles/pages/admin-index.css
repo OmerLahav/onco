@@ -7,6 +7,7 @@ padding: 12px 6px;
 
 }
 
+
 .opt-btn
 {
     display:inline-block;
@@ -49,8 +50,29 @@ label {
     height: 20px;
 }
 
+.table{
+	  padding: 0px;
+}
+
 table
 {
       table-layout: fixed; // ***********add this
-  word-wrap:break-word; // ***********and this
+		word-wrap:break-word; // ***********and this
+	 
+  
 }
+
+
+/* ------------------Responsive--------------*/
+/*----laptop----*/
+@media (max-width: 768px) {
+	.opt-btn {
+    display: inline-block;
+    width: 70px;
+    padding: 12px 6px;
+	margin-bottom:2px;
+  
+}
+
+}
+

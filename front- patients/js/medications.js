@@ -103,7 +103,7 @@ function updateTime() {
   /* time */
   var hr,
     _min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes(),
-    sec = (dateInfo.getSeconds() < 10) ? "0" + dateInfo.getSeconds() : dateInfo.getSeconds(),
+  
     ampm = (dateInfo.getHours() >= 12) ? "PM" : "AM";
 
   // replace 0 with 12 at midnight, subtract 12 from hour if 13–23
@@ -115,7 +115,7 @@ function updateTime() {
     hr = dateInfo.getHours();
   }
 
-  var currentTime = hr + ":" + _min + ":" + sec;
+  var currentTime = hr + ":" + _min ;
 
   // print time
   document.getElementsByClassName("hms")[0].innerHTML = currentTime;

@@ -7,7 +7,7 @@ use App\EmailTemplates;
 use App\Helpers\MailSendHelper;
 use Illuminate\Http\Request;
 use UxWeb\SweetAlert\SweetAlert;
-
+use DB;
 class TeamController extends Controller
 {
     public function index()
@@ -34,7 +34,7 @@ class TeamController extends Controller
     	]);
         
         
-        $email_data = EmailTemplates::get_details(3);
+       /* $email_data = EmailTemplates::get_details(3);
 
         if(!empty($email_data)) 
         {       
@@ -46,7 +46,7 @@ class TeamController extends Controller
            
             //Send Email Helper Function 
             MailSendHelper::send_email($email_data, [request('email')]);
-        }
+        }*/
         
         
         if($create){
@@ -55,5 +55,68 @@ class TeamController extends Controller
              SweetAlert::error('There is an error! ')->persistent("Close");
         }
     	return redirect()->route('team.index');
+    }
+	
+	 function Team_delete ($id)
+    {
+        $deleting=  DB::table ('users')->where('id','=',$id )->delete();
+
+//      if query failed
+        if($deleting!=1){
+            SweetAlert::error('There is an error! ')->persistent("Close");
+            return redirect()->route('team.index');
+        }
+        else {
+
+            SweetAlert::success('Deleted successfully')->persistent("Close");
+            return redirect()->route('team.index');
+        }
+
+    }
+
+
+    public function Team_edit($id)
+    {
+        $users = User::find($id);
+        // Load user/createOrUpdate.blade.php view
+        return view('team.edit',compact('users','id'));
+    }
+
+
+
+    public function Team_update(Request $request,$id)
+    {
+    
+        $this->validate($request,[
+            'role' => 'required',
+            'identification_number' => 'required',
+            'first_name' => 'required',
+            'email' => 'required',
+            'last_name' => 'required',
+            'phone' => 'required'
+        ]);
+
+        $users= User::find($id);
+        $users->role = request('role');
+        $users->identification_number = request('identification_number');
+        $users->first_name = request('first_name');
+        $users->email = request('email');
+        $users->last_name = request('last_name');
+        $users->phone = request('phone');
+        if(request('password') != "")
+        {
+            $users->password = bcrypt(request('password'));
+        }
+        $users->save();
+
+        //   if update failed
+        if($users==null){
+            SweetAlert::error('There is an error! ')->persistent("Close");
+            return redirect()->route('team.index');
+        }
+        else {
+            SweetAlert::success('Updated successfully')->persistent("Close");
+            return redirect()->route('team.index');
+        }
     }
 }

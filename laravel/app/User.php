@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Illuminate\Support\Facades\Auth;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -50,6 +50,10 @@ class User extends Authenticatable
     {
         return $this->role == '4';
     }
+    public function isAdmin()
+    {
+        return $this->role == '5';
+    }
     public function patient_data()
     {
         return $this->hasOne(PatientData::class, 'user_id');
@@ -60,4 +64,15 @@ class User extends Authenticatable
     public static  function checkAlreadyExist($key,$value){
         return self::where($key,$value)->count();
     } 
+
+
+    public function doctor_treatments()
+    {
+        return $this->hasMany(Treatment::class)->where('user_id', Auth::user()->id);
+    }
+
+    public function medications()
+    {
+        return $this->hasManyThrough(TreatmentMedication::class, Treatment::class);
+    }
 }

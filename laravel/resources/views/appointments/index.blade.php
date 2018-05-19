@@ -3,7 +3,7 @@
 @section ('content')
     <div class="page-wrapper">
         <div class="page-wrapper-container">
-            <h1>All Appointments</h1>
+            <h1>Appointments</h1>
 
             @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
                 <a href="{{ route('appointments.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
@@ -11,15 +11,15 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
-                    <th>Sr #</th>
+                    <th>ID</th>
                     @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
                         <th>Provider Name</th>
                     @endif
                     @if(!Auth::user()->isPatient())
                      <th>Patient Name</th>
                     @endif
-                    <th>Appointment Date</th>
-                    <th>Appointment Time</th>
+                    <th>Date</th>
+                    <th>Time</th>
                     <th>Status</th>
                     <th>Medical Staff Type</th>
                     <th>Type </th>
@@ -41,10 +41,14 @@
                             @endif
                         @endif
                         @if(!Auth::user()->isPatient())
-                            <td>{{ $appointment->patient->first_name . ' ' . $appointment->patient->last_name }} </td>
+                            @if(isset($appointment->patient->first_name) && isset($appointment->patient->last_name))
+                                <td>{{ $appointment->patient->first_name . ' ' . $appointment->patient->last_name }} </td>
+                            @else
+                                <td>--N\A--</td>
+                            @endif
                         @endif
 
-                        <td>{{ date('Y-m-d', strtotime($appointment->appointment_date)) }}</td>
+                        <td>{{ date('d-m-Y', strtotime($appointment->appointment_date)) }}</td>
                         <td>{{ date('H:i', strtotime($appointment->appointment_time))}}</td>
                         <td>{{ $appointment->status }}</td>
                         <td>{{ $appointment->medical_staff_type }}</td>

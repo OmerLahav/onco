@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class Treatment extends Model
 {
@@ -12,16 +13,30 @@ class Treatment extends Model
 
     public function symptoms()
     {
-    	return $this->belongsToMany(Symptom::class);
+        return $this->belongsToMany(Symptom::class);
     }
 
     public function medications()
     {
-    	return $this->hasMany(TreatmentMedication::class);
+        return $this->hasMany(TreatmentMedication::class);
     }
 
     public function patient()
     {
-    	return $this->belongsTo(Patient::class);
+        return $this->belongsTo(Patient::class);
+    }
+
+
+    public function medications_patient()
+    {
+        return $this->hasmany('App\TreatmentMedication','treatment_id','id');
+    }
+
+    public function getDatesAttribute()
+    {
+        return Collection::times($this->created_at->diffInDays(), function ($number) {
+            dd($this);
+            return $this->created_at->addDays($number-1)->format('Y-m-d');
+        })->flip()->flatten();
     }
 }

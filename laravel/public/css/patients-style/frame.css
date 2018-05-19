@@ -145,11 +145,7 @@ top:10px;
 
 /* ------------------Responsive--------------*/
 
-@media( min-height: 1920px) 
 
- {
-
-}
 @media (max-width: 768px) {
     .sidebar {
         margin-left: -250px;

@@ -19,9 +19,24 @@ Route::get('/', function () {
 });
 
 
+Route::get('/phpinfo', function () {    
+    echo phpinfo();
+});
+
+
 
 
 Auth::routes();
+
+// Application Api CronJob Route Start.
+    Route::group(['prefix' => 'cron-jobs','namespace' => 'CronJobs'], function () {
+        Route::any("/patient-tratment-status",array(  //1)set status of patient base on medicine he taken on a particular time 
+            'uses' => 'CronController@patient_treatment_status'));
+
+    });
+// Application Api CronJob Route End.
+
+
 
 //error
 Route::get('404',['as'=>'404','uses'=>'ErrorHandlerController@errorCode404']);
@@ -91,6 +106,12 @@ Route::post('/Slot_update/{slot}','SloteTimeController@Slot_update');
 
 //treatments
 Route::resource('treatments', 'TreatmentsController', ['only' => ['index', 'create', 'store', 'show']]);
+Route::get('/Treatment_delete/{treatmentid}' ,'TreatmentsController@Treatment_delete');
+Route::get('/Treatment_edit/{treatmentid}','TreatmentsController@Treatment_edit');
+Route::post('/Treatment_update/{treatmentid}','TreatmentsController@Treatment_update');
+
+
+
 Route::resource('patients', 'PatientsController', ['only' => ['index', 'create', 'store', 'show']]);
 Route::post('patients/{patient}', 'PatientsController@addTreatment')->name('patients.add_treatment');
 
@@ -99,7 +120,11 @@ Route::post('patients/{patient}', 'PatientsController@addTreatment')->name('pati
 Route::get('team', 'TeamController@index')->name('team.index');
 Route::get('team/add', 'TeamController@create')->name('team.create');
 Route::post('team', 'TeamController@store')->name('team.store');
-Route::post('Team_delete,{member}', 'TeamController@Team_delete');
+Route::get('Team_delete/{member}', 'TeamController@Team_delete');
+Route::get('/Team_edit/{member}','TeamController@Team_edit');
+Route::post('/Team_update/{member}','TeamController@Team_update');
+
+
 
 //dashboard charts
 Route::get('google-pie-cancer-type-chart', 'ChartsController@googleLineChart');
@@ -145,6 +170,12 @@ Route::any("appointments/{appointmentsid}/delete",array(
 //End Appointment Related Routes
 
 
+Route::post('treatmentmedications', 'TreatmentMedicationsController@store')->name('treatmentmedications.store');
+Route::get('patients/medicationreports/create', 'Patients\MedicationReportsController@create')->name('patients.medicationreports.create');
+Route::post('medicationlogs', 'Patients\MedicationLogsController@postMedicationByPatient');
+Route::post('patients/{patient}', 'PatientsController@addTreatment')->name('patients.add_treatment');
+Route::get('medicationlogs', 'MedicationLogsController@index')->name('medicationlogs.index');
 
+Route::get('symptom-reports/create', 'Patients\SymptomReportsController@create')->name('symptopsreports.create');
 
 

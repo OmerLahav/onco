@@ -15,8 +15,8 @@ class AppointmentHelper {
         if(!in_array(date("H:i:s", $start_time),$booked_slots))
         {
          $slots[] = date ("H:i:s", $start_time);
-         $start_time += $add_mins; // to check endtie=me
         }
+        $start_time += $add_mins; // to check endtie=me
       }
     }
     return $slots;

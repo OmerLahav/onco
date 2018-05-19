@@ -74,6 +74,8 @@ class AppointmentsController extends Controller
                     'type'                  => request('type'),
                     'medical_staff_type'    => request('role'),
                     'status'                => Appointments::STATUS_REGULAR,
+                    'medical_staff_id'                => request('medical_staff_id'),
+                     
                 ]);
 
                
@@ -108,10 +110,11 @@ class AppointmentsController extends Controller
         }
         else
         {
-            $doctorData = $patientData = $users =  [];
+            $doctorData = $patientData = $doctor =  $users =  [];
             if(Auth::user()->isSecratory())
             {
                 $users = User::where('role','3')->get();
+                $doctor = User::where('role','1')->get();
             }
             else
             {
@@ -123,7 +126,7 @@ class AppointmentsController extends Controller
                     $doctorData = User::find($patientData->doctor_id)->toArray();
                 }
             }
-    	    return view('appointments.create')->withDoctor($doctorData)->withUsers($users);
+    	    return view('appointments.create')->withDoctor($doctorData)->withUsers($users)->withDoctor($doctor);
         }
     }
 
@@ -163,7 +166,6 @@ class AppointmentsController extends Controller
                 //Fetch Appointment Date Booked Slots
                 $booked_slots = Appointments::where('appointment_date','=',$appointmentDate)->pluck('appointment_time')->toArray();
 
-
                 if(Input::get('medicalStaffType') == Appointments::STAFF_TYPE_DOCTOR)
                     {
                     $userId = Input::get('doctorId');
@@ -180,8 +182,7 @@ class AppointmentsController extends Controller
                 }
 
                //Pick Regular Slots Base on Doctore wise OR Nurse Wise
-                $regularSlots = SlotRange::where('user_id','=',$userId)->where('type','=','Regular')->where('status','=','Active')->orderByRaw("RAND()")->first();
-
+                $regularSlots = SlotRange::where('slot_date','=',Input::get('appointmentDate'))->where('user_id','=',$userId)->where('type','=','Regular')->where('status','=','Active')->orderByRaw("RAND()")->first();
                 if(!empty($regularSlots))
                 {
                     $type = 'Regular';
@@ -190,12 +191,11 @@ class AppointmentsController extends Controller
                 if(count($slots) == 0 || $patientData->patient_status == 'Critical')
                 {
                    //Pick Critical Slots
-                    $criticalSlots = SlotRange::where('user_id','=',$userId)->where('type','=','Critical')->where('status','=','Active')->orderByRaw("RAND()")->first();
-
+                    $criticalSlots = SlotRange::where('slot_date','=',Input::get('appointmentDate'))->where('user_id','=',$userId)->where('type','=','Critical')->where('status','=','Active')->orderByRaw("RAND()")->first();
                     if(!empty($criticalSlots))
                     {
                         $type = 'Preserved';
-                        $slots = AppointmentHelper::createSlots($criticalSlots->start_time,$criticalSlots->end_time,$criticalSlots->slot_time_in_minute,$booked_slots);
+                        $slots = AppointmentHelper::createSlots($criticalSlots->start_time,$criticalSlots->end_time,$criticalSlots->slot_time_in_minute,$booked_slots);   
                     }
                 }
                 

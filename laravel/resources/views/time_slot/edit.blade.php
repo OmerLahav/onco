@@ -14,7 +14,7 @@
                         <label for="user_type">User Type:</label>
                         <select class="form-control" id="user_type" name="user_type">
                             <option <?php if($slot_range->user_type == 'Doctor'){ ?> selected="selected" <?php } ?>  value="Doctor">Doctor</option>
-                            <option   <?php if($slot_range->user_type == 'Nurse'){ ?> selected="selected" <?php } ?> value="Nurse">Nurse</option>
+                          <!--   <option   <?php if($slot_range->user_type == 'Nurse'){ ?> selected="selected" <?php } ?> value="Nurse">Nurse</option> -->
                         </select>
                 </div>
 

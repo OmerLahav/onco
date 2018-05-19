@@ -14,4 +14,6 @@ class Symptom extends Model
 	{
 	    return $this->hasMany('App\SymptomReport');
 	}
+
+	
 }

@@ -27,7 +27,8 @@
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Role</th>
+                    <th>Email</th>
+                    <th>Phone</th
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -35,10 +36,12 @@
                 @foreach ($team as $member)
                     <tr>
                         <td>{{ $member->name }}</td>
-                        <td>{{ $member->role }}</td>
+                        <td>{{ $member->email }}</td>
+                        <td>{{ $member->phone }}</td>
+                        
                         <td>
-                            <a href="#" class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
-                            <a href="#" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
+                            <a href="{{action('TeamController@Team_edit',$member->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
+                            <a href="/Team_delete/{{$member->id}}"  onclick="return confirm('Are you sure you want to delete this staff member?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
                         </td>
                     </tr>
                 @endforeach

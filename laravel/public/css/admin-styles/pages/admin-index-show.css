@@ -1,3 +1,80 @@
+h5{
+border-bottom: 1px solid #538cc6;
+font-weight: bold;
+}
+
+
+
+.dataTables_wrapper
+{
+	margin-bottom:25px;
+}
+.add-btn
+{
+
+    max-width: 90px;
+padding: 12px 6px;
+    margin-bottom: 35px;
+
+}
+
+
+.opt-btn
+{
+    display:inline-block;
+    width:105px;
+padding: 12px 6px;
+    margin: 20px;
+    
+}
+.fa-plus 
+{
+        margin-right: -4px;
+}
+.fa-edit.far fa-trash-alt
+{margin-right: 5px;}
+
+
+.del
+{
+    margin-left: 5px;
+}
+.edit
+{
+     font-family: 'Poppins';
+}
+
+input[type=search]{
+    
+    width: 50%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 2.5rem;
+    height: 10px;
+	width:89%;
+}
+
+.table{
+	  padding: 0px;
+}
+
+table
+{
+      table-layout: fixed; // ***********add this
+		word-wrap:break-word; // ***********and this
+	 
+  
+}
+
+
 input.search_field,
 textarea.search_fieldinput[type=date],
 input[type=datetime-local],
@@ -40,11 +117,7 @@ input[type=date] {
     padding: 12px 20px;
 }
 
-label {
-    display: inline-block;
-    margin-bottom: .5rem;
-    width: 20%;
-}
+
 
 input[type=text],
 select,
@@ -52,7 +125,7 @@ input[type=email],
 input[type=tel],
 textarea {
     width: 50%;
-    padding: 12px 20px;
+    padding: 5px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -129,3 +202,7 @@ textarea {
     }
 
     /* ------------------ End Responsive--------------*/
+
+
+
+

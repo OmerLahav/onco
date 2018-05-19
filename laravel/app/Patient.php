@@ -18,6 +18,6 @@ class Patient extends User
 
     public function medications()
     {
-    	return $this->hasManyThrough(treatmentmedication::class, Treatment::class);
+    	return $this->hasManyThrough(TreatmentMedication::class, Treatment::class);
     }
 }

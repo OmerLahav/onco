@@ -19,16 +19,20 @@ $('body').on('click', '#find_slots', function (e) {
 		        $("#page_loader").show();
 		      },
 		      success:function(slotRes){
-		      	
 		        if(slotRes.status)
 		        {
+		        	$("#slot_html").css('display','inline-block');
 		        	$("#slot_html").html(slotRes.html);
 		        	$("#add_appointment_btn").prop('disabled',true);
+		  			$("#add_appointment_btn").show();
 		        }
 		        else
 		        {
 		        	alert(slotRes.msg);
 		        	$("#add_appointment_btn").prop('disabled',true);
+		        	$("#add_appointment_btn").hide();
+		        	//$("#slot_html").html("<div class='time-select' style='display:inline-none;'></div>");
+		        	$("#slot_html").css('display','none');
 		        }
 		        $("#type").val(slotRes.type);
 		      	$("#page_loader").hide();
@@ -37,6 +41,9 @@ $('body').on('click', '#find_slots', function (e) {
 		      error:function (){
 		        alert("There is some error in server side.");
 		      	$("#add_appointment_btn").prop('disabled',true);
+		      	//$("#slot_html").html("<div class='time-select' style='display:inline-block;'></div>");
+		      	$("#add_appointment_btn").hide();
+		      	$("#slot_html").css('display','none');
 		      }
 		    });
 

@@ -34,53 +34,8 @@
                 @endforeach
                 </tbody>
             </table>
-
-
-            <div>
-                <button type="button" id="1" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add treatment </button>
-                <button type="button" id="2" class="btn btn-info add-btn bg-info"><i class="fas fa-plus" ></i> hide</button>
-                <form id="3" name="myform" method="POST" action="{{ route('patients.add_treatment', [$patient]) }}">
-                    @csrf
-                    <div class="form-group">
-                        <label for="treatment_id">Treatment:</label>
-                        <select class="form-control" id="treatment_id" name="treatment_id">
-                            @foreach ($treatments as $treatment)
-                                <option value="{{ $treatment->id }}">{{ $treatment->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ends_at">Ends at:</label>
-                        <input type="date" class="form-control" value="ends_at" placeholder="Enter identification number"
-                               name="ends_at">
-                    </div>
-                    <button type="submit" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add </button>
-
-                </form>
-            </div>
-            <hr>
-
-            {{--<div>{{ $patient }}</div>--}}
         </div>
     </div>
-
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index.css') }} ">
-<style>
-#2{display:none;}
-</style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $("#1").click(function () {
-            $("#3").show();
-
-        });
-        $("#2").click(function () {
-            $("#3").hide();
-            $("#1").show();
-        });
-    });
-</script>
 @stop

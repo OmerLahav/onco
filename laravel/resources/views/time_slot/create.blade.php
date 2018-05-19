@@ -21,7 +21,7 @@
                             <label for="user_type">User Type:</label>
                             <select class="form-control" id="user_type" name="user_type">
                                 <option value="Doctor">Doctor</option>
-                                <option value="Nurse">Nurse</option>
+                                <!-- <option value="Nurse">Nurse</option> -->
                             </select>
                     </div>
 
@@ -72,7 +72,8 @@
 
     {{--<-- css->--}}
     
-	    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form-big.css') }} ">
+	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form-big.css') }} ">
 
 @stop

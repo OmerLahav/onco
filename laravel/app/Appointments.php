@@ -8,7 +8,7 @@ class Appointments extends Model
     
     //Set Fillable Property
 
-    protected $fillable = ['patient_id','appointment_date','medical_staff_type','appointment_time', 'status','type'];
+    protected $fillable = ['patient_id','appointment_date','medical_staff_type','appointment_time', 'status','type','medical_staff_id'];
 
 
     //Define model level constant related to table
