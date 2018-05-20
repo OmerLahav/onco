@@ -222,6 +222,24 @@
                     </a>
                 </li>
             </ul>
+            @elseif(Auth::user()->isAdmin())
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{{ route('dashboard') }}">
+                        <i class="fas fa-tachometer-alt fa-2x " alt="dashboard"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('appointments.get') }}">
+                        <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointment
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('team.index') }}">
+                        <i class="fas fa-user-md fa-2x" alt="team"></i> Medical stuff
+                    </a>
+                </li>
+            </ul>
             @endif
         </div>
 

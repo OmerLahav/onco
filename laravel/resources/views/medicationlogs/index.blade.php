@@ -30,9 +30,29 @@
             @foreach ($treatments as $treatment)
             @if (Carbon\Carbon::parse($date)->between($treatment->created_at, $treatment->ends_at))
             @foreach ($treatment->medications as $treatment_medication)
+            
             <tr>
-                <td>{{ $treatment->patient->name }}</td>
-                <td>{{ $treatment->name }}</td>
+				@if(!empty($treatment->patient))
+					<td>{{ $treatment->patient->name }}</td>
+				@else
+                    
+					@if(isset($treatment->patient_id) && $treatment->patient_id > 0)
+					
+                    	@php
+							$patients = App\User::where('id','=',$treatment->patient_id)->first();
+						@endphp
+						
+                        @if(!empty($patients))
+						 <td>{{ $patients->first_name }} {{ $patients->last_name }}</td>
+						@else
+							 <td>--N/A--</td>
+						@endif
+					@else
+					   <td>--N/A--</td>
+					@endif
+				@endif
+				
+			   <td>{{ $treatment->name }}</td>
                 <td>{{ $treatment_medication->medication->name }}</td>
                 <td>{{ Carbon\Carbon::parse($date)->format('d/m/Y') }}</td>
                 <td>{{ App\TreatmentMedication::DAY_PARTS[$treatment_medication->day_part] }}</td>

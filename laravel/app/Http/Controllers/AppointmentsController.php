@@ -75,6 +75,7 @@ class AppointmentsController extends Controller
                     'medical_staff_type'    => request('role'),
                     'status'                => Appointments::STATUS_REGULAR,
                     'medical_staff_id'                => request('medical_staff_id'),
+                    'medical_staff_id'      => request('doctor_id')
                      
                 ]);
 
@@ -120,13 +121,14 @@ class AppointmentsController extends Controller
             {
                 //get login patient all appointments
                 $patientData = PatientData::where('user_id','=',Auth::user()->id)->first();
+
                 if(!empty($patientData) && isset($patientData->doctor_id))
                 {
                     //Get Doctor Data From User Table
                     $doctorData = User::find($patientData->doctor_id)->toArray();
                 }
             }
-    	    return view('appointments.create')->withDoctor($doctorData)->withUsers($users)->withDoctor($doctor);
+    	    return view('appointments.create')->withDoctordata($doctorData)->withUsers($users)->withDoctor($doctor);
         }
     }
 
@@ -183,6 +185,7 @@ class AppointmentsController extends Controller
 
                //Pick Regular Slots Base on Doctore wise OR Nurse Wise
                 $regularSlots = SlotRange::where('slot_date','=',Input::get('appointmentDate'))->where('user_id','=',$userId)->where('type','=','Regular')->where('status','=','Active')->orderByRaw("RAND()")->first();
+
                 if(!empty($regularSlots))
                 {
                     $type = 'Regular';

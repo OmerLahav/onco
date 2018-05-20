@@ -29,13 +29,9 @@
 
                 <!-- Show List Of Doctor name and Nurse  For Patient -->
                 <div class="form-group">
-                    <label for="role">Select medical team:</label>
-                    @if(isset($doctor))
-                    <select class="form-control" id="medical_staff_type" name="role">
-                        <option name="medical_staff_type" value="Doctor">{{$doctor['first_name']}} {{$doctor['last_name']}}</option>
-                        <option name="medical_staff_type" value="Nurse">Nurse</option>
-                    </select>
-                    @endif
+                    <label for="role">Select medical team:</label>{{$doctordata['first_name']}} {{$doctordata['last_name']}}
+                    <input type="hidden" value="Doctor" id="medical_staff_type" name="role">
+                 
                 </div>
                 @else
                 <div class="form-group">
@@ -43,7 +39,7 @@
                     @if(isset($doctor))
                     <select class="form-control" id="medical_staff_type" name="role">
                         <option name="medical_staff_type" value="Doctor">Doctor</option>
-                        <option name="medical_staff_type" value="Nurse">Nurse</option>
+                       
                     </select>
                     @endif
                 </div>
@@ -82,7 +78,7 @@
                     <input type="hidden" name="type" id="type">
 
                     @if(Auth::user()->isPatient())
-                      <input type="hidden" name="doctor_id" id="doctor_id" value="{{$doctor['id']}}">
+                      <input type="hidden" name="doctor_id" id="doctor_id" value="{{$doctordata['id']}}">
                     @else
                       <input type="hidden" name="doctor_id" id="doctor_id" value="0">
                     @endif

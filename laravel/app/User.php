@@ -9,13 +9,19 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    protected $fillable = ['identification_number', 'first_name', 'last_name', 'email', 'phone', 'password', 'role'];
+    protected $fillable = ['identification_number','birth_date', 'first_name', 'last_name', 'email', 'phone', 'password', 'role'];
 
     protected $hidden = ['password', 'remember_token',];
 
     protected $attributes = [
         'role' => 0
     ];
+
+    public function getRoleName($roleid)
+    {
+        $roles_name = ['1'=>'Doctor','2'=>'Nurse','3'=>'Patient','4'=>'Secratory','5'=>'Admin'];
+        return (array_key_exists($roleid,$roles_name)?$roles_name[$roleid]:'--N/A--');
+    }
 
     public function getNameAttribute()
     {
@@ -24,7 +30,7 @@ class User extends Authenticatable
 
     public function scopeStaff($query)
     {
-        return $query->whereIn('role', [1,2]);
+        return $query->whereIn('role', [1,2,5]);
     }
 
     public function scopePatient($query)
@@ -61,8 +67,8 @@ class User extends Authenticatable
 
     //check already exist value by using key name and key value
 
-    public static  function checkAlreadyExist($key,$value){
-        return self::where($key,$value)->count();
+    public static  function checkAlreadyExist($key,$value,$ids=[]){
+        return self::where($key,$value)->whereNotIn('id',$ids)->count();
     } 
 
 

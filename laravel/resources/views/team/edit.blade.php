@@ -21,11 +21,20 @@
                     @csrf
                     <div class="form-group">
                         <label for="role">Role:</label>
-                        <select class="form-control" id="role" name="role">
+                        @if(Auth::user()->isDoctor())
+                           <select class="form-control" id="role" name="role">
                             <option <?php if($users->role == '1'){ ?> selected <?php } ?> value="1">Doctor</option>
                             <option <?php if($users->role == '2'){ ?> selected <?php } ?> value="2">Nurse</option>
                             <option <?php if($users->role == '5'){ ?> selected <?php } ?> value="5">Admin</option>
-                        </select>
+                          </select>
+                        @elseif(Auth::user()->isAdmin())
+                           <select class="form-control" id="role" name="role">
+                            <option <?php if($users->role == '1'){ ?> selected <?php } ?> value="1">Doctor</option>
+                            <option <?php if($users->role == '2'){ ?> selected <?php } ?> value="2">Nurse</option>
+                           </select>
+                        @endif
+
+                        
                     </div>
 
                     <div class="form-group">

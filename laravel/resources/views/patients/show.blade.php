@@ -3,7 +3,7 @@
 @section ('content')
     <div class="page-wrapper">
         <div class="page-wrapper-container">
-            <h1>{{ $patient->name }}</h1>
+            <h1>{{ $patient->name }} treatment information</h1>
 
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
@@ -13,7 +13,7 @@
                     <th>Description</th>
                     <th>Start</th>
                     <th>End</th>
-                    <th>Actions</th>
+                  
 
                 </tr>
                 </thead>
@@ -24,12 +24,7 @@
                         <td>{{ $patient_treatment->name}}</td>
                         <td>{{ $patient_treatment->description}}</td>
                         <td>{{ $patient_treatment->created_at}}</td>
-                        <td>?</td>
-                        <td>
-                            <a href="#" class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
-                            <a href="#" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
-                        </td>
-
+                        <td>{{ $patient_treatment->ends_at}}</td>
                     </tr>
                 @endforeach
                 </tbody>

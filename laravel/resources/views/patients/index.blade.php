@@ -36,9 +36,10 @@
                         <td>{{ $patient->patient_data->gender or '--N\A--'  }}</td>
                         <td>{{ $patient->patient_data->type or '--N\A--'  }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
-                            <a href="#" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
-							<a href="{{ route('patients.show', [$patient]) }}" class="btn btn-success opt-btn fas fa-user-edit"><span class="edit del">View</span></a>
+                            <a href="{{action('PatientsController@Patient_edit',$patient->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
+                            <a href="/patients_delete/{{$patient->id}}"  onclick="return confirm('Are you sure you want to delete this patient?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
+
+                            <a href="{{ route('patients.show', [$patient]) }}" class="btn btn-success opt-btn fas fa-user-edit"><span class="edit del">Treatments</span></a>
 
 
                         </td>

@@ -70,7 +70,7 @@
                                      <input type="hidden" value="{{$appointment->provider->first_name . ' ' . $appointment->provider->last_name}}" name="provider_name" >
                                      
                                      <input type="hidden" value="{{$appointment->appointment_time}}" name="appointment_time">
-                                     <button  type="submit" class="btn btn-primary bg-info">Add Claender</button>
+                                     <button  type="submit" class="btn btn-primary opt-btn"><i class="fab fa-google"></i>Add to Calendar</button>
                                    </form>
                                 @endif
                             </td>

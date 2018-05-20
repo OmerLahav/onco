@@ -44,7 +44,8 @@
                         @endif
 
                         <td>{{ $timeslot->user_type }}</td>
-                        <td>{{ $timeslot->slot_date }}</td>
+                        <!-- <td>{{ $timeslot->slot_date }}</td>-->
+                        <td>{{ \Carbon\Carbon::parse($timeslot->slot_date)->format('d/m/Y')}}</td>
                         <td>{{ $timeslot->start_time }}</td>
                         <td>{{ $timeslot->end_time }}</td>
                         <td>{{ $timeslot->type }}</td>

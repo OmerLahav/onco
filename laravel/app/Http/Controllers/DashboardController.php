@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+use Carbon;
+$CURRENT_DATE = Carbon\Carbon::now();
 
 
 class DashboardController extends Controller
@@ -30,11 +32,20 @@ class DashboardController extends Controller
             ->count();
         //End count Data Business Logic
 
-        //Start Treatment Data Business Logic
-        $dashboardData['treatmentCountData'] = DB::table('patient_treatment')
-            ->where('id', '!=', 0)
+        //Start Treatments count Data Business Logic
+        $dashboardData['treatmentCountData'] = DB::table('treatments')
+         //where this is the doctor -> to see only his appointments
             ->count();
         //End Treatment Data Business Logic
+
+        //Start doctors Appointments count Data Business Logic
+        $dashboardData['AppointmentCountData'] = DB::table('appointments')
+            ->whereRaw('Date(appointment_date) = CURDATE()')
+          //where this is the doctor -> to see only his appointments
+            ->count();
+        //End doctors Appointments Business Logic
+
+
 
 		
         //Auth check
@@ -45,16 +56,22 @@ class DashboardController extends Controller
             return view('dashboard.index');
 
 		
-		 //patient Business Logic
+		 
 		 //Start patient count Data Business Logic
-		
 		 $dashboardData2 = array();
         $dashboardData2['PatientCountData2'] = DB::table('users')
             ->where('role', '=', 3)
             ->count();
 			
-        //End count Data Business Logic
+        
+
+
+
 		
+
+        //patient Business Logic
+
+
 		 //Auth check
 		if (Auth::user()->isPatient())
             return view('dashboard.index', $dashboardData);

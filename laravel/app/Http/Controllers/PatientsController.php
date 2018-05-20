@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use UxWeb\SweetAlert\SweetAlert;
 use App\Helpers\MailSendHelper;
-
+use DB;
 class PatientsController extends Controller
 {
     public function index()
@@ -30,6 +30,7 @@ class PatientsController extends Controller
         {
             if(User::checkAlreadyExist('identification_number',request('identification_number')) == 0)
             {
+
                 $patient = Patient::create([
             		'role' => 3,
             		'identification_number' => request('identification_number'),
@@ -38,7 +39,7 @@ class PatientsController extends Controller
             		'email' => request('email'),
             		'password' => bcrypt(request('password')),
                     'phone' => request('phone'),
-            		'birth_date' => request('birth_date')
+            		'birth_date' => date('Y-m-d',strtotime(request('birth_date')))
             	]);
 
             	$create = $patient->patient_data()->create([
@@ -104,6 +105,24 @@ class PatientsController extends Controller
     	return redirect()->route('patients.index');
     }
 
+    //Delete Patient BY Doctore
+     function Patient_delete($id)
+    {
+        $deleting=  DB::table ('users')->where('id','=',$id )->delete();
+
+//      if query failed
+        if($deleting!=1)
+        {
+            SweetAlert::error('There is an error! ')->persistent("Close");
+            return redirect()->route('patients.index');
+        }
+        else 
+        {
+            SweetAlert::success('Deleted successfully')->persistent("Close");
+            return redirect()->route('patients.index');
+        }
+    }
+
     public function show(Patient $patient)
     {
         $patient->load('patient_data');
@@ -111,6 +130,68 @@ class PatientsController extends Controller
         return view('patients.show')
             ->withPatient($patient)
             ->withTreatments(Treatment::all());
+    }
+
+    public function Patient_edit($id)
+    {
+        $users = User::where('id',$id)->with(['patient_data'])->first();
+        //print_r($users->toArray()); exit;
+        return view('patients.edit',compact('users','id'));
+    }
+
+    public function Patient_update(Request $request,$id)
+    {
+        if(User::checkAlreadyExist('email',request('email'),[$id]) == 0)
+        {
+            if(User::checkAlreadyExist('identification_number',request('identification_number'),[$id]) == 0)
+            {
+                $users= User::find($id);
+                $users->role = 3;
+                $users->identification_number = request('identification_number');
+                $users->first_name = request('first_name');
+                $users->email = request('email');
+                $users->last_name = request('last_name');
+                $users->birth_date = request('birth_date');
+                $users->phone = request('phone');
+                if(request('password') != "")
+                {
+                    $users->password = bcrypt(request('password'));
+                }
+                $users->save();
+
+                $users->patient_data()->update([
+                    'gender' => request('gender'),
+                    'type' => request('type'),
+                    'contact_relation' => request('contact_relation'),
+                    'contact_name' => request('contact_name'),
+                    'contact_phone' => request('contact_phone'),
+                    'contact_email' => request('contact_email'),
+                    'is_active' => request('is_active'),
+                    'doctor_id' =>(Auth::user()->role == 1 ?Auth::user()->id:0)
+                ]);
+
+
+                //   if update failed
+                if($users==null){
+                    SweetAlert::error('There is an error! ')->persistent("Close");
+                    return redirect()->route('patients.index');
+                }
+                else {
+                    SweetAlert::success('Updated successfully')->persistent("Close");
+                    return redirect()->route('patients.index');
+                }
+            }
+            else
+            {
+                sweetAlert::error('The Id already exist.');
+                return redirect()->route('patients.edit',['id'=>$id]);
+            }
+        }
+        else
+        {
+            sweetAlert::error('The email address already exist.');
+            return redirect()->route('patients.edit',['id'=>$id]);
+        }
     }
 
     public function addTreatment(Patient $patient)

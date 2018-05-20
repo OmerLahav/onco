@@ -19,11 +19,18 @@
                     @csrf
                     <div class="form-group">
                         <label for="role">Role:</label>
-                        <select class="form-control" id="role" name="role">
-                            <option value="1">Doctor</option>
-                            <option value="2">Nurse</option>
-                            <option value="5">Admin</option>
-                        </select>
+                        @if(Auth::user()->isDoctor())
+                            <select class="form-control" id="role" name="role">
+                                <option value="1">Doctor</option>
+                                <option value="2">Nurse</option>
+                                <option value="5">Admin</option>
+                            </select>
+                        @elseif(Auth::user()->isAdmin())
+                            <select class="form-control" id="role" name="role">
+                                <option value="1">Doctor</option>
+                                <option value="2">Nurse</option>
+                            </select>
+                        @endif
                     </div>
 
                     <div class="form-group">

@@ -49,7 +49,7 @@
                                     <i class="far fa-calendar-check"></i>
                                 </div>
                                 <div class="dash-box-body">
-                                    <span class="dash-box-count">0</span>
+                                     <span class="dash-box-count">{{$AppointmentCountData or '0'}}</span>
                                     <span class="dash-box-title">Appointments Today</span>
                                 </div>
 

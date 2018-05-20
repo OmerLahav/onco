@@ -22,28 +22,34 @@
 		@endforeach
                 </tbody>
             </table>-->
-
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Identification Number</th>
                     <th>Email</th>
-                    <th>Phone</th
+                    <th>Phone</th>
+                    <th>Role</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ($team as $member)
-                    <tr>
-                        <td>{{ $member->name }}</td>
-                        <td>{{ $member->email }}</td>
-                        <td>{{ $member->phone }}</td>
-                        
-                        <td>
-                            <a href="{{action('TeamController@Team_edit',$member->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
-                            <a href="/Team_delete/{{$member->id}}"  onclick="return confirm('Are you sure you want to delete this staff member?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
-                        </td>
-                    </tr>
+                  @if((Auth::user()->isAdmin() && !$member->isAdmin()) || Auth::user()->isDoctor())
+                    
+	                    <tr>
+	                        <td>{{ $member->name }}</td>
+	                        <td>{{ $member->identification_number }}</td>
+	                        <td>{{ $member->email }}</td>
+	                        <td>{{ $member->phone }}</td>
+	                        <td>{{ (new App\User)->getRoleName($member->role) }}</td>
+	                        <td>
+	                            <a href="{{action('TeamController@Team_edit',$member->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
+	                            <a href="/Team_delete/{{$member->id}}"  onclick="return confirm('Are you sure you want to delete this staff member?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
+	                        </td>
+	                    </tr>
+	           
+                   @endif
                 @endforeach
                 </tbody>
             </table>

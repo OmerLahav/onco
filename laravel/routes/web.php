@@ -114,6 +114,9 @@ Route::post('/Treatment_update/{treatmentid}','TreatmentsController@Treatment_up
 
 Route::resource('patients', 'PatientsController', ['only' => ['index', 'create', 'store', 'show']]);
 Route::post('patients/{patient}', 'PatientsController@addTreatment')->name('patients.add_treatment');
+Route::get('patients_delete/{member}', 'PatientsController@Patient_delete');
+Route::get('/patients_edit/{member}','PatientsController@Patient_edit')->name('patient.edit');
+Route::post('/patients_update/{member}','PatientsController@Patient_update')->name('patient.update');
 
 
 //Team
@@ -121,7 +124,7 @@ Route::get('team', 'TeamController@index')->name('team.index');
 Route::get('team/add', 'TeamController@create')->name('team.create');
 Route::post('team', 'TeamController@store')->name('team.store');
 Route::get('Team_delete/{member}', 'TeamController@Team_delete');
-Route::get('/Team_edit/{member}','TeamController@Team_edit');
+Route::get('/Team_edit/{member}','TeamController@Team_edit')->name('team.edit');
 Route::post('/Team_update/{member}','TeamController@Team_update');
 
 
