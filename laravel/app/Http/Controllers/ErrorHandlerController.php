@@ -31,5 +31,12 @@ class ErrorHandlerController extends Controller
         return view('errors.405');
 
     }
+    public function reports()
+
+    {
+
+        return view('errors.report');
+
+    }
 
 }

@@ -20,9 +20,14 @@
 
 
     </script>
+   
+
+
+
+
 </head>
 <body>
-<div id="linechart" style="width: 300px; height: 300px;"></div>
+<div id="linechart" style="min-height:500px;height: 100%;width: 100%;margin:auto;text-align:center;" ></div>
 
 
 

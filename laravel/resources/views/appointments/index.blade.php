@@ -4,11 +4,23 @@
     <div class="page-wrapper">
         <div class="page-wrapper-container">
             <h1>Appointments</h1>
+             <div class="steps">
+                <ol class="direction">
+                    <li>
+                        Here you will review appointments.
+                    </li>
+                    @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
+                    <li>
+                        You can add, the appointment to your google calendar by pressing the "G ADD".
+                    </li>
+                     @endif
+                </ol>
+            </div>
 
             @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
                 <a href="{{ route('appointments.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
             @endif
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <table id="appointments" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -70,7 +82,7 @@
                                      <input type="hidden" value="{{$appointment->provider->first_name . ' ' . $appointment->provider->last_name}}" name="provider_name" >
                                      
                                      <input type="hidden" value="{{$appointment->appointment_time}}" name="appointment_time">
-                                     <button  type="submit" class="btn btn-primary opt-btn"><i class="fab fa-google"></i>Add to Calendar</button>
+                                     <button  type="submit" class="btn btn-primary opt-btn"><i class="fab fa-google"></i>Add</button>
                                    </form>
                                 @endif
                             </td>
@@ -81,5 +93,5 @@
             </table>
         </div>
     </div>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index.css') }} ">
+     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index.css') }} ">
 @stop

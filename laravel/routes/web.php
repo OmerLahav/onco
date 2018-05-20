@@ -41,6 +41,8 @@ Auth::routes();
 //error
 Route::get('404',['as'=>'404','uses'=>'ErrorHandlerController@errorCode404']);
 Route::get('405',['as'=>'405','uses'=>'ErrorHandlerController@errorCode405']);
+Route::get('report',['as'=>'report','uses'=>'ErrorHandlerController@reports']);
+
 
 
 Route::get('settings', 'SettingsController@index')->name('settings');
@@ -73,6 +75,9 @@ Route::get("reset-password_msg/{msg}",array( //3)user reset password msg screen 
 
 //dashboard
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+//reports
+
 
 //medications
 Route::resource('medications', 'MedicationsController',

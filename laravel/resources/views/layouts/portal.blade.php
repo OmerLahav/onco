@@ -314,6 +314,12 @@
                     "targets": 4
                 }]
             });
+            $('#appointments').dataTable({
+                "columnDefs": [{
+                    "width": "40%",
+                    "targets": 1
+                }]
+            });
 			
 
 

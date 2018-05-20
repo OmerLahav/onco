@@ -39,7 +39,7 @@
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#">More Info</a></button>
+                                    <button class="stuff_btn"><a href="{{ route('medicationlogs.index') }}">More Info</a></button>
                                 </div>
                             </div>
                         </div>
@@ -54,14 +54,14 @@
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#">More Info</a></button>
+                                    <button class="stuff_btn"><a href="{{ route('appointments.get') }}">More Info</a></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {{--action boxes--}}
+               {{--Data boxes--}}
 
                 <div class="container">
                     <div class="row">
@@ -76,7 +76,7 @@
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#">More Info</a></button>
+                                    <button class="stuff_btn"><a href="{{ route('patients.index') }}">More Info</a></button>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                                 </div>
 
                                 <div class="dash-box-action">
-                                    <button class="stuff_btn"><a href="#">More Info</a></button>
+                                    <button class="stuff_btn"><a href="{{ route('treatments.index') }}">More Info</a></button>
                                 </div>
                             </div>
                         </div>
@@ -116,20 +116,22 @@
                 {{--charts--}}
                 <div class="container">
                     <div class="row " style="margin-top:20px;margin-bottom:60px;">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Cancer types</h5>
                                     <div class="card-text">
+                                         <div id="wrapper" style="min-height:500px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
                                         @if(isset($activeChartData))
                                             @include('charts.google-2-chart',['activeChartData'=>$activeChartData])
                                         @endif
                                     </div>
+                                </div>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                    <!--     <div class="col-md-4 col-sm-4 col-xs-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Cancer types </h5>
@@ -142,16 +144,17 @@
 
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        </div> -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">User types</h5>
                                     <div class="card-text">
+                                        <div id="wrapper" style="min-height:500px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
                                         @if(isset($visitorChartData))
                                             @include('charts.google-pie-cancer-type-chart',['visitorChartData'=>$visitorChartData])
                                         @endif
-
+                                        </div>
                                     </div>
 
                                 </div>
@@ -221,4 +224,12 @@
 
         </div>
     </div>
+
+<script>
+    $(window).resize(function(){
+    drawChart();
+});
+</script>
+
+
 @stop
