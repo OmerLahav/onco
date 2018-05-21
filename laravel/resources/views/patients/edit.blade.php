@@ -83,6 +83,14 @@
                         {{-- <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2"> --}}
                     </div>
 
+                    <div class="form-group">
+                        <label for="num">Patient Status:</label>
+                        <select name="patient_status" class="form-control" id="patient_status" required="required">
+                            <option value="Regular"  <?php if($users->patient_data->patient_status == 'Regular'){ ?> selected <?php } ?>>Regular</option>
+                            <option value='Critical'  <?php if($users->patient_data->patient_status == 'Critical'){ ?> selected <?php } ?>>Critical</option>
+                        </select>
+                    </div>
+
                     <h4>Contact person</h4>
 
                     <div class="form-group">

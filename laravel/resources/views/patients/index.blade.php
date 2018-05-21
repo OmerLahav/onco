@@ -30,6 +30,7 @@
                 </thead>
                 <tbody>
                 @foreach ($patients as $patient)
+                    @if(Auth::user()->id == $patient->patient_data->user_id)
                     <tr>
                         <td>{{ $patient->patient_data->user_id or '--N\A--' }}</td>
                         <td>{{ $patient->name or '--N\A--'  }}</td>
@@ -45,6 +46,7 @@
                         </td>
                     
                     </tr>
+                    @endif
                 @endforeach
                 </tbody>
             </table>

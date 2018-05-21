@@ -17,15 +17,14 @@ class MedicationLogsController extends Controller
 
         /*dd($took);
 */
-      //  print_r($treatments->toArray()); exit;
         if($treatments->count() > 0)
         {
             //old Logic
     		$dates = Collection::times($treatments->min('created_at')->diffInDays(), function ($number) use ($treatments) {
-    			return $treatments->min('created_at')->addDays($number-1)->format('Y-m-d');
+    			return $treatments->min('created_at')->addDays($number)->format('Y-m-d');
     		})->flip();
         }
-
+       
        
        
     	return view('medicationlogs.index')->withTreatments($treatments)->withTook($took)->withDates($dates);

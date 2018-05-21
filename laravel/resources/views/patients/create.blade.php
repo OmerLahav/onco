@@ -91,6 +91,15 @@
                         {{-- <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2"> --}}
                     </div>
 
+
+                    <div class="form-group">
+                        <label for="num">Patient Status:</label>
+                        <select name="patient_status" class="form-control" id="patient_status" required="required">
+                            <option   value="Regular">Regular</option>
+                            <option value="Critical" >Critical</option>
+                        </select>
+                    </div>
+
                     <h4>Contact person</h4>
 
                     <div class="form-group">

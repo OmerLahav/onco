@@ -26,6 +26,7 @@
                         @endforeach
                     </select>
                 </div>
+                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
 
                 <div>
                     <label for="name">Name:</label>

@@ -1,5 +1,14 @@
 $("#add_appointment_btn").prop('disabled',true);
 
+//Disable click on checkbox alert box show
+$('body').on('click', '.meditation_chk', function (e) {
+	if($(this).attr('alreadybook') == "Yes")
+	{
+		alert("You already reported this medication.");
+		$(this).prop('checked', false);
+	}
+});
+
 //Get Slots Base on Appointment Date and Medical Staff Type
 $('body').on('click', '#find_slots', function (e) {
     var appointmentDate = $("#appointment_date").val();

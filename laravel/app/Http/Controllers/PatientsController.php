@@ -50,6 +50,7 @@ class PatientsController extends Controller
             		'contact_phone' => request('contact_phone'),
             		'contact_email' => request('contact_email'),
             		'is_active' => request('is_active'),
+                    'patient_status' => request('patient_status'),
                     'doctor_id' =>(Auth::user()->role == 1 ?Auth::user()->id:0)
             	]);
 
@@ -167,6 +168,7 @@ class PatientsController extends Controller
                     'contact_phone' => request('contact_phone'),
                     'contact_email' => request('contact_email'),
                     'is_active' => request('is_active'),
+                    'patient_status' => request('patient_status'),
                     'doctor_id' =>(Auth::user()->role == 1 ?Auth::user()->id:0)
                 ]);
 

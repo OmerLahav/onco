@@ -17,19 +17,22 @@ class CronController
 	public function patient_treatment_status()
 	{
 
+
 		$cron_results = '';
 
 	    $cron_results.="<<<<<<------- Start Execution of Cron Job Of Patient Treatment Status --------->>>>>><br>";
 		$medications_logs = $treatments_medications = $critical_treatment_medications = [];
 		//Take Patient with his All Teatments
-		$treatments_medications = TreatmentMedication::where('ends_at','>=',date('Y-m-d H:i:s'))->pluck('id')->toArray();
 
+		
+		
+		$treatments_medications = TreatmentMedication::where(DB::raw("DATE(treatment_medications.ends_at)"),">=",date('Y-m-d'))->pluck('id')->toArray();
 
 		$cron_results.="<<<<<<------- Fetching Tratment Medications Table Treatment Id  --------->>>>>><br>";
 		$cron_results.="<<<<<<------- Display Tratment Ids  --------->>>>>><br>";
 		$cron_results.= "(".implode("|",$treatments_medications).")";
 
-		$medications_logs = MedicationLog::pluck('treatment_medication_id')->toArray();
+		$medications_logs = MedicationLog::where(DB::raw("DATE(medication_logs.created_at)"),"=",date('Y-m-d'))->pluck('treatment_medication_id')->toArray();
 
 
 		$cron_results.="<<<<<<------- Fetching Medications Log Table Treatment Id  --------->>>>>><br>";
@@ -44,8 +47,9 @@ class CronController
 			$cron_results.="<<<<<<------- Subtract It and  Display Critical Patient Tratment Ids  --------->>>>>><br>";
 			$cron_results.= "(".implode("|",$critical_treatment_medications).")";
 
+			$treatments_ids = TreatmentMedication::whereIn('id',$critical_treatment_medications)->pluck('treatment_id')->toArray();
 
-			$patient_ids = Treatment::whereIn('id',$critical_treatment_medications)->pluck('patient_id')->toArray();
+			$patient_ids = Treatment::whereIn('id',$treatments_ids)->pluck('patient_id')->toArray();
 			
 			$cron_results.="<<<<<<------- Patient Id from Treatment Ids --------->>>>>><br>";
 			$cron_results.= "(".implode("|",$patient_ids).")";

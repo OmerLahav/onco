@@ -34,14 +34,19 @@
                         </div>
                         <div class="card-body">
                             <div class="list-group">
-                                @if (isset($medications[$key])) @foreach ($medications[$key] as $medication)
-                                <button type="button" class="list-group-item list-group-item-action {{ strtolower($name) }}-box">
+                                @if (isset($medications[$key])) 
+                                @foreach ($medications[$key] as $medication)
+                                @php ($isdisabled = 'No')
+                                @if(in_array($medication['tm_id'],$currentDateMedicationLog))
+                                    @php ($isdisabled = 'Yes')
+                                @endif
+                                <button type="button" class="list-group-item  list-group-item-action {{ strtolower($name) }}-box">
 											<div class="image">
 												<img class="pill-img" src="/images/pills/1484942362ios-emoji-pill.png" alt="{{ $medication['name'] }}">
 											</div>
 											<p class="image-info"></p>
 											<label class="container">{{ $medication['name'] }}
-												<input type="checkbox" name="treatmentmedications[]" value="{{ $medication['tm_id'] }}">
+												<input  type="checkbox" class="meditation_chk" alreadybook="{{$isdisabled}}" name="treatmentmedications[]" value="{{ $medication['tm_id'] }}">
 												<span class="checkmark"></span>
 											</label>
 										</button> @endforeach @endif
@@ -62,7 +67,9 @@
 
 {{-- CSS --}}
 <link rel="stylesheet" href="{{ asset('/css/patients-style/pages/medication.css') }}"> {{-- JS --}}
+<script src="{{ asset('/js2/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('/js2/medications.js') }}"></script>
+<script src="{{ asset('/js2/custom.js') }}"></script>
 <script>
     timeChecker();
 

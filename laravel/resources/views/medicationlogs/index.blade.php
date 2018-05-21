@@ -28,7 +28,6 @@
             <tbody>
             @foreach ($dates as $date => $value)
             @foreach ($treatments as $treatment)
-            @if (Carbon\Carbon::parse($date)->between($treatment->created_at, $treatment->ends_at))
             @foreach ($treatment->medications as $treatment_medication)
             
             <tr>
@@ -60,7 +59,6 @@
                 </td>
             </tr>
             @endforeach
-            @endif
             @endforeach
             @endforeach
 
