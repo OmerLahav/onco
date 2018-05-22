@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+}
+
+
+main {
+    width: 100%;
+}
+
+
+button:hover{
+    cursor: pointer;
+}
+.btn{
+    margin-top: 10px;
+}
+.nav {
+   
+            margin-top: 20px;
+}
+
+
+ol.direction
+{
+    padding-left:10px;
+    margin-top:20px;
+}
+.tab-content {
+    width: 40%;
+    float: left;
+    display: inline;
+    margin-right: 10%;
+margin-top: 12px;
+}
+
+.steps li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    list-style-type:none;
+    text-align:left; 
+     font-family: 'Signika', sans-serif;
+    margin-left:-10px;
+   font-size:20px;
+}
+
+
+.steps li::before {
+  content: counter(step-counter);
+  margin-right: 5px;
+  font-size: 90%;
+  background-color: rgb(0,200,200);
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.report-levels {
+    width: 40%;
+    float: left;
+}
+
+.feel-pain {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#save-btn{
+    margin-top:27px;
+}
+
+.image {
+    float: left;
+    display: inline;
+    margin-right: 41px;
+    width: 144px;
+
+}
+
+.symp-img {
+
+    height: 80px;
+    width: 80px;
+}
+
+.check-img {
+    float: right;
+    display: none;
+}
+
+.image-info {
+    margin-top: 15px;
+    font-size: 15px;
+
+}
+
+.status {
+    width: 50px;
+}
+
+
+input {
+    float: right;
+}
+
+    input[type="radio"] {
+    display: none;
+}
+
+.pointer {
+  padding: 10px 23px;
+  background-color: #00b3b3;
+  border: thin solid;
+  border-radius: 10px;
+  margin:5px;
+  display: inline-block;
+    cursor: pointer;
+}
+.pointer:hover
+{
+    background-color: #006699; 
+}
+input[type="radio"]:checked + label {
+    background-color: #006699;
+    cursor: default;
+    color: #E6E6E6;
+}
+
+/*----pages css----*/
+
+#page-two {
+    display: none;
+}
+
+#page-three {
+    display: none;
+}
+
+
+/*----levels 0-4----*/
+.levels-btn
+{
+    float:right;
+}
+
+.report-levels {
+    
+    margin-top: 177px   ;
+
+   
+}
+.report-levels
+{
+    display: none; 
+}
+
+.level-select {
+    height: 50px;
+}
+.card-info-levels{
+margin-top:82px;
+}
+
+.container-levels {
+    float: left;
+    display: inline;
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container-levels input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 45px;
+    width: 45px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+
+.container-levels:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.radio-zero input:checked ~ .checkmark {
+    background-color: #4169E1	;
+}
+
+.radio-one input:checked ~ .checkmark {
+    background-color: #32CD32	;
+}
+
+.radio-two input:checked ~ .checkmark {
+    background-color: #ffe066			;
+}
+
+.radio-three input:checked ~ .checkmark {
+    background-color: #ffa500;
+}
+
+.radio-four input:checked ~ .checkmark {
+    background-color: #8B4513	;
+}
+
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+
+.container-levels input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+
+.container-levels .checkmark:after {
+    left: 14px;
+    top: 6px;
+    width: 15px;
+    height: 20px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+
+}
+/*----nubers css----*/
+.numbers
+{
+     margin-bottom: 30px;
+}
+.one-five {
+    display: inline;
+    font-size: 20px;
+    margin-left: 15px;
+    
+}
+
+.num-symp-1{
+
+    margin-left: 45px;
+}
+
+.num-symp-2 {
+    margin-left: 45px;
+}
+
+.num-symp-3 {
+    margin-left: 45px;
+}
+.num-symp-4 {
+    margin-left: 40px;
+}
+
+

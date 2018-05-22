@@ -107,11 +107,10 @@
 
 {{--css--}}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+   
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/selected-style.css') }} ">
- 
-	 <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index-show.css') }} ">
-
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index-show.css') }} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
     {{--script--}}
     <script
             src="https://code.jquery.com/jquery-3.3.1.js"

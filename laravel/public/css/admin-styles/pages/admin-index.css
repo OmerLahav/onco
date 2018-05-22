@@ -2,27 +2,43 @@
 {
 
     max-width: 90px;
-padding: 12px 6px;
+    padding: 12px 6px;
     margin-bottom: 35px;
 
 }
 
+.g-btn
+{
+    margin:2px;
+    display:inline-block;
+    width:105px;
+    padding: 12px 6px;
+}
 
+.cf{
+    display:inline-block;
+    width:105px;
+}
+.fa-google
+{
+    width:22px;
+}
 .opt-btn
 {
     display:inline-block;
     width:105px;
-padding: 12px 6px;
+    padding: 12px 6px;
     margin: 20px;
     
 }
 .fa-plus 
 {
-        margin-right: -4px;
+    margin-right: -4px;
 }
 .fa-edit.far fa-trash-alt
-{margin-right: 5px;}
+{   margin-right: 5px;
 
+}
 
 .del
 {
@@ -30,18 +46,18 @@ padding: 12px 6px;
 }
 .edit
 {
-     font-family: 'Poppins';
+    font-family: 'Poppins';
 }
 
 input[type=search]{
     
     width: 50%;
-			padding: 12px 20px;
-			margin: 8px 0;
-			display: inline-block;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			box-sizing: border-box;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 label {
@@ -51,28 +67,33 @@ label {
 }
 
 .table{
-	  padding: 0px;
+	padding: 0px;
 }
 
 table
 {
-      table-layout: fixed; // ***********add this
-		word-wrap:break-word; // ***********and this
-	 
-  
+    table-layout: fixed; // ***********add this
+	word-wrap:break-word; // ***********and this
 }
 
 
 /* ------------------Responsive--------------*/
 /*----laptop----*/
 @media (max-width: 768px) {
-	.opt-btn {
+
+.opt-btn {
     display: inline-block;
     width: 70px;
     padding: 12px 6px;
 	margin-bottom:2px;
-  
 }
+.g-btn
+{
+    display: inline-block;
+    width: 70px;
+    padding: 12px 6px;
+}
+
 
 }
 

@@ -2,48 +2,25 @@
 function timeChecker() {
     var d = new Date();
     var n = d.getHours();
+
      if(n>=6 && n<=12)
      {
-     document.getElementById("card-morrning").style.backgroundColor = "rgb(0,200,200)"; 
-        
-       
-                $('#morning-big').attr('src', "images/medication-time/morning-2.png");
-
-         
+      document.getElementById("card-morning").style.backgroundColor = "rgb(0,200,200)";    
     }
     else if (n>12 && n<=18)
     {
-      document.getElementById("card-afternoon").style.backgroundColor = "rgb(0,200,200)"; 
-        
-      
-
-               $('#afternoon-big').attr('src', "images/medication-time/afternoon-2.png");
-
-               
-
-
+      document.getElementById("card-afternoon").style.backgroundColor = "rgb(0,200,200)";  
     }
     else if (n>18 && n<=24)
     {
       document.getElementById("card-evening").style.backgroundColor = "rgb(0,200,200)"; 
-      
-  
-       $('#evening-big').attr('src', "images/medication-time/evening-2.png");
-
-
     }
     
     else 
     {
-          document.getElementById("card-night").style.backgroundColor = "rgb(0,200,200)"; 
-       
-        
-               $('#night-big').attr('src', "images/medication-time/night-2.png");
- 
+      document.getElementById("card-night").style.backgroundColor = "rgb(0,200,200)"; 
     }
 }
-
-
 
 
 

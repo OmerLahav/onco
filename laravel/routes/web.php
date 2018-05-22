@@ -19,6 +19,10 @@ Route::get('/', function () {
 });
 
 
+Route::get('/timezone-datetime', function () {
+    echo date_default_timezone_get();
+    echo date('Y-m-d H:i:s');
+});
 Route::get('/phpinfo', function () {    
     echo phpinfo();
 });

@@ -24,7 +24,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
+                    @if(Auth::user()->isPatient() || Auth::user()->isSecratory()  || Auth::user()->isNurse()  || Auth::user()->isAdmin())
                         <th>Provider Name</th>
                     @endif
                     @if(!Auth::user()->isPatient())
@@ -45,7 +45,7 @@
                     <tr>
 
                         <td>{{ $appointment->id }}</td>
-                        @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
+                        @if(Auth::user()->isPatient() || Auth::user()->isSecratory() || Auth::user()->isNurse() || Auth::user()->isAdmin())
                             @if($appointment->medical_staff_id != "" && $appointment->medical_staff_id > 0)
                                <td>{{ $appointment->provider->first_name . ' ' . $appointment->provider->last_name }}</td>
                             @else
@@ -65,11 +65,13 @@
                         <td>{{ $appointment->status }}</td>
                         <td>{{ $appointment->medical_staff_type }}</td>
                         <td>{{ $appointment->type }}</td>
-                        @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
+                        @if(Auth::user()->isPatient() || Auth::user()->isSecratory() || Auth::user()->isNurse() || Auth::user()->isAdmin())
                             <td>
-                                @if(!Auth::user()->isPatient())
+
+                           <!--  edit --> 
+                             <!--   @if(!Auth::user()->isPatient())
                                  <a href="{{action('AppointmentsController@editAppointments',$appointment->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
-                                @endif
+                                @endif  -->
 
                                 <a href="/appointments/{{$appointment->id}}/delete"  onclick="return confirm('Are you sure you want to delete this appointment?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
                               
@@ -82,7 +84,7 @@
                                      <input type="hidden" value="{{$appointment->provider->first_name . ' ' . $appointment->provider->last_name}}" name="provider_name" >
                                      
                                      <input type="hidden" value="{{$appointment->appointment_time}}" name="appointment_time">
-                                     <button  type="submit" class="btn btn-primary opt-btn"><i class="fab fa-google"></i>Add</button>
+                                     <button  type="submit" class="btn g-btn btn-primary "><i class="fab fa-google"></i>Add</button>
                                    </form>
                                 @endif
                             </td>

@@ -11,7 +11,7 @@
                     </li>
                 </ol>
             </div>
-            <form class="form-style" method="POST" action="{{ route('symptoms.store') }}">
+            <form class="form-style" method="POST" enctype="multipart/form-data" action="{{ route('symptoms.store') }}">
                 @csrf
                 <div>
                     <label for="name">Name:</label>
