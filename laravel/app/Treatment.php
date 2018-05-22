@@ -13,7 +13,7 @@ class Treatment extends Model
 
     public function symptoms()
     {
-        return $this->belongsToMany(Symptom::class);
+        return $this->belongsToMany(Symptom::class,'symptom_treatment','treatment_id','symptom_id');
     }
 
     public function medications()

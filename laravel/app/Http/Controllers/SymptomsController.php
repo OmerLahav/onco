@@ -25,19 +25,35 @@ class SymptomsController extends Controller
     {
         $validation = Validator::make($request->all(),[
             'name' => 'required',
-            'importance_level' => 'required|numeric'
+            'importance_level' => 'required|numeric',
+            'image'=>'required|image|mimes:jpeg,bmp,png|max:2000'
+
         ]);
 
     	if($validation->fails()){
             SweetAlert::error('There is an error! Please symptom name and level of importance')->persistent("Close");
             return redirect()->route('symptoms.create');
         }
+        //Store Image on Server
+         $file = $request->file('image');
+   
+        //Move Uploaded File
+          $destinationPath = public_path().'/images/symptoms/';
+          $filename = rand('111','999').$file->getClientOriginalName();
 
-    	$create = Symptom::create(
+
+          $file->move($destinationPath,$filename);
+          $createsympt = new Symptom;
+          $createsympt->name = $request->name;
+          $createsympt->image = $filename;
+          $createsympt->importance_level = $request->importance_level;
+          $createsympt->save();
+          
+    	/*$create = Symptom::create(
     		$request->only((new Symptom)->getFillable())
-    	);
+    	);*/
 
-        if($create){
+        if($createsympt){
             SweetAlert::success('Created successfully')->persistent("Close");
         }
 

@@ -16,7 +16,10 @@ class PatientsController extends Controller
 {
     public function index()
     {
-    	return view('patients.index')->withPatients(Patient::allPatients());
+        
+        return view('patients.index')
+        ->withPatients(User::with(['patient_data'])->where('role','=',3)->get());
+    
     }
 
     public function create()
@@ -26,6 +29,7 @@ class PatientsController extends Controller
 
     public function store()
     {
+        
         if(User::checkAlreadyExist('email',request('email')) == 0)
         {
             if(User::checkAlreadyExist('identification_number',request('identification_number')) == 0)
@@ -56,7 +60,7 @@ class PatientsController extends Controller
 
 
                 //Send Registration Email to Patient Using  Mail  Helper Function
-/*
+
                 $email_data = EmailTemplates::get_details(2);
 
                 if(!empty($email_data)) 
@@ -83,7 +87,7 @@ class PatientsController extends Controller
                    
                     //Send Email Helper Function 
                     MailSendHelper::send_email($email_data, [request('contact_email')]);
-                }*/
+                }
                 
 
                 if ($create) {

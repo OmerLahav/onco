@@ -8,13 +8,23 @@ use App\Treatment;
 use Illuminate\Http\Request;
 use UxWeb\SweetAlert\SweetAlert;
 use Validator;
-use DB;
+use DB,Auth;
 class TreatmentsController extends Controller
 {
     public function index()
     {
-    	return view('treatments.index')
-    		->withTreatments(Treatment::all());
+        if(Auth::user()->isDoctor())
+        {
+            //Doctor Show only His Treatments
+           return view('treatments.index')
+    		->withTreatments(Treatment::where('user_id',Auth::user()->id)->get());
+        }
+        elseif(Auth::user()->isNurse() || Auth::user()->isAdmin())
+        {
+            //Nurse Show All treatment
+            return view('treatments.index')
+            ->withTreatments(Treatment::all());
+        }
     }
 
     public function create()

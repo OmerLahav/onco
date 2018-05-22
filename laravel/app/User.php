@@ -62,7 +62,7 @@ class User extends Authenticatable
     }
     public function patient_data()
     {
-        return $this->hasOne(PatientData::class, 'user_id');
+        return $this->hasOne(PatientData::class,'user_id','id');
     }
 
     //check already exist value by using key name and key value

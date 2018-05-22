@@ -6,7 +6,7 @@ use App\MedicationLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
-
+use DatePeriod,DateTime,DateInterval;
 class MedicationLogsController extends Controller
 {
     public function index()
@@ -19,14 +19,36 @@ class MedicationLogsController extends Controller
 */
         if($treatments->count() > 0)
         {
+	        $dates_ary = array_column($treatments->toArray(),'created_at');
+
+	        usort($dates_ary, function($a, $b) {
+			    $dateTimestamp1 = strtotime($a);
+			    $dateTimestamp2 = strtotime($b);
+
+			    return $dateTimestamp1 < $dateTimestamp2 ? -1: 1;
+			});
+
+			$dates = array();
+	        $current = strtotime(date('Y-m-d',strtotime($dates_ary[0])));
+		    $last = strtotime(date('Y-m-d'));
+
+		    while( $current <= $last ) {
+
+		        $dates[] = date('Y-m-d', $current);
+		        $current = strtotime('+1 day', $current);
+		    }
+		  }
+
+		
+		
+        /*if($treatments->count() > 0)
+        {
             //old Logic
     		$dates = Collection::times($treatments->min('created_at')->diffInDays(), function ($number) use ($treatments) {
     			return $treatments->min('created_at')->addDays($number)->format('Y-m-d');
     		})->flip();
-        }
-       
-       
-       
+        }*/
+
     	return view('medicationlogs.index')->withTreatments($treatments)->withTook($took)->withDates($dates);
     }
 }

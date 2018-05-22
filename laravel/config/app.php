@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Israel',
 
     /*
     |--------------------------------------------------------------------------
@@ -268,7 +268,7 @@ define("PW_RESET_TIME_EXCEED","Your reset password link has been expired!");
 
 // API CONSTANTS END
 
-function user_role_name_base_on_id($roleid){
+/*function user_role_name_base_on_id($roleid){
     $roles = ['1'=>'Doctor','2'=>'Nurse','3'=>'Secretary','4'=>'Admin'];
     return $roles[$roleid];
 }
@@ -277,4 +277,4 @@ function  pr($arr) {
   echo "<pre>";
   print_r($arr);
   echo "</pre>";    
-}
+}*/
