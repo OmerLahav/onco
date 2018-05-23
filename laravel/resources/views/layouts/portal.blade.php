@@ -310,7 +310,7 @@
 			$('#patients').dataTable({
                 "columnDefs": [{
                     "width": "30%",
-                    "targets": 4
+                    "targets": 5
                 }]
             });
             $('#appointments').dataTable({
@@ -320,12 +320,8 @@
                 }]
             });
 			
-
-
         });
     </script>
     @include('sweet::alert')
-
 </body>
-
 </html>

@@ -17,6 +17,7 @@ class MedicationLogsController extends Controller
 
         /*dd($took);
 */
+
         if($treatments->count() > 0)
         {
 	        $dates_ary = array_column($treatments->toArray(),'created_at');
@@ -39,7 +40,8 @@ class MedicationLogsController extends Controller
 		    }
 		  }
 
-		
+		// print_r($dates); 
+  //       print_r($treatments->toArray()); exit;
 		
         /*if($treatments->count() > 0)
         {
@@ -49,6 +51,6 @@ class MedicationLogsController extends Controller
     		})->flip();
         }*/
 
-    	return view('medicationlogs.index')->withTreatments($treatments)->withTook($took)->withDates($dates);
+    	return view('medicationlogs.index')->withTreatments($treatments)->withDates($dates);
     }
 }

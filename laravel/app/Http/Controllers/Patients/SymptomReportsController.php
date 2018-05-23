@@ -17,8 +17,14 @@ class SymptomReportsController extends Controller
         //print_r($treatment->toArray()); exit;
         if(!empty($treatment))
         {
-        	return view('patients.symptopsreports.create')
+          	return view('patients.symptopsreports.create')
     		->withTreatments($treatment);
     	}
+    }
+
+    public function store(Request  $request)
+    {
+        print_r($request->toArray());
+        
     }
 }

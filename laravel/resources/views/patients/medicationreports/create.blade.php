@@ -29,7 +29,7 @@
                     <!-- Start {{ $name }} -->
                     <div class="card text-black bg-light m-3 d-inline">
                         <div class="card-header" id="card-{{ strtolower($name) }}">
-                            <img width="50" height="50" src="/images/medication-time/{{ $key }}.png" style="position:relative;top:-8px;left:-50px;">
+                            <img class="top-img" width="50" height="50" src="/images/medication-time/{{ $key }}.png" style="position:relative;top:-8px;left:-50px;">
                             <p class="daytime-text">{{ $name }}</p>
                         </div>
                         <div class="card-body">

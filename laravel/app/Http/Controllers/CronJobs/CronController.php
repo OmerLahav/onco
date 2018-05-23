@@ -81,6 +81,20 @@ class CronController
 	            //MailSendHelper::send_email($email_data, [$getAllPatientsEmailId]);
 	        }
 
+	        //Send SMS to contact person of patient about the status updated to Critical
+	        \Nexmo::message()->send([
+	        	'to' => $getAllPatientsEmailId->patient_data->contact_phone,
+	        	'from' => 'ICan',
+	        	'text' => "Hi {$getAllPatientsEmailId->patient_data->contact_name}, {$getAllPatientsEmailId->first_name} is defined critical"
+	        ]);
+
+	        //Send SMS to the patient's Doctor about the status updated to Critical
+	        \Nexmo::message()->send([
+	        	'to' => $getAllPatientsEmailId->patient_data->doctor->phone,
+	        	'from' => 'ICan',
+	        	'text' => "Hi {$getAllPatientsEmailId->patient_data->doctor->first_name}, {$getAllPatientsEmailId->first_name} is defined critical"
+	        ]);
+
 
 	        //Send Email To All Doctore Of that Patient Who's Status Update as A Critical
 			

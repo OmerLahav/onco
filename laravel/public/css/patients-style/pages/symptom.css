@@ -56,6 +56,7 @@ margin-top: 12px;
 }
 
 .report-levels {
+    display:inline-block;
     width: 40%;
     float: left;
 }
@@ -149,10 +150,7 @@ input[type="radio"]:checked + label {
 
    
 }
-.report-levels
-{
-    display: none; 
-}
+
 
 .level-select {
     height: 50px;
@@ -198,27 +196,7 @@ margin-top:82px;
     background-color: #ccc;
 }
 
-/* When the checkbox is checked, add a blue background */
 
-.radio-zero input:checked ~ .checkmark {
-    background-color: #4169E1	;
-}
-
-.radio-one input:checked ~ .checkmark {
-    background-color: #32CD32	;
-}
-
-.radio-two input:checked ~ .checkmark {
-    background-color: #ffe066			;
-}
-
-.radio-three input:checked ~ .checkmark {
-    background-color: #ffa500;
-}
-
-.radio-four input:checked ~ .checkmark {
-    background-color: #8B4513	;
-}
 
 
 
@@ -237,7 +215,11 @@ margin-top:82px;
 }
 
 /* Style the checkmark/indicator */
+.card-info-levels
+{
+    width:50%;
 
+}
 .container-levels .checkmark:after {
     left: 14px;
     top: 6px;
@@ -254,7 +236,11 @@ margin-top:82px;
 /*----nubers css----*/
 .numbers
 {
-     margin-bottom: 30px;
+  
+    margin-bottom: 30px;
+    width: 50%;
+    margin-top: 40px;
+
 }
 .one-five {
     display: inline;

@@ -95,6 +95,15 @@ class AppointmentsController extends Controller
                     //Send Email Helper Function 
                     MailSendHelper::send_email($email_data, [Auth::user()->email]);
                 }*/
+
+                //Send patient an SMS about the time he scheduled an appointment
+                /*\Nexmo::message()->send([
+                'to' => Auth::user()->phone,
+                'from' => 'ICan',
+                'text' => "Hi {Auth::user()->first_name}, you scheduled an appointment to {$appointment->appointment_date} on {$appointment->appointment_time}."
+                ]);
+*/
+
                 if ($appointment) {
                     SweetAlert::success('Created appointment successfully')->persistent("Close");
                     return redirect()->route('appointments.get');

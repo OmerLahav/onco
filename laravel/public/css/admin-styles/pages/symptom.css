@@ -170,27 +170,7 @@ margin-top:82px;
     background-color: #ccc;
 }
 
-/* When the checkbox is checked, add a blue background */
 
-.radio-zero input:checked ~ .checkmark {
-    background-color: #4169E1	;
-}
-
-.radio-one input:checked ~ .checkmark {
-    background-color: #32CD32	;
-}
-
-.radio-two input:checked ~ .checkmark {
-    background-color: #ffe066			;
-}
-
-.radio-three input:checked ~ .checkmark {
-    background-color: #ffa500;
-}
-
-.radio-four input:checked ~ .checkmark {
-    background-color: #8B4513	;
-}
 
 
 

@@ -32,19 +32,18 @@ $(document).ready(function () {
 
     //-----JS for report symptom one-------------
 
-
-    $(".symp-one").click(function () {
-                $(".section-symp-2,.section-symp-3").hide();
-        $(".section-symp-1").show();
+    $(".symps").click(function () {        
+        $(".symp_level").hide();
+        $("."+$(this).attr('symp_treatid')).show();
     });
 
     //check if user chaked level
-    $('#save-symp-one').click(function () {
-        if (!$("input[name='symptom-1']:checked").val()) {
+    $('.save_level_symtoms').click(function () {
+        if (!$("input[name='symptom_level']:checked").val()) {
             alert('Please select level');
+            return false;
         } else {
-            $(".symp-one").css("background", "#d6f5d6");
-            $("#checked-symp-one").show();
+           $("#"+$(this).attr('frm_id')).submit();
         }
 
     });
@@ -52,168 +51,89 @@ $(document).ready(function () {
     //radio color on click
 
 
-     $("#radio-zero-symp-1").click(function () {
-        $("#il-info-symp-one-0").css("color", "#4169E1");
-        $("#il-info-symp-one-1").css("color", "black");
-        $("#il-info-symp-one-2").css("color", "black");
-        $("#il-info-symp-one-3").css("color", "black");
-        $("#il-info-symp-one-4").css("color", "black");
+     $(".level_radio_0").click(function () {
+        $("#checkmark_"+$(this).attr('lblatt')+"_0").css("background-color",$(this).attr('color_attr'));
+        $("#checkmark_"+$(this).attr('lblatt')+"_1").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_2").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_3").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_4").css("background-color","#eee");
+
+
+        $("#level_text_"+$(this).attr('lblatt')).val($(this).attr('description_attr'));
+        $("#il-info-"+$(this).attr('lblatt')+"-0").css("color",$(this).attr('color_attr'));
+        $("#il-info-"+$(this).attr('lblatt')+"-1").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-2").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-3").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-4").css("color", "black");
     });
-    $("#radio-one-symp-1").click(function () {
-        $("#il-info-symp-one-0").css("color", "black");
-        $("#il-info-symp-one-1").css("color", "#32CD32");
-        $("#il-info-symp-one-2").css("color", "black");
-        $("#il-info-symp-one-3").css("color", "black");
-        $("#il-info-symp-one-4").css("color", "black");
+    $(".level_radio_1").click(function () {
+        $("#checkmark_"+$(this).attr('lblatt')+"_1").css("background-color",$(this).attr('color_attr'));
+
+        $("#checkmark_"+$(this).attr('lblatt')+"_0").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_2").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_3").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_4").css("background-color","#eee");
+
+        $("#level_text_"+$(this).attr('lblatt')).val($(this).attr('description_attr'));
+        $("#il-info-"+$(this).attr('lblatt')+"-0").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-1").css("color", $(this).attr('color_attr'));
+        $("#il-info-"+$(this).attr('lblatt')+"-2").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-3").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-4").css("color", "black");
     });
-    $("#radio-two-symp-1").click(function () {
-        $("#il-info-symp-one-0").css("color", "black");
-        $("#il-info-symp-one-1").css("color", "black");
-        $("#il-info-symp-one-2").css("color", "#ffe066");
-        $("#il-info-symp-one-3").css("color", "black");
-        $("#il-info-symp-one-4").css("color", "black");
+    $(".level_radio_2").click(function () {
+        $("#checkmark_"+$(this).attr('lblatt')+"_2").css("background-color",$(this).attr('color_attr'));
 
-    });
-    $("#radio-three-symp-1").click(function () {
-        $("#il-info-symp-one-0").css("color", "black");
-        $("#il-info-symp-one-1").css("color", "black");
-        $("#il-info-symp-one-2").css("color", "black");
-        $("#il-info-symp-one-3").css("color", "#ffa500");
-        $("#il-info-symp-one-4").css("color", "black");
-
-    });
-    $("#radio-four-symp-1").click(function () {
-        $("#il-info-symp-one-0").css("color", "black");
-        $("#il-info-symp-one-1").css("color", "black");
-        $("#il-info-symp-one-2").css("color", "black");
-        $("#il-info-symp-one-3").css("color", "black");
-        $("#il-info-symp-one-4").css("color", "#8B4513");
-
-    });
+        $("#checkmark_"+$(this).attr('lblatt')+"_1").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_0").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_3").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_4").css("background-color","#eee");
 
 
-   //-----JS for report symptom two-------------
-
-
-    $(".symp-two").click(function () {
-        $(".section-symp-1,.section-symp-3").hide();
-         $(".section-symp-2").show();
-    });
-
-    //check if user chaked level
-    $('#save-symp-two').click(function () {
-        if (!$("input[name='symptom-2']:checked").val()) {
-            alert('Please select level');
-        } else {
-            $(".symp-two").css("background", "#d6f5d6");
-            $("#checked-symp-two").show();
-        }
+        $("#level_text_"+$(this).attr('lblatt')).val($(this).attr('description_attr'));
+        $("#il-info-"+$(this).attr('lblatt')+"-0").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-1").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-2").css("color", $(this).attr('color_attr'));
+        $("#il-info-"+$(this).attr('lblatt')+"-3").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-4").css("color", "black");
 
     });
+    $(".level_radio_3").click(function () {
 
-    //radio color on click
+        $("#checkmark_"+$(this).attr('lblatt')+"_3").css("background-color",$(this).attr('color_attr'));
+
+        $("#checkmark_"+$(this).attr('lblatt')+"_1").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_0").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_2").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_4").css("background-color","#eee");
 
 
-     $("#radio-zero-symp-2").click(function () {
-        $("#il-info-symp-two-0").css("color", "#4169E1");
-        $("#il-info-symp-two-1").css("color", "black");
-        $("#il-info-symp-two-2").css("color", "black");
-        $("#il-info-symp-two-3").css("color", "black");
-        $("#il-info-symp-two-4").css("color", "black");
-    });
-    $("#radio-one-symp-2").click(function () {
-        $("#il-info-symp-two-0").css("color", "black");
-        $("#il-info-symp-two-1").css("color", "#32CD32");
-        $("#il-info-symp-two-2").css("color", "black");
-        $("#il-info-symp-two-3").css("color", "black");
-        $("#il-info-symp-two-4").css("color", "black");
-    });
-    $("#radio-two-symp-2").click(function () {
-        $("#il-info-symp-two-0").css("color", "black");
-        $("#il-info-symp-two-1").css("color", "black");
-        $("#il-info-symp-two-2").css("color", "#ffe066");
-        $("#il-info-symp-two-3").css("color", "black");
-        $("#il-info-symp-two-4").css("color", "black");
+        $("#level_text_"+$(this).attr('lblatt')).val($(this).attr('description_attr'));
+        $("#il-info-"+$(this).attr('lblatt')+"-0").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-1").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-2").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-3").css("color", $(this).attr('color_attr'));
+        $("#il-info-"+$(this).attr('lblatt')+"-4").css("color", "black");
 
     });
-    $("#radio-three-symp-2").click(function () {
-        $("#il-info-symp-two-0").css("color", "black");
-        $("#il-info-symp-two-1").css("color", "black");
-        $("#il-info-symp-two-2").css("color", "black");
-        $("#il-info-symp-two-3").css("color", "#ffa500");
-        $("#il-info-symp-two-4").css("color", "black");
+    $(".level_radio_4").click(function () {
 
-    });
-    $("#radio-four-symp-2").click(function () {
-        $("#il-info-symp-two-0").css("color", "black");
-        $("#il-info-symp-two-1").css("color", "black");
-        $("#il-info-symp-two-2").css("color", "black");
-        $("#il-info-symp-two-3").css("color", "black");
-        $("#il-info-symp-two-4").css("color", "#8B4513");
+        $("#checkmark_"+$(this).attr('lblatt')+"_4").css("background-color",$(this).attr('color_attr'));
 
-    });
-
-//-----JS for report symptom three-------------
+        $("#checkmark_"+$(this).attr('lblatt')+"_1").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_0").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_2").css("background-color","#eee");
+        $("#checkmark_"+$(this).attr('lblatt')+"_3").css("background-color","#eee");
 
 
-    $(".symp-three").click(function () {
-        $(".section-symp-1,.section-symp-2").hide();
-         $(".section-symp-3").show();
-    });
-
-    //check if user chaked level
-    $('#save-symp-three').click(function () {
-        if (!$("input[name='symptom-3']:checked").val()) {
-            alert('Please select level');
-        } else {
-            $(".symp-three").css("background", "#d6f5d6");
-            $("#checked-symp-three").show();
-        }
-
-    });
-
-    //radio color on click
-
-
-     $("#radio-zero-symp-3").click(function () {
-        $("#il-info-symp-three-0").css("color", "#4169E1");
-        $("#il-info-symp-three-1").css("color", "black");
-        $("#il-info-symp-three-2").css("color", "black");
-        $("#il-info-symp-three-3").css("color", "black");
-        $("#il-info-symp-three-4").css("color", "black");
-    });
-    $("#radio-one-symp-3").click(function () {
-        $("#il-info-symp-three-0").css("color", "black");
-        $("#il-info-symp-three-1").css("color", "#32CD32");
-        $("#il-info-symp-three-2").css("color", "black");
-        $("#il-info-symp-three-3").css("color", "black");
-        $("#il-info-symp-three-4").css("color", "black");
-    });
-    $("#radio-two-symp-3").click(function () {
-        $("#il-info-symp-three-0").css("color", "black");
-        $("#il-info-symp-three-1").css("color", "black");
-        $("#il-info-symp-three-2").css("color", "#ffe066");
-        $("#il-info-symp-three-3").css("color", "black");
-        $("#il-info-symp-three-4").css("color", "black");
-
-    });
-    $("#radio-three-symp-3").click(function () {
-        $("#il-info-symp-three-0").css("color", "black");
-        $("#il-info-symp-three-1").css("color", "black");
-        $("#il-info-symp-three-2").css("color", "black");
-        $("#il-info-symp-three-3").css("color", "#ffa500");
-        $("#il-info-symp-three-4").css("color", "black");
-
-    });
-    $("#radio-four-symp-3").click(function () {
-        $("#il-info-symp-three-0").css("color", "black");
-        $("#il-info-symp-three-1").css("color", "black");
-        $("#il-info-symp-three-2").css("color", "black");
-        $("#il-info-symp-three-3").css("color", "black");
-        $("#il-info-symp-three-4").css("color", "#8B4513");
-
+        $("#level_text_"+$(this).attr('lblatt')).val($(this).attr('description_attr'));
+        $("#il-info-"+$(this).attr('lblatt')+"-0").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-1").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-2").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-3").css("color", "black");
+        $("#il-info-"+$(this).attr('lblatt')+"-4").css("color", $(this).attr('color_attr'));
     });
 
 
-   
+
 });

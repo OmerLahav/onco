@@ -24,6 +24,7 @@
                 <tr>
                     <th>Patient ID</th>
                     <th>Patient Name</th>
+                    <th>Patient Status</th>
                     <th>Gender</th>
                     <th>Cancer Type</th>
                         
@@ -39,6 +40,7 @@
                             <tr>
                                 <td>{{ $patient->patient_data->user_id or '--N\A--' }}</td>
                                 <td>{{ $patient->name or '--N\A--'  }}</td>
+                                <td>{{ $patient->patient_data->patient_status or '--N\A--' }}</td>
                                 <td>{{ $patient->patient_data->gender or '--N\A--'  }}</td>
                                 <td>{{ $patient->patient_data->type or '--N\A--'  }}</td>
                                
@@ -56,6 +58,7 @@
                         <tr>
                             <td>{{ $patient->patient_data->user_id or '--N\A--' }}</td>
                             <td>{{ $patient->name or '--N\A--'  }}</td>
+                            <td>{{ $patient->patient_data->patient_status or '--N\A--' }}</td>
                             <td>{{ $patient->patient_data->gender or '--N\A--'  }}</td>
                             <td>{{ $patient->patient_data->type or '--N\A--'  }}</td>
                            

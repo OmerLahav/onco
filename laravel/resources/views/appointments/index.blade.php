@@ -24,9 +24,9 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    @if(Auth::user()->isPatient() || Auth::user()->isSecratory()  || Auth::user()->isNurse()  || Auth::user()->isAdmin())
+                   <!--  @if(Auth::user()->isPatient() || Auth::user()->isSecratory()  || Auth::user()->isNurse()  || Auth::user()->isAdmin()) -->
                         <th>Provider Name</th>
-                    @endif
+                   <!--  @endif -->
                     @if(!Auth::user()->isPatient())
                      <th>Patient Name</th>
                     @endif

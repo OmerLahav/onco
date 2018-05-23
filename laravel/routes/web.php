@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -181,6 +182,9 @@ Route::any("appointments/{appointmentsid}/delete",array(
 
 //End Appointment Related Routes
 
+Route::any("symtoms-reports/store",array( 
+            'as'=>'patient.symptomsreports',
+            'uses' => 'Patients\SymptomReportsController@store'));
 
 Route::post('treatmentmedications', 'TreatmentMedicationsController@store')->name('treatmentmedications.store');
 Route::get('patients/medicationreports/create', 'Patients\MedicationReportsController@create')->name('patients.medicationreports.create');

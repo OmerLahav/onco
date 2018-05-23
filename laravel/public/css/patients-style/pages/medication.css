@@ -123,6 +123,7 @@ section .section-title {
     font-weight: bold;
     display: inline-block;
 
+
 }
 
 #mecication-submit
@@ -233,6 +234,8 @@ section .section-title {
     transform: rotate(45deg);
 }
 
+
+
 /* ----responsive---- */
 
 
@@ -242,24 +245,31 @@ section .section-title {
   .container
   {
 	    padding: 0;
-    text-align: center;
+    	text-align: center;
   }
   
   .card img {
-    position: relative;
-   top: 9px;
-    border-radius: 2px 2px 0 0;
+    	position: relative;
+   		top: 9px;
+    	border-radius: 2px 2px 0 0;
   }
   
   .daytime-text {
  
     display: inline;
+    width: 45%;
+
+}
+
+.top-img{   
+     position:relative;
+    left:10px;
 }
 
     main li {
       
-        width: 130%;
-	   margin-left: 43px;
+    	width: 130%;
+		margin-left: 43px;
         
         
     }
@@ -271,31 +281,41 @@ section .section-title {
     }
 	
 	.card:not([class*=card-outline-]) {
-    border: 0;
-    width: 284px;
+    	border: 0;
+    	width: 284px;
 }
 
 
 	.card{
 		padding: 0;
 		display:block;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+      
 	}
     .time{
         width:100%;
-margin-left:0px;
+		margin-left:0px;
     }
 	
 	
 	.checkmark {
         float: left;
-    left: 212px;
-    width: 84px;
-    background-color: #c2d6d6;
-    width: 26px;
-    height: 26px;
+    	left: 160px;
+    	width: 84px;
+    	background-color: #c2d6d6;
+    	width: 26px;
+    	height: 26px;
+    }
 
-.form-medication{
-margin-left:0px;
+	.form-medication{
+	margin-left:0px;
+}
+
+label .container
+{
+	position: relative;
+   		top: 9px;
 }
 
 }
@@ -335,6 +355,7 @@ margin-left:0px;
     font-size: 20px;
     font-weight: bold;
     display: inline-block;
+    width: 45%;
 
 }
     main ol {
@@ -347,9 +368,19 @@ margin-left:0px;
 	
 	.container{
 		top: -49px;
+		width:60%;
 	}
 	
-
+.checkmark {
+    float: left;
+    left: 160px;
+    width: 25px;
+    background-color: #c2d6d6;
+}
+.top-img{   
+     position:relative;
+    left:10px;
+}
 
 	
 }

@@ -200,7 +200,7 @@
                             </div>
                         </div>
                         <div class="box col-sm-6">
-                            <div class="servive-block rounded servive-block-3">
+                            <div class="servive-block rounded servive-block-4">
                                 <i class="icon-3x color-light fas fa-pills fa-3x"></i>
                                 <h2 class="heading-md">Medications</h2>
                                 <div class="text-box">

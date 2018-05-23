@@ -22,7 +22,9 @@
                     <label for="patient_id">Patient:</label>
                     <select id="patient_id" name="patient_id">
                         @foreach (App\Patient::allPatients() as $patient)
+                        @if(Auth::user()->id ==  $patient->patient_data->doctor_id) 
                             <option value="{{ $patient->id }}"> {{ $patient->name }}</option>
+                        @endif
                         @endforeach
                     </select>
                 </div>

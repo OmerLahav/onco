@@ -99,3 +99,20 @@ height:30px;
     width: 240px;
 }
 
+.card-panel{
+	    position: relative;
+    left: 35px;
+}
+
+
+@media (max-width: 480px) {
+  
+
+  input {
+   
+    width: calc(110% - 3rem);
+}
+  }
+  
+
+

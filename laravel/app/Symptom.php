@@ -19,5 +19,10 @@ class Symptom extends Model
     {
         return $this->belongsToMany(Treatment::class,'symptom_treatment','symptom_id','treatment_id');
     }
+
+    public function symptom_desc()
+	{
+	    return $this->hasMany('App\SymptomDesc');
+	}
 	
 }

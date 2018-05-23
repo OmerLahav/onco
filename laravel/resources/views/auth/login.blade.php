@@ -32,6 +32,7 @@
                         </span>
                     @endif
                </div>
+        <div class="position">
                <div class="row margin">
                   <div class="input-field col s12">
                      <i class="mdi-social-person-outline prefix"></i>
@@ -59,6 +60,7 @@
                </div>
                <p class="forgot-password"><a href="{{ route('password.request') }}">{{ __('Forgot password?') }}</a></p>
                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        </div>
             </form>
          </div>
       </div>
