@@ -23,11 +23,11 @@
         function drawChart() {
             var data = google.visualization.arrayToDataTable(activeChartData);
             var options = {
-                title: 'Patients types of cancer',
+                title: 'Patients health status',
                 curveType: 'function',
                 legend: { position: 'bottom' }
             };
-            var chart = new google.visualization.ColumnChart(document.getElementById('linechart2'));
+            var chart = new google.visualization.PieChart(document.getElementById('linechart2'));
             chart.draw(data, options);
 
 

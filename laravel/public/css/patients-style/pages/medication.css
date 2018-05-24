@@ -93,7 +93,7 @@ section .section-title {
 
 .card {
     float: left;
-	width:300px;
+	width:270px;
 
 }
 
@@ -187,7 +187,8 @@ section .section-title {
 
 .checkmark {
    float: left;
-   left: 240px;
+   left: 212px;
+   height:25px;
 
     
     width: 25px;
@@ -373,8 +374,9 @@ label .container
 	
 .checkmark {
     float: left;
-    left: 160px;
+    left: 183px;
     width: 25px;
+    height: 25px;
     background-color: #c2d6d6;
 }
 .top-img{   

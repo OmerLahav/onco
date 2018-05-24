@@ -103,13 +103,22 @@ top: 150px;
 }
 /* ------------------Responsive--------------*/
 
-@media( min-height: 1920px) 
+@media( max-width: 1920px) 
 
  {
 
 }
 
 @media (max-width: 768px) {
+html, body {
+    background-image: url(images/background.jpg);
+    background-position: center;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+        height: 127vh;
+    margin: 0;
+}
 .mockup{
 position:relative;
     left: -220px;

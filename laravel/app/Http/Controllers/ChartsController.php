@@ -39,17 +39,16 @@ class ChartsController extends Controller
         $activeChartData = DB::table('patient_data')
             ->select(
 
-                DB::raw("is_active as is_active"),
-                DB::raw("COUNT(user_id) as user_id"))
-            ->groupBy("is_active")
-
+                 DB::raw("patient_status as patient_status"),
+              DB::raw("COUNT(user_id) as user_id"))
+            ->groupBy("patient_status")
             ->get();
-
-
-        $result[] = ['type',' user_id'];
+           
+        $result[] = ['patient_status',' user_id'];
         foreach ($activeChartData as $key => $value) {
-            $result[++$key] = [ $value->is_active, $value->user_id];
+            $result[++$key] = [ $value->patient_status, $value->user_id];
         }
+        
 
 
         return json_encode($result);

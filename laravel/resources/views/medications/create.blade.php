@@ -15,9 +15,9 @@
                 @csrf
                 <div>
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" required="required">
                     <label for="name">Strength:</label>
-                    <input type="text" id="strength" name="strength">
+                    <input type="text" id="strength" name="strength" required="required">
 
                 </div>
 

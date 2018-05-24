@@ -26,8 +26,7 @@
                     <th>Patient Name</th>
                     <th>Patient Status</th>
                     <th>Gender</th>
-                    <th>Cancer Type</th>
-                        
+                    <th>Cancer Type</th>   
                     <th>Actions</th>
                     
                 </tr>

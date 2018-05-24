@@ -67,7 +67,7 @@
                             <td>{{ $treatment_medication->medication->name }}</td>
                             <td>{{ Carbon\Carbon::parse($value)->format('d/m/Y') }}</td>
                             <td>{{ App\TreatmentMedication::DAY_PARTS[$treatment_medication->day_part] }}</td>
-                            <td>{{ $is_taken > 0 ? 'Yes' : 'No' }}
+                            <td>{{ $is_taken > 0 ? 'Taken' : 'Not taken' }}
                             </td>
                         </tr>
                         @endif

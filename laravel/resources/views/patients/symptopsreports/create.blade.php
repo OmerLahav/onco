@@ -109,7 +109,7 @@
                                 @if(isset($symptom->symptom_desc))
                                     @foreach($symptom->symptom_desc as $sym_desc_key => $symptom_desc)
                                         <label color_attr="{{$symptom_desc->color}}" description_attr="{{$symptom_desc->description}}" class="container-levels radio-zero level_radio_{{$sym_desc_key}}" lblatt="{{$classts}}">
-                                            <input type="radio" name="symptom_desc_id" value="{{$symptom_desc->id}}">
+                                            <input type="radio" class="symptom_level" name="symptom_desc_id" value="{{$symptom_desc->id}}">
                                             <span id="checkmark_{{$classts}}_{{$sym_desc_key}}" class="checkmark"></span>
                                         </label>
                                     @endforeach

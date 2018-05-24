@@ -34,8 +34,8 @@
                                     <i class="fas fa-pills" aria-hidden="true"></i>
                                 </div>
                                 <div class="dash-box-body">
-                                    <span class="dash-box-count">0</span>
-                                    <span class="dash-box-title">Medication not reported</span>
+                                    <span class="dash-box-count">{{$CriticalCountData or '0'}}</span>
+                                    <span class="dash-box-title">Patients in critical condition</span>
                                 </div>
 
                                 <div class="dash-box-action">
@@ -119,7 +119,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Cancer types</h5>
+                                    <h5 class="card-title">Patients Data</h5>
                                     <div class="card-text">
                                          <div id="wrapper" style="min-height:500px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
                                         @if(isset($activeChartData))
@@ -131,24 +131,11 @@
                                 </div>
                             </div>
                         </div>
-                    <!--     <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cancer types </h5>
-                                    <div class="card-text">
-
-                                        @if(isset($BarChartData))
-                                            @include('charts.google-bar-chart',['BarChartData'=>$BarChartData])
-                                        @endif
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div> -->
+                
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">User types</h5>
+                                    <h5 class="card-title">Patients Data</h5>
                                     <div class="card-text">
                                         <div id="wrapper" style="min-height:500px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
                                         @if(isset($visitorChartData))
@@ -202,26 +189,45 @@
                         <div class="box col-sm-6">
                             <div class="servive-block rounded servive-block-4">
                                 <i class="icon-3x color-light fas fa-pills fa-3x"></i>
-                                <h2 class="heading-md">Medications</h2>
+                                <h2 class="heading-md">Symptoms</h2>
                                 <div class="text-box">
                                     <p>2</p>
                                 </div>
                                 <button type="button" class="btn-style">Add new medications</button>
                             </div>
                         </div>
-
-
                     </div>
-
-
                 </div>
+             @elseif(Auth::user()->isSecratory())
+             <div class="container bootstrap snippet ">
+                    <div class="row margin-bottom-10  ">
+                        <div class="box col-sm-6 ">
+                            <div class="servive-block servive-block-1">
+                                <i class="icon-3x color-light fas fa-heartbeat fa-3x"></i>
+                                <h2 class="heading-md">Schedule</h2>
+                                <div class="text-box">
+                                    <p>Create new schedule for the doctors </p>
+                                </div>
+                                <button type="button" class="btn-style"><a href="{{ route('slots_time.index') }}">Show Schedule</a></button>
 
+                            </div>
+                        </div>
 
+                        <div class="box col-sm-6 ">
+                            <div class="servive-block servive-block-2">
+                                <i class="icon-3x color-light fas fa-stethoscope fa-3x"></i>
+                                <h2 class="heading-md">Today Appointments</h2>
+                                <div class="text-box">
+                                    <p>{{$AppointmentCountData or '0'}}</p>
+                                </div>
+                                <button type="button" class="btn-style">Show Appointments</button>
 
-
+                            </div>
+                        </div>
+             
+                    </div>
+                </div>
             @endif
-
-
         </div>
     </div>
 

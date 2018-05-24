@@ -7,7 +7,29 @@
             
             @if(Auth::user()->isSecratory())
 
-                <a href="{{ route('slots_time.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
+                <a href="{{ route('slots_time.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add
+                </a>
+
+                <div class="steps">
+                    <ol class="direction">
+                        <li>
+                            On this page you can add a new slot's for the doctors.
+                        </li>
+                        <li>
+                            Press the "ADD" button to add.
+                        </li>
+                    </ol>
+                </div>
+            @endif
+            @if(Auth::user()->isDoctor())
+               <div class="steps">
+                    <ol class="direction">
+                        <li>
+                            On this page you can add see your available slots and their date.
+                        </li>
+                    
+                    </ol>
+                </div> 
             @endif
             <table id="example" class="table table-striped table-bordered col-sm-12" style="width:100%">
                 <thead>
@@ -16,7 +38,6 @@
                     @if(Auth::user()->isSecratory())
                         <th>Provider</th>
                     @endif
-                    <th>Role</th>
                     <th>Date</th>
                     <th>Start Time</th>
                     <th>End Time</th>
@@ -43,7 +64,7 @@
 
                         @endif
 
-                        <td>{{ $timeslot->user_type }}</td>
+                        
                         <!-- <td>{{ $timeslot->slot_date }}</td>-->
                         <td>{{ \Carbon\Carbon::parse($timeslot->slot_date)->format('d/m/Y')}}</td>
                         <td>{{ $timeslot->start_time }}</td>

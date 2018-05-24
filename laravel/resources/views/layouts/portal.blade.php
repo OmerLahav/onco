@@ -319,6 +319,18 @@
                     "targets": 7
                 }]
             });
+            $('#appointments2').dataTable({
+                "columnDefs": [{
+                    "width": "5%",
+                    "targets": 0
+                }]
+            });
+            $('#team').dataTable({
+                "columnDefs": [{
+                    "width": "20%",
+                    "targets": 2
+                }]
+            });
 			
         });
     </script>

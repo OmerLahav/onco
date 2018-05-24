@@ -4,6 +4,17 @@
     <div class="page-wrapper">
         <div class="page-wrapper-container">
             <h1>All medications</h1>
+            
+            <div class="steps">
+                <ol class="direction">
+                    <li>
+                        On this page you cana add a new medications.
+                    </li>
+                    <li>
+                        You need to choose the right memedication and its strength.
+                    </li>
+                </ol>
+            </div>
             <a href="{{ route('medications.create') }}"  class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
         <!--<table>
 		@foreach ($medications as $medication)

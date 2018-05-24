@@ -7,11 +7,11 @@
              <div class="steps">
                 <ol class="direction">
                     <li>
-                        Here you will review appointments.
+                        On this page you will review  your appointments.
                     </li>
                     @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
                     <li>
-                        You can add, the appointment to your google calendar by pressing the "G ADD".
+                        In addition ,you can add the appointment to your Google Calendar by pressing on the "G ADD" button.
                     </li>
                      @endif
                 </ol>
@@ -20,7 +20,7 @@
             @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
                 <a href="{{ route('appointments.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
             @endif
-            <table id="appointments" class="table table-striped table-bordered" style="width:100%">
+            <table id="appointments" id="appointments2" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -33,7 +33,6 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Status</th>
-                    <th>Medical Staff Type</th>
                     <th>Type </th>
                     @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
                         <th>Actions</th>
@@ -64,7 +63,6 @@
                         <td>{{ date('H:i', strtotime($appointment->appointment_time))}}</td>
                         <td>{{ $appointment->status }}</td>
                         <td>{{ $appointment->medical_staff_type }}</td>
-                        <td>{{ $appointment->type }}</td>
                         @if(Auth::user()->isPatient() || Auth::user()->isSecratory() || Auth::user()->isNurse() || Auth::user()->isAdmin())
                             <td>
 

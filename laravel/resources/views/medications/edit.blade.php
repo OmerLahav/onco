@@ -13,9 +13,9 @@
 
                 <div>
                     <label for="name">Name:</label>
-                    <input type="text" name="name" value="{{$medication->name}}" placeholder="Name">
-                    {{--<label for="name" >drug_strengths:</label>--}}
-                    {{--<input type="text" name="drug_strengths" value="{{$medication->drug_strengths}}" placeholder="drug_strengths">--}}
+                    <input type="text" name="name" value="{{$medication->name}}" placeholder="Name" required="required">
+                    <!-- <label for="name" >strengths:</label>
+                    <input type="text" name="strengths" value="{{$medication->strengths}}" placeholder="strengths" -->
 
                 </div>
 

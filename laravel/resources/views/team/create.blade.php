@@ -50,6 +50,11 @@
                         <input type="text" class="form-control" id="last_name" placeholder="Enter Last name"
                                name="last_name" required="required">
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="birth_date">Birth Date:</label>
+                        <input type="date" class="form-control" id="birth_date" name="birth_date" required="required">
+                    </div>
 
                     <div class="form-group">
                         <label for="email">Email:</label>
@@ -58,9 +63,8 @@
 
                    <div class="form-group">
                         <label for="password">Password:</label>
-                        <input id="pass" name="password" type="text" size="40" required="required">
+                        <input id="pass" name="password" type="text" size="40" minlength="4" required="required">
                         <input type="button" class="button" value="Generate" onClick="generate();" tabindex="2">
-                        {{-- <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2"> --}}
                     </div>
 
                     <div class="form-group">

@@ -4,6 +4,16 @@
     <div class="page-wrapper">
         <div class="page-wrapper-container">
             <h1>All symptoms</h1>
+            <div class="steps">
+                <ol class="direction">
+                    <li>
+                        On this page you cana add a new symptoms.
+                    </li>
+                    <li>
+                        Please fill in all the information below.
+                    </li>
+                </ol>
+            </div>
             <a href="{{ route('symptoms.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
 
             <table id="example" class="table table-striped table-bordered" style="width:100%">

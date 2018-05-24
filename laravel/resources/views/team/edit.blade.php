@@ -55,16 +55,19 @@
                                name="last_name" required="required">
                     </div>
 
+                   <div class="form-group">
+                        <label for="birth_date">Birth Date:</label>
+                        <input type="date"  class="form-control" value="{{$users->birth_date}}" id="birth_date" name="birth_date>
+                    </div>
+
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" value="{{$users->email}}" class="form-control" id="email" placeholder="Enter email" name="email" required="required">
                     </div>
 
-                   <div class="form-group">
+                    <div class="form-group">
                         <label for="password">Password:</label>
-                        <input id="pass" name="password" type="text" size="40" >
-                        <input type="button" class="button" value="Generate" onClick="generate();" tabindex="2">
-                        {{-- <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2"> --}}
+                        <input id="pass" name="password" type="text" size="40" minlength="4" >
                     </div>
 
                     <div class="form-group">
@@ -80,24 +83,4 @@
     </div>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form-big.css') }} ">
-
-     <script>
-
-        function randomPassword(length) {
-            var chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
-            var pass = "";
-            for (var x = 0; x < length; x++) {
-                var i = Math.floor(Math.random() * chars.length);
-                pass += chars.charAt(i);
-
-            }
-
-            return pass;
-        }
-
-        function generate() {
-            myform.password.value = randomPassword(8);
-
-        }
-    </script>
 @stop

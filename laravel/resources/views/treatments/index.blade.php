@@ -11,13 +11,13 @@
 			 <div class="steps">
                 <ol class="direction">
                     <li>
-                        Here you will Add new treatments.
+                        On this page you can add a new treatments.
                     </li>
                     <li>
-                        You can edit, delete and view treatments inforamtion.
+                        In addition you can edit, delete and view treatments information.
                     </li>
 					<li>
-                        In order to add medications click the green button "View/Add".
+                        In order to add medications, click on the green button "View/Add.
                     </li>
                 </ol>
             </div>

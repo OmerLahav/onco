@@ -39,7 +39,7 @@ $(document).ready(function () {
 
     //check if user chaked level
     $('.save_level_symtoms').click(function () {
-        if (!$("input[name='symptom_level']:checked").val()) {
+        if (!$("input[class='symptom_level']:checked").val()) {
             alert('Please select level');
             return false;
         } else {
