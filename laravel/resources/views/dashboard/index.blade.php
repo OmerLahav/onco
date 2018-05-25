@@ -170,7 +170,7 @@
                                 <i class="icon-3x color-light fas fa-stethoscope fa-3x"></i>
                                 <h2 class="heading-md">Patients Treatments</h2>
                                 <div class="text-box">
-                                    <p></p>
+									 <p>{{$treatmentCountDataPatient or '0'}}</p>
                                 </div>
                                 <button type="button" class="btn-style">Add new treatment</button>
 
@@ -181,7 +181,7 @@
                                 <i class="icon-3x color-light fas fa-pills fa-3x"></i>
                                 <h2 class="heading-md">Medications</h2>
                                 <div class="text-box">
-                                    <p>{{$PatientCountData2 or '0'}}</p>
+                                    
                                 </div>
                                 <button type="button" class="btn-style">Add new medications</button>
                             </div>
@@ -191,7 +191,7 @@
                                 <i class="icon-3x color-light fas fa-pills fa-3x"></i>
                                 <h2 class="heading-md">Symptoms</h2>
                                 <div class="text-box">
-                                    <p>2</p>
+                                    <p></p>
                                 </div>
                                 <button type="button" class="btn-style">Add new medications</button>
                             </div>

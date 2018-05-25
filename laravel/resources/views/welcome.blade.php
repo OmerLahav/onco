@@ -65,22 +65,23 @@
         }
   .links > a {
         
-    color: black;
+
     font-size: 12px;
     font-weight: 700;
        padding: 15px 15px;
-       border: 2px solid black;
+          border: 2px solid #77aaff;
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
     letter-spacing: .12em;
         border-radius: 25px;
+
         background-color: white;
-        color:black;
+        color:#233a77;
   }
   .links > a:hover {
      /* Green */
-    color: black;
+    color: white;
     background-color: rgb(83, 140, 198)!important;
 
 }
@@ -111,6 +112,7 @@ top: 150px;
 
 @media (max-width: 768px) {
 html, body {
+
     background-image: url(images/background.jpg);
     background-position: center;
     color: #636b6f;
@@ -118,6 +120,10 @@ html, body {
     font-weight: 100;
         height: 127vh;
     margin: 0;
+}
+    .logo {
+   position:relative;
+   left:50px;
 }
 .mockup{
 position:relative;
@@ -135,9 +141,16 @@ top: 280px;
 /*----mobile----*/
 @media( max-width: 585px) {
     html, body {
-    background-position:21% 50%; 
-
+    background-color: #f9f9fb;
+    background-image: none;
+height: 127vh;
         }
+
+    .logo {
+   position:relative;
+   left:50px;
+   top:40px;
+}
 .mockup{
 position:relative;
 width:80%;
@@ -154,11 +167,15 @@ display: block;
 margin: 10px;
 width: 200px;
 text-align:center;
+ font-size: 20px;
+     position: relative;
+    top: 62px;
+       left: -1%;
 }
 footer{
 top: 420px;
 }
-
+}
 /* ------------------ End Responsive--------------*/
 
 

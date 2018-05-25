@@ -20,7 +20,6 @@
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Role</th>
-                    <th>Birth date</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -34,7 +33,6 @@
 	                        <td>{{ $member->email }}</td>
 	                        <td>{{ $member->phone }}</td>
 	                        <td>{{ (new App\User)->getRoleName($member->role) }}</td>
-                            <td>{{ $member->birth_date }}</td>
 	                        <td>
 	                            <a href="{{action('TeamController@Team_edit',$member->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
 	                            <a href="/Team_delete/{{$member->id}}"  onclick="return confirm('Are you sure you want to delete this staff member?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>

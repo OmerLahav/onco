@@ -175,6 +175,8 @@ width:100%;
 .stuff_btn:hover
 {
     background-color:#c9cbe0;
+	cursor: pointer;
+	
 
 }
 

@@ -87,7 +87,7 @@
     <script>
         $('#patient_id').chosen({no_results_text: "Oops, groups not found!", width: "50%"});
         $('#symptoms').chosen({no_results_text: "Oops, groups not found!", width: "50%"});
-        // $('#medications').chosen({no_results_text: "Oops, groups not found!", width: "50%"});
+        //$('#medications').chosen({no_results_text: "Oops, groups not found!", width: "100%"});
     </script>
 
 

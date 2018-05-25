@@ -20,7 +20,7 @@ class SymptomReportsController extends Controller
         {
           	return view('patients.symptopsreports.create')
     		->withTreatments($treatment);
-    	}
+    	}	
     }
 
     public function store(Request  $request)
@@ -33,16 +33,19 @@ class SymptomReportsController extends Controller
 
         if($alreadyexists == 0)
         {
+
             $symptopsreports = new SymptomReport;
             $symptopsreports->treatment_id = $request->treatment_id;
             $symptopsreports->symptoms_id = $request->symptoms_id;
             $symptopsreports->level_text = $request->level_text;
-            $symptopsreports->symptom_desc_id = $request->symptom_desc_id;
-            $symptopsreports->symptom_desc_id = $request->symptom_desc_id;
+            $symptopsreports->patient_level = $request->patient_level;
             $symptopsreports->patient_id = Auth::user()->id;
             $symptopsreports->save();
             if($symptopsreports){
-                 SweetAlert::success('symtom reports successfully.')->persistent("Close");
+
+                //check importance level is less then usr level then set pateint status is critical 
+
+                SweetAlert::success('symtom reports successfully.')->persistent("Close");
              } 
              else
              {

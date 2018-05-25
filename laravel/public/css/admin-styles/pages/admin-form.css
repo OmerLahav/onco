@@ -4,8 +4,9 @@
 			margin: 8px 0;
 			display: inline-block;
 			border: 1px solid #ccc;
-			border-radius: 4px;
+			border-radius: 20px;
 			box-sizing: border-box;
+			height: 0.85rem;
 		}
 
 		input[type=submit]{
@@ -36,13 +37,13 @@
 		}
 
 
-		input.search_field, textarea.search_fieldinput[type=date],inpute[type="file"],input[type=datetime-local], input[type=email], input[type=number], input[type=password], input[type=search-md], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.md-textarea {
+		input.search_field, textarea,textarea.search_fieldinput[type=date],inpute[type="file"],input[type=datetime-local], input[type=email], input[type=number], input[type=password], input[type=search-md], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.md-textarea {
 			background-color: transparent;
 			border: none;
 			border: 1px solid rgba(0,0,0,.2);
-			border-radius: 0;
+			border-radius: 20px;
 			outline: 0;
-			height: 0.51rem;
+			height: 0.85rem;
 			width: 60%;
 			font-size: 1rem;
 			box-shadow: none;
@@ -50,7 +51,15 @@
 			-webkit-transition: all .3s;
 			transition: all .3s;
 			background-color: rgb(255, 255, 255);
+			text-align: left;
+			
 
+		}
+		textarea
+		{
+			width:40%;
+			padding: 2px 15px;
+			
 		}
 
 		.btn {
@@ -66,6 +75,7 @@
 			width: 40%;
 			margin-left:30%;
 			margin-top:20px;
+			height: 2.65rem;
 		}
 		label {
 			display: inline-block;
@@ -78,7 +88,22 @@
 			margin: 8px 0;
 		}
 		
-		
+		textarea
+		{
+			background-color: transparent;
+			border: none;
+			border: 1px solid rgba(0,0,0,.2);
+			border-radius: 20px;
+			outline: 0;
+			height: 2.65rem;
+			width: 64%;
+			font-size: 1rem;
+			box-shadow: none;
+			box-sizing: content-box;
+			-webkit-transition: all .3s;
+			transition: all .3s;
+			background-color: rgb(255, 255, 255);
+		}
 		
 		
 		

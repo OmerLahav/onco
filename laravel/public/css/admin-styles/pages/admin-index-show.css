@@ -47,7 +47,7 @@ padding: 12px 6px;
 input[type=search]{
     
     width: 50%;
-			padding: 12px 20px;
+	padding: 12px 20px;
 			margin: 8px 0;
 			display: inline-block;
 			border: 1px solid #ccc;
@@ -94,7 +94,7 @@ textarea.md-textarea {
     border: 1px solid #ccc;
 	 border-radius: 0px;
     outline: 0;
-    height: 0.51rem;
+    height: 0.85rem;
     width: 60%;
     font-size: 1rem;
     box-shadow: none;
@@ -108,7 +108,7 @@ textarea.md-textarea {
 
 input[type=date] {
     width: 50%;
-    padding: 12px 20px;
+    height: 1.00rem;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;

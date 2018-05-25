@@ -1,6 +1,6 @@
 $("#add_appointment_btn").prop('disabled',true);
 
-$('.colorpicker').colorpicker();
+//$('.colorpicker').colorpicker();
 
 
 //Disable click on checkbox alert box show

@@ -5,7 +5,7 @@
         <div class="page-wrapper-container">
             <h1>Edit Symptoms</h1>
 
-            <form class="form-style" method="post" action="{{action('SymptomsController@Symp_update',$symptom[0]['id'])}}">
+            <form class="form-style" method="post" enctype="multipart/form-data" action="{{action('SymptomsController@Symp_update',$symptom[0]['id'])}}">
                 {{csrf_field()}}
                 <inpute type="hidden" name=_method" value="PATCH"/>
 

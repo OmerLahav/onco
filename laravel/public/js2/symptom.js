@@ -1,34 +1,43 @@
 $(document).ready(function () {
     //next prev 
-    var position = 1;
-    $("#next").click(function () {
-        if (position == 1) {
-            $("#page-one").hide();
-            $("#page-two").show();
-            position++;
-        } else if (position == 2) {
-            $("#page-one").hide();
-            $("#page-two").hide();
-            $("#page-three").show();
-            position++;
+    $(document).on('click', '#next', function(){ 
+        if($(this).attr('page') != "")
+        {
+            $(".page").hide();
+            $("."+$(this).attr('page')).show();
+
+
+            $(".symp_level").hide();
+            //$("."+$(this).attr('treatmentsymtomsid')).show();
         }
     });
 
-    $("#back").click(function () {
-        if (position == 1) {
-            $("#page-one").show();
-        } else if (position == 2) {
-            $("#page-one").show();
-            $("#page-two").hide();
-            $("#page-three").hide();
-            position--;
-        } else {
-            $("#page-one").hide();
-            $("#page-two").show();
-            $("#page-three").hide();
-            position--;
+    $(document).on('click', '#back', function(){ 
+        if($(this).attr('page') != "")
+        {
+            $(".page").hide();
+            $("."+$(this).attr('page')).show();
+            
+
+            $(".symp_level").hide();
+            //$("."+$(this).attr('treatmentsymtomsid')).show();
         }
     });
+
+    //Navigantion Bar Code
+
+    $(document).on('click', '.nav-item', function(){  
+        if($(this).attr('treatmentid') != "")
+        {
+            $(".page").hide();
+            $("."+$(this).attr('treatmentid')+'_first_list').show();
+            
+            $(".symp_level").hide();
+            //$("."+$(this).attr('treatmentsymtomsid')).show();
+        }
+    });
+
+
 
     //-----JS for report symptom one-------------
 

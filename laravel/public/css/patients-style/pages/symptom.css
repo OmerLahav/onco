@@ -7,7 +7,9 @@ main {
     width: 100%;
 }
 
-
+.buttons{
+        padding-top: 15px;
+}
 button:hover{
     cursor: pointer;
 }
@@ -19,17 +21,25 @@ button:hover{
             margin-top: 20px;
 }
 
+.nav-tabs > li {
+    float:none;
+    display: table-cell;
+    width: 10%;
+}
 
+.list-group {
+        position: relative;
+    right: 30px;
+    margin-top: 10px;
+}
 ol.direction
 {
     padding-left:10px;
     margin-top:20px;
 }
 .tab-content {
-    width: 40%;
-    float: left;
-    display: inline;
-    margin-right: 10%;
+   
+    
 margin-top: 12px;
 }
 
@@ -56,10 +66,23 @@ margin-top: 12px;
 }
 
 .report-levels {
-    display:inline-block;
-    width: 40%;
-    float: left;
+    display:block;
+   
+    
 }
+
+
+
+#back{
+
+    float:left;
+}
+
+#next{
+
+    float:right;
+}
+
 
 .feel-pain {
     text-align: left;
@@ -98,7 +121,9 @@ margin-top: 12px;
 .status {
     width: 50px;
 }
-
+.symp-desc{
+    padding-top: 30px;
+}
 
 input {
     float: right;
@@ -146,7 +171,7 @@ input[type="radio"]:checked + label {
 
 .report-levels {
     
-    margin-top: 177px   ;
+    margin-top: 0px   ;
 
    
 }
@@ -238,8 +263,11 @@ margin-top:82px;
 {
   
     margin-bottom: 30px;
-    width: 50%;
+    width: 100%;
     margin-top: 40px;
+        top: 60px;
+            position: relative;
+            right: 300px;
 
 }
 .one-five {
@@ -255,14 +283,52 @@ margin-top:82px;
 }
 
 .num-symp-2 {
-    margin-left: 45px;
+    margin-left: 50px;
 }
 
 .num-symp-3 {
     margin-left: 45px;
 }
 .num-symp-4 {
-    margin-left: 40px;
+    margin-left: 45px;
 }
 
 
+
+@media screen and (max-width: 767px) { 
+   .nav-tabs{
+flex-wrap: nowrap;
+
+   }
+
+
+
+
+
+}
+
+
+
+@media screen and (max-width: 480px) { 
+
+.nav-tabs .nav-item {
+
+    width: 100%;
+}
+.list-group {
+        width: 311px;
+
+}
+h5{
+    float:right;
+        position: relative;
+    top: 60px;
+    left: 50px;
+}
+
+.symp-desc{
+float:left;
+padding-top:5px;
+}
+
+}

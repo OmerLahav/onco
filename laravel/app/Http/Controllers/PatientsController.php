@@ -61,7 +61,7 @@ class PatientsController extends Controller
 
                 //Send Registration Email to Patient Using  Mail  Helper Function
 
-                $email_data = EmailTemplates::get_details(2);
+                /*$email_data = EmailTemplates::get_details(2);
 
                 if(!empty($email_data)) 
                 {       
@@ -87,7 +87,7 @@ class PatientsController extends Controller
                    
                     //Send Email Helper Function 
                     MailSendHelper::send_email($email_data, [request('contact_email')]);
-                }
+                }*/
                 
 
                 if ($create) {

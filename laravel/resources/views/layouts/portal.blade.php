@@ -309,7 +309,7 @@
             });
 			$('#patients').dataTable({
                 "columnDefs": [{
-                    "width": "30%",
+                    "width": "25%",
                     "targets": 5
                 }]
             });
@@ -331,6 +331,28 @@
                     "targets": 2
                 }]
             });
+			$('#slots').dataTable({
+                "columnDefs": [{
+                    "width": "10%",
+                    "targets": 6
+                }]
+				
+            });
+			$('#medication-index').dataTable({
+                "columnDefs": [{
+                    "width": "20%",
+                    "targets": 3
+                }]
+				
+            });
+			$('#symptom-index').dataTable({
+                "columnDefs": [{
+                    "width": "20%",
+                    "targets": 3
+                }]
+				
+            });
+			
 			
         });
     </script>

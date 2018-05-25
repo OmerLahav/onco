@@ -31,7 +31,7 @@
                     </ol>
                 </div> 
             @endif
-            <table id="example" class="table table-striped table-bordered col-sm-12" style="width:100%">
+            <table id="slots" class="table table-striped table-bordered col-sm-12 " style="width:100%">
                 <thead>
                 <tr>
                     <th>ID</th>

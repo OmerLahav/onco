@@ -17,13 +17,13 @@ class TreatmentsController extends Controller
         {
             //Doctor Show only His Treatments
            return view('treatments.index')
-    		->withTreatments(Treatment::where('user_id',Auth::user()->id)->get());
+    		->withTreatments(Treatment::where('user_id',Auth::user()->id)->with(['patient'])->get());
         }
         elseif(Auth::user()->isNurse() || Auth::user()->isAdmin())
         {
             //Nurse Show All treatment
             return view('treatments.index')
-            ->withTreatments(Treatment::all());
+            ->withTreatments(Treatment::with(['patient'])->all());
         }
     }
 

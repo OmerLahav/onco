@@ -11,13 +11,12 @@ input[type=tel],
 input[type=text],
 input[type=time],
 input[type=url],
-textarea,
-textarea.md-textarea {
+ {
     background-color: transparent;
     border: 1px solid #ccc;
-	 border-radius: 0px;
+	border-radius: 20px;
     outline: 0;
-    height: 0.51rem;
+    height: 0.85rem;
     width: 60%;
     font-size: 1rem;
     box-shadow: none;
@@ -28,16 +27,35 @@ textarea.md-textarea {
 
 }
 
+textarea,
+textarea.md-textarea
+{
+	background-color: transparent;
+    border: 1px solid #ccc;
+    outline: 0;
+    height: 2.6rem;
+    width: 60%;
+    font-size: 1rem;
+    box-shadow: none;
+    box-sizing: content-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+	padding: 2px 15px;
+}
+
+
 
 input[type=date] {
     width: 50%;
-    padding: 12px 20px;
+    height: 2.50rem;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 0px;
+    border-radius: 20px;
     box-sizing: border-box;
-    padding: 12px 20px;
+    padding: 10px 20px;
 }
 
 label {
@@ -56,14 +74,15 @@ textarea {
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 0;
+    border-radius: 20px;
     box-sizing: border-box;
+	border-radius: 20px;
 }
 
 
 .form-style {
 
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #f2f2f2;
     padding: 20px;
     width: 60%;

@@ -125,7 +125,7 @@ class SymptomsController extends Controller
         $symptom= symptom::find($id);
         
         //check if image upload by user then save into db other wise it take old one
-        if($request->has('image') && $request->file('image') != "")
+        if($request->image != "")
         {
             $destinationPath = public_path().'/images/symptoms/';
             $old_img_path = $destinationPath.$symptom->image;
@@ -142,9 +142,9 @@ class SymptomsController extends Controller
 
         $symptom->name=$request->get('name');
 
-        if($request->has('image') && $request->file('image') != "")
+        if($request->image != "")
         {
-            $createsympt->image = $filename;
+            $symptom->image = $filename;
         }
         $symptom->description = $request->description; 
         $symptom->importance_level=$request->get('importance_level');

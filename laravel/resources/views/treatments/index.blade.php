@@ -28,6 +28,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Treatment Name</th>
+                    <th>Patient Name</th>
                     <th>Description</th>
                     @if(Auth::user()->isDoctor() || Auth::user()->isAdmin())
                     <th>Actions</th>
@@ -39,6 +40,7 @@
                     <tr>
                         <td>{{$srNo++}}</td>
                         <td><a href="{{ route('treatments.show', [$treatment]) }}">{{ $treatment->name }}</a></td>
+                        <td>{{$treatment->patient->first_name}} {{$treatment->patient->last_name}}</td>
                         <td>{{$treatment->description}}</td>
                          @if(Auth::user()->isDoctor() || Auth::user()->isAdmin())
                         <td>

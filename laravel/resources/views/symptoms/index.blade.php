@@ -16,7 +16,7 @@
             </div>
             <a href="{{ route('symptoms.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
 
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <table id="symptom-index" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th>Sr #</th>
