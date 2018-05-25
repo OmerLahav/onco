@@ -34,8 +34,7 @@
                 <tbody>
                 @foreach ($patients as $patient)
                     @if(Auth::user()->isDoctor())
-                        @if(Auth::user()->id ==  $patient->patient_data->doctor_id)   
-
+                        @if(Auth::user()->id ==  $patient->patient_data->doctor_id) 
                             <tr>
                                 <td>{{ $patient->patient_data->user_id or '--N\A--' }}</td>
                                 <td>{{ $patient->name or '--N\A--'  }}</td>
@@ -46,9 +45,7 @@
                                 <td>
                                         <a href="{{action('PatientsController@Patient_edit',$patient->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
                                         <a href="/patients_delete/{{$patient->id}}"  onclick="return confirm('Are you sure you want to delete this patient?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
-
                                         <a href="{{ route('patients.show', [$patient]) }}" class="btn btn-success opt-btn fas fa-user-edit"><span class="edit del">Treatment</span></a>
-                                 
                                 </td>
                             </tr>
                         @endif

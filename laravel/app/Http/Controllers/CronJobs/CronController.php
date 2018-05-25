@@ -58,7 +58,8 @@ class CronController
 
 			//Update Status Critical for All Reglar Patients
 
-			PatientData::where('patient_status','Regular')->whereIn('user_id',$patient_ids)->update(array('patient_status'=>'Critical'));
+			$patients = PatientData::where('patient_status','Regular')->whereIn('user_id',$patient_ids);
+			$patients->update(array('patient_status'=>'Critical'));
 
 			$cron_results.="<<<<<<------- Update Patient Status from Patients Ids --------->>>>>><br>";
 			$cron_results.="<<<<<<------- End Execution of Cron Job Of Patient Treatment Status --------->>>>>><br>";
@@ -81,25 +82,27 @@ class CronController
 	            //MailSendHelper::send_email($email_data, [$getAllPatientsEmailId]);
 	        }
 
-	        //Send SMS to contact person of patient about the status updated to Critical
-	        \Nexmo::message()->send([
-	        	'to' => $getAllPatientsEmailId->patient_data->contact_phone,
-	        	'from' => 'ICan',
-	        	'text' => "Hi {$getAllPatientsEmailId->patient_data->contact_name}, {$getAllPatientsEmailId->first_name} is defined critical"
-	        ]);
-
-	        //Send SMS to the patient's Doctor about the status updated to Critical
-	        \Nexmo::message()->send([
-	        	'to' => $getAllPatientsEmailId->patient_data->doctor->phone,
-	        	'from' => 'ICan',
-	        	'text' => "Hi {$getAllPatientsEmailId->patient_data->doctor->first_name}, {$getAllPatientsEmailId->first_name} is defined critical"
-	        ]);
+	        $patients->get()->each(function($patient_data) {
+		        //Send SMS to contact person of patient about the status updated to Critical
+		        \Nexmo::message()->send([
+		        	'to' => $patient_data->contact_phone,
+		        	'from' => 'ICan',
+		        	'text' => "Hi {$patient_data->contact_name}, {$patient_data->first_name} is defined critical."
+		        ]);
+	        });
 
 
 	        //Send Email To All Doctore Of that Patient Who's Status Update as A Critical
 			
 			if(count($doctoreIds))
 			{
+				//Send SMS to the patient's Doctor about the status updated to Critical
+		        \Nexmo::message()->send([
+		        	'to' => $getAllPatientsEmailId->patient_data->doctor->phone,
+		        	'from' => 'ICan',
+		        	'text' => "Hi {$getAllPatientsEmailId->patient_data->doctor->first_name}, {$getAllPatientsEmailId->first_name} is defined critical"
+		        ]);
+
 				$getAllDoctoreEmailId = User::where('role','1')->whereIn('id',$doctoreIds)->pluck('email')->toArray();
 
 				$email_data = EmailTemplates::get_details(6);

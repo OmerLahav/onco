@@ -46,12 +46,11 @@ class DashboardController extends Controller
         //End doctors Appointments Business Logic
 
 
-            //Start doctors critical count Data Business Logic
+        //Start doctors critical count Data Business Logic
         $dashboardData['CriticalCountData'] = DB::table('patient_data')
             ->where('patient_status', '=' ,'Critical')
-          //where this is the doctor -> to see only his appointments
+                   //where this is the doctor -> to see only his appointments
             ->count();
-           
         //End doctors Appointments Business Logic
 
 

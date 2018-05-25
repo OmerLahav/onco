@@ -4,8 +4,8 @@
         <h1>Medications</h1>
         <div class="steps">
             <ol class="direction">
-                <li>Please select your health care provider.</li>
-                <li>In this stage you will make a request for an appointment.</li>
+                <li>Please check the medication after taking it.</li>
+                <li>Don't forget to submit at the end.</li>
             </ol>
         </div>
 

@@ -21,6 +21,7 @@
                 <tr>
                     <th>Sr #</th>
                     <th>Symptom Name</th>
+                   <!--  <th>Symptom Image</th> -->
                     <th>importance level</th>
                     <th>Actions</th>
                 </tr>
@@ -30,6 +31,7 @@
                     <tr>
                         <td>{{ $symptom->id }}</td>
                         <td>{{ $symptom->name }}</td>
+                        <!-- <td><img src="{{public_path()}}/images/symptoms/{{$symptom->image}}" height="10" width="10" ></td> -->
                         <td>{{ $symptom->importance_level }}</td>
                         <td>
                             <a href="{{action('SymptomsController@Symp_edit',$symptom->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>

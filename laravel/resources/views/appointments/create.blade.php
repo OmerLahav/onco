@@ -61,13 +61,8 @@
                     <label for="appointment_date">Appointment Date:</label>
                     <input type="date" class="form-control" id="appointment_date" name="appointment_date" required="required">
                 </div>
-
-               
-
-               
                     <div>
-                      
-						 <label for="Available Appointments">Available Appointments:</label>
+						 <label for="Available Appointments">Search for Available Appointments:</label>
 						 <br>
 						 <button type="button" id="find_slots" class="btn btn-primary bg-info">Search</button>
                         <div id="slot_html">

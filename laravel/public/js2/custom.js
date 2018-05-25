@@ -1,5 +1,8 @@
 $("#add_appointment_btn").prop('disabled',true);
 
+$('.colorpicker').colorpicker();
+
+
 //Disable click on checkbox alert box show
 $('body').on('click', '.meditation_chk', function (e) {
 	if($(this).attr('alreadybook') == "Yes")

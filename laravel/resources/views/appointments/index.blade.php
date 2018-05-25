@@ -4,6 +4,9 @@
     <div class="page-wrapper">
         <div class="page-wrapper-container">
             <h1>Appointments</h1>
+            @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
+                <a href="{{ route('appointments.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
+            @endif
              <div class="steps">
                 <ol class="direction">
                     <li>
@@ -17,9 +20,7 @@
                 </ol>
             </div>
 
-            @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
-                <a href="{{ route('appointments.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
-            @endif
+            
             <table id="appointments" id="appointments2" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
