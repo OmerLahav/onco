@@ -126,6 +126,11 @@
                             <i class="fas fa-calendar-check fa-2x" alt="medications log"></i> Medications Log
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('symtomslog.index') }}">
+                            <i class="fas fa-calendar-check fa-2x" alt="symtoms log"></i> Symtoms Log
+                        </a>
+                    </li>
                 <li>
                     <a href="settings.html">
                         <i class="fas fa-cog fa-2x" alt="settings"></i> Settings

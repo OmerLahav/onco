@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Patients;
 
 use App\Http\Controllers\Controller;
-use App\Patient,App\Treatment,App\SymptomReport;
+use App\Patient,App\Treatment,App\SymptomReport,App\PatientData,App\Symptom;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -44,7 +44,15 @@ class SymptomReportsController extends Controller
             if($symptopsreports){
 
                 //check importance level is less then usr level then set pateint status is critical 
+                $symptoms_importance_level = Symptom::where('id',$request->symptoms_id)->first()->importance_level;
 
+                if($symptoms_importance_level < $request->patient_level)
+                {
+                    //Get Patient Data and Change Status
+                    $patient = PatientData::where('user_id',Auth::user()->id)->first();
+                    $patient->patient_status = 'Critical';
+                    $patient->save();
+                }
                 SweetAlert::success('symtom reports successfully.')->persistent("Close");
              } 
              else

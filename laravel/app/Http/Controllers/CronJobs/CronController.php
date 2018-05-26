@@ -9,15 +9,16 @@ use App\TreatmentMedication;
 use App\MedicationLog;
 use App\CronJobsLogs;
 use App\User;
+use App\TreatmentSymtoms;
+use App\SymptomReport;
 use App\Helpers\MailSendHelper;
 use App\EmailTemplates;
 use DB;
 class CronController
 {
-	public function patient_treatment_status()
+	//Cron For Change Patint Status Critical Base on Medication Taken By Every Patient Every Day
+	public function patient_status_baseon_treatment_medications()
 	{
-
-
 		$cron_results = '';
 
 	    $cron_results.="<<<<<<------- Start Execution of Cron Job Of Patient Treatment Status --------->>>>>><br>";
@@ -64,14 +65,7 @@ class CronController
 			$cron_results.="<<<<<<------- Update Patient Status from Patients Ids --------->>>>>><br>";
 			$cron_results.="<<<<<<------- End Execution of Cron Job Of Patient Treatment Status --------->>>>>><br>";
 				
-			//Save Cron Result Into Database
-			$cronJobs =  new CronJobsLogs;
-			$cronJobs->cron_name = 'Patient Status Change Base On Medications';
-			$cronJobs->cron_type = 'PatientStatus';
-			$cronJobs->cron_run_date_time = date('Y-m-d H:i:s');
-			$cronJobs->cron_results = $cron_results;
-			$cronJobs->save();
-
+			
 			//Send Email To All Patient Who's Status Update as A Critical
 			$getAllPatientsEmailId = User::where('role','3')->whereIn('id',$patient_ids)->pluck('email')->toArray();
 
@@ -113,6 +107,116 @@ class CronController
 		        }
 		     }
 	      }
+	    //Save Cron Result Into Database
+		$cronJobs =  new CronJobsLogs;
+		$cronJobs->cron_name = 'Patient Status Change Base On Medications';
+		$cronJobs->cron_type = 'PatientStatus';
+		$cronJobs->cron_run_date_time = date('Y-m-d H:i:s');
+		$cronJobs->cron_results = $cron_results;
+		$cronJobs->save();
+
+	}
+
+
+	//Cron For Change Patint Status Critical Base on Submit  Symtoms Reports  By Every Patient Every Day
+	public function patient_status_baseon_treatment_symtoms()
+	{
+		$cron_results = '';
+
+	    $cron_results.="<<<<<<------- Start Execution of Cron Job Of Patient Treatment Status --------->>>>>><br>";
+		$treatments_ids = $symtoms_ids = $symtoms_log_ids = $critical_treatment_symtoms = [];
+		//Take Patient with his All Teatments
+	
+		$treatments_ids = Treatment::where(DB::raw("DATE(treatments.ends_at)"),">=",date('Y-m-d'))->pluck('id')->toArray();
+
+		$symtoms_ids = TreatmentSymtoms::whereIn('treatment_id',$treatments_ids)->pluck('symptom_id')->toArray();
+
+
+		$cron_results.="<<<<<<------- Fetching Tratment Symtoms Table Treatment Id  --------->>>>>><br>";
+		$cron_results.="<<<<<<------- Display treatments_ids Ids  --------->>>>>><br>";
+		$cron_results.= "(".implode("|",$treatments_ids).")";
+
+		$symtoms_log_ids = SymptomReport::where(DB::raw("DATE(symptom_reports.created_at)"),"=",date('Y-m-d'))->pluck('symptoms_id')->toArray();
+
+
+		$cron_results.="<<<<<<------- Fetching Symtoms Reports Log Table symtoms Id  --------->>>>>><br>";
+		$cron_results.="<<<<<<------- Display Symtoms Ids  --------->>>>>><br>";
+		$cron_results.= "(".implode("|",$symtoms_log_ids).")";
+
+
+		$critical_treatment_symtoms = array_unique(array_diff($symtoms_ids, $symtoms_log_ids));
+
+		if(count($critical_treatment_symtoms))
+		{
+			$cron_results.="<<<<<<------- Subtract It and  Display Critical Patient Tratment Ids  --------->>>>>><br>";
+			$cron_results.= "(".implode("|",$critical_treatment_symtoms).")";
+
+			$treatments_ids = TreatmentSymtoms::whereIn('symptom_id',$critical_treatment_symtoms)->pluck('treatment_id')->toArray();
+
+			$patient_ids = Treatment::whereIn('id',$treatments_ids)->pluck('patient_id')->toArray();
+			
+			$cron_results.="<<<<<<------- Patient Id from Treatment Ids --------->>>>>><br>";
+			$cron_results.= "(".implode("|",$patient_ids).")";
+
+			$doctoreIds = PatientData::where('patient_status','Regular')->where('doctor_id','!=','')->whereIn('id',$patient_ids)->pluck('doctor_id')->toArray();
+
+			//Update Status Critical for All Reglar Patients
+
+			$patients = PatientData::where('patient_status','Regular')->whereIn('user_id',$patient_ids);
+			$patients->update(array('patient_status'=>'Critical'));
+
+			$cron_results.="<<<<<<------- Update Patient Status from Patients Ids --------->>>>>><br>";
+			$cron_results.="<<<<<<------- End Execution of Cron Job Of Patient Treatment Status --------->>>>>><br>";
+				
+			
+			//Send Email To All Patient Who's Status Update as A Critical
+			$getAllPatientsEmailId = User::where('role','3')->whereIn('id',$patient_ids)->pluck('email')->toArray();
+
+			$email_data = EmailTemplates::get_details(7);
+	        if(!empty($email_data)) 
+	        {      
+	            //Send Email Helper Function 
+	            //MailSendHelper::send_email($email_data, [$getAllPatientsEmailId]);
+	        }
+
+	        $patients->get()->each(function($patient_data) {
+		        //Send SMS to contact person of patient about the status updated to Critical
+		        \Nexmo::message()->send([
+		        	'to' => $patient_data->contact_phone,
+		        	'from' => 'ICan',
+		        	'text' => "Hi {$patient_data->contact_name}, {$patient_data->first_name} is defined critical."
+		        ]);
+	        });
+
+
+	        //Send Email To All Doctore Of that Patient Who's Status Update as A Critical
+			
+			if(count($doctoreIds))
+			{
+				//Send SMS to the patient's Doctor about the status updated to Critical
+		        \Nexmo::message()->send([
+		        	'to' => $getAllPatientsEmailId->patient_data->doctor->phone,
+		        	'from' => 'ICan',
+		        	'text' => "Hi {$getAllPatientsEmailId->patient_data->doctor->first_name}, {$getAllPatientsEmailId->first_name} is defined critical"
+		        ]);
+
+				$getAllDoctoreEmailId = User::where('role','1')->whereIn('id',$doctoreIds)->pluck('email')->toArray();
+
+				$email_data = EmailTemplates::get_details(8);
+				if(!empty($email_data)) 
+		        {      
+		            //Send Email Helper Function 
+                    //MailSendHelper::send_email($email_data, [$getAllPatientsEmailId]);
+		        }
+		    }
+	    }
+	    //Save Cron Result Into Database
+		$cronJobs =  new CronJobsLogs;
+		$cronJobs->cron_name = 'Patient Status Change Base On Symtoms';
+		$cronJobs->cron_type = 'PatientStatus';
+		$cronJobs->cron_run_date_time = date('Y-m-d H:i:s');
+		$cronJobs->cron_results = $cron_results;
+		$cronJobs->save();
 	}
 }
  

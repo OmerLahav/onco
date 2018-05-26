@@ -35,8 +35,11 @@ Auth::routes();
 
 // Application Api CronJob Route Start.
     Route::group(['prefix' => 'cron-jobs','namespace' => 'CronJobs'], function () {
-        Route::any("/patient-tratment-status",array(  //1)set status of patient base on medicine he taken on a particular time 
-            'uses' => 'CronController@patient_treatment_status'));
+        Route::any("/patient-status-baseon-treatment-medications",array(  //1)set status of patient base on medicine he taken on a particular time 
+            'uses' => 'CronController@patient_status_baseon_treatment_medications'));
+
+        Route::any("/patient-status-baseon-treatment-symtoms",array(  //2)set status of patient base on symtoms  he taken on a particular time 
+            'uses' => 'CronController@patient_status_baseon_treatment_symtoms'));
 
     });
 // Application Api CronJob Route End.
@@ -191,6 +194,9 @@ Route::get('patients/medicationreports/create', 'Patients\MedicationReportsContr
 Route::post('medicationlogs', 'Patients\MedicationLogsController@postMedicationByPatient');
 Route::post('patients/{patient}', 'PatientsController@addTreatment')->name('patients.add_treatment');
 Route::get('medicationlogs', 'MedicationLogsController@index')->name('medicationlogs.index');
+
+Route::get('symtomsreportslogs', 'SymtomsLogsController@index')->name('symtomslog.index');
+
 
 Route::get('symptom-reports/create', 'Patients\SymptomReportsController@create')->name('symptopsreports.create');
 
