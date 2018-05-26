@@ -7,7 +7,7 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        Please add medication.
+                        Please add a medication.
                     </li>
                 </ol>
             </div>

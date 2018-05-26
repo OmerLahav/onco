@@ -43,7 +43,7 @@ class TreatmentsController extends Controller
     	]);
 
         if($validation->fails()){
-            SweetAlert::error('There is an error! Please provide your name')->persistent("Close");
+            SweetAlert::error('There is an error! Please provide your name.')->persistent("Close");
             return redirect()->route('treatments.create');
         }
 
@@ -55,7 +55,7 @@ class TreatmentsController extends Controller
     	//$treatment->medications()->sync($request->medications);
 
         if($create){
-            SweetAlert::success('Added successfully')->persistent("Close");
+            SweetAlert::success('Added successfully!')->persistent("Close");
         }
     	return redirect()->route('treatments.index');
     }
@@ -72,13 +72,13 @@ class TreatmentsController extends Controller
 
 //      if query failed
         if($deleting!=1){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('treatments.index');
 
         }
         else {
 
-            SweetAlert::success('Deleted successfully')->persistent("Close");
+            SweetAlert::success('Deleted successfully!')->persistent("Close");
             return redirect()->route('treatments.index');
         }
 
@@ -110,7 +110,7 @@ class TreatmentsController extends Controller
         ]);
 
         if($validation->fails()){
-            SweetAlert::error('There is an error! Please provide your name')->persistent("Close");
+            SweetAlert::error('There is an error! Please provide your name.')->persistent("Close");
             return redirect()->route('treatments.create');
         }
 
@@ -135,12 +135,12 @@ class TreatmentsController extends Controller
 
         //   if update failed
         if($treatments==null){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('treatments.index');
 
         }
         else {
-            SweetAlert::success('Updated successfully')->persistent("Close");
+            SweetAlert::success('Updated successfully!')->persistent("Close");
             return redirect()->route('treatments.index');
         }
 

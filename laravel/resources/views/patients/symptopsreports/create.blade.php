@@ -3,18 +3,18 @@
     <div class="page-wrapper-container">
         
         <h1>Symptoms Report </h1>
-                        <div class="steps">
+                    <div class="steps">
                         <ol class="direction">
                             <li>
-                                Please choose a symptom for report.
+                                Please choose a symptom for the report.
                             </li>
                             <li>
-                                After selecting sympton plese select level of pain.
+                                After selecting the symptom, please select its level of pain.
                             </li>
                         </ol>
                     </div>
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs nav-fill">
             @if(count($treatments))
                 @foreach($treatments as $key => $treatment)
                     @if(count($treatment->symptoms))
@@ -73,13 +73,30 @@
                                 @if(count($treatment->symptoms))
                                     @php ($j = 1)
                                     @foreach($treatment->symptoms as $sym_key => $symptom)
+                                    
+                                    <?php
+                                    $symtomsreports = '';
+                                    $symtomsreports = App\SymptomReport::where('treatment_id',$treatment->id)
+                                        ->where('symptoms_id',$symptom->id)
+                                        ->where('patient_id',Auth::user()->id)
+                                        ->where(DB::raw("DATE(symptom_reports.created_at)"),"=",date('Y-m-d'))
+                                        ->first();
+
+
+                                    ?>
+                                    @php ($checked = '')
+                                    @php ($stylecss = '')
+                                    @if(isset($symtomsreports) && !empty($symtomsreports))
+                                        @php ($checked = 'display:block')
+                                        @php ($stylecss = 'background:#d6f5d6')    
+                                    @endif
                                     <?php
                                       $classts = 'T_'.$treatment->id.'S_'.$symptom->id;
                                     ?>
                                         @if($page_start_ary[$i] <= $sym_key)
                                             @if($j <= 3)
 
-                                                <button type="button" symp_treatid="{{$classts}}" class="list-group-item list-group-item-action symps {{$symp_ary[$key]}} ">
+                                                <button type="button" style="{{$stylecss}}" symp_treatid="{{$classts}}" class="list-group-item list-group-item-action symps {{$symp_ary[$key]}} ">
                                                     <div class="image">
                                                     <h5>{{$symptom->name}}</h5>
                                                     <img  class="symp-img" src="/images/symptoms/{{$symptom->image}}" alt="Nausea">
@@ -87,7 +104,7 @@
                                                     <div class="symp-desc">
                                                     {{$symptom->description}}
                                                     </div>
-                                                    <img  id="checked-{{$symp_ary[$key]}}" class="check-img" src="/images/symptoms/check.png" alt="check">
+                                                    <img style="{{$checked}}"  id="checked-{{$symp_ary[$key]}}" class="check-img" src="/images/symptoms/check.png" alt="check">
                                                 </button> 
                                             @endif
                                             @php ($j++) 
@@ -200,8 +217,9 @@
                                             </ol>
                                         </div>
                                     </div>
-                                    
-                                    <button frm_id="frm_{{$classts}}"  class="save-btn btn btn-default float-right save_level_symtoms"  id="save-symp-one">Submit </button>
+                                    <a href class=" btn  show_symptoms float-left"  >Back </a>
+
+                                    <button frm_id="frm_{{$classts}}"  class="save-btn btn btn-default save_level_symtoms"  id="save-symp-one">Submit </button>
                                     
                             </section>
                         </form>
@@ -218,38 +236,28 @@
     <!---sidebar ---->
 
     {{-- CSS --}}
-    <link rel="stylesheet" href="{{ asset('/css/patients-style/pages/symptom.css') }}"> {{-- JS --}}
+    <link rel="stylesheet" href="{{ asset('/css/patients-style/pages/symptom.css') }}"> 
+	{{-- JS --}}
     <script src="{{ asset('/js2/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('/js2/symptom.js') }}"></script>
     <script src="{{ asset('/js2/custom.js') }}"></script>
 
-    <script>
-        $(document).ready(function() {
-            //Here not come In js code
-            if ($(window).width() < 481) 
-            {
-                $(".tab-content").css({
-                    "width": "100%"
-                });
-            }
-        });
-    </script>
 
 
-
- <script>
+<script>
        
         $(document).ready(function() {
                 if ($(window).width() <481) {
-                
-                    
-                 $(".symp-one").click(function () {
+                 $(".symps").click(function () {
                 $(".tab-content  ").hide();
-                                
-                     
                  });
-                    
-                   
+
+                    $(".show_symptoms ").click(function () {
+                $(".symptoms_reports  ").hide();
+                  $(".tab-content  ").show();               
+    
+                 });
+                  
               
                 }
      
@@ -259,6 +267,8 @@
   
     });
 </script>   
+
+ 
 
 
 

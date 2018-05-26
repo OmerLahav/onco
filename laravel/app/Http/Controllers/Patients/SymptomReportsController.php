@@ -14,7 +14,7 @@ class SymptomReportsController extends Controller
     public function create()
     {
         //Get Treatment with Sysmptoms
-        $treatment  = Treatment::where('patient_id',Auth::user()->id)->with(['symptoms'])->get();
+        $treatment  = Treatment::where(DB::raw("DATE(treatments.ends_at)"),">=",date('Y-m-d'))->where('patient_id',Auth::user()->id)->with(['symptoms'])->get();
         //print_r($treatment->toArray()); exit;
         if(!empty($treatment))
         {
@@ -40,7 +40,7 @@ class SymptomReportsController extends Controller
             $symptopsreports->level_text = $request->level_text;
             $symptopsreports->patient_level = $request->patient_level;
             $symptopsreports->patient_id = Auth::user()->id;
-            $symptopsreports->save();
+           
             if($symptopsreports){
 
                 //check importance level is less then usr level then set pateint status is critical 
@@ -49,20 +49,25 @@ class SymptomReportsController extends Controller
                 if($symptoms_importance_level < $request->patient_level)
                 {
                     //Get Patient Data and Change Status
-                    $patient = PatientData::where('user_id',Auth::user()->id)->first();
-                    $patient->patient_status = 'Critical';
-                    $patient->save();
-                }
+                    
+                    PatientData::where('user_id',Auth::user()->id)->update(['patient_status'=>'Critical']);
+                    //Update Symtom Status
+
+                    Symptom::where('id',$request->symptoms_id)->update(['symtom_status'=>'Critical']);
+                    $symptopsreports->status = 'Critical';
+
+                }   
                 SweetAlert::success('symtom reports successfully.')->persistent("Close");
              } 
              else
              {
                 sweetAlert::error('Some Error IN Server Side.');
              }
+              $symptopsreports->save();
         }
         else
         {
-            sweetAlert::error('symtom reports already submited by you for today.');
+            sweetAlert::error('symtom reports already submited by you for today.')->persistent("Close");
         }
         return redirect()->route('symptopsreports.create');
         

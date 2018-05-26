@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function scopeStaff($query)
     {
-        return $query->whereIn('role', [1,2,5]);
+        return $query->whereIn('role', [1,2,4,5]);
     }
 
     public function scopePatient($query)

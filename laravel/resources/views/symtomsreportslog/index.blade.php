@@ -8,12 +8,12 @@
         <div class="steps">
             <ol class="direction">
                 <li>
-                    Here you will review symtoms reports of your patients.
+                    Here you can review symptoms' reports of your patients.
                 </li>
 
             </ol>
         </div>
-        <table id="example" class="table table-striped table-bordered col-sm-12" style="width:100%">
+        <table id="symp-report" class="table table-striped table-bordered col-sm-12" style="width:100%" >
             <thead>
             <tr>
                 <th>Patient Name</th>
@@ -98,16 +98,14 @@
 
     </div>
 </div>
-<button onclick="myFunction()">Print this page</button>
 
-<script>
-function myFunction() {
-    window.print();
-}
+
+
+    <script src="{{ asset('js2/jquery.min.js') }}"></script>
+
 </script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index.css') }} ">
-
-
+ 
 @stop
 
 

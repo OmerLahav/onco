@@ -11,10 +11,10 @@
 			 <div class="steps">
                 <ol class="direction">
                     <li>
-                        Here you will Add new patients.
+                        Here you can add new patients.
                     </li>
                     <li>
-                        You can edit, delete and view patients inforamtion.
+                        You can edit, delete and view patients' inforamtion.
                     </li>
                 </ol>
             </div>
@@ -65,7 +65,7 @@
 
                                     <a href="{{ route('patients.show', [$patient]) }}" class="btn btn-success opt-btn fas fa-user-edit"><span class="edit del">Treatment</span></a>
                                 @else
-                                Not Allow Action
+                                Not Allowed Action
                             
                                 @endif
 

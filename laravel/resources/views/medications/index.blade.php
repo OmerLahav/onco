@@ -8,7 +8,7 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        On this page you cana add a new medications.
+                        On this page, you can add new medications.
                     </li>
                     <li>
                         You need to choose the right memedication and its strength.

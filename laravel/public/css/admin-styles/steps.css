@@ -1,6 +1,6 @@
 
 	.steps {
-		width: 60%;
+		width: 100%;
 
 		list-style-type: none;
 		text-align: left;
@@ -29,3 +29,26 @@
 		padding: 3px 8px;
 		border-radius: 3px;
 	}
+
+			/*----tablet----*/
+@media (max-width: 768px) {
+
+
+	.steps li {
+		width:100%;
+	}
+
+}
+
+/*----mobile----*/
+@media( max-width: 585px) {
+	
+
+.steps li {
+		width:100%;
+	}
+
+}
+
+
+/* ------------------ End Responsive--------------*/

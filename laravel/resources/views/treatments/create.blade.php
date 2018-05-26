@@ -8,7 +8,7 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        Here you will create new treatment.
+                        Here you can create a new treatment.
                     </li>
                     <li>
                         Please select the right symptoms for this treatment.
@@ -41,7 +41,7 @@
                 </div>
 
                 <div>
-                    <label for="ends_at">Ends:</label>
+                    <label for="ends_at">Ending date:</label>
                     <input type="date" name="ends_at" id="ends_at">
                 </div>
 

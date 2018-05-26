@@ -66,7 +66,7 @@
   .links > a {
         
 
-    font-size: 12px;
+    font-size: 19px;
     font-weight: 700;
        padding: 15px 15px;
           border: 2px solid #77aaff;
@@ -86,13 +86,18 @@
 
 }
 
-
+a{
+	font-size: 16px;
+}
 .mockup{
 position:relative;
     top: 200px;
     left: 5%;
 }
-
+.top-right {
+   
+    top: 37px;
+}
 
 footer{
     text-align: center;
@@ -114,11 +119,12 @@ top: 150px;
 html, body {
 
     background-image: url(images/background.jpg);
-    background-position: center;
+    background-repeat: no-repeat;
+            background-position: -757px 1px;
     color: #636b6f;
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
-        height: 127vh;
+        height: 97vh;
     margin: 0;
 }
     .logo {
@@ -135,6 +141,10 @@ footer{
 top: 280px;
 }
 
+
+
+
+
 }
 
 
@@ -143,7 +153,7 @@ top: 280px;
     html, body {
     background-color: #f9f9fb;
     background-image: none;
-height: 127vh;
+height: 100vh;
         }
 
     .logo {

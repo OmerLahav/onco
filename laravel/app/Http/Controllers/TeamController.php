@@ -54,21 +54,21 @@ class TeamController extends Controller
         
         
             if($create){
-                SweetAlert::success('Added successfully')->persistent("Close");
+                SweetAlert::success('Added successfully!')->persistent("Close");
             }else{
-                 SweetAlert::error('There is an error! ')->persistent("Close");
+                 SweetAlert::error('There is an error!')->persistent("Close");
             }
         	return redirect()->route('team.index');
         }
         else
         {
-            sweetAlert::error('The Id already exist.');
+            sweetAlert::error('The Id already exists.');
             return redirect()->route('team.create');
         }
     }
     else
     {
-        sweetAlert::error('The email address already exist.');
+        sweetAlert::error('The email address already exists.');
         return redirect()->route('team.create');
     }
     return redirect()->route('team.index');
@@ -80,12 +80,12 @@ class TeamController extends Controller
 
 //      if query failed
         if($deleting!=1){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('team.index');
         }
         else {
 
-            SweetAlert::success('Deleted successfully')->persistent("Close");
+            SweetAlert::success('Deleted successfully!')->persistent("Close");
             return redirect()->route('team.index');
         }
 
@@ -132,23 +132,23 @@ class TeamController extends Controller
 
                     //   if update failed
                     if($users==null){
-                        SweetAlert::error('There is an error! ')->persistent("Close");
+                        SweetAlert::error('There is an error!')->persistent("Close");
                         return redirect()->route('team.index');
                     }
                     else {
-                        SweetAlert::success('Updated successfully')->persistent("Close");
+                        SweetAlert::success('Updated successfully!')->persistent("Close");
                         return redirect()->route('team.index');
                     }
                  }
             else
             {
-                sweetAlert::error('The Id already exist.');
+                sweetAlert::error('The Id already exists.');
                 return redirect()->route('team.edit',['id'=>$id]);
             }
         }
         else
         {
-            sweetAlert::error('The email address already exist.');
+            sweetAlert::error('The email address already exists.');
             return redirect()->route('team.edit',['id'=>$id]);
         }
     }

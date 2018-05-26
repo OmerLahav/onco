@@ -67,6 +67,11 @@ margin-top: 12px;
 
 }
 
+.save-btn{
+margin-right:10%;
+}
+
+
 .status {
     width: 50px;
 }
@@ -206,6 +211,7 @@ margin-top:82px;
 /*----nubers css----*/
 .numbers
 {
+    width:100%;
      margin-bottom: 30px;
 }
 .one-five {

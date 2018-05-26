@@ -24,27 +24,24 @@
 
     <link rel="stylesheet" href="{{ asset('css/admin-styles/bootstrap4.4.3.css') }}">
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
-	
-	  <!--- Table css ---->
+
+    <!--- Table css ---->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 
 
+    <link rel="stylesheet" type="text/css" href="{{ asset(' https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css') }} ">
 
-	
+
+
+
 
     <!--- google fonts ---->
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
-    @if(Auth::user())
-    	@if ((Auth::user()->isNurse()) or (Auth::user()->isDoctor()) or (Auth::user()->isSecratory()))
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> @if(Auth::user()) @if ((Auth::user()->isNurse()) or (Auth::user()->isDoctor()) or (Auth::user()->isSecratory()) or (Auth::user()->isAdmin()))
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/dashboard.css') }} "> 
-    	@endif 
-        @if (Auth::user()->isPatient())
-        <link rel="stylesheet" href="{{ asset('css/patients-style/bootstrap4.4.3.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/patients-style/frame.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/patients-style/dashboard.css') }} "> 
-    	@endif
-    @endif
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/dashboard.css') }} "> @endif @if (Auth::user()->isPatient())
+    <link rel="stylesheet" href="{{ asset('css/patients-style/bootstrap4.4.3.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/patients-style/frame.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/patients-style/dashboard.css') }} "> @endif @endif
 </head>
 
 <body>
@@ -118,24 +115,20 @@
                 </li>
                 <li>
                     <a href="{{ route('team.index') }}">
-                        <i class="fas fa-user-md fa-2x" alt="team"></i> Medical stuff
+                        <i class="fas fa-user-md fa-2x" alt="team"></i> Medical staff
                     </a>
                 </li>
-                 <li>
-                        <a href="{{ route('medicationlogs.index') }}">
-                            <i class="fas fa-calendar-check fa-2x" alt="medications log"></i> Medications Log
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('symtomslog.index') }}">
-                            <i class="fas fa-calendar-check fa-2x" alt="symtoms log"></i> Symtoms Log
-                        </a>
-                    </li>
                 <li>
-                    <a href="settings.html">
-                        <i class="fas fa-cog fa-2x" alt="settings"></i> Settings
-                    </a>
+                    <a href="{{ route('medicationlogs.index') }}">
+                            <i class="fas fa-calendar-check fa-2x" alt="medications log"></i> Medication Log
+                        </a>
                 </li>
+                <li>
+                    <a href="{{ route('symtomslog.index') }}">
+                            <i class="fas fa-calendar-check fa-2x" alt="symtoms log"></i> Symptom Log
+                        </a>
+                </li>
+
             </ul>
             @elseif (Auth::user()->isNurse())
             <ul class="list-unstyled">
@@ -165,15 +158,24 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('team.index') }}">
+                        <i class="fas fa-user-md fa-2x" alt="team"></i> Medical staff
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('appointments.get') }}">
                         <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointments
                     </a>
                 </li>
-
                 <li>
-                    <a href="settings.html">
-                        <i class="fas fa-cog fa-2x" alt="settings"></i> Settings
-                    </a>
+                    <a href="{{ route('symtomslog.index') }}">
+                            <i class="fas fa-calendar-check fa-2x" alt="symtoms log"></i> Symptom Log
+                        </a>
+                </li>
+                 <li>
+                    <a href="{{ route('medicationlogs.index') }}">
+                            <i class="fas fa-calendar-check fa-2x" alt="medications log"></i> Medication Log
+                        </a>
                 </li>
             </ul>
             @elseif(Auth::user()->isPatient())
@@ -183,15 +185,9 @@
                         <i class="fas fa-tachometer-alt fa-2x " alt="dashboard"></i> Dashboard
                     </a>
                 </li>
-
-                <li>
-                    <a href="{{ route('medications.index') }}">
-                        <i class="fas fa-heartbeat fa-2x" alt="medications"></i> Self Report
-                    </a>
-                </li>
                 <li>
                     <a href="{{ route('symptopsreports.create') }}">
-                        <i class="fas fa-heartbeat fa-2x" alt="medications"></i> Symtom Reports                    </a>
+                        <i class="fas fa-heartbeat fa-2x" alt="medications"></i>Symptoms                    </a>
                 </li>
                 <li>
                     <a href="{{ route('patients.medicationreports.create') }}">
@@ -204,8 +200,8 @@
                         <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointments
                     </a>
                 </li>
+                
 
-                <li><a href="settings.html"><i class="fas fa-cog fa-2x" alt="settings"></i> Settings</a></li>
             </ul>
             @elseif(Auth::user()->isSecratory())
 
@@ -215,7 +211,7 @@
                         <i class="fas fa-tachometer-alt fa-2x " alt="dashboard"></i> Dashboard
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a href="{{ route('slots_time.index') }}">
                         <i class="fas fa-clipboard-list fa-2x"></i> Schedule
                     </a>
@@ -223,6 +219,16 @@
                 <li>
                     <a href="{{ route('appointments.get') }}">
                         <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointments
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('patients.index') }}">
+                        <i class="fas fa-user  fa-2x" alt="patients"></i> Patients
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('team.index') }}">
+                        <i class="fas fa-user-md fa-2x" alt="team"></i> Medical staff
                     </a>
                 </li>
             </ul>
@@ -234,13 +240,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('appointments.get') }}">
-                        <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointment
+                    <a href="{{ route('team.index') }}">
+                        <i class="fas fa-user-md fa-2x" alt="team"></i> Medical staff
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('team.index') }}">
-                        <i class="fas fa-user-md fa-2x" alt="team"></i> Medical stuff
+                    <a href="{{ route('patients.index') }}">
+                        <i class="fas fa-user  fa-2x" alt="patients"></i> Patients
                     </a>
                 </li>
             </ul>
@@ -273,9 +279,10 @@
     <script src="{{ asset('js2/jsframe.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	
-	
-	
+    <script src=" {{ asset('https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js') }}"></script>
+    <script src=" {{ asset('https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js') }}"></script>
+
+
 
     <script src=" {{ asset('js2/calendar.js') }}"></script>
     <script src=" {{ asset('js2/new-appointment.js') }}"></script>
@@ -304,63 +311,116 @@
                 "columnDefs": [{
                     "width": "8%",
                     "targets": 0
-                }]
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
             });
-			$('#example2').dataTable({
+            $('#treatments').dataTable({
+                "columnDefs": [{
+                    "width": "30%",
+                    "targets": 4
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
+            });
+            $('#example2').dataTable({
                 "columnDefs": [{
                     "width": "15%",
                     "targets": 0
-                }]
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
             });
-			$('#patients').dataTable({
+            $('#patients').dataTable({
                 "columnDefs": [{
-                    "width": "25%",
+                    "width": "30%",
                     "targets": 5
-                }]
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
             });
             $('#appointments').dataTable({
                 "columnDefs": [{
                     "width": "20%",
                     "targets": 7
-                }]
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
             });
             $('#appointments2').dataTable({
                 "columnDefs": [{
                     "width": "5%",
                     "targets": 0
-                }]
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
             });
             $('#team').dataTable({
                 "columnDefs": [{
                     "width": "20%",
                     "targets": 2
-                }]
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
             });
-			$('#slots').dataTable({
+            $('#slots').dataTable({
                 "columnDefs": [{
                     "width": "10%",
                     "targets": 6
-                }]
-				
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
+
             });
-			$('#medication-index').dataTable({
+            $('#medication-index').dataTable({
                 "columnDefs": [{
                     "width": "20%",
                     "targets": 3
-                }]
-				
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
+
             });
-			$('#symptom-index').dataTable({
+            $('#symptom-index').dataTable({
                 "columnDefs": [{
                     "width": "20%",
                     "targets": 3
-                }]
-				
+                }],
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
+
             });
-			
-			
+
+            $('#symp-report').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'print'
+                ]
+            });
         });
+
     </script>
     @include('sweet::alert')
 </body>
+
 </html>

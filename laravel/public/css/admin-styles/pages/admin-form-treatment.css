@@ -25,8 +25,18 @@ input[type=url],
     transition: all .3s;
     background-color: rgb(255, 255, 255);
 
+
+}
+#name,#ends_at
+{
+    background-color: white;
+    height: 2.50rem;
 }
 
+.chosen-container-single .chosen-singl
+{
+    background-color: white;
+}
 textarea,
 textarea.md-textarea
 {
@@ -141,10 +151,18 @@ textarea {
 		input[type=date],
         input[type=tel],
         textarea {
-            width: 80%;
+            width: 90%;
 
         }
+        .chosen-container-single .chosen-single
+        {
+             width: 80%;
 
+        }
+    .steps li {
+        display: block;
+        width: 170%;
+}
     }
 
     /* ------------------ End Responsive--------------*/

@@ -124,6 +124,17 @@
   
     width: 50%;
 }
+
+input[type=password],textarea, input[type=search-md], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.md-textarea {
+
+width: 85%;
+
+}
+
+.steps li {
+    display: block;
+    width: 170%;
+}
 }
 
 

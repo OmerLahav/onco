@@ -4,25 +4,24 @@
     <div class="page-wrapper">
         <div class="page-wrapper-container">
             <h1>All symptoms</h1>
+             <a href="{{ route('symptoms.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        On this page you cana add a new symptoms.
+                        On this page you can add new symptoms.
                     </li>
                     <li>
-                        Please fill in all the information below.
+                        Please fill all the information below.
                     </li>
                 </ol>
             </div>
-            <a href="{{ route('symptoms.create') }}" class="btn btn-info add-btn bg-info"><i class="fas fa-plus"></i>Add</a>
-
             <table id="symptom-index" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th>Sr #</th>
                     <th>Symptom Name</th>
                    <!--  <th>Symptom Image</th> -->
-                    <th>importance level</th>
+                    <th>Importance Level</th>
                     <th>Actions</th>
                 </tr>
                 </thead>

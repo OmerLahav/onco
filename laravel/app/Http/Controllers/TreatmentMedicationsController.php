@@ -19,7 +19,7 @@ class TreatmentMedicationsController extends Controller
 
         if ($validation->fails()) {
         	dd($validation->errors);
-            SweetAlert::error('There is an error! Please provide your name')->persistent("Close");
+            SweetAlert::error('There is an error! Please provide your name.')->persistent("Close");
 
             return redirect()->route('treatments.show', [request('treatment_id')]);
         }
@@ -32,7 +32,7 @@ class TreatmentMedicationsController extends Controller
     	]);
 
         if ($treatmentmedication) {
-            SweetAlert::success('Added successfully')->persistent("Close");
+            SweetAlert::success('Added successfully!')->persistent("Close");
         }
 
     	return redirect()->route('treatments.show', [request('treatment_id')]);

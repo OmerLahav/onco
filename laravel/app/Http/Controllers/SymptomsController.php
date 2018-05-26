@@ -36,7 +36,7 @@ class SymptomsController extends Controller
         ]);
 
     	if($validation->fails()){
-            SweetAlert::error('There is an error! All input must be enter.')->persistent("Close");
+            SweetAlert::error('There is an error! Please enter all of the fields.')->persistent("Close");
             return redirect()->route('symptoms.create');
         }
 
@@ -72,7 +72,7 @@ class SymptomsController extends Controller
     	);*/
 
         if($createsympt){
-            SweetAlert::success('Created successfully')->persistent("Close");
+            SweetAlert::success('Created successfully!')->persistent("Close");
         }
 
     	return redirect()->route('symptoms.index');
@@ -87,13 +87,13 @@ class SymptomsController extends Controller
 
 //      if query failed
         if($deleting!=1){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('symptoms.index');
 
         }
         else {
 
-            SweetAlert::success('Deleted successfully')->persistent("Close");
+            SweetAlert::success('Deleted successfully!')->persistent("Close");
             return redirect()->route('symptoms.index');
         }
 
@@ -161,12 +161,12 @@ class SymptomsController extends Controller
 
         //   if update failed
         if($symptom==null){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('symptoms.index');
 
         }
         else {
-            SweetAlert::success('Updated successfully')->persistent("Close");
+            SweetAlert::success('Updated successfully!')->persistent("Close");
             return redirect()->route('symptoms.index');
         }
 

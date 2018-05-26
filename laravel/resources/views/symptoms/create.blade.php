@@ -8,7 +8,7 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        Please create new symptom.
+                        Please create a new symptom.
                     </li>
                 </ol>
             </div>
@@ -25,30 +25,30 @@
                 
                 <div>
                     <label for="importance_level">Importance level:</label>
-                    <input type="text" name="importance_level" id="importance_level" max="4" min="0" placeholder="choose zero to 4">
+                    <input type="text" name="importance_level" id="importance_level" max="4" min="0" placeholder="Pick a number between 0-4">
                 </div>
                  <div>
-                    <label for="importance_level">level 0 description:</label>
-                    <input type="text" name="description_0" id="importance_level" placeholder="description 0">
+                    <label for="importance_level">Level 0 description:</label>
+                    <input type="text" name="description_0" id="importance_level" placeholder="Description 0">
                     <input type="hidden" name="color_0" value="#4169E1">
 
-                    <label for="importance_level">level 1 description:</label>
-                    <input type="text" name="description_1" id="importance_level" placeholder="description 1 ">
+                    <label for="importance_level">Level 1 description:</label>
+                    <input type="text" name="description_1" id="importance_level" placeholder="Description 1 ">
                        <input type="hidden" name="color_1" value="#32CD32">
 
                   
-                    <label for="importance_level">level 2 description:</label>
-                    <input type="text" name="description_2" id="importance_level" placeholder="description 2">
+                    <label for="importance_level">Level 2 description:</label>
+                    <input type="text" name="description_2" id="importance_level" placeholder="Description 2">
                        <input type="hidden" name="color_2" value="#ffe066">
 
                   
-                    <label for="importance_level">level 3 description:</label>
-                    <input type="text" name="description_3" id="importance_level" placeholder="description 3">
+                    <label for="importance_level">Level 3 description:</label>
+                    <input type="text" name="description_3" id="importance_level" placeholder="Description 3">
                        <input type="hidden" name="color_3" value=" #ffa500">
 
                   
-                    <label for="importance_level">level 4 description:</label>
-                    <input type="text" name="description_4" id="importance_level" placeholder="importance_level">
+                    <label for="importance_level">Level 4 description:</label>
+                    <input type="text" name="description_4" id="importance_level" placeholder="Description 4">
                        <input type="hidden" name="color_4" value="#8B4513">
 
                 

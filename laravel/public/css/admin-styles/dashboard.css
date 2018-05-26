@@ -3,7 +3,11 @@
 
 }
 
-
+.navbar-expand .navbar-nav .dropdown-menu-right {
+  right: 0;
+  left: auto;
+  padding:0;
+}
 /*----top box----*/
 .dash-box {
     position: relative;

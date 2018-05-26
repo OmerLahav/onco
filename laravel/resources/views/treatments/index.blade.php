@@ -11,17 +11,17 @@
 			 <div class="steps">
                 <ol class="direction">
                     <li>
-                        On this page you can add a new treatments.
+                        On this page, you can add new treatments.
                     </li>
                     <li>
-                        In addition you can edit, delete and view treatments information.
+                        In addition, you can edit, delete and view treatments' information.
                     </li>
 					<li>
-                        In order to add medications, click on the green button "View/Add.
+                        In order to add medications, click on the green button with the "View/Add" label.
                     </li>
                 </ol>
             </div>
-             <table id="example" class="table table-striped table-bordered col-sm-12" style="width:100%">
+             <table id="treatments" class="table table-striped table-bordered col-sm-12" style="width:100%">
                 <thead>
                 <?php
                 $srNo = 1; ?>

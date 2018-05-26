@@ -57,6 +57,13 @@ h1 {
 	flex-shrink: 0;
 }
 
+.dropdown-item:hover{
+    background-color: #343a40!important;
+    color:white;
+
+}
+
+
 /*----slidebar----*/
 .sidebar {
     min-width: 250px;

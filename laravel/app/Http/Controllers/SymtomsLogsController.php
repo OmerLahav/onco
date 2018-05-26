@@ -37,8 +37,6 @@ class SymtomsLogsController extends Controller
 		        $current = strtotime('+1 day', $current);
 		    }
 		  }
-
-
     	return view('symtomsreportslog.index')->withTreatments($treatments)->withDates($dates);
     }
 }

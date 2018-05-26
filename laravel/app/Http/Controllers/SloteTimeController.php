@@ -42,7 +42,7 @@ class SloteTimeController extends Controller
         ]);
 
     	if($validation->fails()){
-            SweetAlert::error('There is an error! Please pass all input.')->persistent("Close");
+            SweetAlert::error('There is an error! Please enter all of the fields.')->persistent("Close");
             return redirect()->route('slots_time.create');
         }
 
@@ -51,7 +51,7 @@ class SloteTimeController extends Controller
     	);
 
         if($create){
-            SweetAlert::success('Created successfully')->persistent("Close");
+            SweetAlert::success('Created successfully!')->persistent("Close");
         }
 
     	return redirect()->route('slots_time.index');
@@ -64,13 +64,13 @@ class SloteTimeController extends Controller
 
 //      if query failed
         if($deleting!=1){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('slots_time.index');
 
         }
         else {
 
-            SweetAlert::success('Deleted successfully')->persistent("Close");
+            SweetAlert::success('Deleted successfully!')->persistent("Close");
             return redirect()->route('slots_time.index');
         }
 
@@ -114,12 +114,12 @@ class SloteTimeController extends Controller
 
         //   if update failed
         if($slot_time==null){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('slots_time.index');
 
         }
         else {
-            SweetAlert::success('Updated successfully')->persistent("Close");
+            SweetAlert::success('Updated successfully!')->persistent("Close");
             return redirect()->route('slots_time.index');
         }
 

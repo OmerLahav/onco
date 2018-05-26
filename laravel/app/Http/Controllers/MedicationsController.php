@@ -37,7 +37,7 @@ class MedicationsController extends Controller
 //        if query failed
 
         if($validation->fails()){
-            SweetAlert::error('There is an error! Please provide madication name')->persistent("Close");
+            SweetAlert::error('There is an error! Please provide madication name.')->persistent("Close");
             return redirect()->route('medications.create');
         }
     	$create = Medication::create(
@@ -45,7 +45,7 @@ class MedicationsController extends Controller
     	);
 
     	if($create){
-            SweetAlert::success('Created successfully')->persistent("Close");
+            SweetAlert::success('Created successfully!')->persistent("Close");
         }
     	return redirect()->route('medications.index');
     }
@@ -58,12 +58,12 @@ class MedicationsController extends Controller
 
 //      if query failed
         if($deleting!=1){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('medications.index');
 
         }
             else {
-                SweetAlert::success('Deleted successfully')->persistent("Close");
+                SweetAlert::success('Deleted successfully!')->persistent("Close");
                 return redirect()->route('medications.index');
             }
 
@@ -93,12 +93,12 @@ class MedicationsController extends Controller
 
 //      if update failed
         if($medication==null){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('medications.index');
 
         }
         else {
-            SweetAlert::success('Updated successfully')->persistent("Close");
+            SweetAlert::success('Updated successfully!')->persistent("Close");
             return redirect()->route('medications.index');
         }
 

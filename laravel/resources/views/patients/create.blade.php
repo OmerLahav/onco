@@ -7,7 +7,7 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        Please enter the new patient details.
+                        Please enter the details of the new patient.
                     </li>
                 </ol>
             </div>
@@ -23,26 +23,26 @@
 
                     <div class="form-group">
                         <label for="first_name">First name:</label>
-                        <input type="text" class="form-control" id="first_name" placeholder="Enter First name" 
+                        <input type="text" class="form-control" id="first_name" placeholder="Enter first name" 
                                required="required" name="first_name">
                     </div>
 
                     <div class="form-group">
                         <label for="last_name">Last name:</label>
-                        <input type="text" class="form-control" id="last_name" placeholder="Enter Last name"
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter last name"
                                name="last_name" required="required">
                     </div>
 
                     <div class="form-group">
                         <label for="gender">Gender:</label>
-                        <select class="form-control" id="gender" name="gender" required="required">
+                        <select class="form-control select" id="gender" name="gender" required="required">
                             <option>Female</option>
                             <option>Male</option>
                         </select>
                     </div>
 					
 					<div class="form-group">
-                        <label for="birth_date">Birth Date:</label>
+                        <label for="birth_date">Birth date:</label>
                         <input type="date" class="form-control" id="birth_date" name="birth_date" required="required">
                     </div>
 
@@ -60,7 +60,7 @@
 
                     <div class="form-group">
                         <label for="num">Cancer type:</label>
-                        <select name="type" class="form-control" id="type" required="required">
+                        <select name="type" class="form-control select" id="type" required="required">
                             <option>Brain</option>
                             <option>Breast</option>
                             <option>Liver</option>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="form-group">
                         <label for="is_active">Status:</label>
-                        <select name="is_active" class="form-control" id="is_active">
+                        <select name="is_active" class="form-control select" id="is_active">
                             <option value="1">Sick</option>
                             <option value="0">Cured</option>
                         </select>
@@ -94,7 +94,7 @@
 
                     <div class="form-group">
                         <label for="num">Patient Status:</label>
-                        <select name="patient_status" class="form-control" id="patient_status" required="required">
+                        <select name="patient_status" class="form-control select" id="patient_status" required="required">
                             <option   value="Regular">Regular</option>
                             <option value="Critical" >Critical</option>
                         </select>
@@ -104,7 +104,7 @@
 
                     <div class="form-group">
                         <label for="contact_relation">Contact relation:</label>
-                        <select name="contact_relation" class="form-control" id="contact_relation" required="required">
+                        <select name="contact_relation" class="form-control select" id="contact_relation" required="required">
                             <option>Spouse</option>
                             <option>Child</option>
                             <option>Sibling</option>

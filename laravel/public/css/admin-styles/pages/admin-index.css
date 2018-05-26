@@ -9,7 +9,8 @@
 
 .g-btn
 {
-    margin:2px;
+    margin-top:5px;
+	margin-left:0px;
     display:inline-block;
     width:105px;
     padding: 12px 6px;

@@ -19,12 +19,50 @@ button:hover{
 .nav {
    
             margin-top: 20px;
+                display: flex;
+                    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
 }
 
-.nav-tabs > li {
-    float:none;
-    display: table-cell;
-    width: 10%;
+
+.nav-tabs > li .nav-link{
+    border: 1px solid black;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: black;
+    font-size: 20px;
+        background-color: transparent;
+    border-bottom:0px;
+   
+    font-size: 20px;
+    font-weight: bold;
+        width: 100%;
+        margin:0px;
+}
+h5{
+max-width: 100%;
+}
+
+.save-btn{
+    margin-left: 67%;
+    margin-top:10%;
+}
+.nav-tabs .nav-link.active {
+    color: black;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 4px solid !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+}
+
+.col-md-6{
+
+    margin-top: -9px;
 }
 
 .list-group {
@@ -39,8 +77,8 @@ ol.direction
 }
 .tab-content {
    
-    
-margin-top: 12px;
+       
+    margin-top: 26px;
 }
 
 .steps li {
@@ -71,7 +109,9 @@ margin-top: 12px;
     
 }
 
-
+.show_symptoms{
+    display:none;
+}
 
 #back{
 
@@ -97,7 +137,7 @@ margin-top: 12px;
     float: left;
     display: inline;
     margin-right: 41px;
-    width: 144px;
+    width: 25%;
 
 }
 
@@ -123,6 +163,7 @@ margin-top: 12px;
 }
 .symp-desc{
     padding-top: 30px;
+        max-width: 85%;
 }
 
 input {
@@ -255,19 +296,67 @@ margin-top:82px;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
 
+
+.steps {
+    width: 60%;
+    list-style-type: none;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 120%;
+    margin-left: 41px
+}
+
+
+.steps li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    list-style-type: none;
+    text-align: left;
+    font-family: 'Signika', sans-serif;
+}
+
+
+.steps li::before {
+    content: counter(step-counter);
+    margin-right: 5px;
+    font-size: 80%;
+    background-color: rgb(0, 200, 200);
+    color: white;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.card-header:first-child {
+    border-radius: 10px 10px 0 0;
+    width: 165%;
+    background: rgb(151, 170, 198);
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    width: 165%;
+   border-bottom: 1px solid ;
+   border-left: 1px solid ;
+    border-right: 1px solid ;
+   border-radius: 0px 0px 10px 10px;
+   rgb(243, 247, 254);
 
 }
+
+
 /*----nubers css----*/
 .numbers
 {
-  
+    position: relative;
     margin-bottom: 30px;
     width: 100%;
     margin-top: 40px;
-        top: 60px;
-            position: relative;
-            right: 300px;
+    top: 60px; 
+    right: 301px;
 
 }
 .one-five {
@@ -279,11 +368,11 @@ margin-top:82px;
 
 .num-symp-1{
 
-    margin-left: 45px;
+    margin-left: 50px;
 }
 
 .num-symp-2 {
-    margin-left: 50px;
+    margin-left: 47px;
 }
 
 .num-symp-3 {
@@ -295,25 +384,29 @@ margin-top:82px;
 
 
 
-@media screen and (max-width: 767px) { 
+@media screen and (max-width: 768px) { 
    .nav-tabs{
 flex-wrap: nowrap;
 
    }
 
 
-
-
-
+.numbers{
+       width: 176%;
+}
+  
+  .col-md-6{
+    display:block;
+  }  
 }
 
 
 
 @media screen and (max-width: 480px) { 
 
-.nav-tabs .nav-item {
+.nav-tabs .nav-link {
 
-    width: 100%;
+      font-size: 15px; 
 }
 .list-group {
         width: 311px;
@@ -321,14 +414,23 @@ flex-wrap: nowrap;
 }
 h5{
     float:right;
-        position: relative;
+    position: relative;
     top: 60px;
-    left: 50px;
+    left: 100px;
 }
 
 .symp-desc{
 float:left;
 padding-top:5px;
 }
+.steps {
+    width: 90%;
+}
 
+
+.show_symptoms{
+    background-color:#2BBBAD;
+    color:white;
+    display: block;
+}
 }

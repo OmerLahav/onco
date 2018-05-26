@@ -6,7 +6,7 @@ input[type=text],input[type=date], select,input[type=email],input[type=tel],inpu
 			border: 1px solid #ccc;
 			border-radius: 20px;
 			box-sizing: border-box;
-			 background-color: transparent;
+			background-color: transparent;
     
 		}
 select.form-control:not([size]):not([multiple])
@@ -17,15 +17,14 @@ select.form-control:not([size]):not([multiple])
 	width: 62.5%;
 
 }
-		select.form-control	
-		{
+select.form-control	
+{
 		
-			Display: inline-block;
-		border: none;
+	Display: inline-block;
+	border: none;
     border: 1px solid rgba(0,0,0,.2);
-   border-radius: 20px;
+   	border-radius: 20px;
     outline: 0;
-      
     width: 65%;
     font-size: 1rem;
     box-shadow: none;
@@ -147,11 +146,16 @@ select.form-control:not([size]):not([multiple])
     margin-top: 20px;
 }
 
-
-input[type=text], select, input[type=email], input[type=tel], textarea {
+select.form-control:not([size]):not([multiple])
+{
+	width: 88%;
+  
+}
+#pass,input[type=text], select, input[type=email], input[type=date], input[type=tel], textarea {
     width: 80%;
   
 }
+
 
 }
 

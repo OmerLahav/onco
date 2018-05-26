@@ -10,11 +10,11 @@
              <div class="steps">
                 <ol class="direction">
                     <li>
-                        On this page you will review  your appointments.
+                        On this page, you can review  your appointments.
                     </li>
                     @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
                     <li>
-                        In addition ,you can add the appointment to your Google Calendar by pressing on the "G ADD" button.
+                        In addition, you can add the appointment to your Google Calendar by pressing on the "G ADD" button.
                     </li>
                      @endif
                 </ol>

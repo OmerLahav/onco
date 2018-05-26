@@ -98,16 +98,16 @@ class AppointmentsController extends Controller
 
                 if ($appointment) {
                 	//Send patient an SMS about the time he scheduled an appointment
-                	\Nexmo::message()->send([
+                	/*\Nexmo::message()->send([
                 	'to' => Auth::user()->phone,
                 	'from' => 'ICan',
                 	'text' => "Hi ".Auth::user()->first_name.", you scheduled an appointment to {$appointment->appointment_date} on {$appointment->appointment_time}."
-                ]);
+                     ]);*/
                 	//Make a popup notification (Sweet Alert)
-                    SweetAlert::success('Created appointment successfullys')->persistent("Close");
+                    SweetAlert::success('Appointment created successfully!')->persistent("Close");
                     return redirect()->route('appointments.get');
                 } else {        
-                    sweetAlert::error('There is an error! try again');
+                    sweetAlert::error('There is an error! try again.');
                     return redirect()->route('appointments.create');
                 }
             }
@@ -145,13 +145,13 @@ class AppointmentsController extends Controller
         $deleting=  DB::table ('appointments')->where('id','=',$id )->delete();
 //      if query failed
         if($deleting!=1){
-            SweetAlert::error('There is an error! ')->persistent("Close");
+            SweetAlert::error('There is an error!')->persistent("Close");
             return redirect()->route('appointments.get');
 
         }
         else {
 
-            SweetAlert::success('Deleted successfully')->persistent("Close");
+            SweetAlert::success('Deleted successfully!')->persistent("Close");
             return redirect()->route('appointments.get');
         }
     }
@@ -199,7 +199,7 @@ class AppointmentsController extends Controller
                     $type = 'Regular';
                     $slots = AppointmentHelper::createSlots($regularSlots->start_time,$regularSlots->end_time,$regularSlots->slot_time_in_minute,$booked_slots);
                 }
-                if(count($slots) == 0 || $patientData->patient_status == 'Critical')
+                if(count($slots) == 0 && $patientData->patient_status == 'Critical')
                 {
                    //Pick Critical Slots
                     $criticalSlots = SlotRange::where('slot_date','=',Input::get('appointmentDate'))->where('user_id','=',$userId)->where('type','=','Critical')->where('status','=','Active')->orderByRaw("RAND()")->first();

@@ -31,9 +31,11 @@
 			margin: 8px 0;
 			display: inline-block;
 			border: 1px solid #ccc;
-			border-radius: 4px;
+			border-radius: 20px;
 			box-sizing: border-box;
 			background-color: white;
+			height: 2.5rem;
+			
 		}
 
 		input[type=submit]{
@@ -43,7 +45,7 @@
 			padding: 14px 20px;
 			margin: 8px 0;
 			border: none;
-			border-radius: 4px;
+			border-radius: 20px;
 			cursor: pointer;
 		}
 
@@ -64,16 +66,17 @@
 			background-color: transparent;
 			border: none;
 			border: 1px solid rgba(0,0,0,.2);
-			border-radius: 0;
+			border-radius: 20px;
 			outline: 0;
-			height: 0.51rem;
+			height: 0.85rem;
 			width: 60%;
 			font-size: 1rem;
 			box-shadow: none;
 			box-sizing: content-box;
 			-webkit-transition: all .3s;
 			transition: all .3s;
-				background-color: white;
+			background-color: white;
+				
 		
 
 		}

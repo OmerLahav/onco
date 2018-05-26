@@ -171,6 +171,12 @@ width:100%;
   background-color:#669999;
   color: black
 }
+.text-box
+{
+  margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 17px;
+}
 
 /*Colored Content Boxes
 ------------------------------------*/
@@ -254,8 +260,11 @@ margin-bottom:20px;
 display:inline;
 }
 
-
-
+.navbar-expand .navbar-nav .dropdown-menu-right {
+    right: 0;
+    left: auto;
+    padding:0;
+}
 
 /* ------------------Responsive--------------*/
 
@@ -294,6 +303,11 @@ width:100%;
 height:80%;
 padding-left:0px;
 padding-right:0px;
+}
+
+.servive-block
+{
+  margin-bottom: 15px;
 }
 }
 
