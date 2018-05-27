@@ -58,7 +58,7 @@
                      <button type="submit" class="btn waves-effect waves-light col s12" >{{ __('Login') }}</button> 
                   </div>
                </div>
-               <p class="forgot-password"><a href="{{ route('password.request') }}">{{ __('Forgot password?') }}</a></p>
+               <p class="forgot-password"><a href="{{ route('password.email.show') }}">{{ __('Forgot password?') }}</a></p>
                <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </div>
             </form>

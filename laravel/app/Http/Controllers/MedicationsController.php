@@ -14,7 +14,7 @@ class MedicationsController extends Controller
 
     public function index()
     {
-        if (Auth::user()->isDoctor()){
+        if (Auth::user()->isDoctor()  || Auth::user()->isNurse()){
 
         return view('medications.index')
             ->withMedications(Medication::all());
@@ -53,19 +53,9 @@ class MedicationsController extends Controller
 
     function delete ($id)
     {
-      $deleting=  DB::table ('medications')->where('id','=',$id )->delete();
-
-
-//      if query failed
-        if($deleting!=1){
-            SweetAlert::error('There is an error!')->persistent("Close");
-            return redirect()->route('medications.index');
-
-        }
-            else {
-                SweetAlert::success('Deleted successfully!')->persistent("Close");
-                return redirect()->route('medications.index');
-            }
+        DB::table ('medications')->where('id','=',$id )->delete();
+        SweetAlert::success('Deleted successfully!')->persistent("Close");
+        return redirect()->route('medications.index');
 
     }
 

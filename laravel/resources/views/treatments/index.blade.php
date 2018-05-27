@@ -48,7 +48,7 @@
     							<a href="/Treatment_delete/{{$treatment->id}}"  onclick="return confirm('Are you sure you want to delete this treatment?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
     							<a href="{{ route('treatments.show', [$treatment]) }}" class="btn btn-success opt-btn "><span class="edit del">View/Add</span></a>
                         </td>
-                          @endif
+                         @endif
                     </tr>
                 @endforeach
                 </tbody>

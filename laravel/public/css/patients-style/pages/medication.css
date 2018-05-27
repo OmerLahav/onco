@@ -7,9 +7,7 @@
 section {
     padding: 60px 0;
 }
-
-
-
+   
 .time {
    margin: auto;
     color: black;
@@ -243,85 +241,8 @@ section .section-title {
 
 
 
-/* ----mobile---- */
-@media (max-width: 480px) {
-  .container
-  {
-	    padding: 0;
-    	text-align: center;
-  }
-  
-  .card img {
-    	position: relative;
-   		top: 9px;
-    	border-radius: 2px 2px 0 0;
-  }
-  
-  .daytime-text {
- 
-    display: inline;
-    width: 45%;
-
-}
-
-.top-img{   
-     position:relative;
-    left:10px;
-}
-
-    main li {
-      
-    	width: 130%;
-		margin-left: 43px;
-        
-        
-    }
-    main ol {
-        margin-bottom: 35px;
-        padding-left: 0px;
-        list-style-position: inside;
-	
-    }
-	
-	.card:not([class*=card-outline-]) {
-    	border: 0;
-    	width: 284px;
-}
 
 
-	.card{
-		padding: 0;
-		display:block;
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-      
-	}
-    .time{
-        width:100%;
-		margin-left:0px;
-    }
-	
-	
-	.checkmark {
-        float: left;
-    	left: 160px;
-    	width: 84px;
-    	background-color: #c2d6d6;
-    	width: 26px;
-    	height: 26px;
-    }
-
-	.form-medication{
-	margin-left:0px;
-}
-
-label .container
-{
-	position: relative;
-   		top: 9px;
-}
-
-}
 /*----tablet----*/
 @media (max-width: 769px) {
 
@@ -389,6 +310,85 @@ label .container
 	
 }
 
+/* ----mobile---- */
+@media (max-width: 480px) {
+  .container
+  {
+        padding: 0;
+            max-width: 88%;
+        text-align: center;
+  }
+  
+  .card img {
+        position: relative;
+        top: 9px;
+        border-radius: 2px 2px 0 0;
+  }
+  
+  .daytime-text {
+ 
+    display: inline;
+    width: 45%;
 
+}
+
+.top-img{   
+     position:relative;
+    left:10px;
+}
+
+    main li {
+      
+        width: 130%;
+        margin-left: 43px;
+        
+        
+    }
+    main ol {
+        margin-bottom: 35px;
+        padding-left: 0px;
+        list-style-position: inside;
+    
+    }
+    
+    .card:not([class*=card-outline-]) {
+        border: 0;
+        width: 284px;
+}
+
+
+    .card{
+        padding: 0;
+        display:block;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+      
+    }
+    .time{
+        width:100%;
+        margin-left:0px;
+    }
+    
+    
+    .checkmark {
+        float: left;
+        left: 160px;
+        width: 84px;
+        background-color: #c2d6d6;
+        width: 26px;
+        height: 26px;
+    }
+
+    .form-medication{
+    margin-left:0px;
+}
+
+label .container
+{
+    position: relative;
+        top: 9px;
+}
+
+}
 
 

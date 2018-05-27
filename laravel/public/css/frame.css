@@ -148,6 +148,21 @@ top:10px;
     top: 50%;
 }
 
+/* datatables design*/
+.buttons-print{
+
+    font-size: .8rem;
+    padding: .55rem 1.13rem;
+    margin: 6px;
+    border-radius: 2px;
+    border: 0;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    white-space: normal!important;
+    cursor: pointer;
+    background-color: rgb(83, 140, 198)!important;
+    color:white;
+}
 
 /* ------------------Responsive--------------*/
 
@@ -223,6 +238,12 @@ height:56px;
 footer{
     height: 38px;
 }
+
+.navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+    width:102%;
+}
+
+
 }
 /* ------------------ End Responsive--------------*/
 

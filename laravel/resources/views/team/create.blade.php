@@ -29,6 +29,8 @@
                             <select class="form-control" id="role" name="role">
                                 <option value="1">Doctor</option>
                                 <option value="2">Nurse</option>
+                                <option value="4">Secretary</option>
+                                <option value="5">Admin</option>
                             </select>
                         @endif
                     </div>

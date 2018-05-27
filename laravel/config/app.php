@@ -152,7 +152,7 @@ return [
          * Package Service Providers...
          */
 
-	Nexmo\Laravel\NexmoServiceProvider::class,
+    Nexmo\Laravel\NexmoServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -212,7 +212,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-	'Nexmo' => Nexmo\Laravel\Facade\Nexmo::class,
+    'Nexmo' => Nexmo\Laravel\Facade\Nexmo::class,
     ],
 
 ];

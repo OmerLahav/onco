@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\SymptomReport;
+use App\Treatment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,14 @@ class SymtomsLogsController extends Controller
 {
     public function index()
     {
-    	$treatments = Auth::user()->doctor_treatments()->orderBy('patient_id')->get();
+    	if(Auth::user()->isNurse())
+        {
+            $treatments = Treatment::orderBy('patient_id')->get();
+        }
+        else
+        {
+    	   $treatments = Auth::user()->doctor_treatments()->orderBy('patient_id')->get();
+    	}
     	$took = SymptomReport::whereIn('patient_id', $treatments->pluck('patient_id')->unique()->toArray())->get();
         $log = $dates = [];
 

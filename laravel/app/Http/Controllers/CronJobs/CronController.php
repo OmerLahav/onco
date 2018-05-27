@@ -59,61 +59,76 @@ class CronController
 
 			//Update Status Critical for All Reglar Patients
 
-			$patients = PatientData::where('patient_status','Regular')->whereIn('user_id',$patient_ids);
-			$patients->update(array('patient_status'=>'Critical'));
+			$patients = PatientData::where('patient_status','Regular')->whereIn('user_id',$patient_ids)->update(array('patient_status'=>'Critical'));
 
 			$cron_results.="<<<<<<------- Update Patient Status from Patients Ids --------->>>>>><br>";
 			$cron_results.="<<<<<<------- End Execution of Cron Job Of Patient Treatment Status --------->>>>>><br>";
 				
 			
 			//Send Email To All Patient Who's Status Update as A Critical
-			$getAllPatientsEmailId = User::where('role','3')->whereIn('id',$patient_ids)->pluck('email')->toArray();
+			$getAllPatients = User::where('role','3')->whereIn('id',$patient_ids)->get();
 
 			$email_data = EmailTemplates::get_details(5);
 	        if(!empty($email_data)) 
-	        {      
-	            //Send Email Helper Function 
-	            //MailSendHelper::send_email($email_data, [$getAllPatientsEmailId]);
+	        {   
+	        	//Send Email Helper Function 
+	            MailSendHelper::send_email($email_data,$getAllPatients->pluck('email')->toArray());
+	        }
+	        $patients = User::where('role','3')->with(['patient_data'])->where('phone','!=',"")->whereIn('id',$patient_ids)->get();
+	        //Sending SMS Code To Patient
+	        if(!empty($patients))
+	        {
+		        foreach ($patients as $key => $value) {
+		        	
+		        	\Nexmo::message()->send([
+			        	'to' => $value->phone,
+			        	'from' => 'ICan',
+			        	'text' => "Hi patient msg {$value->first_name} is defined critical."
+			        ]);
+
+			        \Nexmo::message()->send([
+			        	'to' => $value->patient_data->contact_phone,
+			        	'from' => 'ICan',
+			        	'text' => "Hi patient msg {$value->patient_data->contact_name} is defined critical."
+			        ]);
+
+			        //Send Email To COnstact Perons
+			        MailSendHelper::send_email($email_data,[$value->patient_data->contact_email]);
+		        }
 	        }
 
-	        $patients->get()->each(function($patient_data) {
-		        //Send SMS to contact person of patient about the status updated to Critical
-		        \Nexmo::message()->send([
-		        	'to' => $patient_data->contact_phone,
-		        	'from' => 'ICan',
-		        	'text' => "Hi {$patient_data->contact_name}, {$patient_data->first_name} is defined critical."
-		        ]);
-	        });
-
-
 	        //Send Email To All Doctore Of that Patient Who's Status Update as A Critical
-			
-			if(count($doctoreIds))
-			{
-				//Send SMS to the patient's Doctor about the status updated to Critical
-		        \Nexmo::message()->send([
-		        	'to' => $getAllPatientsEmailId->patient_data->doctor->phone,
-		        	'from' => 'ICan',
-		        	'text' => "Hi {$getAllPatientsEmailId->patient_data->doctor->first_name}, {$getAllPatientsEmailId->first_name} is defined critical"
-		        ]);
+			$doctors = PatientData::where('doctor_id','!=','')->with(['patient_data','doctore_data'])->whereIn('user_id',$patient_ids)->get();
 
+			if(count($doctors))
+			{
+				//Sending SMS Code To Doctore
+				foreach ($doctors as $key => $value) {
+	        	 	\Nexmo::message()->send([
+		        	'to' => $value->doctore_data->phone,
+		        	'from' => 'ICan',
+		        	'text' => "Hi doctor msg {$value->doctore_data->first_name}, {$value->patient_data->first_name} is defined critical."
+			        ]);
+		        }
+
+		        //Sending Email Code To Doctore
 				$getAllDoctoreEmailId = User::where('role','1')->whereIn('id',$doctoreIds)->pluck('email')->toArray();
 
 				$email_data = EmailTemplates::get_details(6);
 				if(!empty($email_data)) 
 		        {      
 		            //Send Email Helper Function 
-                    //MailSendHelper::send_email($email_data, [$getAllPatientsEmailId]);
+                    MailSendHelper::send_email($email_data,$getAllDoctoreEmailId);
 		        }
 		     }
-	      }
-	    //Save Cron Result Into Database
-		$cronJobs =  new CronJobsLogs;
-		$cronJobs->cron_name = 'Patient Status Change Base On Medications';
-		$cronJobs->cron_type = 'PatientStatus';
-		$cronJobs->cron_run_date_time = date('Y-m-d H:i:s');
-		$cronJobs->cron_results = $cron_results;
-		$cronJobs->save();
+	        }
+		    //Save Cron Result Into Database
+			$cronJobs =  new CronJobsLogs;
+			$cronJobs->cron_name = 'Patient Status Change Base On Medications';
+			$cronJobs->cron_type = 'PatientStatus';
+			$cronJobs->cron_run_date_time = date('Y-m-d H:i:s');
+			$cronJobs->cron_results = $cron_results;
+			$cronJobs->save();
 
 	}
 
@@ -158,8 +173,7 @@ class CronController
 			$cron_results.="<<<<<<------- Patient Id from Treatment Ids --------->>>>>><br>";
 			$cron_results.= "(".implode("|",$patient_ids).")";
 
-			$doctoreIds = PatientData::where('patient_status','Regular')->where('doctor_id','!=','')->whereIn('id',$patient_ids)->pluck('doctor_id')->toArray();
-
+			$doctoreIds = PatientData::where('patient_status','Regular')->where('doctor_id','!=','')->whereIn('user_id',$patient_ids)->pluck('doctor_id')->toArray();
 			//Update Status Critical for All Reglar Patients
 
 			$patients = PatientData::where('patient_status','Regular')->whereIn('user_id',$patient_ids);
@@ -171,44 +185,62 @@ class CronController
 			
 			//Send Email To All Patient Who's Status Update as A Critical
 			$getAllPatientsEmailId = User::where('role','3')->whereIn('id',$patient_ids)->pluck('email')->toArray();
-
 			$email_data = EmailTemplates::get_details(7);
 	        if(!empty($email_data)) 
 	        {      
 	            //Send Email Helper Function 
-	            //MailSendHelper::send_email($email_data, [$getAllPatientsEmailId]);
+	            MailSendHelper::send_email($email_data, $getAllPatientsEmailId);
 	        }
 
-	        $patients->get()->each(function($patient_data) {
-		        //Send SMS to contact person of patient about the status updated to Critical
-		        \Nexmo::message()->send([
-		        	'to' => $patient_data->contact_phone,
-		        	'from' => 'ICan',
-		        	'text' => "Hi {$patient_data->contact_name}, {$patient_data->first_name} is defined critical."
-		        ]);
-	        });
+	        $patients = User::where('role','3')->with(['patient_data'])->whereIn('id',$patient_ids)->get();
 
+	        //Sending SMS Code To Patient
+	        if(!empty($patients))
+	        {
+		        foreach ($patients as $key => $value) {
+		        	\Nexmo::message()->send([
+			        	'to' => $value->phone,
+			        	'from' => 'ICan',
+			        	'text' => "Hi patient msg {$value->first_name} is defined critical."
+			        ]);
 
+			        \Nexmo::message()->send([
+			        	'to' => $value->patient_data->contact_phone,
+			        	'from' => 'ICan',
+			        	'text' => "Hi patient msg {$value->patient_data->contact_name} is defined critical."
+			        ]);
+
+			        //Send Email To Contact Person
+			        MailSendHelper::send_email($email_data,[$value->patient_data->contact_email]);
+		        }
+	        }
+
+	       
 	        //Send Email To All Doctore Of that Patient Who's Status Update as A Critical
-			
-			if(count($doctoreIds))
-			{
-				//Send SMS to the patient's Doctor about the status updated to Critical
-		        \Nexmo::message()->send([
-		        	'to' => $getAllPatientsEmailId->patient_data->doctor->phone,
-		        	'from' => 'ICan',
-		        	'text' => "Hi {$getAllPatientsEmailId->patient_data->doctor->first_name}, {$getAllPatientsEmailId->first_name} is defined critical"
-		        ]);
+			$doctors = PatientData::where('doctor_id','!=','')->with(['patient_data','doctore_data'])->whereIn('user_id',$patient_ids)->get();
 
+			
+			if(count($doctors))
+			{
+				//Sending SMS Code To Doctore
+				foreach ($doctors as $key => $value) {
+	        	 	\Nexmo::message()->send([
+		        	'to' => $value->doctore_data->phone,
+		        	'from' => 'ICan',
+		        	'text' => "Hi doctor msg {$value->doctore_data->first_name}, {$value->patient_data->first_name} is defined critical."
+			        ]);
+		        }
+				//Send Email To Doctore
 				$getAllDoctoreEmailId = User::where('role','1')->whereIn('id',$doctoreIds)->pluck('email')->toArray();
 
 				$email_data = EmailTemplates::get_details(8);
 				if(!empty($email_data)) 
 		        {      
 		            //Send Email Helper Function 
-                    //MailSendHelper::send_email($email_data, [$getAllPatientsEmailId]);
+                    MailSendHelper::send_email($email_data, $getAllDoctoreEmailId);
 		        }
-		    }
+			    
+			}
 	    }
 	    //Save Cron Result Into Database
 		$cronJobs =  new CronJobsLogs;

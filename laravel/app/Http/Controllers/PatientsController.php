@@ -61,7 +61,7 @@ class PatientsController extends Controller
 
                 //Send Registration Email to Patient Using  Mail  Helper Function
 
-                /*$email_data = EmailTemplates::get_details(2);
+                $email_data = EmailTemplates::get_details(2);
 
                 if(!empty($email_data)) 
                 {       
@@ -87,7 +87,7 @@ class PatientsController extends Controller
                    
                     //Send Email Helper Function 
                     MailSendHelper::send_email($email_data, [request('contact_email')]);
-                }*/
+                }
                 
 
                 if ($create) {
@@ -114,16 +114,17 @@ class PatientsController extends Controller
      function Patient_delete($id)
     {
         $deleting=  DB::table ('users')->where('id','=',$id )->delete();
+        $deleting2=  DB::table ('patient_data')->where('user_id','=',$id )->delete();
 
 //      if query failed
-        if($deleting!=1)
+        if($deleting!=1 && $deleting2!=1)
         {
             SweetAlert::error('There is an error! ')->persistent("Close");
             return redirect()->route('patients.index');
         }
         else 
         {
-            SweetAlert::success('Deleted successfully')->persistent("Close");
+            SweetAlert::success('Deleted successfully. Dont forget to delete this patient treatments')->persistent("Close");
             return redirect()->route('patients.index');
         }
     }

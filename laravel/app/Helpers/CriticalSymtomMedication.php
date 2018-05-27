@@ -8,7 +8,7 @@ use  App\TreatmentSymtoms;
 use DB;
 class CriticalSymtomMedication {
 
-  public static function  getCriticalMedication($doctoreid=0,$patientid = 0) 
+  public static function  getCriticalMedication($doctoreid=0,$patientid = 0,$nurseid = 0) 
   {
 
     //Get All Previous Day Running Treatment 
@@ -19,6 +19,10 @@ class CriticalSymtomMedication {
     if($doctoreid != 0)
     {
       $treatmentIds = Treatment::where('user_id',$doctoreid)->where(DB::raw("DATE(treatments.ends_at)"),">=",date('Y-m-d'))->pluck('id')->toArray();
+    }
+    if($nurseid != 0)
+    {
+      $treatmentIds = Treatment::where(DB::raw("DATE(treatments.ends_at)"),">=",date('Y-m-d'))->pluck('id')->toArray();
     }
 
     if(!empty($treatmentIds))
@@ -52,7 +56,7 @@ class CriticalSymtomMedication {
     return 0;                   
   }
 
-  public static function  getCriticalSymtoms($doctoreid=0,$patientid = 0) 
+  public static function  getCriticalSymtoms($doctoreid=0,$patientid = 0,$nurseid = 0) 
   {
 
     //Get All Previous Day Running Treatment 
@@ -63,6 +67,11 @@ class CriticalSymtomMedication {
     if($doctoreid != 0)
     {
       $treatmentIds = Treatment::where('user_id',$doctoreid)->where(DB::raw("DATE(treatments.ends_at)"),">=",date('Y-m-d'))->pluck('id')->toArray();
+    }
+
+    if($nurseid != 0)
+    {
+      $treatmentIds = Treatment::where(DB::raw("DATE(treatments.ends_at)"),">=",date('Y-m-d'))->pluck('id')->toArray();
     }
 
     if(!empty($treatmentIds))
@@ -83,15 +92,7 @@ class CriticalSymtomMedication {
           $submited_symtomsreports_count = $query->whereIn('symptoms_id',$treatmentsymtomsIds)->where('status','Critical')->count();
 
           return $submited_symtomsreports_count;
-          /*$countTreatment =  count($treatmentsymtomsIds);
-          if($submited_symtomsreports_count > 0)
-          {
-             return $countTreatment  - $submited_symtomsreports_count;
-          }
-          else
-          {
-            return $countTreatment;
-          }*/
+          
       }
     }
     return 0;                   

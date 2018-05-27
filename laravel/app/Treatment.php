@@ -15,6 +15,10 @@ class Treatment extends Model
     {
         return $this->belongsToMany(Symptom::class,'symptom_treatment','treatment_id','symptom_id')->with('symptom_desc');
     }
+    public function treatment_symtoms()
+    {
+        return $this->hasMany(TreatmentSymtoms::class);
+    }
 
     public function medications()
     {
@@ -31,6 +35,15 @@ class Treatment extends Model
     {
         return $this->hasmany('App\TreatmentMedication','treatment_id','id');
     }
+
+	public function delete() {
+	    $this->medications()->delete();
+	    $this->treatment_symtoms()->delete();
+	    parent::delete();
+	}
+    
+
+
 
     public function getDatesAttribute()
     {

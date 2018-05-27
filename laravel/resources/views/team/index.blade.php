@@ -29,7 +29,7 @@
                 </thead>
                 <tbody>
                 @foreach ($team as $member)
-                  @if((Auth::user()->isAdmin() && !$member->isAdmin()) || Auth::user()->isDoctor())
+                  @if((Auth::user()->isAdmin() && !$member->isAdmin()) || Auth::user()->isDoctor() || Auth::user()->isNurse())
                     
 	                    <tr>
 	                        <td>{{ $member->name }}</td>

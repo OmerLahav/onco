@@ -9,6 +9,7 @@ class MailSendHelper {
 
   public static function send_email($email_data = array(),$to_sender_emailids = array(),$cc_emails_send_list = array(),$bcc_emails_send_list = array()) {
 
+    //print_r($to_sender_emailids); exit;
     //Common Replace Value For All Email
     $to_array = array('[SITE_URL]','[SITE_NAME]','[DATE]','[IMG_LOGO_PATH]');
     $replace_array = array(SITE_URL,SITE_NAME,CURRENT_DATE_TIME,SITE_URL.APP_LOGO_PATH);

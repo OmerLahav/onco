@@ -4,7 +4,7 @@
 
 <div class="page-wrapper">
     <div class="page-wrapper-container">
-        <h1>Symtoms log</h1>
+        <h1>Symptoms log</h1>
         <div class="steps">
             <ol class="direction">
                 <li>

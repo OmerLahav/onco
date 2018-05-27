@@ -35,7 +35,7 @@
                     <th>Time</th>
                     <th>Status</th>
                     <th>Type </th>
-                    @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
+                    @if(Auth::user()->isPatient() || Auth::user()->isSecratory() || Auth::user()->isNurse())
                         <th>Actions</th>
                     @endif
                 </tr>

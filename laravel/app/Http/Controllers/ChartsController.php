@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Auth;
+
 use DB;
+
 
 class ChartsController extends Controller
 {
@@ -13,14 +16,26 @@ class ChartsController extends Controller
 
     public function googleLineChart()
     {
-        $visitorChartData = DB::table('patient_data')
+         if (Auth::user()->isDoctor())
+         {
+            $visitorChartData = DB::table('patient_data')
             ->select(
-
-                DB::raw("type as type"),
-              DB::raw("COUNT(user_id) as user_id"))
+            DB::raw("type as type"),
+            DB::raw("COUNT(user_id) as user_id"))
             ->groupBy("type")
-
+            ->where('doctor_id','=',Auth::user()->id)
             ->get();
+            }
+            else
+            {
+            $visitorChartData = DB::table('patient_data')
+            ->select(
+            DB::raw("type as type"),
+            DB::raw("COUNT(user_id) as user_id"))
+            ->groupBy("type")
+            ->get();
+
+            }
 
 
         $result[] = ['type',' user_id'];
@@ -36,13 +51,28 @@ class ChartsController extends Controller
 
     public function googleLineChart2()
     {
-        $activeChartData = DB::table('patient_data')
-            ->select(
 
-                 DB::raw("patient_status as patient_status"),
-              DB::raw("COUNT(user_id) as user_id"))
+         if (Auth::user()->isDoctor())
+         {
+            $activeChartData = DB::table('patient_data')
+            ->select(
+            DB::raw("patient_status as patient_status"),
+            DB::raw("COUNT(user_id) as user_id"))
+            ->groupBy("patient_status")
+            ->where('doctor_id','=',Auth::user()->id)
+            ->get();
+        }
+        else
+        {
+             $activeChartData = DB::table('patient_data')
+            ->select(
+            DB::raw("patient_status as patient_status"),
+            DB::raw("COUNT(user_id) as user_id"))
             ->groupBy("patient_status")
             ->get();
+        }
+
+        
            
         $result[] = ['patient_status',' user_id'];
         foreach ($activeChartData as $key => $value) {

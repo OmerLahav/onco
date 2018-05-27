@@ -315,6 +315,7 @@ margin-top:82px;
     list-style-type: none;
     text-align: left;
     font-family: 'Signika', sans-serif;
+    width:130%;
 }
 
 
@@ -392,7 +393,7 @@ flex-wrap: nowrap;
 
 
 .numbers{
-       width: 176%;
+           width: 182%;
 }
   
   .col-md-6{
@@ -433,4 +434,13 @@ padding-top:5px;
     color:white;
     display: block;
 }
+
+
+.report-levels {
+    
+    width: 123%;
+}
+   
+
+
 }

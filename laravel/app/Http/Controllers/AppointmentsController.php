@@ -39,7 +39,8 @@ class AppointmentsController extends Controller
         elseif(Auth::user()->isNurse())
         {
             //Get All Approved Appointment For Nurse
-            $appointments=Appointments::get_list([["medical_staff_id","=",Auth::user()->id],['medical_staff_type','=',Appointments::STAFF_TYPE_NURSE]]);    
+            //$appointments=Appointments::get_list([["medical_staff_id","=",Auth::user()->id],['medical_staff_type','=',Appointments::STAFF_TYPE_NURSE]]);    
+            $appointments=Appointments::get_list([]);
         }
         elseif(Auth::user()->isSecratory())
         {
@@ -84,7 +85,7 @@ class AppointmentsController extends Controller
 
                 //Send Appointment Email to Patient Using  Mail  Helper Function
 
-                /*$email_data = EmailTemplates::get_details(3);
+                $email_data = EmailTemplates::get_details(3);
 
                 if(!empty($email_data)) 
                 {       
@@ -94,15 +95,15 @@ class AppointmentsController extends Controller
                         
                     //Send Email Helper Function 
                     MailSendHelper::send_email($email_data, [Auth::user()->email]);
-                }*/
+                }
 
                 if ($appointment) {
                 	//Send patient an SMS about the time he scheduled an appointment
-                	/*\Nexmo::message()->send([
+                	 \Nexmo::message()->send([
                 	'to' => Auth::user()->phone,
                 	'from' => 'ICan',
                 	'text' => "Hi ".Auth::user()->first_name.", you scheduled an appointment to {$appointment->appointment_date} on {$appointment->appointment_time}."
-                     ]);*/
+                     ]); 
                 	//Make a popup notification (Sweet Alert)
                     SweetAlert::success('Appointment created successfully!')->persistent("Close");
                     return redirect()->route('appointments.get');

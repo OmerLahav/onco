@@ -54,9 +54,9 @@ Route::get('report',['as'=>'report','uses'=>'ErrorHandlerController@reports']);
 
 
 Route::get('settings', 'SettingsController@index')->name('settings');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/forgot-password','ForgotPasswordController@forgotPassword');
-Route::post('/forgot-password','ForgotPasswordController@postForgotPassword');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/forgot-password','ForgotPasswordController@forgotPassword')->name('password.email.show');
+//Route::post('/forgot-password','ForgotPasswordController@postForgotPassword');
 
 
 Route::post('/forgot-password-new','ForgotPasswordController@postForgotPasswordNew')->name('password.email');

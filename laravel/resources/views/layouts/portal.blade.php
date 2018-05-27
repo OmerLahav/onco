@@ -110,7 +110,7 @@
                 </li>
                 <li>
                     <a href="{{ route('appointments.get') }}">
-                        <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointment
+                        <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointments
                     </a>
                 </li>
                 <li>
@@ -164,7 +164,7 @@
                 </li>
                 <li>
                     <a href="{{ route('appointments.get') }}">
-                        <i class="fas fa-calendar-check fa-2x" alt="appointment"></i> Appointments
+                        <i class="fas fa-calendar-check fa-2x" alt="Appointments"></i> Appointments
                     </a>
                 </li>
                 <li>
@@ -312,7 +312,7 @@
                     "width": "8%",
                     "targets": 0
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -322,7 +322,7 @@
                     "width": "30%",
                     "targets": 4
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -332,7 +332,7 @@
                     "width": "15%",
                     "targets": 0
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -342,7 +342,7 @@
                     "width": "30%",
                     "targets": 5
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -352,7 +352,7 @@
                     "width": "20%",
                     "targets": 7
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -362,7 +362,7 @@
                     "width": "5%",
                     "targets": 0
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -372,7 +372,7 @@
                     "width": "20%",
                     "targets": 2
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -382,7 +382,7 @@
                     "width": "10%",
                     "targets": 6
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -393,7 +393,7 @@
                     "width": "20%",
                     "targets": 3
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -404,7 +404,7 @@
                     "width": "20%",
                     "targets": 3
                 }],
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]
@@ -412,7 +412,7 @@
             });
 
             $('#symp-report').DataTable({
-                dom: 'Bfrtip',
+                dom: 'Blfrtip',
                 buttons: [
                     'print'
                 ]

@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="dash-box-action">
-                            <button class="stuff_btn"><a href="#">More Info</a></button>
+                            <button class="stuff_btn"><a href="{{ route('medicationlogs.index') }}">More Info</a></button>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="dash-box-action">
-                            <button class="stuff_btn"><a href="#">More Info</a></button>
+                            <button class="stuff_btn"><a href="{{ route('symtomslog.index') }}">More Info</a></button>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="dash-box-action">
-                            <button class="stuff_btn"><a href="{{ route('medicationlogs.index') }}">More Info</a></button>
+                            <button class="stuff_btn"><a href="{{ route('patients.index') }}">More Info</a></button>
                         </div>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
             <div class="row margin-bottom-10  ">
                 <div class="box col-sm-6 ">
                     <div class="servive-block servive-block-1">
-                        <i class="icon-3x color-light fas fa-heartbeat fa-3x"></i>
+                        <i class="icon-3x color-light fas fas fa-pills fa-3x"></i>
                         <h2 class="heading-md">Medication Reports</h2>
                         <div class="text-box">
                             Remaining report: &nbsp;{{$CurrentDayMedicationReportCount or '0'}}
@@ -178,7 +178,7 @@
                 </div>
                 <div class="box col-sm-6 ">
                     <div class="servive-block servive-block-2">
-                        <i class="icon-3x color-light fas fa-stethoscope fa-3x"></i>
+                        <i class="icon-3x color-light fas fa-heartbeat fa-3x"></i>
                         <h2 class="heading-md">Symptom Reports</h2>
                         <div class="text-box">
                            Number of Critical Reports: &nbsp;{{$CurrentDaySymtomReportCount or '0'}}
@@ -190,19 +190,19 @@
                 </div>
                 <div class="box col-sm-6">
                     <div class="servive-block rounded servive-block-3">
-                        <i class="icon-3x color-light fas fa-pills fa-3x"></i>
+                        <i class="icon-3x color-light fas fa-stethoscope fa-3x"></i>
                         <h2 class="heading-md">Treatments</h2>
                         <div class="text-box">
-                        Number of treatments: ???????
+                        Number of treatments: &nbsp;{{$PatientTreatmentCount or '0'}}
                         </div>
                     </div>
                 </div>
                  <div class="box col-sm-6">
                     <div class="servive-block rounded servive-block-4">
-                        <i class="icon-3x color-light fas fa-pills fa-3x"></i>
+                        <i class="icon-3x color-light fas fa-calendar-check fa-3x"></i>
                         <h2 class="heading-md">Appointments</h2>
                         <div class="text-box">
-                              Today appointments: ???????
+                              Today appointments: &nbsp;{{$PatientAppointmentCount or '0'}}
                         </div>
                     </div>
                 </div>

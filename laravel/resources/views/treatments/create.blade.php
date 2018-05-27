@@ -20,7 +20,7 @@
 
                 <div>
                     <label for="patient_id">Patient:</label>
-                    <select id="patient_id" name="patient_id">
+                    <select id="patient_id" name="patient_id" required="required">
                         @foreach (App\Patient::allPatients() as $patient)
                         @if(Auth::user()->id ==  $patient->patient_data->doctor_id) 
                             <option value="{{ $patient->id }}"> {{ $patient->name }}</option>
@@ -28,11 +28,11 @@
                         @endforeach
                     </select>
                 </div>
-                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                <input type="hidden" name="user_id" value="{{Auth::user()->id}}" required="required">
 
                 <div>
                     <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" placeholder="Name">
+                    <input type="text" name="name" id="name" placeholder="Name" required="required">
                 </div>
 
                 <div>
@@ -42,26 +42,19 @@
 
                 <div>
                     <label for="ends_at">Ending date:</label>
-                    <input type="date" name="ends_at" id="ends_at">
+                    <input type="date" name="ends_at" id="ends_at" required="required">
                 </div>
 
                 <div>
                     <label for="medications">Symptoms:</label>
-                    <select id="symptoms" multiple="" name="symptoms[]">
+                    <select id="symptoms" multiple="" name="symptoms[]" required="required">
                         @foreach ($symptoms as $symptom)
                             <option value="{{ $symptom->id }}" @if(!empty($editData)) @endif> {{ $symptom->name }}</option>
                         @endforeach
                     </select>
                 </div>
 
-                {{-- <div>
-                    <label for="medications">Medications:</label>
-                    <select id="medications" multiple="" name="medications[]">
-                        @foreach ($medications as $medication)
-                            <option value="{{ $medication->id }}"> {{ $medication->name }}</option>
-                        @endforeach
-                    </select>
-                </div> --}}
+          
 
                 <div>
                     <button type="submit" class="btn btn-primary bg-info">Add</button>

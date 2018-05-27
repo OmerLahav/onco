@@ -38,7 +38,7 @@ class TeamController extends Controller
         	]);
             
             
-           /* $email_data = EmailTemplates::get_details(3);
+            $email_data = EmailTemplates::get_details(3);
 
             if(!empty($email_data)) 
             {       
@@ -50,7 +50,7 @@ class TeamController extends Controller
                
                 //Send Email Helper Function 
                 MailSendHelper::send_email($email_data, [request('email')]);
-            }*/
+            }
         
         
             if($create){

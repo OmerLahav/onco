@@ -1,53 +1,36 @@
-@extends ('layouts.portal')
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
 
-@section ('content')
-   <h1>Dashboard</h1>
-    <div class="container bootstrap snippet ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
 
-        <div class="row margin-bottom-10  ">
-            <div class="box col-sm-6 ">
-                <div class="servive-block servive-block-pink">
-                    <i class="icon-3x color-light fas fa-heartbeat fa-3x"></i>
-                    <h2 class="heading-md">Self Report</h2>
-                    <div class="text-box">
-                        <p>You have not recorded any symptoms for the last day. </p>
-                    </div>
-                    <button type="button" class="btn-style">Report Now</button>
+    <link href="{{ asset('css/admin-styles/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{!! asset('css/admin-styles/pages/404.css') !!}" media="all" rel="stylesheet" type="text/css" />
+    <title>Page not found</title>
+</head>
+<body>
 
-                </div>
-            </div>
-            <div class="box col-sm-6">
-                <div class="servive-block rounded servive-block-parklife">
-                    <i class="icon-3x color-light fas fa-pills fa-3x"></i>
-                    <h2 class="heading-md">Medications</h2>
-                    <div class="text-box">
-                        <p>You have not taken a medication for the evening.</p>
-                    </div>
-                    <button type="button" class="btn-style">Report Now </button>
-                </div>
-            </div>
-            <div class="box col-sm-6">
-                <div class="servive-block rounded servive-block-caramel">
-                    <i class="icon-3x color-light fas fa-calendar-check fa-3x"></i>
-                    <h2 class="heading-md">Appointment</h2>
-                    <div class="text-box">
-                        <p>You have an appointment on Thursday, 24 June,2018.</p>
-                    </div>
-                    <button type="button" class="btn-style">Appointment</button>
-                </div>
-            </div>
 
-            <div class="box col-sm-6">
-                <div class="servive-block rounded servive-block-blue">
-                    <i class="icon-3x color-light fas fa-envelope fa-3x"></i>
-                    <h2 class="heading-md">Messages</h2>
-                    <div class="text-box">
-                        <p>you have not messages.</p>
-                    </div>
-                    <button type="button" class="btn-style">See inbox</button>
-                </div>
-            </div>
-
-        </div>
+<main  class="container">
+    
+    
+    <div>
+        <img style="float: left" class="logo" src="images/logo.png" alt="ican logo" >
     </div>
-@stop
+    <div class="col-sm-3 col-md-4 col-lg-4 center">
+        <div class="speech-bubble center" tabindex="2">
+            <h2 >404 page not found</h2>
+            Uh oh, we can’t seem to find the page you’re looking for. Try going back to the previous page or see our Help Center for more information.
+        </div>
+        <div ><img class="doctor" src="images/medical-clipart-funny-13.png" alt="doctor"  tabindex="3"></div>
+    </div>
+</main>
+<footer class="center" tabindex="4">© 2018 ICAN, Inc.</footer>
+
+
+
+
+</body>
+</html>

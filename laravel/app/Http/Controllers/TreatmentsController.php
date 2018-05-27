@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Medication;
 use App\Symptom;
 use App\Treatment;
+use App\SymptomReport;
+use App\MedicationLog;
+use App\TreatmentMedication;
 use Illuminate\Http\Request;
 use UxWeb\SweetAlert\SweetAlert;
 use Validator;
@@ -23,7 +26,7 @@ class TreatmentsController extends Controller
         {
             //Nurse Show All treatment
             return view('treatments.index')
-            ->withTreatments(Treatment::with(['patient'])->all());
+            ->withTreatments(Treatment::with(['patient'])->get());
         }
     }
 
@@ -68,19 +71,22 @@ class TreatmentsController extends Controller
 
     function Treatment_delete($id)
     {
-        $deleting=  DB::table ('treatments')->where('id','=',$id )->delete();
+        $record = Treatment::find($id);
+           
+        $record->delete();
+            
+        //Delete Log and Symtoms Reports
 
-//      if query failed
-        if($deleting!=1){
-            SweetAlert::error('There is an error!')->persistent("Close");
-            return redirect()->route('treatments.index');
 
-        }
-        else {
+        SymptomReport::where('treatment_id',$id)->delete();
+        $treatment_medication = TreatmentMedication::where('treatment_id',$id)->pluck('id')->toArray();
 
-            SweetAlert::success('Deleted successfully!')->persistent("Close");
-            return redirect()->route('treatments.index');
-        }
+       MedicationLog::whereIn('treatment_medication_id',$treatment_medication)->delete();        
+
+//      if query failed    
+        SweetAlert::success('Deleted successfully!')->persistent("Close");
+        return redirect()->route('treatments.index');
+    
 
     }
 

@@ -29,9 +29,20 @@ class DashboardController extends Controller
 
          //doctors
         //Start count doctors patients Data Business Logic
-        $dashboardData['PatientCountData'] = DB::table('treatments')
+       /* $dashboardData['PatientCountData'] = DB::table('treatments')
 			->where('user_id','=',Auth::id())
+            ->count();*/
+         if(Auth::user()->isDoctor())
+         {
+            $dashboardData['PatientCountData'] = DB::table('patient_data')
+            ->where('doctor_id','=',Auth::user()->id)
             ->count();
+         } elseif(Auth::user()->isNurse()){
+            $dashboardData['PatientCountData'] = DB::table('patient_data')
+            ->count();
+         }
+            
+
         //End count Data Business Logic
 
         //Start doctors Treatments count Data Business Logic
@@ -44,8 +55,8 @@ class DashboardController extends Controller
        
         //Start doctors Appointments count Data Business Logic
         $dashboardData['AppointmentCountData'] = DB::table('appointments')
-            ->whereRaw('Date(appointment_date) = CURDATE()')
-			->where('medical_staff_id','=',Auth::id())
+            ->where('medical_staff_id', '=',Auth::user()->id)
+            ->where('appointment_date', '=',date('Y-m-d'))
             ->count();
         //End doctors Appointments Business Logic
 
@@ -59,8 +70,8 @@ class DashboardController extends Controller
         //End doctors Appointments Business Logic
 		
 		 //Start Not Reported Medication Only for Previous Date  count for doctors Data Business Logic
-        $docotreid = 0;
-        $patientid = 0;
+        $docotreid = $patientid = $nurseid = 0;
+    
         
         if (Auth::user()->isDoctor())
         {
@@ -70,8 +81,12 @@ class DashboardController extends Controller
         {
             $patientid = Auth::user()->id;
         }
-        $dashboardData['CurrentDayMedicationReportCount'] =   CriticalSymtomMedication::getCriticalMedication($docotreid,$patientid);
-        $dashboardData['CurrentDaySymtomReportCount'] =   CriticalSymtomMedication::getCriticalSymtoms($docotreid,$patientid);
+        if (Auth::user()->isNurse())
+        {
+            $nurseid = Auth::user()->id;
+        }
+        $dashboardData['CurrentDayMedicationReportCount'] =   CriticalSymtomMedication::getCriticalMedication($docotreid,$patientid,$nurseid);
+        $dashboardData['CurrentDaySymtomReportCount'] =   CriticalSymtomMedication::getCriticalSymtoms($docotreid,$patientid,$nurseid);
         //End  Not Reported Symtoms  Business Logic   
 
        
@@ -81,10 +96,18 @@ class DashboardController extends Controller
 
 		//patient
 		//Start patient Appointments count Data Business Logic
+         $dashboardData['PatientAppointmentCount'] = DB::table('appointments')
+         ->where('patient_id', '=',Auth::user()->id)
+         ->where('appointment_date', '=',date('Y-m-d'))
+         ->count();
        
         //End patient Appointments Business Logic
 
         //Start patient treatments count Data Business Logic
+         $dashboardData['PatientTreatmentCount'] = DB::table('treatments')
+         ->where('patient_id', '=',Auth::user()->id)
+        ->where(DB::raw("DATE(treatments.ends_at)"),">=",date('Y-m-d'))
+        ->count();
        
         //End patient treatments Business Logic
 

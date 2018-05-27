@@ -32,7 +32,9 @@
                     <th>Sr #</th>
                     <th>Medication Name</th>
                     <th>Strength</th>
-                    <th>Actions</th>
+                    @if(Auth::user()->isDoctor())
+                        <th>Actions</th>
+                    @endif
                 </tr>
                 </thead>
                 <tbody>
@@ -41,11 +43,13 @@
                         <td>{{ $medication->id }}</td>
                         <td>{{ $medication->name }}</td>
                         <td>{{ $medication->strength }}</td>
+                        @if(Auth::user()->isDoctor())
                         <td>
                             <a href="{{action('MedicationsController@edit',$medication->id)}}"  class="btn btn-primary opt-btn fa fa-edit"><span class="edit "> Edit </span></a>
-                            <a href="/Symp_delete/{{$medication->id}}"  onclick="return confirm('Are you sure you want to delete this medication?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
+                            <a href="/delete/{{$medication->id}}"  onclick="return confirm('Are you sure you want to delete this medication?');" class="btn btn-danger opt-btn far fa-trash-alt"><span class="edit del">Delete</span></a>
 
                         </td>
+                        @endif
                     </tr>
                 @endforeach
                 </tbody>

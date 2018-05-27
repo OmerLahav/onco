@@ -209,10 +209,18 @@ font-size:30px;
 height:56px;
 
 }
+/* datatables design*/
+.buttons-print{
+background-color: blue;
+}
+
+
 
 footer{
     height: 38px;
 }
+
+
 }
 /* ------------------ End Responsive--------------*/
 
