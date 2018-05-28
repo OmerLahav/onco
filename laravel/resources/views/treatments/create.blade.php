@@ -46,8 +46,8 @@
                 </div>
 
                 <div>
-                    <label for="medications">Symptoms:</label>
-                    <select id="symptoms" multiple="" name="symptoms[]" required="required">
+                    <label for="Symptoms">Symptoms:</label>
+                    <select id="symptoms" multiple="" name="symptoms[]">
                         @foreach ($symptoms as $symptom)
                             <option value="{{ $symptom->id }}" @if(!empty($editData)) @endif> {{ $symptom->name }}</option>
                         @endforeach

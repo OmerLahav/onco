@@ -18,21 +18,14 @@
     <link href="{!! asset('css/admin-styles/radio.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('css/admin-styles/steps.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/calendar.css') }} ">
-
-    <!--<link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/new-appointment.css') }} ">-->
+    
+    <link rel="stylesheet" href="{{ asset('css/buttons.dataTables.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/frame.css') }} ">
-
     <link rel="stylesheet" href="{{ asset('css/admin-styles/bootstrap4.4.3.css') }}">
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
-
     <!--- Table css ---->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-
-
-    <link rel="stylesheet" type="text/css" href="{{ asset(' https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css') }} ">
-
-
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> 
+  
 
 
     <!--- google fonts ---->
@@ -41,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/dashboard.css') }} "> @endif @if (Auth::user()->isPatient())
     <link rel="stylesheet" href="{{ asset('css/patients-style/bootstrap4.4.3.css') }}">
     <link rel="stylesheet" href="{{ asset('css/patients-style/frame.css') }}">
+    <link href="{!! asset('css/patients-style/steps.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/patients-style/dashboard.css') }} "> @endif @endif
 </head>
 
@@ -58,7 +52,6 @@
                         @if(Auth::user())
                         {{Auth::user()->name}} 
                         @endif
-
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -289,7 +282,7 @@
     <script type="text/javascript">
         document.title = document.getElementsByTagName("H1").item(0).innerHTML;
     </script>
-
+<!-- datatabel script -->
     <script>
         $(document).ready(function() {
             $('.sidebar-toggle').on('click', function() {
@@ -315,27 +308,30 @@
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
             });
             $('#treatments').dataTable({
                 "columnDefs": [{
-                    "width": "30%",
+                    "width": "40%",
                     "targets": 4
                 }],
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
             });
             $('#example2').dataTable({
                 "columnDefs": [{
-                    "width": "15%",
+                    "width": "20%",
                     "targets": 0
                 }],
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
             });
             $('#patients').dataTable({
                 "columnDefs": [{
@@ -345,7 +341,8 @@
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
             });
             $('#appointments').dataTable({
                 "columnDefs": [{
@@ -355,7 +352,8 @@
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
             });
             $('#appointments2').dataTable({
                 "columnDefs": [{
@@ -365,17 +363,19 @@
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
             });
             $('#team').dataTable({
                 "columnDefs": [{
-                    "width": "20%",
+                    "width": "30%",
                     "targets": 2
                 }],
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
             });
             $('#slots').dataTable({
                 "columnDefs": [{
@@ -385,18 +385,20 @@
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
 
             });
             $('#medication-index').dataTable({
                 "columnDefs": [{
-                    "width": "20%",
+                    "width": "30%",
                     "targets": 3
                 }],
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
 
             });
             $('#symptom-index').dataTable({
@@ -407,7 +409,8 @@
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
 
             });
 
@@ -415,7 +418,20 @@
                 dom: 'Blfrtip',
                 buttons: [
                     'print'
-                ]
+                ],
+                responsive: true
+            });
+            $('#medicationLog').dataTable({
+                "columnDefs": [{
+                    "width": "15%",
+                    "targets": 0
+                }],
+                dom: 'Blfrtip',
+                buttons: [
+                    'print'
+                ],
+                responsive: true
+
             });
         });
 

@@ -149,6 +149,11 @@ top:10px;
 }
 
 /* datatables design*/
+div.dt-buttons{
+   
+    display: inline;
+    float:right;
+}
 .buttons-print{
 
     font-size: .8rem;

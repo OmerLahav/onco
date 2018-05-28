@@ -13,7 +13,7 @@
 
             </ol>
         </div>
-        <table id="example" class="table table-striped table-bordered col-sm-12" style="width:100%">
+        <table id="medicationLog" class="table table-striped table-bordered col-sm-12" style="width:100%">
             <thead>
             <tr>
                 <th>Patient Name</th>

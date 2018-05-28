@@ -15,9 +15,7 @@
                 </ol>
             </div>
             <div class="container">
-                 <form class="form-style" method="post" action="{{action('TeamController@Team_update',$users->id)}}">
-
-                
+                 <form class="form-style" name="myform" method="post" action="{{action('TeamController@Team_update',$users->id)}}">
                     @csrf
                     <div class="form-group">
                         <label for="role">Role:</label>
@@ -67,7 +65,9 @@
 
                     <div class="form-group">
                         <label for="password">Password:</label>
-                        <input id="pass" name="password" type="text" size="40" minlength="4" >
+                        <input id="pass" name="password" type="text" size="40">
+                        <input type="button" class="button" value="Generate" onClick="generate();" tabindex="2">
+                        {{-- <input type="buttonbtn btn-success" class="generate d-inline btn btn-success" value="Generate" onClick="generate();" tabindex="2"> --}}
                     </div>
 
                     <div class="form-group">
@@ -83,4 +83,22 @@
     </div>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form-big.css') }} ">
+    <script>
+        function randomPassword(length) {
+            var chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
+            var pass = "";
+            for (var x = 0; x < length; x++) {
+                var i = Math.floor(Math.random() * chars.length);
+                pass += chars.charAt(i);
+
+            }
+
+            return pass;
+        }
+
+        function generate() {
+            myform.password.value = randomPassword(8);
+
+        }
+    </script>
 @stop

@@ -15,6 +15,7 @@
         html, body {
             background-image: url("images/background.jpg");
 			background-position: center;
+            background-repeat: no-repeat;
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
@@ -220,4 +221,14 @@ top: 420px;
 
 </div>
 </body>
+
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "b72f7212-6c89-46b4-bad0-10fa219e5429",
+    });
+  });
+</script>
 </html>

@@ -130,7 +130,6 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-form-big.css') }} ">
     <script>
-
         function randomPassword(length) {
             var chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
             var pass = "";

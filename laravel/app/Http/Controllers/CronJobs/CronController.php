@@ -24,9 +24,6 @@ class CronController
 	    $cron_results.="<<<<<<------- Start Execution of Cron Job Of Patient Treatment Status --------->>>>>><br>";
 		$medications_logs = $treatments_medications = $critical_treatment_medications = [];
 		//Take Patient with his All Teatments
-
-		
-		
 		$treatments_medications = TreatmentMedication::where(DB::raw("DATE(treatment_medications.ends_at)"),">=",date('Y-m-d'))->pluck('id')->toArray();
 
 		$cron_results.="<<<<<<------- Fetching Tratment Medications Table Treatment Id  --------->>>>>><br>";
@@ -34,7 +31,6 @@ class CronController
 		$cron_results.= "(".implode("|",$treatments_medications).")";
 
 		$medications_logs = MedicationLog::where(DB::raw("DATE(medication_logs.created_at)"),"=",date('Y-m-d'))->pluck('treatment_medication_id')->toArray();
-
 
 		$cron_results.="<<<<<<------- Fetching Medications Log Table Treatment Id  --------->>>>>><br>";
 		$cron_results.="<<<<<<------- Display Tratment Ids  --------->>>>>><br>";
@@ -75,7 +71,7 @@ class CronController
 	            MailSendHelper::send_email($email_data,$getAllPatients->pluck('email')->toArray());
 	        }
 	        $patients = User::where('role','3')->with(['patient_data'])->where('phone','!=',"")->whereIn('id',$patient_ids)->get();
-	        //Sending SMS Code To Patient
+	        //Sending SMS Code To Patient and to its Contact
 	        if(!empty($patients))
 	        {
 		        foreach ($patients as $key => $value) {
@@ -83,21 +79,21 @@ class CronController
 		        	\Nexmo::message()->send([
 			        	'to' => $value->phone,
 			        	'from' => 'ICan',
-			        	'text' => "Hi patient msg {$value->first_name} is defined critical."
+			        	'text' => "Dear patient {$value->first_name}, your status is defined critical. Please contact your doctor."
 			        ]);
 
 			        \Nexmo::message()->send([
 			        	'to' => $value->patient_data->contact_phone,
 			        	'from' => 'ICan',
-			        	'text' => "Hi patient msg {$value->patient_data->contact_name} is defined critical."
+			        	'text' => "Dear Contact {$value->patient_data->contact_name}, {$value->first_name} is defined critical. Please check for his condition."
 			        ]);
 
-			        //Send Email To COnstact Perons
+			        //Send Email To Constact Perons
 			        MailSendHelper::send_email($email_data,[$value->patient_data->contact_email]);
 		        }
 	        }
 
-	        //Send Email To All Doctore Of that Patient Who's Status Update as A Critical
+	        //Send Email To All Doctors Of that Patient Who's Status Update as A Critical
 			$doctors = PatientData::where('doctor_id','!=','')->with(['patient_data','doctore_data'])->whereIn('user_id',$patient_ids)->get();
 
 			if(count($doctors))
@@ -107,7 +103,7 @@ class CronController
 	        	 	\Nexmo::message()->send([
 		        	'to' => $value->doctore_data->phone,
 		        	'from' => 'ICan',
-		        	'text' => "Hi doctor msg {$value->doctore_data->first_name}, {$value->patient_data->first_name} is defined critical."
+		        	'text' => "Dear Doctor {$value->doctore_data->first_name}, {$value->patient_data->first_name} is defined critical. Please check for his condition ."
 			        ]);
 		        }
 
@@ -194,20 +190,20 @@ class CronController
 
 	        $patients = User::where('role','3')->with(['patient_data'])->whereIn('id',$patient_ids)->get();
 
-	        //Sending SMS Code To Patient
+	        //Sending SMS Code To Patient and his contact 
 	        if(!empty($patients))
 	        {
 		        foreach ($patients as $key => $value) {
 		        	\Nexmo::message()->send([
 			        	'to' => $value->phone,
 			        	'from' => 'ICan',
-			        	'text' => "Hi patient msg {$value->first_name} is defined critical."
+			        	'text' => "Dear patient {$value->first_name} your status is defined critical. Please contact your doctor."
 			        ]);
 
 			        \Nexmo::message()->send([
 			        	'to' => $value->patient_data->contact_phone,
 			        	'from' => 'ICan',
-			        	'text' => "Hi patient msg {$value->patient_data->contact_name} is defined critical."
+			        	'text' => "Dear Contact {$value->patient_data->contact_name}, {$value->first_name} is defined critical. Please check for his condition."
 			        ]);
 
 			        //Send Email To Contact Person
@@ -227,7 +223,7 @@ class CronController
 	        	 	\Nexmo::message()->send([
 		        	'to' => $value->doctore_data->phone,
 		        	'from' => 'ICan',
-		        	'text' => "Hi doctor msg {$value->doctore_data->first_name}, {$value->patient_data->first_name} is defined critical."
+		        	'text' => "Dear Doctor {$value->doctore_data->first_name}, {$value->patient_data->first_name} is defined critical. Please check for his condition ."
 			        ]);
 		        }
 				//Send Email To Doctore

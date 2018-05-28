@@ -8,7 +8,11 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use App\User;
 use UxWeb\SweetAlert\SweetAlert;
+use App\Helpers\MailSendHelper;
+use App\EmailTemplates;
+
 class SymptomReportsController extends Controller
 {
     public function create()
@@ -46,18 +50,82 @@ class SymptomReportsController extends Controller
                 //check importance level is less then usr level then set pateint status is critical 
                 $symptoms_importance_level = Symptom::where('id',$request->symptoms_id)->first()->importance_level;
 
-                if($symptoms_importance_level < $request->patient_level)
+                if($symptoms_importance_level <= $request->patient_level)
                 {
                     //Get Patient Data and Change Status
                     
-                    PatientData::where('user_id',Auth::user()->id)->update(['patient_status'=>'Critical']);
+                    $patientdata = PatientData::where('user_id',Auth::user()->id)->with(['doctore_data'])->first();
+                    $patientdata->patient_status = 'Critical';
+                    $patientdata->save();
+
                     //Update Symtom Status
 
                     Symptom::where('id',$request->symptoms_id)->update(['symtom_status'=>'Critical']);
                     $symptopsreports->status = 'Critical';
+                    //send to patient for this critical status
 
+	                    //Send Email 
+                    	$email_data = EmailTemplates::get_details(7);
+						if(!empty($email_data)) 
+				        {      
+				            //Send Email TO Patient 
+		                    MailSendHelper::send_email($email_data,[Auth::user()->email]);
+				        	
+				        	//Send Email To Contact Person
+		                    if(isset($patientdata))
+				        	{
+		                    	 MailSendHelper::send_email($email_data,[$patientdata->contact_email]);
+				        	}
+				        }
+
+	                    //Send SMS
+				        	//Send SMS to Patiet
+		                    if(isset(Auth::user()->phone))
+					        {
+					        	\Nexmo::message()->send([
+					        	'to' => Auth::user()->phone,
+					        	'from' => 'ICan',
+					        	'text' => "Dear patient ".Auth::user()->first_name." your status is defined critical, because of your last symptom report. Please contact your doctor."
+						        ]);
+					        }
+
+					        //Send SMS to Patient contact person 
+							
+							if(isset($patientdata))
+					        {
+					        	\Nexmo::message()->send([
+					        	'to' => $patientdata->contact_phone,
+					        	'from' => 'ICan',
+					        	'text' => "Dear Contact {$patientdata->contact_name}, ".Auth::user()->first_name." is defined critical, because of his last symptom report. Please check for his condition."
+						        ]);
+					        }		                    
+
+
+
+                    // Send to patient doctor for this critical status 
+	                    //Send Email 
+				        $email_data = EmailTemplates::get_details(8);
+						if(!empty($email_data)) 
+				        {      
+				        	if(isset($patientdata->doctore_data))
+				        	{
+				            	//Send Email Helper Function 
+		                    	MailSendHelper::send_email($email_data,[$patientdata->doctore_data->email]);
+				        	}
+				        }
+
+	                    //Send SMS
+
+				        if(isset($patientdata->doctore_data))
+				        {
+				        	\Nexmo::message()->send([
+				        	'to' => $patientdata->doctore_data->phone,
+				        	'from' => 'ICan',
+				        	'text' => "Dear Doctor {$patientdata->doctore_data->first_name}, {$patientdata->doctore_data->first_name} is defined critical,because of your last symptom report Please check for his condition ."
+					        ]);
+				        }
                 }   
-                SweetAlert::success('symtom reports successfully.')->persistent("Close");
+                SweetAlert::success('symptom reported successfully.')->persistent("Close");
              } 
              else
              {
@@ -67,7 +135,7 @@ class SymptomReportsController extends Controller
         }
         else
         {
-            sweetAlert::error('symtom reports already submited by you for today.')->persistent("Close");
+            sweetAlert::error('This sympton already submited by you for today.')->persistent("Close");
         }
         return redirect()->route('symptopsreports.create');
         

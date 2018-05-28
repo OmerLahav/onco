@@ -85,7 +85,7 @@ class AppointmentsController extends Controller
 
                 //Send Appointment Email to Patient Using  Mail  Helper Function
 
-                $email_data = EmailTemplates::get_details(3);
+                $email_data = EmailTemplates::get_details(9);
 
                 if(!empty($email_data)) 
                 {       

@@ -72,6 +72,5 @@
 <script src="{{ asset('/js2/custom.js') }}"></script>
 <script>
     timeChecker();
-
 </script>
 @stop

@@ -11,7 +11,7 @@
                 <div class="col-md-4">
                     <div class="dash-box dash-box-color-3">
                         <div class="dash-box-icon">
-                            <i class="fas fa-heartbeat"></i>
+                            <i class="fas fa-pills"></i>
                         </div>
 
                         <div class="dash-box-body">
@@ -45,7 +45,7 @@
                 <div class="col-md-4">
                     <div class="dash-box dash-box-color-2">
                         <div class="dash-box-icon">
-                            <i class="fas fa-pills" aria-hidden="true"></i>
+                            <i class="fas fa-heartbeat" aria-hidden="true"></i>
                         </div>
                         <div class="dash-box-body">
                             @if (Auth::user()->isDoctor())
@@ -110,7 +110,7 @@
                 <div class="col-md-4">
                     <div class="dash-box dash-box-color-2">
                         <div class="dash-box-icon">
-                            <i class="fas fa-pills" aria-hidden="true"></i>
+                            <i class="fas fa-stethoscope" aria-hidden="true"></i>
                         </div>
 
                         <div class="dash-box-body">
@@ -209,32 +209,44 @@
             </div>
         </div>
         @elseif(Auth::user()->isSecratory())
-        <div class="container bootstrap snippet ">
-            <div class="row margin-bottom-10  ">
-                <div class="box col-sm-6 ">
-                    <div class="servive-block servive-block-1">
-                        <i class="icon-3x color-light fas fa-heartbeat fa-3x"></i>
-                        <h2 class="heading-md">Schedule</h2>
-                        <div class="text-box">
-                            <p>Create new schedule for the doctors </p>
+       <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dash-box dash-box-color-3">
+                        <div class="dash-box-icon">
+                            <i class="fas fa-pills"></i>
                         </div>
-                        <button type="button" class="btn-style"><a href="{{ route('slots_time.index') }}">Show Schedule</a></button>
 
+                        <div class="dash-box-body">
+                            <span class="dash-box-count">Schedule</span>
+                        
+                            <span class="dash-box-title">Schedule for the medical team</span>
+                        </div>
+
+                        <div class="dash-box-action">
+                            <button class="stuff_btn"><a href="{{ route('slots_time.index') }}">Show Schedule</a></button>
+                        </div>
                     </div>
                 </div>
-
-                <div class="box col-sm-6 ">
-                    <div class="servive-block servive-block-2">
-                        <i class="icon-3x color-light fas fa-stethoscope fa-3x"></i>
-                        <h2 class="heading-md">Today Appointments</h2>
-                        <div class="text-box">
-                            <p>{{$AppointmentCountDataNurse or '0'}}</p>
+                 <div class="col-md-6">
+                    <div class="dash-box dash-box-color-1">
+                        <div class="dash-box-icon">
+                            <i class="fas fa-heartbeat"></i>
                         </div>
-                        <button type="button" class="btn-style">Show Appointments</button>
 
+                        <div class="dash-box-body">
+                            <span class="dash-box-count">{{$AppointmentCountDataNurse or '0'}}</span>
+                        
+                            <span class="dash-box-title">Today appointments</span>
+                        </div>
+
+                        <div class="dash-box-action">
+                            <button class="stuff_btn"><a href="{{ route('appointments.get') }}">More Info</a></button>
+                        </div>
                     </div>
                 </div>
-
+               
+                
             </div>
         </div>
         @endif @if(Auth::user()->isAdmin())
@@ -243,7 +255,7 @@
                 <div class="col-md-6">
                     <div class="dash-box dash-box-color-2">
                         <div class="dash-box-icon">
-                            <i class="fas fa-pills" aria-hidden="true"></i>
+                            <i class="fas fa-users" aria-hidden="true"></i>
                         </div>
                         <div class="dash-box-body">
                             <span class="dash-box-count">{{$PatientTotalCount or '0'}}</span>
@@ -258,7 +270,7 @@
                 <div class="col-md-6">
                     <div class="dash-box dash-box-color-2">
                         <div class="dash-box-icon">
-                            <i class="fas fa-pills" aria-hidden="true"></i>
+                            <i class="fas fa-user-md" aria-hidden="true"></i>
                         </div>
                         <div class="dash-box-body">
                             <span class="dash-box-count">{{$TeamTotalCount or '0'}}</span>

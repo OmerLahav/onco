@@ -84,15 +84,19 @@ table
 
 .opt-btn {
     display: inline-block;
-    width: 70px;
+    width: 90px;
     padding: 12px 6px;
-	margin-bottom:2px;
+	
 }
 .g-btn
 {
     display: inline-block;
-    width: 70px;
+    
     padding: 12px 6px;
+}
+.opt-1
+{
+    margin-top:2px;
 }
 
 

@@ -36,7 +36,7 @@ button:hover{
     border-bottom:0px;
    
     font-size: 20px;
-    font-weight: bold;
+   
         width: 100%;
         margin:0px;
 }
@@ -55,6 +55,9 @@ max-width: 100%;
     border-bottom: 4px solid !important;
     font-size: 20px;
     font-weight: bold;
+    border: 1px solid black;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
 }
 
 
@@ -163,7 +166,7 @@ ol.direction
 }
 .symp-desc{
     padding-top: 30px;
-        max-width: 85%;
+        max-width: 100%;
 }
 
 input {
@@ -441,6 +444,9 @@ padding-top:5px;
     width: 123%;
 }
    
-
+.save-btn {
+    margin-left: 49%;
+     margin-top: -22%;
+}
 
 }

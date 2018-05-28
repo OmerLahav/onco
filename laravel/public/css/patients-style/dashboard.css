@@ -176,7 +176,7 @@ width:100%;
   margin-bottom: 25px;
   font-weight: bold;
   font-size: 17px;
-  width: 107%
+  width: 100%
 }
 
 /*Colored Content Boxes
@@ -287,6 +287,12 @@ display:inline-block;
 width:100%;
 
 }
+.text-box
+{
+  
+  width: 107%;
+    max-height: 35px;
+}
 
 }
 
@@ -305,7 +311,11 @@ height:80%;
 padding-left:0px;
 padding-right:0px;
 }
-
+.text-box
+{
+  
+  width: 107%
+}
 .servive-block
 {
   margin-bottom: 15px;
