@@ -16,7 +16,7 @@ use App\EmailTemplates;
 use DB;
 class CronController
 {
-	//Cron For Change Patint Status Critical Base on Medication Taken By Every Patient Every Day
+	//Cron For Change Patient Status Critical Based on Medication Taken By Every Patient Every Day
 	public function patient_status_baseon_treatment_medications()
 	{
 		$cron_results = '';

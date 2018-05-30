@@ -20,8 +20,15 @@
 
                 <div>
                     <label for="importance_level">Importance level:</label>
-                    <input type="text" name="importance_level" value="{{$symptom[0]['importance_level']}}"
-                           id="importance_level" placeholder="importance_level">
+                    
+                    <select name="importance_level" class="form-control select" id="importance_level">
+                            <option value="">Pick a number between 0-4</option>
+                            <option <?php if($symptom[0]['importance_level'] == '0'){ ?> selected <?php } ?>  value="0">0</option>
+                            <option <?php if($symptom[0]['importance_level'] == '1'){ ?> selected <?php } ?> value="1">1</option>
+                            <option <?php if($symptom[0]['importance_level'] == '2'){ ?> selected <?php } ?> value="2">2</option>
+                            <option <?php if($symptom[0]['importance_level'] == '3'){ ?> selected <?php } ?> value="3">3</option>
+                            <option <?php if($symptom[0]['importance_level'] == '4'){ ?> selected <?php } ?> value="4">4</option>
+                    </select>
                 </div>
                 <div>
 

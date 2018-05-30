@@ -89,10 +89,13 @@ class AppointmentsController extends Controller
 
                 if(!empty($email_data)) 
                 {       
-                    $email_data->template_body = str_replace('[USERNAME]',Auth::user()->first_name.' '.Auth::user()->last_name,$email_data->template_body);
-                    $email_data->template_body = str_replace('[APPOINTMENT_TIME]',request('appointment_time'),$email_data->template_body);
+                    $email_data->template_body = str_replace('[USER_NAME]',Auth::user()->first_name.' '.Auth::user()->last_name,$email_data->template_body);
+                    $email_data->template_body = str_replace('[APOINTMENT_TIME]',request('appointment_time'),$email_data->template_body);
                     $email_data->template_body = str_replace('[APPOINTMENT_DATE]',request('appointment_date'),$email_data->template_body);
+
+                    $email_data->template_body = str_replace('[APPOINTMENT_TYPE]',request('type'),$email_data->template_body);
                         
+
                     //Send Email Helper Function 
                     MailSendHelper::send_email($email_data, [Auth::user()->email]);
                 }
@@ -228,18 +231,18 @@ class AppointmentsController extends Controller
                     $slot_html.= "</div>";
                     $status = TRUE;
                     $msg = 'Slots get sucessfully.';
-                }
-                else
-                {
+                        }
+                        else
+                        {
+                            $status = FALSE;
+                            $msg = 'Slots not found.';
+                        }
+                } else {
                     $status = FALSE;
-                    $msg = 'Slots not found.';
+                    $msg = 'Please select appoointment date.';
                 }
-        } else {
-            $status = FALSE;
-            $msg = 'Please select appoointment date.';
-        }
-        return ['html'=>$slot_html,'status'=>$status,'msg'=>$msg,'type'=>$type];
-    }
+                return ['html'=>$slot_html,'status'=>$status,'msg'=>$msg,'type'=>$type];
+            }
 
    //Google Claneder Page for add details
 
@@ -253,9 +256,6 @@ class AppointmentsController extends Controller
 		'action' => 'TEMPLATE',
 		'text' => urlencode('Appointment to'. Input::get('provider_name')),
 		'dates' => '20180523T080000/20190523T170000',
-
-		// 'Start' => '2019-12-04 12:30:00',
-		// 'End' => '2019-12-04 14:30:00',
 
 		//'details' => urlencode('blabla') ,
 		'location' => urlencode('Meir Hospital, Petakh-Tikva') ,

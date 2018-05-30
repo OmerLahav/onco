@@ -125,17 +125,17 @@ class SymptomReportsController extends Controller
 					        ]);
 				        }
                 }   
-                SweetAlert::success('symptom reported successfully.')->persistent("Close");
+                SweetAlert::success('The symptom was reported successfully!')->persistent("Close");
              } 
              else
              {
-                sweetAlert::error('Some Error IN Server Side.');
+                sweetAlert::error('Error on server side.');
              }
               $symptopsreports->save();
         }
         else
         {
-            sweetAlert::error('This sympton already submited by you for today.')->persistent("Close");
+            sweetAlert::error('This sympton was already submited by you today.')->persistent("Close");
         }
         return redirect()->route('symptopsreports.create');
         

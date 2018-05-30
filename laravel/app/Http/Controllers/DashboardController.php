@@ -28,10 +28,8 @@ class DashboardController extends Controller
         $dashboardData['activeChartData']    = $chartsArray2;
 
          //doctors
-        //Start count doctors patients Data Business Logic
-       /* $dashboardData['PatientCountData'] = DB::table('treatments')
-			->where('user_id','=',Auth::id())
-            ->count();*/
+         //Start count doctors patients Data Business Logic
+       
          if(Auth::user()->isDoctor())
          {
             $dashboardData['PatientCountData'] = DB::table('patient_data')
@@ -51,15 +49,12 @@ class DashboardController extends Controller
             ->count();
         //End Treatment Data Business Logic
 
-
-       
         //Start doctors Appointments count Data Business Logic
         $dashboardData['AppointmentCountData'] = DB::table('appointments')
             ->where('medical_staff_id', '=',Auth::user()->id)
             ->where('appointment_date', '=',date('Y-m-d'))
             ->count();
         //End doctors Appointments Business Logic
-
 
         //Start doctors patients critical count Data Business Logic
         $dashboardData['CriticalCountData'] = DB::table('patient_data')
@@ -89,10 +84,6 @@ class DashboardController extends Controller
         $dashboardData['CurrentDaySymtomReportCount'] =   CriticalSymtomMedication::getCriticalSymtoms($docotreid,$patientid,$nurseid);
         //End  Not Reported Symtoms  Business Logic   
 
-       
-	   
-	   
-
 
 		//patient
 		//Start patient Appointments count Data Business Logic
@@ -110,11 +101,6 @@ class DashboardController extends Controller
         ->count();
        
         //End patient treatments Business Logic
-
-
-
-		
-	
 
 		//Admin
          //Start patients count Data Business Logic
@@ -151,39 +137,12 @@ class DashboardController extends Controller
         $dashboardData['treatmentCountDataNurse'] = DB::table('treatments')
             ->count();
 			
-			
-        //for nurseee
-        //Start Not Reported Medication Only for Previous Date  count for doctors Data Business Logic
-        
-        //End  Not Reported Symtoms  Business Logic 
-		//End nurse  Data Business Logic
-            
-        
-
         if ((Auth::user()->isDoctor()) or (Auth::user()->isNurse()))
             return view('dashboard.index', $dashboardData);
 
         else
             return view('dashboard.index',$dashboardData);
 
-        
-       
-		
-		
-        //Auth check
-       /* if ((Auth::user()->isDoctor()) or (Auth::user()->isNurse()))
-            return view('dashboard.index', $dashboardData);
-
-        else
-            return view('dashboard.index');
-
-		
-		if (Auth::user()->isPatient())
-            return view('dashboard.index', $dashboardData);
-
-        else
-            return view('dashboard.index');*/
-        //End Update Data Business Logic
 
     }
 

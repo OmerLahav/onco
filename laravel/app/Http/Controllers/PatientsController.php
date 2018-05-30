@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Patient;
 use App\User;
 use App\Treatment;
+use App\Medication;
+use App\Symptom;
+use App\SymptomReport;
+use App\MedicationLog;
+use App\TreatmentMedication;
 use App\EmailTemplates;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -124,6 +129,16 @@ class PatientsController extends Controller
         }
         else 
         {
+            //Delete Patint Treatment and medocation as well
+
+            $treatment = Treatment::where('patient_id',$id)->first();
+            $treatment->delete();
+            
+            //Delete Log and Symtoms Reports
+            SymptomReport::where('treatment_id',$treatment->id)->delete();
+            $treatment_medication = TreatmentMedication::where('treatment_id',$treatment->id)->pluck('id')->toArray();
+            MedicationLog::whereIn('treatment_medication_id',$treatment_medication)->delete(); 
+            
             SweetAlert::success('Deleted successfully. Dont forget to delete this patient treatments')->persistent("Close");
             return redirect()->route('patients.index');
         }

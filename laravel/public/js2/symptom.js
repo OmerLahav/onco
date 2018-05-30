@@ -1,4 +1,22 @@
 $(document).ready(function () {
+
+
+ if ($(window).width() <1024 && $(window).width()>=768) {
+alert('hi');
+   var toggled = $('.sidebar.toggled');
+   $(".sidebar").click(function () {
+    
+    //if (toggled.is(':visible') ) {
+      if($('.toggled').is(':visible')) {
+alert('hi');
+         $('.numbers').css("width","223%"); 
+         $('.numbers').css("right","243px"); 
+    }
+
+    });
+ }  
+
+	
     //next prev 
     $(document).on('click', '#next', function(){ 
         if($(this).attr('page') != "")
@@ -142,6 +160,12 @@ $(document).ready(function () {
         $("#il-info-"+$(this).attr('lblatt')+"-3").css("color", "black");
         $("#il-info-"+$(this).attr('lblatt')+"-4").css("color", $(this).attr('color_attr'));
     });
+
+
+
+
+           
+
 
 
 

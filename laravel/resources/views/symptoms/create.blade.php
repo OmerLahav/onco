@@ -25,7 +25,15 @@
                 
                 <div>
                     <label for="importance_level">Importance level:</label>
-                    <input type="text" name="importance_level" id="importance_level" max="4" min="0" placeholder="Pick a number between 0-4">
+                
+                    <select name="importance_level" class="form-control select" id="importance_level">
+                            <option value="">Pick a number between 0-4</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                    </select>
                 </div>
                  <div>
                     <label for="importance_level">Level 0 description:</label>

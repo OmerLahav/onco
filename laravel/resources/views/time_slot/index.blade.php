@@ -25,7 +25,7 @@
                <div class="steps">
                     <ol class="direction">
                         <li>
-                            On this page you can add see your available slots and their date.
+                            On this page you can see your available slots and their date.
                         </li>
                     
                     </ol>

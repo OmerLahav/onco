@@ -10,7 +10,7 @@
              <div class="steps">
                 <ol class="direction">
                     <li>
-                        On this page you can add/edit/delete team stuff.
+                        On this page you can add/edit/delete medical staff members.
                     </li>
              
             </div>
@@ -19,7 +19,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Identification Number</th>
-                    <th>Email</th>
+                    <th>E-Mail</th>
                     <th>Phone</th>
                     <th>Role</th>
                     @if(Auth::user()->isAdmin())

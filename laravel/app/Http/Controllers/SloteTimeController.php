@@ -11,7 +11,7 @@ class SloteTimeController extends Controller
 {
     public function index()
     {
-        //Return login secratory user all created slots or particular doctore so base on login user role
+        //Return login secretary user all created slots or particular doctor based on login user role
         if(Auth::user()->isDoctor())
         {
             return view('time_slot.index')->withTimeslots(SlotRange::where('user_id','=',Auth::user()->id)->get());
@@ -24,7 +24,7 @@ class SloteTimeController extends Controller
 
     public function create()
     {
-        //Get All Nurse and Doctore of that secratory
+        //Get All Nurse and Doctor of that secratory
         $users = User::whereIn('role',['1'])->get();
     	return view('time_slot.create')->withUsers($users);
     }

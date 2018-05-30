@@ -14,7 +14,7 @@
                     </li>
                     @if(Auth::user()->isPatient() || Auth::user()->isSecratory())
                     <li>
-                        In addition, you can add the appointment to your Google Calendar by pressing on the "G ADD" button.
+                        In addition, you can add the appointments to your Google Calendar by pressing on the "G ADD" button.
                     </li>
                      @endif
                 </ol>
@@ -34,7 +34,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Status</th>
-                    <th>Type </th>
+                    <th>Role </th>
                     @if(Auth::user()->isPatient() || Auth::user()->isSecratory() || Auth::user()->isNurse())
                         <th>Actions</th>
                     @endif
