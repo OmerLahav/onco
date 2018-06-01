@@ -105,6 +105,9 @@
 
 </script>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index.css') }} ">
+{{--js--}}
+<script src="{{ asset('js2/jquery.min.js') }}"></script>
+<script src="{{ asset('js2/phone-alert.js') }}"></script>
  
 @stop
 

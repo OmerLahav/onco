@@ -1,20 +1,12 @@
 $(document).ready(function () {
 
 
- if ($(window).width() <1024 && $(window).width()>=768) {
-alert('hi');
-   var toggled = $('.sidebar.toggled');
-   $(".sidebar").click(function () {
-    
-    //if (toggled.is(':visible') ) {
-      if($('.toggled').is(':visible')) {
-alert('hi');
-         $('.numbers').css("width","223%"); 
-         $('.numbers').css("right","243px"); 
-    }
-
-    });
- }  
+ 
+ $(".sidebar-toggle").on("click", function(){
+    $this = $(this);
+    $sidebar = $(".sidebar");
+    $("body").toggleClass("menu-opened");
+ });
 
 	
     //next prev 

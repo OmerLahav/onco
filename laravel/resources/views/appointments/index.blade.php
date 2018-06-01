@@ -26,7 +26,7 @@
                 <tr>
                     <th>ID</th>
                    <!--  @if(Auth::user()->isPatient() || Auth::user()->isSecratory()  || Auth::user()->isNurse()  || Auth::user()->isAdmin()) -->
-                        <th>Provider Name</th>
+                        <th>Caregiver Name</th>
                    <!--  @endif -->
                     @if(!Auth::user()->isPatient())
                      <th>Patient Name</th>
@@ -95,4 +95,7 @@
         </div>
     </div>
      <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index.css') }} ">
+	 {{--js--}}
+<script src="{{ asset('js2/jquery.min.js') }}"></script>
+<script src="{{ asset('js2/phone-alert.js') }}"></script>
 @stop

@@ -9,6 +9,7 @@
 			height: 0.85rem;
 		}
 
+
 		input[type=submit]{
 			width: 100%;
 			background-color: #4CAF50;
@@ -26,7 +27,7 @@ select.form-control{
     border: 1px solid rgba(0,0,0,.2);
     border-radius: 20px;
     outline: 0;
-    width: 64%;
+    width: 65%;
     font-size: 1rem;
     box-shadow: none;
     box-sizing: content-box;
@@ -35,6 +36,10 @@ select.form-control{
     background-color: rgb(255, 255, 255);
 
 		}
+
+		textarea,select.form-control:not([size]):not([multiple]) {
+    	height: calc(1.25rem + 2px);
+    	}
 
 
 		input[type=submit]:hover {
@@ -54,7 +59,7 @@ select.form-control{
 		}
 
 
-		input.search_field, textarea,textarea.search_fieldinput[type=date],inpute[type="file"],input[type=datetime-local], input[type=email], input[type=number], input[type=password], input[type=search-md], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.md-textarea {
+		input.search_field,textarea.search_fieldinput[type=date],inpute[type="file"],inpute[type="time"],input[type=datetime-local], input[type=email], input[type=number], input[type=password], input[type=search-md], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.md-textarea {
 			background-color: transparent;
 			border: none;
 			border: 1px solid rgba(0,0,0,.2);
@@ -72,13 +77,16 @@ select.form-control{
 			
 
 		}
-		textarea
-		{
-			width:40%;
-			padding: 2px 15px;
-			
+
+
+	input[type=time], select {
+			display:inline-block;
+                        width: 65%;
+border: 1px solid rgba(0,0,0,.2);
+
 		}
 
+		
 		.btn {
 			font-size: .8rem;
 			padding: 0.85rem 2.13rem;
@@ -113,16 +121,18 @@ select.form-control{
 			border-radius: 20px;
 			outline: 0;
 			height: 2.65rem;
-			width: 61%;
+			width: 65%;
 			font-size: 1rem;
 			box-shadow: none;
 			box-sizing: content-box;
 			-webkit-transition: all .3s;
 			transition: all .3s;
 			background-color: rgb(255, 255, 255);
+			height: calc(1.95rem + 2px);
 		}
 		
-		
+
+/* ------------------ End Responsive--------------*/		
 		
 		/*----tablet----*/
 @media (max-width: 768px) {
@@ -152,6 +162,12 @@ width: 85%;
     display: block;
     width: 170%;
 }
+
+select.form-control{
+ 	width: 95%;
+
+		}
+
 }
 
 

@@ -139,7 +139,7 @@ class PatientsController extends Controller
             $treatment_medication = TreatmentMedication::where('treatment_id',$treatment->id)->pluck('id')->toArray();
             MedicationLog::whereIn('treatment_medication_id',$treatment_medication)->delete(); 
             
-            SweetAlert::success('Deleted successfully. Dont forget to delete this patient treatments')->persistent("Close");
+            SweetAlert::success('Deleted successfully.')->persistent("Close");
             return redirect()->route('patients.index');
         }
     }

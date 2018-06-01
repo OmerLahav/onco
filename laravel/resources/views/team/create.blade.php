@@ -7,7 +7,7 @@
             <div class="steps">
                 <ol class="direction">
                     <li>
-                        Please add a staff member.
+                        Please add a medical staff member.
                     </li>
                     <li>
                         Select the right role.

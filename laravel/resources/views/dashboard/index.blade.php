@@ -1,6 +1,14 @@
 @extends ('layouts.portal') @section ('content')
 
-
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "b72f7212-6c89-46b4-bad0-10fa219e5429",
+    });
+  });
+</script>
 <div class="page-wrapper">
     <div class="page-wrapper-container">
         <h1>Dashboard</h1>
@@ -202,7 +210,7 @@
                         <i class="icon-3x color-light fas fa-calendar-check fa-3x"></i>
                         <h2 class="heading-md">Appointments</h2>
                         <div class="text-box">
-                              Today appointments: &nbsp;{{$PatientAppointmentCount or '0'}}
+                              Today's appointments: &nbsp;{{$PatientAppointmentCount or '0'}}
                         </div>
                     </div>
                 </div>
@@ -237,7 +245,7 @@
                         <div class="dash-box-body">
                             <span class="dash-box-count">{{$AppointmentCountDataNurse or '0'}}</span>
                         
-                            <span class="dash-box-title">Today appointments</span>
+                            <span class="dash-box-title">Today's appointments</span>
                         </div>
 
                         <div class="dash-box-action">

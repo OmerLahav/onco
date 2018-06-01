@@ -36,7 +36,7 @@
                 <tr>
                     <th>ID</th>
                     @if(Auth::user()->isSecratory())
-                        <th>Provider</th>
+                        <th>Caregiver</th>
                     @endif
                     <th>Date</th>
                     <th>Start Time</th>
@@ -88,4 +88,7 @@
 	<!--css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index.css') }} ">
 	<link href="{!! asset('css/data-tables.css') !!}" media="all" rel="stylesheet" type="text/css" />
+	{{--js--}}
+<script src="{{ asset('js2/jquery.min.js') }}"></script>
+<script src="{{ asset('js2/phone-alert.js') }}"></script>
 @stop

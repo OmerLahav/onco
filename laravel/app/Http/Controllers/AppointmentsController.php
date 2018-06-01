@@ -117,7 +117,7 @@ class AppointmentsController extends Controller
             }
             else
             {
-                sweetAlert::error('Appointment already booked by someone else.');
+                sweetAlert::error('Appointment is already booked by someone else.');
                 return redirect()->route('appointments.create');
             }
         }

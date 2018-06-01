@@ -450,3 +450,23 @@ padding-top:5px;
 }
 
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) { 
+	.menu-opened .numbers {
+	    width: 268%;
+       right: 302px;	
+}
+
+
+.menu-opened .report-levels {
+width: 158%;
+position: relative;
+    right: 63px;
+}
+
+
+.menu-opened .save-btn {
+    margin-left: 47%;
+}
+
+}

@@ -7,7 +7,7 @@
         <div class="steps">
             <ol class="direction">
                 <li>
-                   Select the medical provider.
+                   Select the caregiver.
                 </li>
 				<li>
                    Select the date.
@@ -16,7 +16,7 @@
                     Click on search button.
                 </li>
 				<li>
-                    Choose your preferd time.
+                    Choose your preferred time.
                 </li>
             </ol>
         </div>

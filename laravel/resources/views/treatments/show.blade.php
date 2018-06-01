@@ -14,7 +14,7 @@
                         Here you can find inforamtion about the patient treatment.
                     </li>
 					<li>
-                        At the end of the page you can add medications to the treatment <a href="#add-medication">Click here.</a>
+                        At the bottom of the page you can add medications to the treatment <a href="#add-medication">Click here.</a>
                     </li>
 					
                 </ol>

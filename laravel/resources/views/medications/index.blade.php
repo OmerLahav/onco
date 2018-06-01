@@ -11,7 +11,7 @@
                         On this page, you can add new medications.
                     </li>
                     <li>
-                        You need to choose the right memedication and its strength.
+                        You need to choose the right medication and its strength.
                     </li>
                 </ol>
             </div>
@@ -57,4 +57,7 @@
         </div>
     </div>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles/pages/admin-index.css') }} ">
+	{{--js--}}
+<script src="{{ asset('js2/jquery.min.js') }}"></script>
+<script src="{{ asset('js2/phone-alert.js') }}"></script>
 @stop

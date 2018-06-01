@@ -129,13 +129,13 @@ class SymptomReportsController extends Controller
              } 
              else
              {
-                sweetAlert::error('Error on server side.');
+                sweetAlert::error('Error on the server side.');
              }
               $symptopsreports->save();
         }
         else
         {
-            sweetAlert::error('This sympton was already submited by you today.')->persistent("Close");
+            sweetAlert::error('This sympton was already submitted by you today.')->persistent("Close");
         }
         return redirect()->route('symptopsreports.create');
         
