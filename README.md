@@ -5,7 +5,7 @@ My bachelor's degree final project of an hospital's **oncology department manage
 
 ### Front-End Technologies
 * HTML5
-* CSS
+* CSS3
 * JavaScript
 * Bootstrap 4.0
 
@@ -19,7 +19,7 @@ My bachelor's degree final project of an hospital's **oncology department manage
 * Nexmo
 * LHNCBC
 
-## Other creators
+## Other team members of project
 
 * [Shimon Eidelman](https://il.linkedin.com/in/shimoneidelman)
 * [Tomer Chatsky](https://il.linkedin.com/in/tomer-chatsky)
