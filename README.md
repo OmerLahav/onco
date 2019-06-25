@@ -1,5 +1,5 @@
 # iCan
-My Bachelor's degree final project of an hospital's **oncology department management system**.
+My bachelor's degree final project of an hospital's **oncology department management system**.
 
 ![iCan](front/images/logo.png)
 
