@@ -7,7 +7,7 @@ My Bachelor's degree final project of an hospital's oncology department manageme
 * JavaScript
 * Bootstrap 4.0
 
-### Front-End Technologies
+### Back-End Technologies
 * PHP
 * Laravel 5.6
 
