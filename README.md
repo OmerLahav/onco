@@ -7,11 +7,11 @@ My bachelor's degree final project of an hospital's **oncology department manage
 * HTML5
 * CSS3
 * JavaScript
-* Bootstrap 4.0
+* [Bootstrap 4.0](https://github.com/twbs/bootstrap)
 
 ### Back-End Technologies
 * PHP
-* Laravel 5.6
+* [Laravel 5.6](https://github.com/laravel/laravel)
 
 ### APIs
 * Google Charts
