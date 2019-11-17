@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="front/images/logo.png">
+  <img src="front/images/logo.png" style="margin: 0;">
 </p>
 
 # iCan
