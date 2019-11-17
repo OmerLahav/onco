@@ -1,4 +1,6 @@
-<img src="front/images/logo.png" style="margin: 0 auto;">
+<p align="center">
+  <img src="front/images/logo.png">
+</p>
 
 # iCan
 My bachelor's degree final project of an hospital's **oncology department management system**.
