@@ -1,7 +1,7 @@
+<img src="front/images/logo.png" style="text-align: center;">
+
 # iCan
 My bachelor's degree final project of an hospital's **oncology department management system**.
-
-![iCan](front/images/logo.png)
 
 ### Front-End Technologies
 * HTML5
